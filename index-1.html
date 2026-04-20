@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loty na Weekend — Najtańsze loty weekendowe z Polski</title>
+  <meta name="description" content="Znajdź najtańsze loty weekendowe z Polski z Ryanair i Wizzair. Porównaj ceny, sprawdź dostęp do morza i LGBT+ friendly destynacje." />
+  <meta property="og:title" content="Loty na Weekend — Najtańsze loty weekendowe" />
+  <meta property="og:description" content="Porównywarka tanich lotów weekendowych z Polski. Ryanair + Wizzair." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <link rel="canonical" href="https://lotynaweekend.pl" />
+  <!-- Playfair Display: elegancki serif do nagłówków, oficjalny i czytelny -->
+  <!-- Source Sans 3: najwyższa czytelność do body, nie krzykliwy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primary: #521437;
+      --color-secondary: #ac3942;
+      --color-accent: #f58c3d;
+      --color-accent-neon: #ff9a4a;
+      --bg-base: #0d0810;
+      --bg-surface: #150b19;
+      --bg-card: #1c1022;
+      --bg-card-hover: #231429;
+      --bg-glass: rgba(82,20,55,0.14);
+      --bg-glass-hover: rgba(82,20,55,0.26);
+      --text-primary: #ede5f5;
+      --text-secondary: #bca0cc;
+      --text-muted: #80608f;
+      --border-subtle: rgba(172,57,66,0.17);
+      --border-medium: rgba(172,57,66,0.36);
+      --border-accent: rgba(245,140,61,0.44);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,.32);
+      --shadow-md: 0 4px 24px rgba(0,0,0,.42);
+      --shadow-lg: 0 8px 48px rgba(82,20,55,.28);
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-pill: 100px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Sans 3', system-ui, sans-serif;
+      --tr: .2s ease; --tr-slow: .4s ease;
+      --nav-h: 66px;
+    }
+    [data-theme="light"] {
+      --bg-base:#fdf5f8; --bg-surface:#f4e7ef; --bg-card:#fff0f5; --bg-card-hover:#ffe0ec;
+      --bg-glass:rgba(245,232,240,.85); --bg-glass-hover:rgba(235,215,228,.9);
+      --text-primary:#1a0510; --text-secondary:#6b2040; --text-muted:#9a5080;
+      --border-subtle:rgba(172,57,66,.14); --border-medium:rgba(172,57,66,.3);
+      --shadow-sm:0 2px 8px rgba(82,20,55,.07); --shadow-md:0 4px 24px rgba(82,20,55,.11); --shadow-lg:0 8px 48px rgba(82,20,55,.14);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--font-body);background:var(--bg-base);color:var(--text-primary);line-height:1.65;overflow-x:hidden;transition:background var(--tr-slow),color var(--tr-slow)}
+    img{max-width:100%;display:block} a{color:inherit;text-decoration:none} button{cursor:pointer;border:none;background:none;font-family:inherit} input,select{font-family:inherit} ul{list-style:none}
+
+    /* AURORA */
+    .aurora-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+    .ab{position:absolute;border-radius:50%;filter:blur(88px);opacity:.1;animation:af 20s ease-in-out infinite}
+    .ab:nth-child(1){width:55vw;height:55vw;background:var(--color-primary);top:-15%;left:-8%;animation-delay:0s}
+    .ab:nth-child(2){width:38vw;height:38vw;background:var(--color-secondary);top:42%;right:-12%;animation-delay:-7s}
+    .ab:nth-child(3){width:32vw;height:32vw;background:var(--color-accent);bottom:-8%;left:32%;animation-delay:-14s;opacity:.06}
+    @keyframes af{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(2%,4%) scale(1.04)}66%{transform:translate(-2%,2%) scale(.97)}}
+    [data-theme="light"] .ab{opacity:.05}
+
+    /* TICKER */
+    .ticker-bar{background:linear-gradient(90deg,var(--color-primary),rgba(172,57,66,.9),var(--color-primary));padding:7px 0;overflow:hidden;border-bottom:1px solid var(--border-subtle)}
+    .ticker-inner{display:flex;animation:tk 45s linear infinite;white-space:nowrap}
+    .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 32px;font-size:.78rem;color:rgba(255,255,255,.88);letter-spacing:.02em}
+    .ticker-item strong{color:#ffd580;font-weight:600}
+    .ticker-div{color:rgba(255,255,255,.22);margin:0 8px}
+    @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* NAVBAR */
+    .navbar{position:sticky;top:0;z-index:1000;height:var(--nav-h);background:rgba(13,8,16,.88);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;padding:0 40px;transition:background var(--tr-slow)}
+    [data-theme="light"] .navbar{background:rgba(253,245,248,.9)}
+    .navbar-inner{width:100%;max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+    .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:1.18rem;color:var(--text-primary);letter-spacing:.01em}
+    .logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--color-primary),var(--color-accent));border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1rem}
+    .logo em{color:var(--color-accent);font-style:normal}
+    .nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+    .nav-link{font-size:.875rem;font-weight:400;color:var(--text-secondary);padding:6px 12px;border-radius:var(--radius-sm);transition:all var(--tr)}
+    .nav-link:hover{color:var(--text-primary);background:var(--bg-glass)}
+    .nav-actions{display:flex;align-items:center;gap:8px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:var(--radius-pill);font-family:var(--font-body);font-weight:500;font-size:.875rem;transition:all var(--tr);cursor:pointer;border:none;white-space:nowrap}
+    .btn-ghost{background:transparent;color:var(--text-secondary);border:1px solid var(--border-subtle)}
+    .btn-ghost:hover{background:var(--bg-glass);color:var(--text-primary);border-color:var(--border-medium)}
+    .btn-primary{background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));color:#fff;box-shadow:0 4px 16px rgba(82,20,55,.3)}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(82,20,55,.44)}
+    .btn-accent{background:linear-gradient(135deg,var(--color-accent),#e8741d);color:#fff;box-shadow:0 4px 16px rgba(245,140,61,.28)}
+    .btn-accent:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(245,140,61,.42)}
+    .btn-lg{padding:13px 30px;font-size:.975rem}
+    .theme-toggle{width:38px;height:38px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;background:var(--bg-glass);border:1px solid var(--border-subtle);color:var(--text-secondary);font-size:1rem;transition:all var(--tr)}
+    .theme-toggle:hover{background:var(--bg-glass-hover);color:var(--text-primary)}
+
+    /* HERO */
+    .hero{min-height:calc(100vh - var(--nav-h));display:flex;align-items:center;justify-content:center;padding:80px 40px 60px;text-align:center;position:relative}
+    .hero-content{max-width:780px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg-glass);border:1px solid var(--border-accent);padding:6px 16px;border-radius:var(--radius-pill);font-size:.78rem;font-weight:500;color:var(--color-accent);margin-bottom:28px;animation:fid .6s ease both;letter-spacing:.04em}
+    .hero-badge-dot{width:6px;height:6px;background:var(--color-accent);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+    .hero-title{font-family:var(--font-display);font-weight:700;font-size:clamp(2.5rem,6.5vw,4.8rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;animation:fid .7s ease .1s both}
+    .hero-title .lg{background:linear-gradient(135deg,var(--color-secondary),var(--color-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .tw-wrap{font-size:clamp(.95rem,2.2vw,1.18rem);color:var(--text-secondary);margin-bottom:40px;min-height:2em;animation:fid .7s ease .2s both;font-weight:300}
+    .tw-text{border-right:2px solid var(--color-accent);padding-right:2px}
+    .hero-stats{display:flex;justify-content:center;gap:48px;margin-bottom:44px;animation:fid .7s ease .3s both;flex-wrap:wrap}
+    .hero-stat-num{font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:var(--color-accent)}
+    .hero-stat-lbl{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
+    .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fid .7s ease .4s both}
+    .scroll-ind{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-muted);font-size:.72rem;animation:bounce 2s ease-in-out infinite}
+    .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--color-accent),transparent)}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+
+    /* SECTIONS */
+    section{padding:80px 40px}
+    .sec-inner{max-width:1400px;margin:0 auto}
+    .sec-lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--color-accent);font-weight:600;margin-bottom:10px}
+    .sec-title{font-family:var(--font-display);font-weight:700;font-size:clamp(1.65rem,3.5vw,2.5rem);line-height:1.12;letter-spacing:-.005em}
+    .sec-sub{color:var(--text-secondary);margin-top:10px;font-size:1rem;font-weight:300}
+    .sec-hdr{margin-bottom:40px}
+
+    /* COUNTERS */
+    .counter-wrap{background:linear-gradient(135deg,rgba(82,20,55,.2),rgba(172,57,66,.1));border:1px solid var(--border-subtle);border-radius:var(--radius-xl);padding:48px;text-align:center;margin-bottom:64px}
+    .counter-grid{display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
+    .counter-num{font-family:var(--font-display);font-weight:700;font-size:2.7rem;background:linear-gradient(135deg,var(--color-secondary),var(--color-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+    .counter-lbl{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;font-weight:400}
+
+    /* VIBE CARDS */
+    .vibe-scroll-wrap{position:relative}
+    .vibe-arrow{position:absolute;top:50%;z-index:10;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border-medium);color:var(--text-primary);font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--tr);box-shadow:var(--shadow-md);line-height:1}
+    .vibe-arrow:hover{background:var(--color-accent);border-color:var(--color-accent);color:#fff;transform:translateY(-50%) scale(1.08)}
+    .vibe-arrow-l{left:-18px} .vibe-arrow-r{right:-18px}
+    .vibe-grid{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;padding-top:4px;cursor:grab;user-select:none;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--border-medium) transparent}
+    .vibe-grid::-webkit-scrollbar{height:4px}
+    .vibe-grid::-webkit-scrollbar-thumb{background:var(--border-medium);border-radius:2px}
+    .vibe-grid.grabbing{cursor:grabbing}
+    .vibe-card{flex-shrink:0;width:188px;height:244px;border-radius:var(--radius-lg);position:relative;overflow:hidden;cursor:pointer;transition:transform var(--tr),box-shadow var(--tr);border:1px solid rgba(255,255,255,.04)}
+    .vibe-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.42)}
+    .vibe-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .vibe-card:hover img{transform:scale(1.06)}
+    .vibe-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.84) 0%,rgba(0,0,0,.18) 55%,rgba(0,0,0,.04) 100%)}
+    .vibe-content{position:absolute;bottom:0;left:0;right:0;padding:16px}
+    .vibe-city{font-family:var(--font-display);font-weight:600;font-size:1.05rem;color:#fff;margin-bottom:2px}
+    .vibe-ctry{font-size:.69rem;color:rgba(255,255,255,.55);letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px;font-weight:400}
+    .vibe-price{font-size:.82rem;color:var(--color-accent-neon,#ff9a4a);font-weight:600}
+    .vibe-badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.58);backdrop-filter:blur(8px);padding:3px 9px;border-radius:var(--radius-pill);font-size:.67rem;color:rgba(255,255,255,.82);letter-spacing:.05em;font-weight:400}
+
+    /* SEARCH */
+    #search{background:var(--bg-surface)}
+    .search-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+    .search-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--color-primary),var(--color-secondary),var(--color-accent))}
+    .search-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:end;margin-bottom:24px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-lbl{font-size:.72rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.1em}
+    .form-input{background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:11px 15px;color:var(--text-primary);font-size:.9rem;transition:all var(--tr);outline:none;font-family:var(--font-body)}
+    .form-input:focus{border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(245,140,61,.1)}
+    .form-input::placeholder{color:var(--text-muted)}
+
+    /* Multi chips */
+    .chips-wrap{background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:7px 11px;min-height:46px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;transition:all var(--tr);cursor:text}
+    .chips-wrap:focus-within{border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(245,140,61,.1)}
+    .a-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(82,20,55,.45);border:1px solid var(--border-medium);border-radius:var(--radius-pill);padding:3px 10px;font-size:.8rem;color:var(--text-primary);font-weight:500}
+    .a-chip-rm{color:var(--text-muted);cursor:pointer;line-height:1;font-size:.85rem;transition:color var(--tr)}
+    .a-chip-rm:hover{color:var(--color-secondary)}
+    .chip-input{border:none;background:transparent;outline:none;color:var(--text-primary);font-size:.9rem;min-width:110px;flex:1;font-family:var(--font-body)}
+    .chip-input::placeholder{color:var(--text-muted)}
+
+    /* Autocomplete */
+    .ac-wrap{position:relative}
+    .ac-drop{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-md);box-shadow:var(--shadow-md);z-index:200;max-height:256px;overflow-y:auto;display:none}
+    .ac-drop.open{display:block;animation:fid .15s ease}
+    .ac-item{display:flex;align-items:center;gap:11px;padding:10px 14px;cursor:pointer;transition:background var(--tr);border-bottom:1px solid var(--border-subtle)}
+    .ac-item:last-child{border-bottom:none}
+    .ac-item:hover{background:var(--bg-glass-hover)}
+    .ap-flag{font-size:1.2rem;flex-shrink:0}
+    .ap-name{font-size:.88rem;font-weight:500}
+    .ap-ctry{font-size:.72rem;color:var(--text-muted);font-weight:400}
+    .ap-code{font-family:var(--font-display);font-size:.78rem;font-weight:600;color:var(--color-accent);background:rgba(245,140,61,.1);padding:2px 8px;border-radius:var(--radius-sm);flex-shrink:0}
+
+    /* Toggles */
+    .airline-toggles{display:flex;gap:10px;flex-wrap:wrap}
+    .airline-toggle{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:var(--radius-pill);border:2px solid var(--border-subtle);background:transparent;cursor:pointer;transition:all var(--tr);font-size:.85rem;font-weight:500;color:var(--text-secondary);font-family:var(--font-body)}
+    .airline-toggle.a-ryanair{border-color:rgba(7,53,144,.6);background:rgba(7,53,144,.1);color:#7eb5ff}
+    .airline-toggle.a-wizzair{border-color:rgba(198,0,126,.6);background:rgba(198,0,126,.1);color:#ff82d5}
+    .days-lbl{font-size:.72rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+    .days-grid{display:flex;gap:8px;flex-wrap:wrap}
+    .day-btn{padding:8px 14px;border-radius:var(--radius-sm);border:1px solid var(--border-subtle);background:transparent;color:var(--text-secondary);font-size:.83rem;cursor:pointer;transition:all var(--tr);font-family:var(--font-body)}
+    .day-btn.on{background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));border-color:transparent;color:#fff}
+    .day-btn:hover:not(.on){background:var(--bg-glass);color:var(--text-primary)}
+
+    /* MONTH SECTION */
+    .month-sec{margin-bottom:24px}
+    .yr-tabs{display:flex;gap:6px;margin-bottom:12px}
+    .yr-tab{padding:5px 14px;border-radius:var(--radius-pill);border:1px solid var(--border-subtle);background:transparent;color:var(--text-muted);font-size:.8rem;cursor:pointer;transition:all var(--tr);font-family:var(--font-body)}
+    .yr-tab.on{background:var(--bg-glass);color:var(--text-primary);border-color:var(--border-medium)}
+    .months-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+    .mo-btn{padding:7px 4px;border-radius:var(--radius-sm);border:1px solid var(--border-subtle);background:transparent;color:var(--text-muted);font-size:.78rem;cursor:pointer;transition:all var(--tr);text-align:center;font-family:var(--font-body)}
+    .mo-btn:hover:not(.on):not(.past){background:var(--bg-glass);color:var(--text-primary)}
+    .mo-btn.on{background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));border-color:transparent;color:#fff;font-weight:600}
+    .mo-btn.past{opacity:.32;cursor:not-allowed}
+
+    /* BUDGET */
+    .budget-box{background:var(--bg-glass);border:1px solid var(--border-accent);border-radius:var(--radius-lg);padding:18px 22px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+    .budget-lbl{font-size:.875rem;color:var(--text-secondary);white-space:nowrap;font-weight:400}
+    .budget-slider{flex:1;min-width:180px}
+    .budget-val{font-family:var(--font-display);font-weight:700;font-size:1.28rem;color:var(--color-accent);min-width:85px}
+    input[type=range]{width:100%;accent-color:var(--color-accent);height:3px;cursor:pointer}
+    .budget-chips{display:flex;gap:6px;flex-wrap:wrap}
+    .b-chip{padding:4px 12px;border-radius:var(--radius-pill);font-size:.78rem;border:1px solid var(--border-subtle);background:transparent;color:var(--text-muted);cursor:pointer;transition:all var(--tr);font-family:var(--font-body)}
+    .b-chip.on{background:rgba(245,140,61,.15);border-color:var(--color-accent);color:var(--color-accent)}
+    .b-chip:hover:not(.on){background:var(--bg-glass);color:var(--text-primary)}
+
+    /* OPTIONS */
+    .search-opts{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--border-subtle);margin-top:18px}
+    .opt-toggle{display:flex;align-items:center;gap:9px;cursor:pointer;font-size:.875rem;color:var(--text-secondary);user-select:none}
+    .sw{width:38px;height:20px;background:var(--border-medium);border-radius:var(--radius-pill);position:relative;transition:background var(--tr);flex-shrink:0}
+    .sw.on{background:linear-gradient(135deg,var(--color-secondary),var(--color-accent))}
+    .sw-knob{position:absolute;top:2px;left:2px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform var(--tr);box-shadow:0 1px 4px rgba(0,0,0,.3)}
+    .sw.on .sw-knob{transform:translateX(18px)}
+    .sec-div{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--text-muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+    .sec-div::before,.sec-div::after{content:'';flex:1;height:1px;background:var(--border-subtle)}
+
+    /* RESULTS */
+    #results{padding-top:48px}
+    .results-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .results-count{font-family:var(--font-display);font-weight:600;font-size:1.05rem}
+    .results-count span{color:var(--color-accent)}
+    .sort-sel{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:8px 12px;color:var(--text-primary);font-size:.855rem;outline:none;cursor:pointer;margin-left:auto;font-family:var(--font-body)}
+    .filt-chips{display:flex;gap:6px;flex-wrap:wrap}
+    .filt-chip{display:flex;align-items:center;gap:4px;padding:5px 12px;border-radius:var(--radius-pill);border:1px solid var(--border-subtle);background:transparent;color:var(--text-muted);font-size:.78rem;cursor:pointer;transition:all var(--tr);font-family:var(--font-body)}
+    .filt-chip.on{border-color:var(--color-accent);background:rgba(245,140,61,.1);color:var(--color-accent)}
+    .filt-chip:hover:not(.on){background:var(--bg-glass);color:var(--text-primary)}
+    .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+    .skel{background:linear-gradient(90deg,var(--bg-card) 25%,var(--bg-card-hover) 50%,var(--bg-card) 75%);background-size:200% 100%;animation:sw 1.5s ease-in-out infinite;border-radius:var(--radius-lg);height:340px}
+    @keyframes sw{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+    /* FLIGHT CARD */
+    .flight-card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s ease;position:relative;display:flex;flex-direction:column}
+    .flight-card:hover{transform:translateY(-3px);border-color:var(--border-medium);box-shadow:var(--shadow-lg);background:var(--bg-card-hover)}
+
+    /* Country row — prominent, top */
+    .fc-country{display:flex;align-items:center;gap:10px;padding:14px 18px 0}
+    .fc-flag{font-size:1.55rem;line-height:1}
+    .fc-name{font-family:var(--font-display);font-weight:700;font-size:1.02rem;color:var(--text-primary);letter-spacing:.01em}
+    .fc-route{font-size:.74rem;color:var(--text-muted);font-weight:400;margin-left:auto}
+
+    /* Date bar — above times, prominent */
+    .fc-date{background:linear-gradient(135deg,rgba(82,20,55,.28),rgba(172,57,66,.14));padding:10px 18px;margin:12px 0 0;display:flex;align-items:center;gap:10px;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)}
+    .fc-date-txt{font-weight:600;font-size:.92rem;color:var(--text-primary)}
+    .fc-date-dur{font-size:.72rem;color:var(--text-muted);margin-left:auto;font-weight:400}
+
+    /* Times section */
+    .fc-times{padding:14px 18px;flex:1}
+    .leg-lbl{font-size:.67rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;font-weight:600}
+    .leg-row{display:flex;align-items:center;justify-content:space-between}
+    .t-block{text-align:center}
+    .t-val{font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--text-primary)}
+    .t-city{font-size:.7rem;color:var(--text-muted);margin-top:2px;font-weight:400}
+    .dur-center{flex:1;padding:0 10px;text-align:center}
+    .dur-line{height:1px;background:var(--border-medium);position:relative;margin:8px 0}
+    .dur-line::before,.dur-line::after{content:'';position:absolute;top:-3px;width:6px;height:6px;background:var(--color-accent);border-radius:50%}
+    .dur-line::before{left:0}.dur-line::after{right:0}
+    .dur-txt{font-size:.72rem;color:var(--text-muted);font-weight:400}
+    .leg-divider{height:1px;background:var(--border-subtle);border:none;margin:10px 0}
+    .return-leg{opacity:.8}
+
+    /* Meta badges */
+    .fc-meta{display:flex;gap:6px;flex-wrap:wrap;padding:0 18px 10px}
+    .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:var(--radius-pill);font-size:.7rem;font-weight:500;letter-spacing:.02em}
+    .badge-sea{background:rgba(37,150,190,.12);color:#68ccf0}
+    .badge-lgbt{background:rgba(130,100,220,.12);color:#b090f5}
+    .badge-nolg{background:rgba(200,60,60,.1);color:#f59090}
+    .badge-novisa{background:rgba(80,200,80,.12);color:#70d890}
+    .badge-visa{background:rgba(200,120,30,.12);color:#f0a850}
+    .badge-dist{background:rgba(82,20,55,.25);color:var(--text-secondary)}
+    .badge-currency{background:rgba(245,140,61,.08);color:#e8a060}
+    .badge-english{background:rgba(30,120,200,.12);color:#78b8f8}
+    .badge-noenglish{background:rgba(150,100,30,.12);color:#c8a060}
+    .badge-passport{background:rgba(180,60,60,.1);color:#e08080}
+    /* Extra info strip in card */
+    .fc-extra{display:flex;gap:0;border-top:1px solid var(--border-subtle);padding:0}
+    .fc-extra-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px;border-right:1px solid var(--border-subtle);text-align:center}
+    .fc-extra-item:last-child{border-right:none}
+    .fc-extra-val{font-size:.78rem;font-weight:600;color:var(--text-primary);line-height:1.2}
+    .fc-extra-lbl{font-size:.62rem;color:var(--text-muted);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+
+    /* Card footer */
+    .fc-footer{padding:12px 18px;border-top:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(0,0,0,.08)}
+    .fc-price-main{font-family:var(--font-display);font-weight:700;font-size:1.4rem;color:var(--color-accent);line-height:1}
+    .fc-price-sub{font-size:.7rem;color:var(--text-muted);margin-top:2px;font-weight:400}
+    .airline-tag{display:inline-flex;align-items:center;gap:5px;margin-top:5px;padding:2px 9px;border-radius:var(--radius-pill);font-size:.7rem;font-weight:600}
+    .at-ry{background:rgba(7,53,144,.18);color:#7eb5ff;border:1px solid rgba(7,53,144,.3)}
+    .at-wz{background:rgba(198,0,126,.18);color:#ff82d5;border:1px solid rgba(198,0,126,.3)}
+    .fc-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+    .heart-btn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-surface);border:1px solid var(--border-subtle);color:var(--text-muted);font-size:1rem;transition:all var(--tr)}
+    .heart-btn:hover{background:rgba(172,57,66,.15);color:var(--color-secondary);border-color:var(--color-secondary)}
+    .heart-btn.active{background:rgba(172,57,66,.2);color:var(--color-secondary);border-color:var(--color-secondary)}
+    .btn-book{padding:8px 16px;border-radius:var(--radius-pill);font-size:.82rem;font-weight:600;background:linear-gradient(135deg,var(--color-secondary),var(--color-accent));color:#fff;transition:all var(--tr);display:inline-flex;align-items:center;gap:4px;font-family:var(--font-body)}
+    .btn-book:hover{transform:scale(1.04);box-shadow:0 4px 16px rgba(172,57,66,.3)}
+
+    /* Empty / error */
+    .empty-state{text-align:center;padding:72px 40px;color:var(--text-muted)}
+    .empty-ico{font-size:3rem;margin-bottom:16px;opacity:.35}
+    .empty-title{font-family:var(--font-display);font-size:1.15rem;margin-bottom:10px;color:var(--text-secondary)}
+    .err-box{background:rgba(200,60,60,.07);border:1px solid rgba(200,60,60,.2);border-radius:var(--radius-lg);padding:32px;text-align:center}
+    .spinner{width:38px;height:38px;border-radius:50%;border:3px solid var(--border-subtle);border-top-color:var(--color-accent);animation:spin .8s linear infinite;margin:0 auto}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* MAP */
+    #map-section{background:var(--bg-surface)}
+    .map-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .map-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.78rem;color:var(--text-muted)}
+    .leg-item{display:flex;align-items:center;gap:6px}
+    .leg-dot{width:10px;height:10px;border-radius:50%}
+    .map-container{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);overflow:hidden;position:relative;height:480px}
+    .map-svg{width:100%;height:100%}
+    /* Country SVG paths */
+    .cp{fill:rgba(82,20,55,.08);stroke:rgba(172,57,66,.17);stroke-width:.8;transition:all .25s ease;cursor:default}
+    .cp.has-f{fill:rgba(245,140,61,.06);stroke:rgba(245,140,61,.38);stroke-width:1.2;cursor:pointer}
+    .cp.has-f:hover{fill:rgba(245,140,61,.13);stroke:rgba(245,140,61,.72);stroke-width:1.5}
+    /* Najtańsze 3 — neonowy pomarańczowy border */
+    .cp.cheapest{fill:rgba(245,140,61,.09);stroke:var(--color-accent);stroke-width:2;filter:drop-shadow(0 0 5px rgba(245,140,61,.45));cursor:pointer}
+    .cp.cheapest:hover{fill:rgba(245,140,61,.18)}
+    .route-line{fill:none;stroke-dasharray:6,4;animation:dash 2s linear infinite;stroke-width:1.5;opacity:.3}
+    .rl-ry{stroke:#5e9eff}.rl-wz{stroke:#ff69c9}
+    @keyframes dash{to{stroke-dashoffset:-20}}
+    .ap-dot{cursor:pointer}
+    .map-tt{position:absolute;background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-md);padding:10px 14px;font-size:.8rem;pointer-events:none;z-index:50;display:none;box-shadow:var(--shadow-md);white-space:nowrap;min-width:158px}
+    .map-tt.vis{display:block}
+    .map-tt-name{font-family:var(--font-display);font-weight:600;font-size:.9rem;margin-bottom:3px}
+    .map-tt-price{color:var(--color-accent);font-weight:600;font-size:.85rem}
+    .map-tt-sub{color:var(--text-muted);font-size:.72rem;margin-top:2px}
+
+    /* NEWSLETTER */
+    #newsletter{background:var(--bg-base)}
+    .nl-card{background:linear-gradient(135deg,rgba(82,20,55,.3),rgba(172,57,66,.15));border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:76px 48px;text-align:center;position:relative;overflow:hidden}
+    .nl-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,140,61,.07),transparent 60%)}
+    .nl-bell{font-size:2.2rem;margin-bottom:16px;display:inline-block;animation:bell 4s ease-in-out infinite;cursor:pointer}
+    @keyframes bell{0%,88%,100%{transform:rotate(0)}90%{transform:rotate(-12deg)}92%{transform:rotate(12deg)}94%{transform:rotate(-8deg)}96%{transform:rotate(8deg)}}
+    .nl-title{font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:10px}
+    .nl-sub{color:var(--text-secondary);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;font-weight:300;font-size:1rem}
+    .nl-form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:620px;margin:0 auto}
+    .nl-input{flex:1;min-width:175px;background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-pill);padding:12px 20px;color:var(--text-primary);font-size:.9rem;outline:none;transition:all var(--tr);font-family:var(--font-body)}
+    .nl-input:focus{border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(245,140,61,.1)}
+
+    /* MODAL */
+    .modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:2000;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:32px}
+    .modal-ov.open{display:flex;animation:fi .2s ease}
+    @keyframes fi{from{opacity:0}to{opacity:1}}
+    .modal{background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-xl);padding:40px;width:100%;max-width:420px;position:relative;box-shadow:var(--shadow-lg);animation:su .25s ease}
+    @keyframes su{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .modal-close{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;background:var(--bg-surface);border:1px solid var(--border-subtle);color:var(--text-muted);font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+    .modal-close:hover{background:var(--bg-glass-hover);color:var(--text-primary)}
+    .modal-title{font-family:var(--font-display);font-weight:700;font-size:1.5rem;margin-bottom:6px}
+    .modal-sub{color:var(--text-secondary);font-size:.875rem;margin-bottom:26px;font-weight:300}
+    .modal-tabs{display:flex;gap:2px;background:var(--bg-surface);border-radius:var(--radius-sm);padding:3px;margin-bottom:26px}
+    .modal-tab{flex:1;text-align:center;padding:8px;border-radius:6px;font-size:.855rem;font-weight:500;cursor:pointer;transition:all var(--tr);color:var(--text-muted);font-family:var(--font-body)}
+    .modal-tab.on{background:var(--bg-card);color:var(--text-primary);box-shadow:var(--shadow-sm)}
+
+    /* USER PANEL */
+    .user-panel{position:fixed;right:0;top:0;height:100vh;width:370px;background:var(--bg-surface);border-left:1px solid var(--border-subtle);z-index:1500;transform:translateX(100%);transition:transform var(--tr-slow);overflow-y:auto;padding:28px}
+    .user-panel.open{transform:translateX(0);box-shadow:-8px 0 40px rgba(0,0,0,.34)}
+    .panel-hdr{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+    .panel-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary),var(--color-accent));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:#fff;flex-shrink:0}
+    .panel-uname{font-weight:600;font-size:.95rem;font-family:var(--font-display)}
+    .panel-uemail{font-size:.74rem;color:var(--text-muted)}
+    .panel-close{width:30px;height:30px;border-radius:50%;background:var(--bg-glass);border:1px solid var(--border-subtle);color:var(--text-muted);display:flex;align-items:center;justify-content:center}
+    .p-sec{margin-bottom:26px}
+    .p-sec-title{font-size:.69rem;text-transform:uppercase;letter-spacing:.14em;color:var(--text-muted);margin-bottom:12px;display:flex;align-items:center;gap:10px;font-weight:600}
+    .p-sec-title::after{content:'';flex:1;height:1px;background:var(--border-subtle)}
+    .hist-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border-subtle);cursor:pointer;transition:all var(--tr)}
+    .hist-item:hover{padding-left:4px}
+    .hist-route{flex:1;font-size:.855rem}
+    .hist-date{font-size:.7rem;color:var(--text-muted)}
+    .hist-price{font-weight:600;color:var(--color-accent);font-size:.855rem}
+    .fav-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all var(--tr)}
+    .fav-item:hover{border-color:var(--border-medium)}
+    .fav-route{flex:1;font-weight:500;font-size:.875rem}
+    .fav-price{color:var(--color-accent);font-weight:600;font-size:.875rem;flex-shrink:0}
+    .fav-rm{width:26px;height:26px;border-radius:50%;background:transparent;border:1px solid var(--border-subtle);color:var(--text-muted);font-size:.75rem;display:flex;align-items:center;justify-content:center;transition:all var(--tr);flex-shrink:0}
+    .fav-rm:hover{background:rgba(200,60,60,.1);border-color:#f08080;color:#f08080}
+    .alert-item{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:8px;position:relative}
+    .alert-route{font-weight:500;font-size:.875rem;margin-bottom:3px}
+    .alert-meta{font-size:.72rem;color:var(--text-muted)}
+    .alert-rm{position:absolute;top:10px;right:10px;width:22px;height:22px;border-radius:50%;background:transparent;border:1px solid var(--border-subtle);color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:.72rem;cursor:pointer;transition:all var(--tr)}
+    .alert-rm:hover{background:rgba(200,60,60,.1);color:#f08080}
+    /* Fav airport box */
+    .fav-ap-box{background:var(--bg-card);border:1px solid var(--border-accent);border-radius:var(--radius-md);padding:14px;margin-bottom:14px}
+    .fav-ap-lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent);font-weight:600;margin-bottom:8px}
+    .fav-ap-input{width:100%;background:var(--bg-surface);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:9px 12px;color:var(--text-primary);font-size:.875rem;outline:none;font-family:var(--font-body);transition:all var(--tr)}
+    .fav-ap-input:focus{border-color:var(--color-accent)}
+    .fav-ap-cur{display:flex;align-items:center;gap:8px;background:rgba(245,140,61,.1);border:1px solid var(--border-accent);border-radius:var(--radius-sm);padding:8px 12px;margin-top:8px}
+    .fav-ap-code{font-family:var(--font-display);font-weight:700;color:var(--color-accent)}
+
+    /* TOAST */
+    .toast-wrap{position:fixed;bottom:32px;right:32px;z-index:3000;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+    .toast{background:var(--bg-card);border:1px solid var(--border-medium);border-radius:var(--radius-lg);padding:14px 18px;box-shadow:var(--shadow-lg);min-width:265px;max-width:360px;display:flex;align-items:flex-start;gap:10px;animation:ti .3s ease;pointer-events:all}
+    @keyframes ti{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+    .toast-ico{font-size:1.1rem;flex-shrink:0}
+    .toast-title{font-weight:600;font-size:.855rem;margin-bottom:2px}
+    .toast-msg{font-size:.78rem;color:var(--text-secondary)}
+
+    /* FOOTER */
+    footer{background:var(--bg-surface);border-top:1px solid var(--border-subtle);padding:48px 40px;text-align:center;color:var(--text-muted);font-size:.8rem}
+    .footer-logo{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:10px}
+    .footer-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+    .footer-link{color:var(--text-muted);transition:color var(--tr)}
+    .footer-link:hover{color:var(--color-accent)}
+
+    /* ANIMATIONS */
+    .si{opacity:0;transform:translateY(14px)}
+    .si.vis{animation:stag .45s ease forwards}
+    @keyframes stag{to{opacity:1;transform:translateY(0)}}
+    @keyframes fid{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.search-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){section{padding:56px 20px}.navbar{padding:0 20px}.nav-links{display:none}.search-grid{grid-template-columns:1fr}.hero-stats{gap:32px}.user-panel{width:100%}.budget-box{flex-direction:column;align-items:stretch}.results-grid{grid-template-columns:1fr}.counter-grid{gap:38px}.map-container{height:320px}.months-grid{grid-template-columns:repeat(4,1fr)}.nl-card{padding:48px 24px}.fc-extra{flex-wrap:wrap}.fc-extra-item{min-width:45%}}
+    @media(max-width:480px){.hero{padding:56px 20px}.modal{padding:28px 20px}.vibe-arrow{display:none}}
+  </style>
+</head>
+<body>
+
+<div class="aurora-bg" aria-hidden="true"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
+
+<!-- TICKER -->
+<div class="ticker-bar" role="marquee" aria-label="Aktualne promocje lotów">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Główna nawigacja">
+  <div class="navbar-inner">
+    <a href="#" class="logo" aria-label="Loty na Weekend">
+      <div class="logo-icon" aria-hidden="true">✈</div>Loty na <em>Weekend</em>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#search" class="nav-link">Szukaj</a></li>
+      <li><a href="#results" class="nav-link">Wyniki</a></li>
+      <li><a href="#map-section" class="nav-link">Mapa</a></li>
+      <li><a href="#newsletter" class="nav-link">Alerty</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeBtn" aria-label="Tryb jasny/ciemny">🌙</button>
+      <button class="btn btn-ghost" id="loginBtn">Zaloguj</button>
+      <button class="btn btn-primary" id="registerBtn">Konto</button>
+      <button class="btn btn-ghost" id="panelBtn" style="display:none">👤 Panel</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span>Aktualizowane codziennie · Ryanair + Wizzair</div>
+    <h1 class="hero-title">Najtańsze loty<br>na <span class="lg">weekend</span></h1>
+    <div class="tw-wrap" aria-live="polite"><span class="tw-text" id="twEl"></span></div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">2&nbsp;847</div><div class="hero-stat-lbl">Lotów weekendowych</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">94</div><div class="hero-stat-lbl">Destynacji</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">149 PLN</div><div class="hero-stat-lbl">Najtańszy lot dziś</div></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#search" class="btn btn-accent btn-lg">🔍 Znajdź lot</a>
+      <button class="btn btn-ghost btn-lg" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">🗺 Zobacz mapę</button>
+    </div>
+  </div>
+  <div class="scroll-ind" aria-hidden="true"><span>Przewiń</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- COUNTERS -->
+<section style="padding:0 40px 64px">
+  <div class="sec-inner">
+    <div class="counter-wrap">
+      <div class="counter-grid">
+        <div><span class="counter-num" data-target="2847">0</span><div class="counter-lbl">Lotów w bazie</div></div>
+        <div><span class="counter-num" data-target="94">0</span><div class="counter-lbl">Destynacji</div></div>
+        <div><span class="counter-num" data-target="18">0</span><div class="counter-lbl">Lotnisk startowych</div></div>
+        <div><span class="counter-num" data-target="1243">0</span><div class="counter-lbl">Zapisanych alertów</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIBE CARDS ze zdjęciami Unsplash -->
+<section style="padding:0 40px 64px">
+  <div class="sec-inner">
+    <div class="sec-hdr" style="margin-bottom:22px">
+      <div class="sec-lbl">Popularne kierunki</div>
+      <h2 class="sec-title">Gdzie polecieć?</h2>
+      <p class="sec-sub">Kliknij, by uzupełnić wyszukiwarkę. Przeciągnij lub użyj strzałek ‹ ›</p>
+    </div>
+    <div class="vibe-scroll-wrap">
+      <button class="vibe-arrow vibe-arrow-l" onclick="scrollVibe(-1)" aria-label="Przewiń w lewo">‹</button>
+      <div class="vibe-grid" id="vibeGrid" role="list"></div>
+      <button class="vibe-arrow vibe-arrow-r" onclick="scrollVibe(1)" aria-label="Przewiń w prawo">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<section id="search" aria-labelledby="searchH">
+  <div class="sec-inner">
+    <div class="sec-hdr">
+      <div class="sec-lbl">Wyszukiwarka</div>
+      <h2 class="sec-title" id="searchH">Znajdź swój lot</h2>
+      <p class="sec-sub">Wybierz jedno lub kilka lotnisk startowych, destynację, miesiąc i budżet</p>
+    </div>
+    <div class="search-card" role="search">
+      <!-- Linie -->
+      <div style="margin-bottom:22px">
+        <div class="days-lbl">Linie lotnicze</div>
+        <div class="airline-toggles">
+          <button class="airline-toggle a-ryanair" id="togRy" aria-pressed="true" onclick="togAirline('ryanair')">🔵 Ryanair</button>
+          <button class="airline-toggle a-wizzair" id="togWz" aria-pressed="true" onclick="togAirline('wizzair')">💜 Wizzair</button>
+        </div>
+      </div>
+      <!-- Grid -->
+      <div class="search-grid">
+        <div class="form-group">
+          <label class="form-lbl">Skąd lecisz <span style="font-size:.67rem;color:var(--text-muted);text-transform:none;letter-spacing:0">(kilka lotnisk)</span></label>
+          <div class="ac-wrap">
+            <div class="chips-wrap" id="chipsWrap" onclick="document.getElementById('chipInput').focus()">
+              <div id="originChips" style="display:contents"></div>
+              <input type="text" id="chipInput" class="chip-input" placeholder="Katowice, Kraków..." autocomplete="off" aria-label="Lotnisko startowe" />
+            </div>
+            <div id="originDrop" class="ac-drop" role="listbox"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-lbl" for="destIn">Dokąd lecisz</label>
+          <div class="ac-wrap">
+            <input type="text" id="destIn" class="form-input" placeholder="Gdziekolwiek, Barcelona..." autocomplete="off" aria-label="Lotnisko docelowe" />
+            <div id="destDrop" class="ac-drop" role="listbox"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-lbl" for="currSel">Waluta</label>
+          <select id="currSel" class="form-input">
+            <option value="PLN" selected>🇵🇱 PLN</option>
+            <option value="EUR">🇪🇺 EUR</option>
+            <option value="GBP">🇬🇧 GBP</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Terminy weekendowe -->
+      <div style="margin-bottom:20px">
+        <div class="days-lbl">Terminy weekendowe</div>
+        <div class="days-grid" role="group">
+          <button class="day-btn on" data-day="fri-sun" aria-pressed="true" onclick="togDay(this)">Pt–Nd (3 dni)</button>
+          <button class="day-btn on" data-day="sat-sun" aria-pressed="true" onclick="togDay(this)">Sb–Nd (2 dni)</button>
+          <button class="day-btn" data-day="fri" aria-pressed="false" onclick="togDay(this)">Piątek</button>
+          <button class="day-btn" data-day="sat" aria-pressed="false" onclick="togDay(this)">Sobota</button>
+          <button class="day-btn" data-day="sun" aria-pressed="false" onclick="togDay(this)">Niedziela</button>
+        </div>
+      </div>
+
+      <!-- Preferowany miesiąc — dynamiczne lata -->
+      <div class="sec-div">Preferowany miesiąc</div>
+      <div class="month-sec" style="margin-bottom:22px">
+        <div class="days-lbl" style="margin-bottom:10px">Rok <span style="font-size:.67rem;color:var(--text-muted);text-transform:none;letter-spacing:0">— bez zaznaczenia = szuka we wszystkich dostępnych terminach</span></div>
+        <div class="yr-tabs" id="yrTabs" role="tablist"></div>
+        <div id="monthGridsWrap"></div>
+      </div>
+
+      <!-- Budżet -->
+      <div class="budget-box">
+        <div class="budget-lbl">💰 Budżet max:</div>
+        <div class="budget-slider"><input type="range" id="budgetR" min="100" max="3000" value="800" step="50" oninput="updBudget(this.value)" /></div>
+        <div class="budget-val" id="budgetV">800 PLN</div>
+        <div class="budget-chips">
+          <button class="b-chip" onclick="setBudget(300)">do 300</button>
+          <button class="b-chip" onclick="setBudget(500)">do 500</button>
+          <button class="b-chip on" onclick="setBudget(800)">do 800</button>
+          <button class="b-chip" onclick="setBudget(1500)">do 1500</button>
+          <button class="b-chip" onclick="setBudget(3000)">bez limitu</button>
+        </div>
+      </div>
+
+      <!-- Opcje -->
+      <div class="search-opts">
+        <label class="opt-toggle"><div class="sw on" id="swRound" onclick="togSw(this)" role="switch" aria-checked="true" tabindex="0"></div><span>↔ W obie strony</span></label>
+        <label class="opt-toggle"><div class="sw" id="swSea" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>🌊 Tylko przy morzu</span></label>
+        <label class="opt-toggle"><div class="sw" id="swLgbt" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>🏳️‍🌈 LGBT+ friendly</span></label>
+      </div>
+
+      <!-- Przycisk Szukaj — na samym dole po wszystkich filtrach -->
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border-subtle);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <button class="btn btn-accent btn-lg" style="flex:1;justify-content:center;max-width:320px" onclick="runSearch()" aria-label="Szukaj lotów">
+          ✈ Szukaj lotów
+        </button>
+        <div id="activeDestBadge" style="display:none;font-size:.82rem;color:var(--text-secondary)">
+          Szukasz: <strong id="activeDestLabel" style="color:var(--color-accent)">–</strong>
+          <button onclick="clearDest()" style="margin-left:8px;font-size:.75rem;color:var(--text-muted);background:none;border:none;cursor:pointer;text-decoration:underline">wyczyść</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="sec-inner">
+    <div class="results-bar">
+      <div class="results-count" id="resCount">Znaleziono <span id="resNum">12</span> lotów</div>
+      <div class="filt-chips" role="group">
+        <button class="filt-chip on" onclick="setFilter(this,'all')">Wszystkie</button>
+        <button class="filt-chip" onclick="setFilter(this,'sea')">🌊 Przy morzu</button>
+        <button class="filt-chip" onclick="setFilter(this,'lgbt')">🏳️‍🌈 LGBT+</button>
+        <button class="filt-chip" onclick="setFilter(this,'cheapest')">💸 Najtańsze</button>
+        <button class="filt-chip" onclick="setFilter(this,'novisa')">✅ Bez wizy</button>
+        <button class="filt-chip" onclick="setFilter(this,'english')">🗣 Mówią po angielsku</button>
+        <button class="filt-chip" onclick="setFilter(this,'close')">🚶 Lotnisko blisko centrum</button>
+      </div>
+      <select class="sort-sel" id="sortSel" onchange="doSort(this.value)">
+        <option value="price">Cena rosnąco</option>
+        <option value="price-desc">Cena malejąco</option>
+        <option value="date">Data wylotu</option>
+        <option value="dur">Czas lotu</option>
+        <option value="dist">Bliskość centrum</option>
+      </select>
+    </div>
+    <div id="loadingDiv" style="display:none"><div class="results-grid"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>
+    <div id="errorDiv" style="display:none" role="alert"><div class="err-box"><div style="font-size:2rem;margin-bottom:14px">⚠️</div><strong>Błąd pobierania danych</strong><p style="color:var(--text-muted);font-size:.875rem;margin:10px 0 18px">Wyświetlamy ostatnie zapisane dane.</p><button class="btn btn-primary" onclick="runSearch()">↺ Spróbuj ponownie</button></div></div>
+    <div id="emptyDiv" style="display:none"><div class="empty-state"><div class="empty-ico">🔍</div><div class="empty-title" id="emptyTitle">Nie znaleziono lotów</div><p id="emptyMsg">Zmień kryteria lub zwiększ budżet.</p><br><button class="btn btn-accent" onclick="setBudget(3000);runSearch()">Zwiększ budżet i szukaj</button></div></div>
+    <div class="results-grid" id="resultsGrid" role="list"></div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map-section">
+  <div class="sec-inner">
+    <div class="sec-hdr" style="margin-bottom:22px">
+      <div class="sec-lbl">Mapa tras</div>
+      <h2 class="sec-title">Dokąd możesz polecieć?</h2>
+      <p class="sec-sub">Kraje z <strong style="color:var(--color-accent)">pomarańczowym</strong> obramowaniem mają najtańsze loty. Najedź na lotnisko by zobaczyć aktualną cenę.</p>
+    </div>
+    <div class="map-controls">
+      <div class="map-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:var(--color-accent);box-shadow:0 0 5px var(--color-accent)"></div><span>Najtańsze</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:rgba(245,140,61,.38)"></div><span>Dostępne loty</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#5e9eff"></div><span>Ryanair</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#ff69c9"></div><span>Wizzair</span></div>
+      </div>
+      <div id="favApBadge" style="display:none;margin-left:auto;font-size:.8rem;color:var(--color-accent)">⭐ Loty z: <strong id="favApLabel">–</strong></div>
+    </div>
+    <div class="map-container">
+      <div class="map-tt" id="mapTt"></div>
+      <svg class="map-svg" viewBox="0 0 1000 500" id="worldMap" role="img" aria-label="Mapa tras lotów">
+        <rect width="1000" height="500" fill="rgba(13,8,16,.5)" rx="16"/>
+        <g stroke="rgba(255,255,255,.022)" stroke-width=".8">
+          <line x1="0" y1="125" x2="1000" y2="125"/><line x1="0" y1="250" x2="1000" y2="250"/><line x1="0" y1="375" x2="1000" y2="375"/>
+          <line x1="250" y1="0" x2="250" y2="500"/><line x1="500" y1="0" x2="500" y2="500"/><line x1="750" y1="0" x2="750" y2="500"/>
+        </g>
+        <g id="cPaths"></g>
+        <g id="rLines"></g>
+        <g id="aDots"></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="sec-inner">
+    <div class="nl-card">
+      <div class="nl-bell" onclick="document.getElementById('nlEmail').focus()" role="button" tabindex="0">🔔</div>
+      <h2 class="nl-title">Zainteresowana lotem?</h2>
+      <p class="nl-sub">Zapisz się na alerty i dostawaj powiadomienia o najtańszych lotach weekendowych na maila. Codziennie sprawdzamy ceny.</p>
+      <form id="nlForm" class="nl-form" onsubmit="submitNL(event)" novalidate>
+        <input type="email" class="nl-input" id="nlEmail" placeholder="twoj@email.pl" required aria-label="Email" />
+        <input type="text" class="nl-input" id="nlOrigin" placeholder="Skąd (np. KTW)" aria-label="Lotnisko startowe" />
+        <input type="text" class="nl-input" id="nlDest" placeholder="Dokąd (np. BCN lub Gdziekolwiek)" aria-label="Lotnisko docelowe" />
+        <button type="submit" class="btn btn-accent btn-lg">🔔 Zapisz się</button>
+      </form>
+      <p style="margin-top:14px;font-size:.73rem;color:var(--text-muted)">Wypisać możesz się w dowolnej chwili. Nie spamujemy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUTH MODAL -->
+<div class="modal-ov" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Zamknij">✕</button>
+    <div class="modal-title" id="authTitle">Witaj!</div>
+    <div class="modal-sub">Zaloguj się lub utwórz konto, by śledzić ulubione loty.</div>
+    <div class="modal-tabs" role="tablist">
+      <button class="modal-tab on" id="tabL" role="tab" onclick="switchTab('login')">Zaloguj</button>
+      <button class="modal-tab" id="tabR" role="tab" onclick="switchTab('reg')">Rejestracja</button>
+    </div>
+    <div id="loginF">
+      <div class="form-group" style="margin-bottom:14px"><label class="form-lbl" for="lEmail">Email</label><input type="email" id="lEmail" class="form-input" placeholder="twoj@email.pl" /></div>
+      <div class="form-group" style="margin-bottom:26px"><label class="form-lbl" for="lPass">Hasło</label><input type="password" id="lPass" class="form-input" placeholder="••••••••" /></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="doLogin()">Zaloguj się</button>
+    </div>
+    <div id="regF" style="display:none">
+      <div class="form-group" style="margin-bottom:12px"><label class="form-lbl" for="rEmail">Email</label><input type="email" id="rEmail" class="form-input" placeholder="twoj@email.pl" /></div>
+      <div class="form-group" style="margin-bottom:12px"><label class="form-lbl" for="rPass">Hasło</label><input type="password" id="rPass" class="form-input" placeholder="Min. 8 znaków" /></div>
+      <div class="form-group" style="margin-bottom:26px"><label class="form-lbl" for="rPass2">Powtórz hasło</label><input type="password" id="rPass2" class="form-input" placeholder="Powtórz hasło" /></div>
+      <button class="btn btn-accent" style="width:100%;justify-content:center" onclick="doRegister()">Utwórz konto</button>
+    </div>
+  </div>
+</div>
+
+<!-- USER PANEL -->
+<aside class="user-panel" id="userPanel" role="complementary" aria-label="Panel użytkownika">
+  <div class="panel-hdr">
+    <div class="panel-avatar" id="pAvatar">A</div>
+    <div><div class="panel-uname" id="pName">Anna</div><div class="panel-uemail" id="pEmail">anna@example.pl</div></div>
+    <button class="panel-close" onclick="closePanel()" style="margin-left:auto" aria-label="Zamknij">✕</button>
+  </div>
+  <div class="p-sec">
+    <div class="p-sec-title">⭐ Ulubione lotnisko</div>
+    <div class="fav-ap-box">
+      <div class="fav-ap-lbl">Lotnisko domyślne (auto-uzupełnia wyszukiwarkę i mapę)</div>
+      <input type="text" class="fav-ap-input" id="favApIn" placeholder="Wpisz kod lub nazwę (np. KTW)" oninput="filterFavAp(this.value)" aria-label="Ulubione lotnisko" />
+      <div id="favApCur" style="display:none" class="fav-ap-cur">
+        <span>Aktualnie:</span><span class="fav-ap-code" id="favApCode">–</span>
+        <span id="favApName" style="font-size:.8rem;color:var(--text-muted)">–</span>
+        <button onclick="clearFavAp()" style="margin-left:auto;font-size:.74rem;color:var(--text-muted);background:none;border:none;cursor:pointer">✕ usuń</button>
+      </div>
+      <div id="favApSugg" class="ac-drop" style="position:static;margin-top:6px;max-height:140px"></div>
+    </div>
+  </div>
+  <div class="p-sec"><div class="p-sec-title">Historia wyszukiwań</div><div id="pHistory"></div></div>
+  <div class="p-sec"><div class="p-sec-title">❤️ Ulubione trasy</div><div id="pFavs"></div></div>
+  <div class="p-sec"><div class="p-sec-title">🔔 Aktywne alerty</div><div id="pAlerts"></div></div>
+  <button class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:14px" onclick="doLogout()">Wyloguj się</button>
+</aside>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<footer role="contentinfo">
+  <div class="sec-inner" style="max-width:1400px">
+    <div class="footer-logo">✈ Loty na Weekend</div>
+    <div class="footer-links">
+      <a href="#" class="footer-link">O nas</a><a href="#" class="footer-link">Polityka prywatności</a>
+      <a href="#" class="footer-link">Regulamin</a><a href="#" class="footer-link">Kontakt</a>
+      <a href="https://ryanair.com" target="_blank" rel="noopener" class="footer-link">Ryanair.com</a>
+      <a href="https://wizzair.com" target="_blank" rel="noopener" class="footer-link">Wizzair.com</a>
+    </div>
+    <p>© 2025 Loty na Weekend · Prototyp poglądowy — dane mockowe<br>Czcionki: Playfair Display (nagłówki) + Source Sans 3 (body) — elegancja i czytelność</p>
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   DATA
+================================================================ */
+const AIRPORTS = [
+  {code:'KTW',name:'Katowice Pyrzowice',country:'Polska',flag:'🇵🇱',x:490,y:148,isPL:true},
+  {code:'KRK',name:'Kraków Balice',country:'Polska',flag:'🇵🇱',x:495,y:152,isPL:true},
+  {code:'WAW',name:'Warszawa Chopin',country:'Polska',flag:'🇵🇱',x:505,y:140,isPL:true},
+  {code:'WRO',name:'Wrocław Strachowice',country:'Polska',flag:'🇵🇱',x:472,y:145,isPL:true},
+  {code:'GDN',name:'Gdańsk im. Wałęsy',country:'Polska',flag:'🇵🇱',x:488,y:126,isPL:true},
+  {code:'POZ',name:'Poznań Ławica',country:'Polska',flag:'🇵🇱',x:468,y:136,isPL:true},
+  {code:'BCN',name:'Barcelona El Prat',country:'Hiszpania',flag:'🇪🇸',x:362,y:168},
+  {code:'MAD',name:'Madryt Barajas',country:'Hiszpania',flag:'🇪🇸',x:344,y:172},
+  {code:'ALC',name:'Alicante',country:'Hiszpania',flag:'🇪🇸',x:354,y:178},
+  {code:'PMI',name:'Palma de Mallorca',country:'Hiszpania',flag:'🇪🇸',x:372,y:174},
+  {code:'LIS',name:'Lizbona Humberto Delgado',country:'Portugalia',flag:'🇵🇹',x:322,y:178},
+  {code:'OPO',name:'Porto Francisco Sá Carneiro',country:'Portugalia',flag:'🇵🇹',x:318,y:170},
+  {code:'FCO',name:'Rzym Fiumicino',country:'Włochy',flag:'🇮🇹',x:432,y:172},
+  {code:'MXP',name:'Mediolan Malpensa',country:'Włochy',flag:'🇮🇹',x:415,y:157},
+  {code:'NAP',name:'Neapol',country:'Włochy',flag:'🇮🇹',x:444,y:178},
+  {code:'ATH',name:'Ateny Eleftherios Venizelos',country:'Grecja',flag:'🇬🇷',x:492,y:185},
+  {code:'HER',name:'Heraklion Kreta',country:'Grecja',flag:'🇬🇷',x:494,y:198},
+  {code:'DUB',name:'Dublin',country:'Irlandia',flag:'🇮🇪',x:334,y:126},
+  {code:'STN',name:'Londyn Stansted',country:'Wielka Brytania',flag:'🇬🇧',x:366,y:126},
+  {code:'AMS',name:'Amsterdam Schiphol',country:'Holandia',flag:'🇳🇱',x:400,y:126},
+  {code:'CDG',name:'Paryż Charles de Gaulle',country:'Francja',flag:'🇫🇷',x:385,y:142},
+  {code:'TXL',name:'Berlin Brandenburg',country:'Niemcy',flag:'🇩🇪',x:440,y:130},
+  {code:'VIE',name:'Wiedeń',country:'Austria',flag:'🇦🇹',x:462,y:150},
+  {code:'BUD',name:'Budapeszt',country:'Węgry',flag:'🇭🇺',x:474,y:156},
+  {code:'TIA',name:'Tirana',country:'Albania',flag:'🇦🇱',x:474,y:182},
+  {code:'SKP',name:'Skopje',country:'Macedonia Pn.',flag:'🇲🇰',x:480,y:178},
+  {code:'SSH',name:'Sharm el-Sheikh',country:'Egipt',flag:'🇪🇬',x:532,y:208},
+  {code:'HRG',name:'Hurghada',country:'Egipt',flag:'🇪🇬',x:528,y:210},
+  {code:'RIX',name:'Ryga',country:'Łotwa',flag:'🇱🇻',x:502,y:116},
+  {code:'PRG',name:'Praga Václava Havla',country:'Czechy',flag:'🇨🇿',x:452,y:142},
+  {code:'BRU',name:'Bruksela',country:'Belgia',flag:'🇧🇪',x:396,y:132},
+];
+
+// distKm=odległość lotnisko→centrum, passport=czy wymagany paszport (PL), visa=wymagania wizowe, currency=waluta, englishOk=czy angielski szeroko rozumiany
+const FLIGHTS=[
+  {id:'f1',airline:'ryanair',from:'KTW',to:'BCN',fromCity:'Katowice',toCity:'Barcelona',flag:'🇪🇸',country:'Hiszpania',dept:'06:40',arr:'09:20',retDept:'19:45',retArr:'23:15',deptDay:'piątek',retDay:'niedziela',dur:'2h 40m',date:'Pt–Nd, 25–27 kwi 2025',raw:'2025-04-25',month:4,year:2025,price1:389,price2:649,sea:true,lgbt:true,lgbtN:'Barcelona – jedno z najbardziej queer-friendly miast Europy',distKm:14,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f2',airline:'wizzair',from:'KRK',to:'ATH',fromCity:'Kraków',toCity:'Ateny',flag:'🇬🇷',country:'Grecja',dept:'07:15',arr:'10:55',retDept:'18:00',retArr:'20:35',deptDay:'sobota',retDay:'niedziela',dur:'3h 40m',date:'Sb–Nd, 10–11 maj 2025',raw:'2025-05-10',month:5,year:2025,price1:299,price2:519,sea:true,lgbt:true,lgbtN:'Ateny – aktywna społeczność LGBTQ+',distKm:35,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f3',airline:'ryanair',from:'KTW',to:'DUB',fromCity:'Katowice',toCity:'Dublin',flag:'🇮🇪',country:'Irlandia',dept:'08:00',arr:'10:10',retDept:'20:30',retArr:'23:50',deptDay:'piątek',retDay:'niedziela',dur:'2h 10m',date:'Pt–Nd, 6–8 cze 2025',raw:'2025-06-06',month:6,year:2025,price1:249,price2:429,sea:false,lgbt:true,lgbtN:'Irlandia – pierwszy kraj z referendum za małżeństwami jednopłciowymi',distKm:12,passport:true,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f4',airline:'wizzair',from:'KTW',to:'FCO',fromCity:'Katowice',toCity:'Rzym',flag:'🇮🇹',country:'Włochy',dept:'11:30',arr:'13:55',retDept:'15:00',retArr:'18:30',deptDay:'sobota',retDay:'niedziela',dur:'2h 25m',date:'Sb–Nd, 14–15 cze 2025',raw:'2025-06-14',month:6,year:2025,price1:319,price2:549,sea:false,lgbt:true,lgbtN:'Rzym i Mediolan mają aktywną społeczność queer',distKm:30,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f5',airline:'ryanair',from:'KRK',to:'PMI',fromCity:'Kraków',toCity:'Palma de Mallorca',flag:'🇪🇸',country:'Hiszpania',dept:'09:55',arr:'12:30',retDept:'17:30',retArr:'21:00',deptDay:'piątek',retDay:'niedziela',dur:'2h 35m',date:'Pt–Nd, 4–6 lip 2025',raw:'2025-07-04',month:7,year:2025,price1:449,price2:789,sea:true,lgbt:true,lgbtN:'Mallorca – przyjazna LGBTQ+ wyspa',distKm:9,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f6',airline:'wizzair',from:'KTW',to:'TIA',fromCity:'Katowice',toCity:'Tirana',flag:'🇦🇱',country:'Albania',dept:'14:20',arr:'17:00',retDept:'11:00',retArr:'13:45',deptDay:'piątek',retDay:'niedziela',dur:'2h 40m',date:'Pt–Nd, 18–20 kwi 2025',raw:'2025-04-18',month:4,year:2025,price1:149,price2:249,sea:false,lgbt:false,lgbtN:'Albania – brak pełnych praw dla LGBTQ+',distKm:4,passport:false,visa:'brak',currency:'ALL L',englishOk:false},
+  {id:'f7',airline:'ryanair',from:'KTW',to:'STN',fromCity:'Katowice',toCity:'Londyn',flag:'🇬🇧',country:'Wielka Brytania',dept:'06:50',arr:'08:25',retDept:'21:00',retArr:'00:35',deptDay:'sobota',retDay:'niedziela',dur:'2h 35m',date:'Sb–Nd, 24–25 maj 2025',raw:'2025-05-24',month:5,year:2025,price1:279,price2:489,sea:false,lgbt:true,lgbtN:'Londyn – jedna z najbardziej LGBTQ+ friendly metropolii',distKm:60,passport:true,visa:'brak',currency:'GBP £',englishOk:true},
+  {id:'f8',airline:'wizzair',from:'KRK',to:'HER',fromCity:'Kraków',toCity:'Heraklion',flag:'🇬🇷',country:'Grecja',dept:'08:30',arr:'12:20',retDept:'13:00',retArr:'16:45',deptDay:'piątek',retDay:'niedziela',dur:'3h 50m',date:'Pt–Nd, 1–3 sie 2025',raw:'2025-08-01',month:8,year:2025,price1:359,price2:619,sea:true,lgbt:true,lgbtN:'Kreta – popularna wśród turystów LGBTQ+',distKm:5,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f9',airline:'ryanair',from:'KTW',to:'AMS',fromCity:'Katowice',toCity:'Amsterdam',flag:'🇳🇱',country:'Holandia',dept:'07:40',arr:'09:35',retDept:'19:15',retArr:'21:10',deptDay:'sobota',retDay:'sobota',dur:'1h 55m',date:'Sb, 12 lip 2025',raw:'2025-07-12',month:7,year:2025,price1:199,price2:339,sea:false,lgbt:true,lgbtN:'Holandia – ojczyzna pierwszego małżeństwa jednopłciowego',distKm:18,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f10',airline:'wizzair',from:'KTW',to:'SSH',fromCity:'Katowice',toCity:'Sharm el-Sheikh',flag:'🇪🇬',country:'Egipt',dept:'03:30',arr:'07:30',retDept:'08:30',retArr:'13:20',deptDay:'piątek',retDay:'niedziela',dur:'4h 00m',date:'Pt–Nd, 3–5 paź 2025',raw:'2025-10-03',month:10,year:2025,price1:629,price2:1049,sea:true,lgbt:false,lgbtN:'Egipt – przepisy kryminalizujące związki jednopłciowe',distKm:12,passport:true,visa:'e-wiza',currency:'EGP £',englishOk:false},
+  {id:'f11',airline:'ryanair',from:'KRK',to:'LIS',fromCity:'Kraków',toCity:'Lizbona',flag:'🇵🇹',country:'Portugalia',dept:'09:10',arr:'12:15',retDept:'20:00',retArr:'00:00',deptDay:'piątek',retDay:'niedziela',dur:'3h 05m',date:'Pt–Nd, 12–14 wrz 2025',raw:'2025-09-12',month:9,year:2025,price1:419,price2:699,sea:false,lgbt:true,lgbtN:'Portugalia – jeden z najbardziej tolerancyjnych krajów Europy',distKm:11,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f12',airline:'wizzair',from:'KTW',to:'SKP',fromCity:'Katowice',toCity:'Skopje',flag:'🇲🇰',country:'Macedonia Pn.',dept:'10:00',arr:'12:25',retDept:'13:30',retArr:'16:00',deptDay:'niedziela',retDay:'niedziela',dur:'2h 25m',date:'Nd, 20 kwi 2025',raw:'2025-04-20',month:4,year:2025,price1:169,price2:289,sea:false,lgbt:false,lgbtN:'Macedonia Pn. – brak pełnych praw LGBTQ+',distKm:21,passport:false,visa:'brak',currency:'MKD ден',englishOk:false},
+  {id:'f13',airline:'ryanair',from:'KTW',to:'BCN',fromCity:'Katowice',toCity:'Barcelona',flag:'🇪🇸',country:'Hiszpania',dept:'07:10',arr:'09:50',retDept:'20:00',retArr:'23:35',deptDay:'piątek',retDay:'niedziela',dur:'2h 40m',date:'Pt–Nd, 17–19 kwi 2026',raw:'2026-04-17',month:4,year:2026,price1:359,price2:599,sea:true,lgbt:true,lgbtN:'Barcelona – queer capital Europy',distKm:14,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f14',airline:'wizzair',from:'KRK',to:'ATH',fromCity:'Kraków',toCity:'Ateny',flag:'🇬🇷',country:'Grecja',dept:'06:45',arr:'10:25',retDept:'17:30',retArr:'20:05',deptDay:'sobota',retDay:'niedziela',dur:'3h 40m',date:'Sb–Nd, 9–10 maj 2026',raw:'2026-05-09',month:5,year:2026,price1:279,price2:489,sea:true,lgbt:true,lgbtN:'Ateny – aktywna społeczność LGBTQ+',distKm:35,passport:false,visa:'brak',currency:'EUR €',englishOk:true},
+  {id:'f15',airline:'ryanair',from:'KTW',to:'DUB',fromCity:'Katowice',toCity:'Dublin',flag:'🇮🇪',country:'Irlandia',dept:'08:30',arr:'10:40',retDept:'21:00',retArr:'00:20',deptDay:'piątek',retDay:'niedziela',dur:'2h 10m',date:'Pt–Nd, 5–7 cze 2026',raw:'2026-06-05',month:6,year:2026,price1:239,price2:409,sea:false,lgbt:true,lgbtN:'Irlandia – lider LGBTQ+ w Europie',distKm:12,passport:true,visa:'brak',currency:'EUR €',englishOk:true},
+];
+  {id:'f15',airline:'ryanair',from:'KTW',to:'DUB',fromCity:'Katowice',toCity:'Dublin',flag:'🇮🇪',country:'Irlandia',dept:'08:30',arr:'10:40',retDept:'21:00',retArr:'00:20',dur:'2h 10m',date:'Pt–Nd, 5–7 cze 2026',raw:'2026-06-05',month:6,year:2026,price1:239,price2:409,sea:false,lgbt:true,lgbtN:'Irlandia – lider LGBTQ+ w Europie'},
+];
+
+const VIBES=[
+  {city:'Barcelona',country:'Hiszpania',badge:'Architektura Gaudíego',price:'od 359 PLN',img:'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400&h=520&fit=crop&q=80',alt:'Sagrada Família'},
+  {city:'Amsterdam',country:'Holandia',badge:'Kanały i tulipany',price:'od 199 PLN',img:'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=400&h=520&fit=crop&q=80',alt:'Kanały Amsterdamu'},
+  {city:'Rzym',country:'Włochy',badge:'Wieczne Miasto',price:'od 319 PLN',img:'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&h=520&fit=crop&q=80',alt:'Koloseum w Rzymie'},
+  {city:'Ateny',country:'Grecja',badge:'Akropol i filozofia',price:'od 279 PLN',img:'https://images.unsplash.com/photo-1555993539-1732b0258235?w=400&h=520&fit=crop&q=80',alt:'Akropol w Atenach'},
+  {city:'Lizbona',country:'Portugalia',badge:'Fado i tramwaje',price:'od 419 PLN',img:'https://images.unsplash.com/photo-1558008258-3256797b43f3?w=400&h=520&fit=crop&q=80',alt:'Tramwaj w Lizbonie'},
+  {city:'Dublin',country:'Irlandia',badge:'Zielona wyspa',price:'od 239 PLN',img:'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=400&h=520&fit=crop&q=80',alt:'Centrum Dublina'},
+  {city:'Londyn',country:'Wielka Brytania',badge:'Big Ben i kultura',price:'od 279 PLN',img:'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=520&fit=crop&q=80',alt:'Tower Bridge'},
+  {city:'Mallorca',country:'Hiszpania',badge:'Rajskie plaże',price:'od 449 PLN',img:'https://images.unsplash.com/photo-1504512485720-7d83a16ee1a6?w=400&h=520&fit=crop&q=80',alt:'Plaża na Majorce'},
+  {city:'Heraklion',country:'Grecja',badge:'Kreta – słońce i morze',price:'od 359 PLN',img:'https://images.unsplash.com/photo-1571406252241-db0280bd36cd?w=400&h=520&fit=crop&q=80',alt:'Błękitna woda Krety'},
+  {city:'Paryż',country:'Francja',badge:'Wieża Eiffla',price:'od 299 PLN',img:'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=520&fit=crop&q=80',alt:'Wieża Eiffla'},
+];
+
+const TICKER_DATA=[
+  {from:'KTW',to:'Tirana',p:'149 PLN'},{from:'KRK',to:'Skopje',p:'169 PLN'},
+  {from:'KRK',to:'Amsterdam',p:'199 PLN'},{from:'KTW',to:'Dublin',p:'249 PLN'},
+  {from:'KRK',to:'Ateny',p:'279 PLN'},{from:'KTW',to:'Londyn',p:'279 PLN'},
+  {from:'KTW',to:'Rzym',p:'319 PLN'},{from:'KRK',to:'Barcelona',p:'359 PLN'},
+  {from:'KRK',to:'Lizbona',p:'419 PLN'},{from:'KTW',to:'Mallorca',p:'449 PLN'},
+];
+
+// Uproszczone ścieżki krajów (SVG polygons)
+const CPATHS=[
+  {n:'Norwegia',d:'M378,58 L438,48 L464,62 L460,98 L428,110 L390,108 L376,80 Z'},
+  {n:'Szwecja',d:'M444,50 L492,44 L516,62 L520,98 L500,122 L460,124 L446,100 Z'},
+  {n:'Finlandia',d:'M500,50 L556,46 L564,78 L550,110 L516,115 L498,100 Z'},
+  {n:'Dania',d:'M414,96 L452,92 L458,108 L448,122 L418,120 Z'},
+  {n:'Białoruś',d:'M506,106 L564,100 L572,118 L562,140 L530,146 L506,136 Z',noF:true},
+  {n:'Ukraina',d:'M506,115 L582,106 L598,126 L588,155 L556,164 L510,162 L498,143 Z',noF:true},
+  {n:'Łotwa',d:'M484,104 L524,100 L530,114 L522,126 L490,126 L482,114 Z',cn:'Łotwa'},
+  {n:'Litwa',d:'M472,116 L510,112 L518,126 L508,138 L476,138 L470,126 Z'},
+  {n:'Polska',d:'M452,113 L532,105 L542,120 L536,148 L510,156 L472,156 L450,146 Z'},
+  {n:'Niemcy',d:'M394,107 L474,102 L482,120 L476,152 L454,158 L424,155 L394,147 Z',cn:'Niemcy'},
+  {n:'Holandia',d:'M382,108 L420,104 L426,122 L418,134 L386,134 Z',cn:'Holandia'},
+  {n:'Belgia',d:'M378,126 L412,122 L418,138 L408,148 L382,148 Z',cn:'Belgia'},
+  {n:'Wielka Brytania',d:'M342,93 L394,89 L400,110 L390,138 L364,142 L345,136 L340,112 Z',cn:'Wielka Brytania'},
+  {n:'Irlandia',d:'M313,107 L342,103 L348,125 L338,136 L318,133 L311,120 Z',cn:'Irlandia'},
+  {n:'Francja',d:'M330,126 L398,120 L428,136 L424,162 L404,168 L366,165 L334,158 Z',cn:'Francja'},
+  {n:'Szwajcaria',d:'M396,148 L430,140 L436,154 L428,164 L398,164 Z'},
+  {n:'Austria',d:'M423,148 L480,140 L488,152 L480,165 L444,168 L422,162 Z',cn:'Austria'},
+  {n:'Czechy',d:'M432,128 L480,122 L488,136 L482,150 L456,154 L432,149 Z',cn:'Czechy'},
+  {n:'Słowacja',d:'M454,147 L504,138 L512,150 L502,161 L473,162 L454,157 Z'},
+  {n:'Węgry',d:'M452,156 L502,148 L512,162 L502,174 L472,176 L452,168 Z',cn:'Węgry'},
+  {n:'Włochy',d:'M401,146 L440,138 L463,150 L470,168 L464,186 L450,202 L440,215 L430,210 L422,196 L414,180 L405,165 L400,152 Z',cn:'Włochy'},
+  {n:'Chorwacja',d:'M432,162 L462,156 L472,172 L463,185 L443,184 Z'},
+  {n:'Serbia',d:'M455,170 L500,163 L509,177 L500,190 L473,192 L454,182 Z'},
+  {n:'Rumunia',d:'M488,138 L547,130 L556,147 L549,168 L521,175 L494,171 Z'},
+  {n:'Bułgaria',d:'M488,168 L536,162 L543,178 L530,193 L496,196 L484,183 Z'},
+  {n:'Macedonia Pn.',d:'M468,182 L500,178 L506,190 L496,200 L472,200 Z',cn:'Macedonia Pn.'},
+  {n:'Albania',d:'M462,182 L484,178 L491,194 L484,208 L465,210 Z',cn:'Albania'},
+  {n:'Grecja',d:'M456,193 L512,186 L522,200 L511,218 L490,226 L467,222 Z',cn:'Grecja'},
+  {n:'Turcja',d:'M502,178 L578,168 L592,182 L580,200 L543,204 L504,196 Z',noF:true},
+  {n:'Portugalia',d:'M303,154 L337,148 L343,170 L336,198 L303,196 Z',cn:'Portugalia'},
+  {n:'Hiszpania',d:'M314,144 L400,136 L410,153 L403,182 L378,196 L344,197 L313,180 Z',cn:'Hiszpania'},
+  {n:'Maroko',d:'M310,205 L384,200 L388,230 L368,252 L315,255 L305,235 Z',noF:true},
+  {n:'Egipt',d:'M490,197 L566,191 L573,241 L540,258 L492,261 L482,239 Z',cn:'Egipt'},
+  {n:'USA',d:'M70,130 L200,118 L215,158 L200,210 L155,230 L85,225 L62,195 Z',noF:true},
+  {n:'Kanada',d:'M65,75 L215,60 L220,118 L70,130 Z',noF:true},
+];
+
+/* ================================================================
+   FLIGHT CHEAPEST PER COUNTRY (for map)
+================================================================ */
+const CHEAPEST_BY_COUNTRY={};
+FLIGHTS.forEach(f=>{
+  const ap=AIRPORTS.find(a=>a.code===f.to);
+  if(!ap)return;
+  const k=ap.country;
+  if(!CHEAPEST_BY_COUNTRY[k]||CHEAPEST_BY_COUNTRY[k].price1>f.price1)
+    CHEAPEST_BY_COUNTRY[k]={price1:f.price1,from:f.from,to:f.to,toCity:f.toCity,airline:f.airline};
+});
+const sortedC=Object.entries(CHEAPEST_BY_COUNTRY).sort((a,b)=>a[1].price1-b[1].price1);
+const TOP3=new Set(sortedC.slice(0,3).map(([k])=>k));
+
+/* ================================================================
+   STATE
+================================================================ */
+const S={
+  airlines:{ryanair:true,wizzair:true},
+  days:['fri-sun','sat-sun'],
+  months:[], // "2025-4"
+  budget:800,
+  roundtrip:true,
+  seaOnly:false,
+  lgbtOnly:false,
+  filter:'all',
+  sort:'price',
+  destFilter:'', // city name or airport code lowercase
+  favorites:new Set(['f3','f9']),
+  loggedIn:false,
+  user:null,
+  favAp:null,
+  origins:[], // {code,name}
+  history:[
+    {route:'KTW → BCN',date:'15 kwi',price:'389 PLN'},
+    {route:'KRK → ATH',date:'10 kwi',price:'299 PLN'},
+  ],
+  alerts:[
+    {id:'a1',route:'KTW → BCN',days:'Pt–Nd',added:'12 kwi'},
+    {id:'a2',route:'KRK → ATH',days:'Sb–Nd',added:'8 kwi'},
+  ],
+};
+
+/* ================================================================
+   INIT
+================================================================ */
+window.addEventListener('DOMContentLoaded',()=>{
+  initTicker(); initVibes(); initVibeScroll(); initMonths(); renderResults(); initMap(); initTW(); initCounters(); initIO();
+  setupOriginChips(); setupDestAC();
+  const u=localStorage.getItem('lnw_u'); if(u){S.user=JSON.parse(u);S.loggedIn=true;updateAuthUI();}
+  const fa=localStorage.getItem('lnw_fa'); if(fa){S.favAp=JSON.parse(fa);applyFavAp();}
+  const th=localStorage.getItem('lnw_th'); if(th){document.documentElement.setAttribute('data-theme',th);document.getElementById('themeBtn').textContent=th==='light'?'☀️':'🌙';}
+  setTimeout(()=>toast('info','✈','Witaj!','Sprawdź najtańsze oferty na weekendy'),1200);
+});
+
+/* TICKER */
+function initTicker(){
+  const items=[...TICKER_DATA,...TICKER_DATA];
+  document.getElementById('tickerInner').innerHTML=items.map(t=>`<span class="ticker-item">✈ ${t.from} → ${t.to} <strong>${t.p}</strong></span><span class="ticker-div">|</span>`).join('');
+}
+
+/* VIBE CARDS */
+function initVibes(){
+  document.getElementById('vibeGrid').innerHTML=VIBES.map(d=>`
+    <div class="vibe-card si" role="listitem" tabindex="0"
+         onclick="pickDest('${d.city}')" onkeydown="if(event.key==='Enter')pickDest('${d.city}')"
+         aria-label="${d.city}, ${d.country} – ${d.price}">
+      <img src="${d.img}" alt="${d.alt}" loading="lazy"/>
+      <div class="vibe-overlay" aria-hidden="true"></div>
+      <div class="vibe-badge">${d.country}</div>
+      <div class="vibe-content">
+        <div class="vibe-city">${d.city}</div>
+        <div class="vibe-ctry">${d.badge}</div>
+        <div class="vibe-price">${d.price}</div>
+      </div>
+    </div>`).join('');
+}
+function initVibeScroll(){
+  const g=document.getElementById('vibeGrid');
+  let down=false,sx,sl;
+  g.addEventListener('mousedown',e=>{down=true;g.classList.add('grabbing');sx=e.pageX-g.offsetLeft;sl=g.scrollLeft;});
+  g.addEventListener('mouseleave',()=>{down=false;g.classList.remove('grabbing');});
+  g.addEventListener('mouseup',()=>{down=false;g.classList.remove('grabbing');});
+  g.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();g.scrollLeft=sl-(e.pageX-g.offsetLeft-sx)*1.2;});
+  let tx; g.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;sl=g.scrollLeft;});
+  g.addEventListener('touchmove',e=>{g.scrollLeft=sl+(tx-e.touches[0].clientX);});
+}
+function scrollVibe(d){document.getElementById('vibeGrid').scrollBy({left:d*400,behavior:'smooth'});}
+function pickDest(city){
+  // Find airport code for city
+  const ap=AIRPORTS.find(a=>!a.isPL&&a.name.toLowerCase().includes(city.toLowerCase()));
+  const code=ap?ap.code:'';
+  document.getElementById('destIn').value=ap?`${ap.name} (${ap.code})`:city;
+  S.destFilter=city.toLowerCase();
+  showDestBadge(city);
+  document.getElementById('search').scrollIntoView({behavior:'smooth'});
+  toast('info','✈',`Wybrany cel: ${city}`,'Naciśnij "Szukaj lotów" by wyszukać');
+}
+function clearDest(){
+  S.destFilter='';
+  document.getElementById('destIn').value='';
+  document.getElementById('activeDestBadge').style.display='none';
+}
+function showDestBadge(city){
+  document.getElementById('activeDestBadge').style.display='flex';
+  document.getElementById('activeDestLabel').textContent=city;
+}
+
+/* MONTHS — dynamic current year + next year */
+const MO_PL=['Sty','Lut','Mar','Kwi','Maj','Cze','Lip','Sie','Wrz','Paź','Lis','Gru'];
+const NOW=new Date();
+const CUR_YR=NOW.getFullYear();
+const YEARS=[CUR_YR, CUR_YR+1];
+let activeYr=String(CUR_YR);
+
+function initMonths(){
+  // Build year tabs dynamically
+  const tabsEl=document.getElementById('yrTabs');
+  const gridsEl=document.getElementById('monthGridsWrap');
+  tabsEl.innerHTML=''; gridsEl.innerHTML='';
+  YEARS.forEach((yr,idx)=>{
+    const tab=document.createElement('button');
+    tab.className='yr-tab'+(idx===0?' on':'');
+    tab.dataset.yr=String(yr);
+    tab.setAttribute('role','tab');
+    tab.textContent=String(yr);
+    tab.onclick=()=>setYr(tab,String(yr));
+    tabsEl.appendChild(tab);
+
+    const grid=document.createElement('div');
+    grid.className='months-grid';
+    grid.id=`mGrid${yr}`;
+    grid.style.display=idx===0?'grid':'none';
+    grid.style.marginTop=idx>0?'8px':'0';
+    grid.innerHTML=MO_PL.map((m,i)=>{
+      const past=yr<NOW.getFullYear()||(yr===NOW.getFullYear()&&i+1<NOW.getMonth()+1);
+      return `<button class="mo-btn${past?' past':''}" data-m="${i+1}" data-y="${yr}" ${past?'disabled aria-disabled="true"':''} onclick="togMonth(this,${yr},${i+1})" aria-label="${m} ${yr}">${m}</button>`;
+    }).join('');
+    gridsEl.appendChild(grid);
+  });
+}
+function setYr(btn,yr){
+  document.querySelectorAll('.yr-tab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on'); activeYr=yr;
+  YEARS.forEach(y=>{ const g=document.getElementById(`mGrid${y}`); if(g)g.style.display=String(y)===yr?'grid':'none'; });
+}
+function togMonth(btn,yr,m){
+  const k=`${yr}-${m}`;
+  if(S.months.includes(k)){S.months=S.months.filter(x=>x!==k);btn.classList.remove('on');}
+  else{S.months.push(k);btn.classList.add('on');}
+}
+
+/* ORIGIN CHIPS */
+function setupOriginChips(){
+  const inp=document.getElementById('chipInput'), drop=document.getElementById('originDrop');
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase(); if(!q){drop.classList.remove('open');return;}
+    const m=AIRPORTS.filter(a=>a.isPL&&(a.name.toLowerCase().includes(q)||a.code.toLowerCase().includes(q))).filter(a=>!S.origins.find(o=>o.code===a.code)).slice(0,6);
+    if(!m.length){drop.classList.remove('open');return;}
+    drop.innerHTML=m.map(a=>`<div class="ac-item" role="option" tabindex="0" onclick="addOrigin('${a.code}','${a.name}')" onkeydown="if(event.key==='Enter')addOrigin('${a.code}','${a.name}')"><span class="ap-flag">${a.flag}</span><div><div class="ap-name">${a.name}</div><div class="ap-ctry">${a.country}</div></div><span class="ap-code">${a.code}</span></div>`).join('');
+    drop.classList.add('open');
+  });
+  inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&S.origins.length)rmOrigin(S.origins[S.origins.length-1].code);});
+  document.addEventListener('click',e=>{if(!document.getElementById('chipsWrap').contains(e.target))drop.classList.remove('open');});
+}
+function addOrigin(code,name){
+  if(S.origins.find(o=>o.code===code))return;
+  S.origins.push({code,name}); renderChips(); document.getElementById('chipInput').value=''; document.getElementById('originDrop').classList.remove('open'); updateMapRoutes();
+}
+function rmOrigin(code){S.origins=S.origins.filter(o=>o.code!==code);renderChips();updateMapRoutes();}
+function renderChips(){
+  document.getElementById('originChips').innerHTML=S.origins.map(o=>`<span class="a-chip">${o.code}<span class="a-chip-rm" onclick="rmOrigin('${o.code}')" role="button" tabindex="0">×</span></span>`).join('');
+}
+
+/* DEST AUTOCOMPLETE */
+function setupDestAC(){
+  const inp=document.getElementById('destIn'),drop=document.getElementById('destDrop');
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase(); if(!q){drop.classList.remove('open');return;}
+    const extras='gdziekolwiek'.includes(q)?[{code:'ANY',name:'Gdziekolwiek',country:'Wszystkie destynacje',flag:'🌍'}]:[];
+    const m=AIRPORTS.filter(a=>!a.isPL&&(a.name.toLowerCase().includes(q)||a.code.toLowerCase().includes(q)||a.country.toLowerCase().includes(q))).slice(0,7);
+    const all=[...extras,...m]; if(!all.length){drop.classList.remove('open');return;}
+    drop.innerHTML=all.map(a=>`<div class="ac-item" role="option" tabindex="0" onclick="pickDestAC('${a.code}','${a.name}')" onkeydown="if(event.key==='Enter')pickDestAC('${a.code}','${a.name}')"><span class="ap-flag">${a.flag}</span><div><div class="ap-name">${a.name}</div><div class="ap-ctry">${a.country}</div></div><span class="ap-code">${a.code}</span></div>`).join('');
+    drop.classList.add('open');
+  });
+  document.addEventListener('click',e=>{if(!inp.contains(e.target)&&!drop.contains(e.target))drop.classList.remove('open');});
+}
+function pickDestAC(code,name){
+  const val=code==='ANY'?'Gdziekolwiek':`${name} (${code})`;
+  document.getElementById('destIn').value=val;
+  document.getElementById('destDrop').classList.remove('open');
+  if(code==='ANY'){S.destFilter='';document.getElementById('activeDestBadge').style.display='none';}
+  else{S.destFilter=code.toLowerCase();showDestBadge(name);}
+}
+
+/* AIRLINES, DAYS, BUDGET, SWITCHES */
+function togAirline(a){
+  S.airlines[a]=!S.airlines[a];
+  const btn=document.getElementById(`tog${a==='ryanair'?'Ry':'Wz'}`);
+  btn.classList.toggle(`a-${a}`,S.airlines[a]); btn.setAttribute('aria-pressed',S.airlines[a]);
+}
+function togDay(btn){const d=btn.dataset.day;if(S.days.includes(d)){S.days=S.days.filter(x=>x!==d);btn.classList.remove('on');btn.setAttribute('aria-pressed','false');}else{S.days.push(d);btn.classList.add('on');btn.setAttribute('aria-pressed','true');}}
+function updBudget(v){S.budget=+v;document.getElementById('budgetV').textContent=S.budget>=3000?'Bez limitu':`${S.budget} PLN`;document.querySelectorAll('.b-chip').forEach(c=>c.classList.remove('on'));}
+function setBudget(v){S.budget=v;document.getElementById('budgetR').value=v;document.getElementById('budgetV').textContent=v>=3000?'Bez limitu':`${v} PLN`;document.querySelectorAll('.b-chip').forEach(c=>c.classList.toggle('on',c.textContent.includes(v>=3000?'limit':v)));}
+function togSw(el){el.classList.toggle('on');const on=el.classList.contains('on');el.setAttribute('aria-checked',on);if(el.id==='swRound')S.roundtrip=on;if(el.id==='swSea')S.seaOnly=on;if(el.id==='swLgbt')S.lgbtOnly=on;}
+
+/* SEARCH */
+function runSearch(){
+  showLoad();
+  setTimeout(()=>{hideLoad();renderResults();document.getElementById('results').scrollIntoView({behavior:'smooth'});if(S.loggedIn){const o=S.origins.map(x=>x.code).join('+')||'KTW',d=document.getElementById('destIn').value||'Gdziekolwiek';S.history.unshift({route:`${o} → ${d}`,date:'Dziś',price:'–'});if(S.history.length>10)S.history.pop();}toast('success','✈','Loty znalezione!','Aktualne oferty na weekendy');},1100);
+}
+function showLoad(){document.getElementById('loadingDiv').style.display='block';document.getElementById('resultsGrid').style.display='none';document.getElementById('emptyDiv').style.display='none';}
+function hideLoad(){document.getElementById('loadingDiv').style.display='none';document.getElementById('resultsGrid').style.display='grid';}
+
+function getFlights(){
+  const today=new Date(); today.setHours(0,0,0,0);
+  const destRaw=document.getElementById('destIn').value.trim().toLowerCase();
+  const destCodeMatch=destRaw.match(/\(([a-z]{3})\)$/i);
+  const destCode=destCodeMatch?destCodeMatch[1].toUpperCase():'';
+  const destCity=destRaw.replace(/\s*\([a-z]{3}\)$/i,'').trim();
+
+  let fl=FLIGHTS.filter(f=>{
+    // Nie pokazuj przeszłych lotów nigdy
+    const flDate=new Date(f.raw); flDate.setHours(0,0,0,0);
+    if(flDate<today)return false;
+
+    if(!S.airlines[f.airline])return false;
+    const p=S.roundtrip?f.price2:f.price1;
+    if(S.budget<3000&&p>S.budget)return false;
+    if(S.seaOnly&&!f.sea)return false;
+    if(S.lgbtOnly&&!f.lgbt)return false;
+
+    // Filtruj po wybranym miesiącu/roku — dokładne dopasowanie
+    if(S.months.length>0){
+      if(!S.months.includes(`${f.year}-${f.month}`))return false;
+    }
+
+    // Filtruj po lotniskach startowych
+    if(S.origins.length>0&&!S.origins.find(o=>o.code===f.from))return false;
+
+    // Filtruj po mieście/lotnisku docelowym (z inputa lub vibeCard)
+    const activeDestFilter=S.destFilter||destCity;
+    if(activeDestFilter&&activeDestFilter!=='gdziekolwiek'){
+      if(destCode){
+        if(f.to!==destCode)return false;
+      } else {
+        const df=activeDestFilter.toLowerCase();
+        const match=f.to.toLowerCase()===df||f.toCity.toLowerCase().includes(df)||f.country.toLowerCase().includes(df);
+        if(!match)return false;
+      }
+    }
+
+    // Filtry z chipów wyników
+    if(S.filter==='sea'&&!f.sea)return false;
+    if(S.filter==='lgbt'&&!f.lgbt)return false;
+    if(S.filter==='novisa'&&f.visa!=='brak')return false;
+    if(S.filter==='english'&&!f.englishOk)return false;
+    if(S.filter==='close'&&f.distKm>15)return false;
+    if(S.filter==='cheapest'){
+      const mn=Math.min(...FLIGHTS.map(x=>S.roundtrip?x.price2:x.price1));
+      if(p>mn*1.65)return false;
+    }
+    return true;
+  });
+
+  fl.sort((a,b)=>{
+    const pa=S.roundtrip?a.price2:a.price1,pb=S.roundtrip?b.price2:b.price1;
+    if(S.sort==='price')return pa-pb;
+    if(S.sort==='price-desc')return pb-pa;
+    if(S.sort==='date')return new Date(a.raw)-new Date(b.raw);
+    if(S.sort==='dur')return pDur(a.dur)-pDur(b.dur);
+    if(S.sort==='dist')return a.distKm-b.distKm;
+    return 0;
+  });
+  return fl;
+}
+function pDur(d){const m=d.match(/(\d+)h (\d+)m/);return m?+m[1]*60+ +m[2]:999;}
+
+function renderResults(){
+  const fl=getFlights(),grid=document.getElementById('resultsGrid');
+  document.getElementById('resNum').textContent=fl.length;
+  if(!fl.length){
+    grid.innerHTML='';grid.style.display='none';
+    document.getElementById('emptyDiv').style.display='block';
+    // Kontekstowe komunikaty
+    let title='Nie znaleziono lotów';
+    let msg='Zmień kryteria wyszukiwania lub zwiększ budżet.';
+    if(S.months.length>0){
+      const mNames=S.months.map(k=>{const[y,m]=k.split('-');return `${MO_PL[+m-1]} ${y}`;});
+      title='Brak lotów w wybranym przedziale czasowym';
+      msg=`Nie znaleziono lotów w: <strong>${mNames.join(', ')}</strong>. Spróbuj wybrać inne miesiące lub wyczyść filtr miesięcy.`;
+    } else {
+      const destRaw=document.getElementById('destIn').value.trim();
+      if(destRaw&&destRaw!=='Gdziekolwiek'){
+        title=`Brak lotów do: ${destRaw.split('(')[0].trim()}`;
+        msg='Nie ma dostępnych lotów do tego miejsca w wybranych terminach. Spróbuj inne lotnisko lub zmień daty.';
+      }
+    }
+    document.getElementById('emptyTitle').textContent=title;
+    document.getElementById('emptyMsg').innerHTML=msg;
+    return;
+  }
+  document.getElementById('emptyDiv').style.display='none';
+  grid.style.display='grid';
+  grid.innerHTML=fl.map((f,i)=>cardHTML(f,i)).join('');
+}
+
+function cardHTML(f,i){
+  const p=S.roundtrip?f.price2:f.price1, fav=S.favorites.has(f.id);
+  const lgbtB=f.lgbt
+    ?`<span class="badge badge-lgbt" title="${f.lgbtN}">🏳️‍🌈 LGBT+ friendly</span>`
+    :`<span class="badge badge-nolg" title="${f.lgbtN}">⚠️ Nieodp. LGBTQ+</span>`;
+  const seaB=f.sea?`<span class="badge badge-sea">🌊 Przy morzu</span>`:'';
+  const url=f.airline==='ryanair'?'https://www.ryanair.com':'https://wizzair.com';
+  const atCls=f.airline==='ryanair'?'at-ry':'at-wz';
+  const atN=f.airline==='ryanair'?'🔵 Ryanair':'💜 Wizzair';
+
+  // Lepsza etykieta dnia — "Piątek, 25 kwi" itp.
+  const deptDayFull=`${cap(f.deptDay)}, ${f.raw.split('-').slice(1).reverse().join(' ').replace('-',' ')}`;
+  const rawDt=new Date(f.raw);
+  const retDaysOffset=f.deptDay===f.retDay?0:f.retDay==='niedziela'&&f.deptDay==='piątek'?2:f.retDay==='niedziela'&&f.deptDay==='sobota'?1:0;
+  const retRawDt=new Date(rawDt); retRawDt.setDate(retRawDt.getDate()+retDaysOffset);
+  const retDateStr=`${retRawDt.getDate()} ${MO_PL[retRawDt.getMonth()]}`;
+  const retDayFull=`${cap(f.retDay)}, ${retDateStr}`;
+
+  // Linia powrotna z dokładnymi info
+  const retSection=S.roundtrip?`
+    <hr class="leg-divider"/>
+    <div class="return-leg">
+      <div class="leg-lbl">
+        ↩ Powrót: ${retDayFull} · <span style="color:var(--color-accent)">${f.to}</span> → <span style="color:var(--color-accent)">${f.from}</span>
+      </div>
+      <div class="leg-row">
+        <div class="t-block">
+          <div class="t-val">${f.retDept}</div>
+          <div class="t-city">${f.toCity}</div>
+          <div style="font-size:.62rem;color:var(--text-muted);margin-top:1px">${f.to}</div>
+        </div>
+        <div class="dur-center">
+          <div class="dur-txt">${f.dur}</div>
+          <div class="dur-line" aria-hidden="true"></div>
+        </div>
+        <div class="t-block" style="text-align:right">
+          <div class="t-val">${f.retArr}</div>
+          <div class="t-city">${f.fromCity}</div>
+          <div style="font-size:.62rem;color:var(--text-muted);margin-top:1px">${f.from}</div>
+        </div>
+      </div>
+    </div>`:'';
+
+  // Paszport / wiza
+  const visaB=f.visa==='brak'
+    ?`<span class="badge badge-novisa">✅ Bez wizy</span>`
+    :`<span class="badge badge-visa">📋 ${f.visa}</span>`;
+  const passB=f.passport
+    ?`<span class="badge badge-passport">🛂 Paszport</span>`
+    :`<span class="badge badge-novisa" style="background:rgba(80,200,80,.08)">🪪 Dowód wystarczy</span>`;
+  const engB=f.englishOk
+    ?`<span class="badge badge-english">🗣 Angielski OK</span>`
+    :`<span class="badge badge-noenglish">🗣 Słaby angielski</span>`;
+
+  return `
+  <article class="flight-card" role="listitem" style="animation:stag .4s ease ${Math.min(i*.07,.5)}s both" aria-label="Lot ${f.fromCity}–${f.toCity}, ${p} PLN">
+    <!-- Kraj — na górze, prominentny -->
+    <div class="fc-country">
+      <span class="fc-flag" role="img" aria-label="${f.country}">${f.flag}</span>
+      <span class="fc-name">${f.country}</span>
+      <span class="fc-route">${f.from} → ${f.to}</span>
+    </div>
+
+    <!-- Data — wyraźna, przed godzinami -->
+    <div class="fc-date">
+      <span style="font-size:.95rem">📅</span>
+      <span class="fc-date-txt">${f.date}</span>
+      <span class="fc-date-dur">${f.dur} lotu</span>
+    </div>
+
+    <!-- Loty: wylot + powrót -->
+    <div class="fc-times">
+      <!-- Wylot -->
+      <div class="leg-lbl">
+        ✈ Wylot: ${cap(f.deptDay)}, ${f.from} → ${f.to} · ${f.toCity}
+      </div>
+      <div class="leg-row">
+        <div class="t-block">
+          <div class="t-val">${f.dept}</div>
+          <div class="t-city">${f.fromCity}</div>
+          <div style="font-size:.62rem;color:var(--text-muted);margin-top:1px">${f.from}</div>
+        </div>
+        <div class="dur-center">
+          <div class="dur-txt">${f.dur}</div>
+          <div class="dur-line" aria-hidden="true"></div>
+          <div class="dur-txt" style="font-size:.67rem">bezpośredni</div>
+        </div>
+        <div class="t-block" style="text-align:right">
+          <div class="t-val">${f.arr}</div>
+          <div class="t-city">${f.toCity}</div>
+          <div style="font-size:.62rem;color:var(--text-muted);margin-top:1px">${f.to}</div>
+        </div>
+      </div>
+      ${retSection}
+    </div>
+
+    <!-- Główne badges: morze + LGBT -->
+    <div class="fc-meta">
+      ${seaB}${lgbtB}${visaB}${passB}${engB}
+    </div>
+
+    <!-- Pasek dodatkowych informacji -->
+    <div class="fc-extra">
+      <div class="fc-extra-item" title="Odległość od lotniska do centrum miasta">
+        <div class="fc-extra-val">~${f.distKm} km</div>
+        <div class="fc-extra-lbl">Do centrum</div>
+      </div>
+      <div class="fc-extra-item" title="Waluta obowiązująca w miejscu docelowym">
+        <div class="fc-extra-val">${f.currency}</div>
+        <div class="fc-extra-lbl">Waluta</div>
+      </div>
+      <div class="fc-extra-item" title="Wymagania wizowe dla obywateli polskich">
+        <div class="fc-extra-val" style="${f.visa==='brak'?'color:#70d890':'color:#f0a850'}">${f.visa==='brak'?'Brak':f.visa}</div>
+        <div class="fc-extra-lbl">Wiza</div>
+      </div>
+      <div class="fc-extra-item" title="Czy w miejscu docelowym rozumieją angielski">
+        <div class="fc-extra-val" style="${f.englishOk?'color:#78b8f8':'color:#c8a060'}">${f.englishOk?'✓ Tak':'✗ Słaby'}</div>
+        <div class="fc-extra-lbl">Angielski</div>
+      </div>
+    </div>
+
+    <!-- Footer: cena + linia + przyciski -->
+    <div class="fc-footer">
+      <div>
+        <div class="fc-price-main">${p} PLN</div>
+        <div class="fc-price-sub">${S.roundtrip?`1 strona: ${f.price1} PLN`:`W obie: ${f.price2} PLN`} / os.</div>
+        <span class="airline-tag ${atCls}">${atN}</span>
+      </div>
+      <div class="fc-actions">
+        <button class="heart-btn${fav?' active':''}" onclick="togFav('${f.id}',this)"
+                aria-label="${fav?'Usuń z':'Dodaj do'} ulubionych" aria-pressed="${fav}">${fav?'❤️':'🤍'}</button>
+        <a href="${url}" target="_blank" rel="noopener" class="btn-book" aria-label="Kup bilet">Kup bilet ↗</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+function cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):'';}
+
+function setFilter(btn,f){document.querySelectorAll('.filt-chip').forEach(c=>c.classList.remove('on'));btn.classList.add('on');S.filter=f;renderResults();}
+function doSort(v){S.sort=v;renderResults();}
+function togFav(id,btn){
+  if(!S.loggedIn){openModal('login');toast('info','🔐','Zaloguj się','By zapisać ulubione');return;}
+  if(S.favorites.has(id)){S.favorites.delete(id);btn.classList.remove('active');btn.setAttribute('aria-pressed','false');btn.innerHTML='🤍';toast('info','🤍','Usunięto z ulubionych','');}
+  else{S.favorites.add(id);btn.classList.add('active');btn.setAttribute('aria-pressed','true');btn.innerHTML='❤️';toast('success','❤️','Dodano do ulubionych!','');}
+  if(document.getElementById('userPanel').classList.contains('open'))renderPanel();
+}
+
+/* MAP */
+function initMap(){
+  const cg=document.getElementById('cPaths');
+  CPATHS.forEach(c=>{
+    const fi=CHEAPEST_BY_COUNTRY[c.n]||CHEAPEST_BY_COUNTRY[c.cn];
+    const cheap=TOP3.has(c.n)||TOP3.has(c.cn);
+    const hf=!!fi&&!c.noF;
+    let cls='cp';
+    if(cheap&&!c.noF)cls+=' cheapest';
+    else if(hf)cls+=' has-f';
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('d',c.d);p.setAttribute('class',cls);p.setAttribute('data-name',c.n);
+    if(hf){
+      p.addEventListener('mouseenter',e=>showCTT(e,c.n,fi));
+      p.addEventListener('mouseleave',hideTT);
+      p.addEventListener('click',()=>goToMap(fi.to,fi.toCity));
+    }
+    cg.appendChild(p);
+  });
+  drawRoutes();
+  drawDots();
+}
+function drawRoutes(origins=['KTW','KRK']){
+  const lg=document.getElementById('rLines'); lg.innerHTML='';
+  const ors=AIRPORTS.filter(a=>origins.includes(a.code));
+  FLIGHTS.forEach(f=>{
+    const o=ors.find(x=>x.code===f.from),d=AIRPORTS.find(a=>a.code===f.to);
+    if(!o||!d)return;
+    const l=document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1',o.x);l.setAttribute('y1',o.y);l.setAttribute('x2',d.x);l.setAttribute('y2',d.y);
+    l.setAttribute('class',`route-line rl-${f.airline}`);
+    l.setAttribute('data-from',f.from);l.setAttribute('data-to',f.to);
+    lg.appendChild(l);
+  });
+}
+function drawDots(){
+  const dg=document.getElementById('aDots');
+  AIRPORTS.forEach(a=>{
+    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class','ap-dot');g.setAttribute('role','button');g.setAttribute('tabindex','0');g.setAttribute('aria-label',`${a.name}`);
+    if(a.isPL){const ring=document.createElementNS('http://www.w3.org/2000/svg','circle');ring.setAttribute('cx',a.x);ring.setAttribute('cy',a.y);ring.setAttribute('r',10);ring.setAttribute('fill','var(--color-accent)');ring.setAttribute('opacity','.14');g.appendChild(ring);}
+    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',a.x);dot.setAttribute('cy',a.y);dot.setAttribute('r',a.isPL?6:4);
+    dot.setAttribute('fill',a.isPL?'var(--color-accent)':'var(--color-secondary)');dot.setAttribute('opacity','.9');
+    g.appendChild(dot);
+    if(a.isPL){const lbl=document.createElementNS('http://www.w3.org/2000/svg','text');lbl.setAttribute('x',a.x+9);lbl.setAttribute('y',a.y+4);lbl.setAttribute('fill','var(--text-primary)');lbl.setAttribute('font-size','8');lbl.setAttribute('font-family','Source Sans 3,sans-serif');lbl.setAttribute('opacity','.72');lbl.textContent=a.code;g.appendChild(lbl);}
+    const cf=FLIGHTS.filter(f=>f.to===a.code).sort((x,y)=>x.price1-y.price1)[0];
+    g.addEventListener('mouseenter',e=>{showATT(e,a,cf);if(cf)hlRoutes(a.code);});
+    g.addEventListener('mouseleave',()=>{hideTT();clRoutes();});
+    g.addEventListener('click',()=>{if(!a.isPL)goToMap(a.code,a.name);});
+    dg.appendChild(g);
+  });
+}
+function updateMapRoutes(){
+  const codes=S.origins.map(o=>o.code);
+  if(S.favAp&&!codes.includes(S.favAp.code))codes.push(S.favAp.code);
+  drawRoutes(codes.length?codes:['KTW','KRK']);
+}
+function hlRoutes(code){document.querySelectorAll('.route-line').forEach(l=>{l.style.opacity=l.getAttribute('data-to')===code?'0.9':'0.07';if(l.getAttribute('data-to')===code)l.style.strokeWidth='2.5';});}
+function clRoutes(){document.querySelectorAll('.route-line').forEach(l=>{l.style.opacity='.3';l.style.strokeWidth='';});}
+function showCTT(e,name,fi){
+  const tt=document.getElementById('mapTt'),r=document.getElementById('worldMap').getBoundingClientRect();
+  tt.innerHTML=`<div class="map-tt-name">${name}</div><div class="map-tt-price">od ${fi.price1} PLN</div><div class="map-tt-sub">${fi.from} → ${fi.to} · ${fi.airline==='ryanair'?'Ryanair':'Wizzair'}</div><div class="map-tt-sub" style="color:var(--color-accent);margin-top:3px">Kliknij, by wybrać</div>`;
+  tt.classList.add('vis');tt.style.left=(e.clientX-r.left+12)+'px';tt.style.top=Math.max(8,e.clientY-r.top-62)+'px';
+}
+function showATT(e,a,f){
+  const tt=document.getElementById('mapTt'),r=document.getElementById('worldMap').getBoundingClientRect();
+  tt.innerHTML=`<div class="map-tt-name">${a.flag} ${a.name}</div>${f?`<div class="map-tt-price">od ${f.price1} PLN</div><div class="map-tt-sub">${f.from} → ${a.code} · ${f.airline==='ryanair'?'Ryanair':'Wizzair'}</div>`:`<div class="map-tt-sub">${a.country}</div>`}`;
+  tt.classList.add('vis');tt.style.left=(e.clientX-r.left+12)+'px';tt.style.top=Math.max(8,e.clientY-r.top-52)+'px';
+}
+function hideTT(){document.getElementById('mapTt').classList.remove('vis');}
+function goToMap(code,name){document.getElementById('destIn').value=`${name} (${code})`;document.getElementById('search').scrollIntoView({behavior:'smooth'});}
+
+/* FAV AIRPORT */
+function filterFavAp(q){
+  const s=document.getElementById('favApSugg');
+  if(!q.trim()){s.style.display='none';return;}
+  const m=AIRPORTS.filter(a=>a.isPL&&(a.name.toLowerCase().includes(q.toLowerCase())||a.code.toLowerCase().includes(q.toLowerCase())));
+  if(!m.length){s.style.display='none';return;}
+  s.innerHTML=m.map(a=>`<div class="ac-item" onclick="setFavAp('${a.code}','${a.name}')" style="cursor:pointer"><span class="ap-flag">${a.flag}</span><div><div class="ap-name">${a.name}</div></div><span class="ap-code">${a.code}</span></div>`).join('');
+  s.style.display='block';
+}
+function setFavAp(code,name){
+  S.favAp={code,name};localStorage.setItem('lnw_fa',JSON.stringify(S.favAp));
+  document.getElementById('favApIn').value='';document.getElementById('favApSugg').style.display='none';
+  document.getElementById('favApCur').style.display='flex';document.getElementById('favApCode').textContent=code;document.getElementById('favApName').textContent=name;
+  applyFavAp();toast('success','⭐',`Ulubione lotnisko: ${code}`,'Auto-uzupełni wyszukiwarkę i mapę');
+}
+function clearFavAp(){S.favAp=null;localStorage.removeItem('lnw_fa');document.getElementById('favApCur').style.display='none';document.getElementById('favApIn').value='';document.getElementById('favApBadge').style.display='none';updateMapRoutes();}
+function applyFavAp(){
+  if(!S.favAp)return;
+  if(!S.origins.find(o=>o.code===S.favAp.code))addOrigin(S.favAp.code,S.favAp.name);
+  document.getElementById('favApBadge').style.display='flex';document.getElementById('favApLabel').textContent=`${S.favAp.code} – ${S.favAp.name}`;
+  document.getElementById('favApCur').style.display='flex';document.getElementById('favApCode').textContent=S.favAp.code;document.getElementById('favApName').textContent=S.favAp.name;
+  updateMapRoutes();
+}
+
+/* NEWSLETTER */
+function submitNL(e){
+  e.preventDefault();
+  const em=document.getElementById('nlEmail').value.trim();
+  if(!em||!em.includes('@')){toast('error','⚠️','Nieprawidłowy email','');return;}
+  const o=document.getElementById('nlOrigin').value.trim()||'KTW',d=document.getElementById('nlDest').value.trim()||'Wszędzie';
+  toast('success','🔔','Zapisano!',`Alerty ${o} → ${d} aktywowane`);
+  document.getElementById('nlForm').reset();
+  if(S.loggedIn){S.alerts.push({id:'a'+Date.now(),route:`${o} → ${d}`,days:'Pt–Nd',added:'Dziś'});if(document.getElementById('userPanel').classList.contains('open'))renderPanel();}
+}
+
+/* AUTH */
+function openModal(tab='login'){document.getElementById('authModal').classList.add('open');switchTab(tab);}
+function closeModal(){document.getElementById('authModal').classList.remove('open');}
+function switchTab(t){
+  document.getElementById('loginF').style.display=t==='login'?'block':'none';
+  document.getElementById('regF').style.display=t==='reg'?'block':'none';
+  document.getElementById('tabL').classList.toggle('on',t==='login');
+  document.getElementById('tabR').classList.toggle('on',t==='reg');
+}
+function doLogin(){
+  const em=document.getElementById('lEmail').value.trim(),pw=document.getElementById('lPass').value;
+  if(!em||!pw){toast('error','⚠️','Uzupełnij dane','');return;}
+  S.user={email:em,name:em.split('@')[0]};S.loggedIn=true;localStorage.setItem('lnw_u',JSON.stringify(S.user));
+  closeModal();updateAuthUI();toast('success','👋',`Witaj, ${S.user.name}!`,'Zalogowano');
+}
+function doRegister(){
+  const em=document.getElementById('rEmail').value.trim(),pw=document.getElementById('rPass').value,pw2=document.getElementById('rPass2').value;
+  if(!em||!pw){toast('error','⚠️','Uzupełnij dane','');return;}
+  if(pw!==pw2){toast('error','⚠️','Hasła się nie zgadzają','');return;}
+  if(pw.length<8){toast('error','⚠️','Za krótkie hasło','Min. 8 znaków');return;}
+  S.user={email:em,name:em.split('@')[0]};S.loggedIn=true;localStorage.setItem('lnw_u',JSON.stringify(S.user));
+  closeModal();updateAuthUI();toast('success','🎉','Konto utworzone!',`Witaj, ${S.user.name}!`);
+}
+function doLogout(){S.loggedIn=false;S.user=null;localStorage.removeItem('lnw_u');closePanel();updateAuthUI();toast('info','👋','Wylogowano','Do zobaczenia!');}
+function updateAuthUI(){
+  const l=document.getElementById('loginBtn'),r=document.getElementById('registerBtn'),p=document.getElementById('panelBtn');
+  if(S.loggedIn){l.style.display='none';r.style.display='none';p.style.display='flex';p.textContent=`👤 ${S.user.name}`;}
+  else{l.style.display='flex';r.style.display='flex';p.style.display='none';}
+}
+document.getElementById('loginBtn').onclick=()=>openModal('login');
+document.getElementById('registerBtn').onclick=()=>openModal('reg');
+document.getElementById('panelBtn').onclick=()=>openUserPanel();
+document.getElementById('authModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closePanel();}});
+
+/* USER PANEL */
+function openUserPanel(){document.getElementById('userPanel').classList.add('open');renderPanel();}
+function closePanel(){document.getElementById('userPanel').classList.remove('open');}
+function renderPanel(){
+  if(!S.loggedIn)return;
+  document.getElementById('pAvatar').textContent=S.user.name.charAt(0).toUpperCase();
+  document.getElementById('pName').textContent=S.user.name;
+  document.getElementById('pEmail').textContent=S.user.email;
+  if(S.favAp){document.getElementById('favApCur').style.display='flex';document.getElementById('favApCode').textContent=S.favAp.code;document.getElementById('favApName').textContent=S.favAp.name;}
+  const h=document.getElementById('pHistory');
+  h.innerHTML=!S.history.length?'<p style="color:var(--text-muted);font-size:.83rem">Brak historii</p>':S.history.map(x=>`<div class="hist-item" onclick="replayS('${x.route}')"><span style="opacity:.5">↺</span><div class="hist-route">${x.route}</div><div class="hist-date">${x.date}</div><div class="hist-price">${x.price}</div></div>`).join('');
+  const favs=FLIGHTS.filter(f=>S.favorites.has(f.id));
+  document.getElementById('pFavs').innerHTML=!favs.length?'<p style="color:var(--text-muted);font-size:.83rem">Brak ulubionych. Kliknij ❤️ przy locie.</p>':favs.map(f=>`<div class="fav-item"><span>${f.flag}</span><div class="fav-route">${f.fromCity} → ${f.toCity}</div><div class="fav-price">${S.roundtrip?f.price2:f.price1} PLN</div><button class="fav-rm" onclick="rmFav('${f.id}')">✕</button></div>`).join('');
+  document.getElementById('pAlerts').innerHTML=!S.alerts.length?'<p style="color:var(--text-muted);font-size:.83rem">Brak alertów</p>':S.alerts.map(a=>`<div class="alert-item"><div class="alert-route">✈ ${a.route}</div><div class="alert-meta">📅 ${a.days} · Dodano: ${a.added}</div><button class="alert-rm" onclick="rmAlert('${a.id}')">✕</button></div>`).join('');
+}
+function rmFav(id){S.favorites.delete(id);renderResults();renderPanel();toast('info','🤍','Usunięto z ulubionych','');}
+function rmAlert(id){S.alerts=S.alerts.filter(a=>a.id!==id);renderPanel();toast('info','🔕','Alert usunięty','');}
+function replayS(r){const p=r.split(' → ');if(p[0]){const a=AIRPORTS.find(x=>x.code===p[0]);if(a)addOrigin(a.code,a.name);}if(p[1])document.getElementById('destIn').value=p[1];closePanel();document.getElementById('search').scrollIntoView({behavior:'smooth'});}
+
+/* THEME */
+document.getElementById('themeBtn').addEventListener('click',()=>{
+  const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'☀️':'🌙';localStorage.setItem('lnw_th',d?'light':'dark');
+});
+
+/* TOAST */
+function toast(type,icon,title,msg){
+  const c=document.getElementById('toastWrap'),t=document.createElement('div');
+  t.className='toast';t.setAttribute('role','alert');
+  t.innerHTML=`<span class="toast-ico">${icon}</span><div><div class="toast-title">${title}</div>${msg?`<div class="toast-msg">${msg}</div>`:''}</div>`;
+  c.appendChild(t);
+  setTimeout(()=>{t.style.transition='all .3s ease';t.style.transform='translateX(110%)';t.style.opacity='0';setTimeout(()=>t.remove(),300);},3500);
+}
+
+/* TYPEWRITER */
+const TW_PH=['Najtańsze loty z Katowic i Krakowa','Znajdź swój idealny weekend!','Ryanair i Wizzair w jednym miejscu','Loty z dostępem do morza?','Destynacje LGBT+ friendly?','Filtruj po miesiącu i budżecie'];
+let twI=0,twC=0,twD=false;
+function initTW(){
+  const el=document.getElementById('twEl');
+  function tick(){
+    const ph=TW_PH[twI];
+    if(!twD){el.textContent=ph.slice(0,++twC);if(twC>=ph.length){twD=true;setTimeout(tick,2100);return;}}
+    else{el.textContent=ph.slice(0,--twC);if(!twC){twD=false;twI=(twI+1)%TW_PH.length;}}
+    setTimeout(tick,twD?38:70);
+  }
+  tick();
+}
+
+/* COUNTERS */
+function initCounters(){
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,tg=+el.dataset.target,step=Math.ceil(tg/60);let c=0;const t=setInterval(()=>{c=Math.min(c+step,tg);el.textContent=c.toLocaleString('pl-PL');if(c>=tg)clearInterval(t);},22);io.unobserve(el);});},{threshold:.5});
+  document.querySelectorAll('[data-target]').forEach(x=>io.observe(x));
+}
+
+/* INTERSECTION OBSERVER stagger */
+function initIO(){
+  const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(!e.isIntersecting)return;e.target.style.animationDelay=`${i*.07}s`;e.target.classList.add('vis');io.unobserve(e.target);});},{threshold:.08});
+  document.querySelectorAll('.si').forEach(el=>io.observe(el));
+}
+
+/* BG SYNC simulation */
+let st;
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden)st=setTimeout(()=>{if(S.loggedIn)toast('info','🔔','Nowy tani lot!','KTW → AMS od 179 PLN – niższa cena!');},8000);
+  else clearTimeout(st);
+});
+</script>
+</body>
+</html>
