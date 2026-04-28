@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loty na Weekend — Najtańsze loty weekendowe z Polski</title>
+  <meta name="description" content="Znajdź najtańsze loty weekendowe z Polski z Ryanair i Wizzair." />
+  <meta property="og:title" content="Loty na Weekend — Najtańsze loty weekendowe" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="aurora-bg" aria-hidden="true"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
+
+<div class="ticker-bar" role="marquee" aria-label="Aktualne promocje">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<nav class="navbar" role="navigation" aria-label="Główna nawigacja">
+  <div class="navbar-inner">
+    <a href="#" class="logo"><div class="logo-icon">✈</div>Loty na <em>Weekend</em></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#search" class="nav-link">Szukaj</a></li>
+      <li><a href="#results" class="nav-link">Wyniki</a></li>
+      <li><a href="#map-section" class="nav-link">Mapa</a></li>
+      <li><a href="#newsletter" class="nav-link">Alerty</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeBtn" aria-label="Tryb jasny/ciemny">🌙</button>
+      <button class="btn btn-ghost"   id="loginBtn">Zaloguj</button>
+      <button class="btn btn-primary" id="registerBtn">Konto</button>
+      <button class="btn btn-ghost"   id="panelBtn" style="display:none">👤 Panel</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Aktualizowane codziennie · Ryanair + Wizzair</div>
+    <h1 class="hero-title">Najtańsze loty<br>na <span class="lg">weekend</span></h1>
+    <div class="tw-wrap" aria-live="polite"><span class="tw-text" id="twEl"></span></div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">2&nbsp;847</div><div class="hero-stat-lbl">Lotów weekendowych</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">94</div><div class="hero-stat-lbl">Destynacji</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">149 PLN</div><div class="hero-stat-lbl">Najtańszy lot dziś</div></div>
+    </div>
+    <div class="hero-cta">
+      <a href="#search" class="btn btn-accent btn-lg">🔍 Znajdź lot</a>
+      <button class="btn btn-ghost btn-lg" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">🗺 Zobacz mapę</button>
+    </div>
+  </div>
+  <div class="scroll-ind" aria-hidden="true"><span>Przewiń</span><div class="scroll-line"></div></div>
+</section>
+
+<section style="padding:0 40px 64px">
+  <div class="sec-inner">
+    <div class="counter-wrap">
+      <div class="counter-grid">
+        <div><span class="counter-num" data-target="2847">0</span><div class="counter-lbl">Lotów w bazie</div></div>
+        <div><span class="counter-num" data-target="94">0</span><div class="counter-lbl">Destynacji</div></div>
+        <div><span class="counter-num" data-target="18">0</span><div class="counter-lbl">Lotnisk startowych</div></div>
+        <div><span class="counter-num" data-target="1243">0</span><div class="counter-lbl">Zapisanych alertów</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 40px 64px">
+  <div class="sec-inner">
+    <div class="sec-hdr" style="margin-bottom:22px">
+      <div class="sec-lbl">Popularne kierunki</div>
+      <h2 class="sec-title">Gdzie polecieć?</h2>
+      <p class="sec-sub">Kliknij, by uzupełnić wyszukiwarkę. Przeciągnij lub użyj strzałek ‹ ›</p>
+    </div>
+    <div class="vibe-scroll-wrap">
+      <button class="vibe-arrow vibe-arrow-l" onclick="scrollVibe(-1)" aria-label="Przewiń w lewo">‹</button>
+      <div class="vibe-grid" id="vibeGrid" role="list"></div>
+      <button class="vibe-arrow vibe-arrow-r" onclick="scrollVibe(1)" aria-label="Przewiń w prawo">›</button>
+    </div>
+  </div>
+</section>
+
+<section id="search" aria-labelledby="searchH">
+  <div class="sec-inner">
+    <div class="sec-hdr">
+      <div class="sec-lbl">Wyszukiwarka</div>
+      <h2 class="sec-title" id="searchH">Znajdź swój lot</h2>
+      <p class="sec-sub">Wybierz jedno lub kilka lotnisk startowych, destynację, miesiąc i budżet</p>
+    </div>
+    <div class="search-card" role="search">
+      <div style="margin-bottom:22px">
+        <div class="days-lbl">Linie lotnicze</div>
+        <div class="airline-toggles" role="group">
+          <button class="airline-toggle a-ryanair" id="togRy" aria-pressed="true" onclick="togAirline('ryanair')">🔵 Ryanair</button>
+          <button class="airline-toggle a-wizzair" id="togWz" aria-pressed="true" onclick="togAirline('wizzair')">💜 Wizzair</button>
+        </div>
+      </div>
+      <div class="search-grid">
+        <div class="form-group">
+          <label class="form-lbl">Skąd lecisz <span style="font-size:.67rem;color:var(--text-muted);text-transform:none;letter-spacing:0">(kilka lotnisk)</span></label>
+          <div class="ac-wrap">
+            <div class="chips-wrap" id="chipsWrap" onclick="document.getElementById('chipInput').focus()">
+              <div id="originChips" style="display:contents"></div>
+              <input type="text" id="chipInput" class="chip-input" placeholder="Katowice, Kraków..." autocomplete="off" aria-label="Lotnisko startowe" />
+            </div>
+            <div id="originDrop" class="ac-drop" role="listbox"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-lbl" for="destIn">Dokąd lecisz</label>
+          <div class="ac-wrap">
+            <input type="text" id="destIn" class="form-input" placeholder="Gdziekolwiek, Barcelona..." autocomplete="off" />
+            <div id="destDrop" class="ac-drop" role="listbox"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-lbl" for="currSel">Waluta</label>
+          <select id="currSel" class="form-input">
+            <option value="PLN" selected>🇵🇱 PLN</option>
+            <option value="EUR">🇪🇺 EUR</option>
+            <option value="GBP">🇬🇧 GBP</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <div class="days-lbl">Terminy weekendowe — które dni Cię interesują?</div>
+        <div class="days-grid" role="group">
+          <button class="day-btn on" data-day="fri-sun" aria-pressed="true" onclick="togDay(this)">Pt–Nd (3 dni)</button>
+          <button class="day-btn on" data-day="sat-sun" aria-pressed="true" onclick="togDay(this)">Sb–Nd (2 dni)</button>
+          <button class="day-btn on" data-day="fri-sat" aria-pressed="true" onclick="togDay(this)">Pt–Sb (2 dni)</button>
+          <button class="day-btn on" data-day="fri-only" aria-pressed="true" onclick="togDay(this)">Pt (1 dzień)</button>
+          <button class="day-btn on" data-day="sat-only" aria-pressed="true" onclick="togDay(this)">Sb (1 dzień)</button>
+          <button class="day-btn on" data-day="sun-only" aria-pressed="true" onclick="togDay(this)">Nd (1 dzień)</button>
+        </div>
+      </div>
+      <div class="sec-div">Preferowany termin</div>
+      <div class="month-sec" style="margin-bottom:22px">
+        <div class="days-lbl" style="margin-bottom:10px">
+          Wybierz rok
+          <span style="font-size:.67rem;color:var(--text-muted);text-transform:none;letter-spacing:0">
+            — następnie zaznacz konkretne miesiące (opcjonalnie)
+          </span>
+        </div>
+        <div class="yr-tabs" id="yrTabs" role="tablist" aria-label="Wybór roku wyszukiwania"></div>
+        <div id="monthGridsWrap" role="region" aria-label="Wybór miesięcy"></div>
+      </div>
+      <div class="budget-box" role="group">
+        <div class="budget-lbl">💰 Budżet max:</div>
+        <div class="budget-slider"><input type="range" id="budgetR" min="100" max="3000" value="500" step="25" oninput="updBudget(this.value)" /></div>
+        <div class="budget-val" id="budgetV">500 PLN</div>
+        <div class="budget-chips">
+          <button class="b-chip" onclick="setBudget(200)">do 200</button>
+          <button class="b-chip" onclick="setBudget(300)">do 300</button>
+          <button class="b-chip on" onclick="setBudget(500)">do 500</button>
+          <button class="b-chip" onclick="setBudget(800)">do 800</button>
+          <button class="b-chip" onclick="setBudget(3000)">bez limitu</button>
+        </div>
+      </div>
+      <div class="search-opts">
+        <label class="opt-toggle"><div class="sw on" id="swRound" onclick="togSw(this)" role="switch" aria-checked="true" tabindex="0"></div><span>↔ W obie strony</span></label>
+        <label class="opt-toggle"><div class="sw" id="swSea" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>🌊 Tylko przy morzu</span></label>
+        <label class="opt-toggle"><div class="sw" id="swLgbt" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>🏳️‍🌈 LGBT+ friendly</span></label>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border-subtle);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <button class="btn btn-accent btn-lg" style="flex:1;justify-content:center;max-width:320px" onclick="runSearch()">✈ Szukaj lotów</button>
+        <div id="activeDestBadge" style="display:none;font-size:.82rem;color:var(--text-secondary);align-items:center;gap:8px">
+          Szukasz do: <strong id="activeDestLabel" style="color:var(--color-accent)">–</strong>
+          <button onclick="clearDest()" style="font-size:.74rem;color:var(--text-muted);background:none;border:none;cursor:pointer;text-decoration:underline">✕ wyczyść</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="sec-inner">
+    <h2 class="sec-title" style="margin-bottom:8px">Wyniki wyszukiwania</h2>
+    <!-- Last-updated bar — pokazuje liczbę lotów i czas ostatniej aktualizacji -->
+    <div class="last-updated-bar">
+      <span id="lastUpdated" title="Klika by zobaczyć szczegóły źródła">💾 Ładowanie danych...</span>
+      <button id="refreshBtn" class="btn-refresh" type="button"
+              title="Pobierz najnowsze loty z serwera"
+              aria-label="Odśwież listę lotów">🔄 Odśwież</button>
+    </div>
+    <div class="results-bar">
+      <div class="results-count">Znaleziono <span id="resNum">0</span> lotów</div>
+      <div class="filt-chips" role="group">
+        <button class="filt-chip on" onclick="setFilter(this,'all')">Wszystkie</button>
+        <button class="filt-chip" onclick="setFilter(this,'sea')">🌊 Przy morzu</button>
+        <button class="filt-chip" onclick="setFilter(this,'lgbt')">🏳️‍🌈 LGBT+</button>
+        <button class="filt-chip" onclick="setFilter(this,'cheapest')">💸 Najtańsze</button>
+        <button class="filt-chip" onclick="setFilter(this,'novisa')">✅ Bez wizy</button>
+        <button class="filt-chip" onclick="setFilter(this,'english')">🗣 Angielski OK</button>
+        <button class="filt-chip" onclick="setFilter(this,'close')">🚶 Blisko centrum</button>
+      </div>
+      <select class="sort-sel" id="sortSel" onchange="doSort(this.value)">
+        <option value="price">Cena rosnąco</option>
+        <option value="price-desc">Cena malejąco</option>
+        <option value="date">Data wylotu</option>
+        <option value="dur">Czas lotu</option>
+        <option value="dist">Bliskość centrum</option>
+      </select>
+    </div>
+    <div id="loadingDiv" style="display:none"><div class="results-grid"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>
+    <div id="errorDiv" style="display:none" role="alert"><div class="err-box"><div style="font-size:2rem;margin-bottom:14px">⚠️</div><strong>Błąd pobierania danych</strong><p style="color:var(--text-muted);font-size:.875rem;margin:10px 0 18px">Wyświetlamy zapisane dane.</p><button class="btn btn-primary" onclick="runSearch()">↺ Spróbuj ponownie</button></div></div>
+    <div id="emptyDiv" style="display:none"><div class="empty-state"><div class="empty-ico">🔍</div><div class="empty-title" id="emptyTitle">Nie znaleziono lotów</div><p id="emptyMsg">Zmień kryteria lub zwiększ budżet.</p><br><button class="btn btn-accent" onclick="setBudget(3000);runSearch()">Zwiększ budżet i szukaj</button></div></div>
+    <div class="results-grid" id="resultsGrid" role="list"></div>
+  </div>
+</section>
+
+<section id="map-section">
+  <div class="sec-inner">
+    <div class="sec-hdr" style="margin-bottom:22px">
+      <div class="sec-lbl">Mapa tras</div>
+      <h2 class="sec-title">Dokąd możesz polecieć?</h2>
+      <p class="sec-sub">Kraje z <strong style="color:var(--color-accent)">pomarańczowym</strong> obramowaniem mają najtańsze loty.</p>
+    </div>
+    <div class="map-controls">
+      <div class="map-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:var(--color-accent);box-shadow:0 0 5px var(--color-accent)"></div><span>Najtańsze</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:rgba(245,140,61,.38)"></div><span>Dostępne loty</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#5e9eff"></div><span>Ryanair</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#ff69c9"></div><span>Wizzair</span></div>
+      </div>
+      <div id="favApBadge" style="display:none;margin-left:auto;font-size:.8rem;color:var(--color-accent);align-items:center;gap:6px">⭐ Loty z: <strong id="favApLabel">–</strong></div>
+    </div>
+    <div class="map-container">
+      <div class="map-tt" id="mapTt" role="tooltip"></div>
+      <svg class="map-svg" viewBox="0 0 1000 500" id="worldMap" role="img" aria-label="Mapa tras lotów">
+        <rect width="1000" height="500" fill="rgba(13,8,16,.5)" rx="16"/>
+        <g stroke="rgba(255,255,255,.022)" stroke-width=".8">
+          <line x1="0" y1="125" x2="1000" y2="125"/><line x1="0" y1="250" x2="1000" y2="250"/>
+          <line x1="0" y1="375" x2="1000" y2="375"/><line x1="250" y1="0" x2="250" y2="500"/>
+          <line x1="500" y1="0" x2="500" y2="500"/><line x1="750" y1="0" x2="750" y2="500"/>
+        </g>
+        <g id="cPaths"></g><g id="rLines"></g><g id="aDots"></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="sec-inner">
+    <div class="nl-card">
+      <div class="nl-bell" onclick="document.getElementById('nlEmail').focus()" role="button" tabindex="0">🔔</div>
+      <h2 class="nl-title">Zainteresowana lotem?</h2>
+      <p class="nl-sub">Zapisz się na alerty i dostawaj powiadomienia o najtańszych lotach weekendowych.</p>
+      <form id="nlForm" class="nl-form" onsubmit="submitNL(event)" novalidate>
+        <input type="email" class="nl-input" id="nlEmail" placeholder="twoj@email.pl" required />
+        <input type="text"  class="nl-input" id="nlOrigin" placeholder="Skąd (np. KTW)" />
+        <input type="text"  class="nl-input" id="nlDest" placeholder="Dokąd (np. BCN lub Gdziekolwiek)" />
+        <button type="submit" class="btn btn-accent btn-lg" id="nlBtn">🔔 Zapisz się</button>
+      </form>
+      <div id="nlStatus" style="margin-top:14px;font-size:.82rem;display:none;text-align:center"></div>
+      <p style="margin-top:14px;font-size:.73rem;color:var(--text-muted)">Nie spamujemy. Możesz wypisać się w dowolnej chwili.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUTH MODAL -->
+<div class="modal-ov" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title" id="authTitle">Witaj!</div>
+    <div class="modal-sub">Zaloguj się lub utwórz konto, by śledzić ulubione loty.</div>
+    <!-- Firebase error display -->
+    <div id="authError" style="display:none;background:rgba(200,60,60,.1);border:1px solid rgba(200,60,60,.25);border-radius:8px;padding:10px 14px;font-size:.83rem;color:#f59090;margin-bottom:16px"></div>
+    <!-- Firebase loading spinner -->
+    <div id="authSpinner" style="display:none;text-align:center;padding:16px"><div class="spinner"></div><p style="color:var(--text-muted);font-size:.82rem;margin-top:10px">Proszę czekać...</p></div>
+    <div class="modal-tabs" role="tablist">
+      <button class="modal-tab on" id="tabL" role="tab" onclick="switchTab('login')">Zaloguj</button>
+      <button class="modal-tab"    id="tabR" role="tab" onclick="switchTab('reg')">Rejestracja</button>
+    </div>
+    <div id="loginF">
+      <div class="form-group" style="margin-bottom:14px"><label class="form-lbl" for="lEmail">Email</label><input type="email" id="lEmail" class="form-input" placeholder="twoj@email.pl" autocomplete="email" /></div>
+      <div class="form-group" style="margin-bottom:26px"><label class="form-lbl" for="lPass">Hasło</label><input type="password" id="lPass" class="form-input" placeholder="••••••••" autocomplete="current-password" /></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="doLogin()">Zaloguj się</button>
+      <p style="text-align:center;margin-top:12px;font-size:.78rem"><a href="#" onclick="sendPasswordReset(event)" style="color:var(--color-accent)">Zapomniałam hasła?</a></p>
+    </div>
+    <div id="regF" style="display:none">
+      <div class="form-group" style="margin-bottom:12px"><label class="form-lbl" for="rEmail">Email</label><input type="email" id="rEmail" class="form-input" placeholder="twoj@email.pl" autocomplete="email" /></div>
+      <div class="form-group" style="margin-bottom:12px"><label class="form-lbl" for="rName">Imię (opcjonalne)</label><input type="text" id="rName" class="form-input" placeholder="Anna" autocomplete="given-name" /></div>
+      <div class="form-group" style="margin-bottom:12px"><label class="form-lbl" for="rPass">Hasło</label><input type="password" id="rPass" class="form-input" placeholder="Min. 8 znaków" autocomplete="new-password" /></div>
+      <div class="form-group" style="margin-bottom:26px"><label class="form-lbl" for="rPass2">Powtórz hasło</label><input type="password" id="rPass2" class="form-input" placeholder="Powtórz hasło" autocomplete="new-password" /></div>
+      <button class="btn btn-accent" style="width:100%;justify-content:center" onclick="doRegister()">Utwórz konto</button>
+    </div>
+  </div>
+</div>
+
+<!-- USER PANEL -->
+<aside class="user-panel" id="userPanel" role="complementary" aria-label="Panel użytkownika">
+  <div class="panel-hdr">
+    <div class="panel-avatar" id="pAvatar">A</div>
+    <div><div class="panel-uname" id="pName">Anna</div><div class="panel-uemail" id="pEmail">anna@example.pl</div></div>
+    <button class="panel-close" onclick="closePanel()" style="margin-left:auto">✕</button>
+  </div>
+  <!-- Firebase sync indicator -->
+  <div id="syncBadge" style="display:none;font-size:.72rem;color:#70d890;text-align:center;margin-bottom:12px;padding:6px 10px;background:rgba(80,200,80,.08);border-radius:8px">
+    ☁️ Dane zsynchronizowane z Firebase
+  </div>
+  <div class="p-sec">
+    <div class="p-sec-title">⭐ Ulubione lotnisko</div>
+    <div class="fav-ap-box">
+      <div class="fav-ap-lbl">Lotnisko domyślne — auto-uzupełnia wyszukiwarkę i mapę</div>
+      <input type="text" class="fav-ap-input" id="favApIn" placeholder="Wpisz kod lub nazwę (np. KTW)" oninput="filterFavAp(this.value)" />
+      <div id="favApCur" style="display:none" class="fav-ap-cur">
+        <span>Aktualnie:</span><span class="fav-ap-code" id="favApCode">–</span>
+        <span id="favApName" style="font-size:.8rem;color:var(--text-muted)">–</span>
+        <button onclick="clearFavAp()" style="margin-left:auto;font-size:.74rem;color:var(--text-muted);background:none;border:none;cursor:pointer">✕ usuń</button>
+      </div>
+      <div id="favApSugg" class="ac-drop" style="position:static;margin-top:6px;max-height:140px" role="listbox"></div>
+    </div>
+  </div>
+  <div class="p-sec"><div class="p-sec-title">Historia wyszukiwań</div><div id="pHistory"></div></div>
+  <div class="p-sec"><div class="p-sec-title">❤️ Ulubione trasy</div><div id="pFavs"></div></div>
+  <div class="p-sec"><div class="p-sec-title">🔔 Aktywne alerty</div><div id="pAlerts"></div></div>
+  <button class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:14px" onclick="doLogout()">Wyloguj się</button>
+</aside>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<footer role="contentinfo">
+  <div class="sec-inner" style="max-width:1400px">
+    <div class="footer-logo">✈ Loty na Weekend</div>
+    <div class="footer-links">
+      <a href="#" class="footer-link">O nas</a>
+      <a href="#" class="footer-link">Polityka prywatności</a>
+      <a href="#" class="footer-link">Regulamin</a>
+      <a href="https://ryanair.com" target="_blank" rel="noopener" class="footer-link">Ryanair.com</a>
+      <a href="https://wizzair.com" target="_blank" rel="noopener" class="footer-link">Wizzair.com</a>
+    </div>
+    <p>© 2025 Loty na Weekend · Firebase Authentication + Firestore · EmailJS</p>
+  </div>
+</footer>
+
+<!-- ================================================================
+  KOLEJNOŚĆ SKRYPTÓW — NIE ZMIENIAJ!
+  1. firebase-config.js  ← Twoje klucze (wypełnij najpierw!)
+  2. Firebase SDK v10    ← z CDN Google (compat mode, bez bundlera)
+  3. EmailJS SDK         ← z CDN jsdelivr
+  4. app.js              ← główna logika
+================================================================ -->
+<script src="firebase-config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
