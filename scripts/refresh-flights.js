@@ -89,6 +89,114 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
  */
 async function fetchWizzairFares(/* from, to, date */) {
   // TODO: zaimplementować Wizzair API. Wymaga session cookies z głównej strony.
+  
+async function fetchWizzairFares(from, to, dateFrom, dateTo) {
+  // Wizzair API wymaga max 42 dni — jeśli zakres większy, podziel na chunks
+  const chunks = chunkDateRange(dateFrom, dateTo, 42);
+  const allFlights = [];
+
+  for (const chunk of chunks) {
+    const body = {
+      flightList: [{
+        departureStation: from,
+        arrivalStation:   to,
+        from: chunk.from,
+        to:   chunk.to,
+      }],
+      priceType:   'regular',
+      adultCount:  1,
+      childCount:  0,
+      infantCount: 0,
+    };
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+    try {
+      const res = await fetch('https://be.wizzair.com/27.7.0/Api/search/timetable', {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          'authority':       'be.wizzair.com',
+          'accept':          'application/json, text/plain, */*',
+          'origin':          'https://wizzair.com',
+          'user-agent':      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'content-type':    'application/json;charset=UTF-8',
+          'referer':         'https://wizzair.com/pl-pl/flights/timetable',
+          'accept-language': 'pl-PL,pl;q=0.9,en;q=0.8',
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Wizzair HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+
+      // Wizzair zwraca outboundFlights[] z pełnymi danymi lotu
+      if (Array.isArray(data.outboundFlights)) {
+        for (const f of data.outboundFlights) {
+          // f ma: arrivalStation, departureStation, departureDate, arrivalDate,
+          // duration, flightCode, price: { amount, currencyCode }, ...
+          allFlights.push({
+            outbound: {
+              departureAirport: { iataCode: f.departureStation },
+              arrivalAirport:   { iataCode: f.arrivalStation },
+              departureDate:    f.departureDate,
+              arrivalDate:      f.arrivalDate,
+              price: {
+                value:        f.price.amount,
+                currencyCode: f.price.currencyCode,
+              },
+              flightCode: f.flightCode,
+            },
+          });
+        }
+      }
+    } catch (err) {
+      console.warn(`[Wizzair] ${from}→${to} ${chunk.from}–${chunk.to}: ${err.message}`);
+      // Nie przerywamy — kontynuujemy następny chunk
+    } finally {
+      clearTimeout(timer);
+    }
+
+    // Throttle żeby nie spamić API
+    await new Promise(r => setTimeout(r, 500));
+  }
+
+  return allFlights;
+}
+
+/**
+ * Dzieli zakres dat na chunki maksymalnej długości (np. 42 dni dla Wizzair).
+ * Zwraca tablicę {from, to} w formacie YYYY-MM-DD.
+ */
+function chunkDateRange(dateFrom, dateTo, maxDays) {
+  const chunks = [];
+  const startDate = new Date(dateFrom);
+  const endDate   = new Date(dateTo);
+
+  let current = new Date(startDate);
+  while (current < endDate) {
+    const chunkEnd = new Date(current);
+    chunkEnd.setDate(chunkEnd.getDate() + maxDays - 1);
+    if (chunkEnd > endDate) chunkEnd.setTime(endDate.getTime());
+
+    chunks.push({
+      from: current.toISOString().slice(0, 10),
+      to:   chunkEnd.toISOString().slice(0, 10),
+    });
+
+    current.setDate(current.getDate() + maxDays);
+  }
+  return chunks;
+}
+
+
+  
+  
+  
   // Patrz: https://github.com/cohaolain/ryanair-py/issues (similar approach for Wizz)
   return [];
 }
