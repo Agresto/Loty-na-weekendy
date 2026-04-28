@@ -257,6 +257,28 @@ async function fetchRealFlights() {
     }
     console.log(`✓ ${fares.length} ofert`);
 
+
+// Po pętli Ryanair...
+const wizzairRoutes = ROUTES.filter(r => r[2] === 'wizzair');
+console.log(`\n[refresh] Pobieranie ${wizzairRoutes.length} tras Wizzair...`);
+
+for (let i = 0; i < wizzairRoutes.length; i++) {
+  const [from, to, , basePrice, durMin, deptHour] = wizzairRoutes[i];
+  const origInfo = ORIGINS[from];
+  const destInfo = DESTS[to];
+  if (!origInfo || !destInfo) continue;
+
+  process.stdout.write(`[${i+1}/${wizzairRoutes.length}] ${from}→${to}... `);
+
+  const fares = await fetchWizzairFares(from, to, dateFrom, dateTo);
+  
+  console.log(`✓ ${fares.length} ofert`);
+  
+
+  // Ten sam kod co dla Ryanair — przetwarza fares na obiekt lotu
+  // (skopiuj z istniejącej pętli Ryanair, zmień airline na 'wizzair')
+}
+    
     // Filtruj tylko weekendy
     for (const fare of fares) {
       const out = fare.outbound;
