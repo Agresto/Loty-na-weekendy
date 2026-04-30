@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-30T14:57:20.804Z",
+  "lastUpdated": "2026-04-30T15:03:26.010Z",
   "source": "ryanair+wizzair-api",
   "maxBudgetRT": 500,
   "totalCount": 707,
@@ -698,7 +698,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r325",
+      "id": "r333",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -718,8 +718,8 @@
       "retRaw": "2026-05-12",
       "month": 5,
       "year": 2026,
-      "price1": 264,
-      "price2": 448,
+      "price1": 294,
+      "price2": 478,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -904,10 +904,10 @@
       "toCity": "Londyn Stansted",
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
-      "dept": "12:00",
-      "arr": "14:25",
-      "retDept": "00:00",
-      "retArr": "02:25",
+      "dept": "19:00",
+      "arr": "21:25",
+      "retDept": "07:00",
+      "retArr": "09:25",
       "deptDay": "sobota",
       "retDay": "niedziela",
       "dur": "2h 25m",
@@ -3866,7 +3866,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r327",
+      "id": "r326",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -7397,7 +7397,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r329",
+      "id": "r328",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -11621,7 +11621,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r331",
+      "id": "r330",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -13667,7 +13667,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r328",
+      "id": "r327",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -15944,7 +15944,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r332",
+      "id": "r331",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -20201,7 +20201,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r330",
+      "id": "r329",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -21257,7 +21257,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r333",
+      "id": "r332",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -22676,7 +22676,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r326",
+      "id": "r325",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
