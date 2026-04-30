@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-04-30T15:03:26.010Z",
+  "lastUpdated": "2026-04-30T15:22:22.316Z",
   "source": "ryanair+wizzair-api",
   "maxBudgetRT": 500,
-  "totalCount": 707,
+  "totalCount": 709,
   "flights": [
     {
-      "id": "r373",
+      "id": "r374",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -38,7 +38,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r606",
+      "id": "r608",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -71,7 +71,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r656",
+      "id": "r658",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -137,7 +137,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r601",
+      "id": "r603",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -170,7 +170,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r677",
+      "id": "r679",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -236,7 +236,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r173",
+      "id": "r174",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -269,7 +269,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r237",
+      "id": "r238",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -302,7 +302,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r342",
+      "id": "r343",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -368,7 +368,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r413",
+      "id": "r415",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -401,7 +401,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r441",
+      "id": "r443",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -434,7 +434,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r531",
+      "id": "r547",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -454,8 +454,8 @@
       "retRaw": "2026-05-09",
       "month": 5,
       "year": 2026,
-      "price1": 200,
-      "price2": 413,
+      "price1": 204,
+      "price2": 456,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -467,7 +467,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r585",
+      "id": "r587",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -500,7 +500,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r634",
+      "id": "r636",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -533,7 +533,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r700",
+      "id": "r702",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -632,7 +632,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r129",
+      "id": "r130",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -665,7 +665,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r228",
+      "id": "r229",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -764,7 +764,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r404",
+      "id": "r406",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -797,7 +797,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r420",
+      "id": "r422",
       "airline": "ryanair",
       "from": "KRK",
       "to": "PMI",
@@ -830,7 +830,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r547",
+      "id": "r549",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -863,7 +863,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r569",
+      "id": "r571",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -896,7 +896,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r631",
+      "id": "r633",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -995,7 +995,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r161",
+      "id": "r162",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -1028,7 +1028,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r211",
+      "id": "r212",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -1061,7 +1061,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r421",
+      "id": "r423",
       "airline": "ryanair",
       "from": "KRK",
       "to": "PMI",
@@ -1094,7 +1094,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r448",
+      "id": "r450",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -1127,7 +1127,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r604",
+      "id": "r606",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -1160,7 +1160,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r645",
+      "id": "r647",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -1226,7 +1226,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r107",
+      "id": "r108",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -1259,7 +1259,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r210",
+      "id": "r211",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -1292,7 +1292,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r268",
+      "id": "r269",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -1325,7 +1325,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r344",
+      "id": "r345",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -1346,7 +1346,7 @@
       "month": 5,
       "year": 2026,
       "price1": 81,
-      "price2": 201,
+      "price2": 203,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -1358,7 +1358,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r399",
+      "id": "r401",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -1391,7 +1391,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r431",
+      "id": "r433",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -1424,7 +1424,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r516",
+      "id": "r518",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -1457,7 +1457,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r554",
+      "id": "r556",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -1490,7 +1490,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r628",
+      "id": "r630",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -1523,7 +1523,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r690",
+      "id": "r693",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -1544,7 +1544,7 @@
       "month": 5,
       "year": 2026,
       "price1": 166,
-      "price2": 341,
+      "price2": 349,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -1622,7 +1622,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r123",
+      "id": "r124",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -1655,7 +1655,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r183",
+      "id": "r184",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -1688,7 +1688,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r290",
+      "id": "r291",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -1721,7 +1721,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r304",
+      "id": "r306",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -1754,7 +1754,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r346",
+      "id": "r347",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -1787,7 +1787,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r398",
+      "id": "r400",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -1820,7 +1820,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r422",
+      "id": "r424",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -1853,7 +1853,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r512",
+      "id": "r514",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -1886,7 +1886,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r552",
+      "id": "r555",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -1919,7 +1919,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r629",
+      "id": "r631",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -1952,7 +1952,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r698",
+      "id": "r700",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -2051,7 +2051,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r139",
+      "id": "r140",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -2084,7 +2084,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r184",
+      "id": "r185",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -2117,7 +2117,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r321",
+      "id": "r322",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -2183,7 +2183,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r419",
+      "id": "r421",
       "airline": "ryanair",
       "from": "KRK",
       "to": "PMI",
@@ -2216,7 +2216,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r439",
+      "id": "r441",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -2249,7 +2249,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r449",
+      "id": "r451",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -2282,7 +2282,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r568",
+      "id": "r570",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -2315,7 +2315,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r617",
+      "id": "r619",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -2348,7 +2348,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r652",
+      "id": "r654",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -2447,7 +2447,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r121",
+      "id": "r122",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -2480,7 +2480,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r197",
+      "id": "r198",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -2513,7 +2513,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r263",
+      "id": "r264",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -2533,8 +2533,8 @@
       "retRaw": "2026-05-23",
       "month": 5,
       "year": 2026,
-      "price1": 123,
-      "price2": 345,
+      "price1": 119,
+      "price2": 349,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -2546,7 +2546,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r310",
+      "id": "r312",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -2579,7 +2579,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r372",
+      "id": "r373",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -2612,7 +2612,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r401",
+      "id": "r403",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -2645,7 +2645,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r426",
+      "id": "r428",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -2678,7 +2678,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r515",
+      "id": "r517",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -2711,7 +2711,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r592",
+      "id": "r594",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -2744,7 +2744,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r666",
+      "id": "r668",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -2777,7 +2777,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r699",
+      "id": "r701",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -2909,7 +2909,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r159",
+      "id": "r160",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -2942,7 +2942,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r195",
+      "id": "r196",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -2975,7 +2975,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r253",
+      "id": "r254",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -3008,7 +3008,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r349",
+      "id": "r353",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -3028,8 +3028,8 @@
       "retRaw": "2026-05-26",
       "month": 5,
       "year": 2026,
-      "price1": 89,
-      "price2": 239,
+      "price1": 94,
+      "price2": 243,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3041,7 +3041,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r402",
+      "id": "r404",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -3074,7 +3074,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r513",
+      "id": "r515",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -3107,7 +3107,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r571",
+      "id": "r573",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -3115,10 +3115,10 @@
       "toCity": "Londyn Stansted",
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
-      "dept": "05:00",
-      "arr": "07:35",
-      "retDept": "17:00",
-      "retArr": "19:35",
+      "dept": "19:00",
+      "arr": "21:35",
+      "retDept": "07:00",
+      "retArr": "09:35",
       "deptDay": "sobota",
       "retDay": "niedziela",
       "dur": "2h 35m",
@@ -3127,8 +3127,8 @@
       "retRaw": "2026-05-26",
       "month": 5,
       "year": 2026,
-      "price1": 69,
-      "price2": 226,
+      "price1": 68,
+      "price2": 225,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3140,7 +3140,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r646",
+      "id": "r648",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -3173,7 +3173,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r695",
+      "id": "r697",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -3305,7 +3305,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r120",
+      "id": "r121",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -3338,7 +3338,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r185",
+      "id": "r186",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -3371,7 +3371,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r259",
+      "id": "r261",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -3391,8 +3391,8 @@
       "retRaw": "2026-05-27",
       "month": 5,
       "year": 2026,
-      "price1": 247,
-      "price2": 328,
+      "price1": 251,
+      "price2": 332,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -3404,7 +3404,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r338",
+      "id": "r339",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -3470,7 +3470,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r446",
+      "id": "r448",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -3503,7 +3503,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r459",
+      "id": "r461",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -3536,7 +3536,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r504",
+      "id": "r506",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -3569,7 +3569,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r579",
+      "id": "r581",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -3602,7 +3602,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r615",
+      "id": "r617",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -3635,7 +3635,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r653",
+      "id": "r655",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -3767,7 +3767,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r119",
+      "id": "r120",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -3800,7 +3800,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r202",
+      "id": "r203",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -3866,7 +3866,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r326",
+      "id": "r324",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -3887,7 +3887,7 @@
       "month": 5,
       "year": 2026,
       "price1": 196,
-      "price2": 451,
+      "price2": 447,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -3899,7 +3899,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r364",
+      "id": "r365",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -3932,7 +3932,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r403",
+      "id": "r405",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -3965,7 +3965,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r440",
+      "id": "r442",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -3998,7 +3998,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r474",
+      "id": "r476",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -4031,7 +4031,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r527",
+      "id": "r529",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -4064,7 +4064,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r591",
+      "id": "r593",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -4097,7 +4097,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r658",
+      "id": "r660",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -4130,7 +4130,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r688",
+      "id": "r690",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -4229,7 +4229,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r106",
+      "id": "r107",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -4262,7 +4262,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r192",
+      "id": "r193",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -4295,7 +4295,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r265",
+      "id": "r266",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -4328,7 +4328,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r384",
+      "id": "r385",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -4361,7 +4361,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r408",
+      "id": "r410",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -4394,7 +4394,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r549",
+      "id": "r551",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -4427,7 +4427,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r593",
+      "id": "r595",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -4460,7 +4460,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r668",
+      "id": "r670",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -4493,7 +4493,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r696",
+      "id": "r698",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -4592,7 +4592,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r109",
+      "id": "r110",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -4625,7 +4625,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r182",
+      "id": "r183",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -4658,7 +4658,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r389",
+      "id": "r390",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -4691,7 +4691,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r415",
+      "id": "r417",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -4724,7 +4724,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r430",
+      "id": "r432",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -4757,7 +4757,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r467",
+      "id": "r469",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -4790,7 +4790,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r498",
+      "id": "r500",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -4823,7 +4823,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r620",
+      "id": "r622",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -4922,7 +4922,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r124",
+      "id": "r125",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -4955,7 +4955,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r208",
+      "id": "r209",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -4988,7 +4988,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r359",
+      "id": "r360",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -5021,7 +5021,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r400",
+      "id": "r402",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -5054,7 +5054,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r444",
+      "id": "r446",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -5087,7 +5087,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r566",
+      "id": "r568",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -5120,7 +5120,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r637",
+      "id": "r639",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -5153,7 +5153,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r704",
+      "id": "r706",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -5186,7 +5186,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r13",
+      "id": "r14",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -5252,7 +5252,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r113",
+      "id": "r117",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -5273,7 +5273,7 @@
       "month": 6,
       "year": 2026,
       "price1": 95,
-      "price2": 163,
+      "price2": 167,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -5285,7 +5285,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r193",
+      "id": "r194",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -5318,7 +5318,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r251",
+      "id": "r252",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -5384,7 +5384,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r405",
+      "id": "r407",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -5417,7 +5417,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r501",
+      "id": "r503",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -5450,7 +5450,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r553",
+      "id": "r554",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -5470,8 +5470,8 @@
       "retRaw": "2026-06-09",
       "month": 6,
       "year": 2026,
-      "price1": 81,
-      "price2": 150,
+      "price1": 72,
+      "price2": 141,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5483,7 +5483,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r627",
+      "id": "r629",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -5516,7 +5516,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r694",
+      "id": "r696",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -5615,7 +5615,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r114",
+      "id": "r118",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -5636,7 +5636,7 @@
       "month": 6,
       "year": 2026,
       "price1": 95,
-      "price2": 163,
+      "price2": 167,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -5648,7 +5648,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r194",
+      "id": "r195",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -5681,7 +5681,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r266",
+      "id": "r267",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -5714,7 +5714,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r300",
+      "id": "r301",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -5734,8 +5734,8 @@
       "retRaw": "2026-06-10",
       "month": 6,
       "year": 2026,
-      "price1": 243,
-      "price2": 349,
+      "price1": 234,
+      "price2": 341,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -5747,7 +5747,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r353",
+      "id": "r352",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -5767,8 +5767,8 @@
       "retRaw": "2026-06-09",
       "month": 6,
       "year": 2026,
-      "price1": 153,
-      "price2": 247,
+      "price1": 149,
+      "price2": 242,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5780,7 +5780,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r456",
+      "id": "r458",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -5813,7 +5813,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r495",
+      "id": "r497",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -5846,7 +5846,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r576",
+      "id": "r578",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -5879,7 +5879,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r619",
+      "id": "r621",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -5912,7 +5912,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r638",
+      "id": "r640",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -5978,7 +5978,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r8",
+      "id": "r9",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -6044,7 +6044,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r108",
+      "id": "r109",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -6057,15 +6057,15 @@
       "retDept": "11:00",
       "retArr": "13:10",
       "deptDay": "piątek",
-      "retDay": "niedziela",
+      "retDay": "sobota",
       "dur": "2h 10m",
-      "date": "Pt–Nd, 12–14 Cze 2026",
+      "date": "Sb–Nd, 12–13 Cze 2026",
       "raw": "2026-06-12",
-      "retRaw": "2026-06-14",
+      "retRaw": "2026-06-13",
       "month": 6,
       "year": 2026,
       "price1": 68,
-      "price2": 149,
+      "price2": 145,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -6074,10 +6074,10 @@
       "visa": "brak",
       "currency": "EUR €",
       "englishOk": true,
-      "pattern": "fri-sun"
+      "pattern": "fri-sat"
     },
     {
-      "id": "r190",
+      "id": "r191",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -6110,7 +6110,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r291",
+      "id": "r292",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -6143,7 +6143,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r302",
+      "id": "r303",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -6176,7 +6176,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r345",
+      "id": "r346",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -6209,7 +6209,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r416",
+      "id": "r418",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -6242,7 +6242,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r425",
+      "id": "r427",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -6275,7 +6275,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r510",
+      "id": "r512",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -6308,7 +6308,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r560",
+      "id": "r562",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -6341,7 +6341,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r633",
+      "id": "r635",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -6374,7 +6374,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r703",
+      "id": "r705",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -6407,7 +6407,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r9",
+      "id": "r8",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -6428,7 +6428,7 @@
       "month": 6,
       "year": 2026,
       "price1": 98,
-      "price2": 186,
+      "price2": 181,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6473,7 +6473,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r110",
+      "id": "r111",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -6490,7 +6490,7 @@
       "dur": "2h 10m",
       "date": "Sb–Nd, 13–14 Cze 2026",
       "raw": "2026-06-13",
-      "retRaw": "2026-06-14",
+      "retRaw": "2026-06-15",
       "month": 6,
       "year": 2026,
       "price1": 77,
@@ -6506,7 +6506,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r186",
+      "id": "r187",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -6539,7 +6539,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r262",
+      "id": "r263",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -6572,7 +6572,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r308",
+      "id": "r309",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -6605,7 +6605,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r347",
+      "id": "r348",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -6638,7 +6638,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r487",
+      "id": "r489",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -6671,7 +6671,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r507",
+      "id": "r509",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -6704,7 +6704,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r557",
+      "id": "r559",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -6737,7 +6737,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r632",
+      "id": "r634",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -6770,7 +6770,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r692",
+      "id": "r694",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -6803,7 +6803,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r14",
+      "id": "r13",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -6824,7 +6824,7 @@
       "month": 6,
       "year": 2026,
       "price1": 123,
-      "price2": 212,
+      "price2": 207,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6869,7 +6869,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r111",
+      "id": "r112",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -6902,7 +6902,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r187",
+      "id": "r188",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -6935,7 +6935,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r281",
+      "id": "r282",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -6968,7 +6968,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r306",
+      "id": "r305",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -6988,8 +6988,8 @@
       "retRaw": "2026-06-16",
       "month": 6,
       "year": 2026,
-      "price1": 217,
-      "price2": 404,
+      "price1": 209,
+      "price2": 396,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -7001,7 +7001,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r368",
+      "id": "r369",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -7034,7 +7034,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r447",
+      "id": "r449",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -7067,7 +7067,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r450",
+      "id": "r452",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -7100,7 +7100,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r496",
+      "id": "r498",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -7133,7 +7133,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r577",
+      "id": "r579",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -7166,7 +7166,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r665",
+      "id": "r667",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -7265,7 +7265,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r105",
+      "id": "r106",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -7298,7 +7298,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r122",
+      "id": "r123",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -7331,7 +7331,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r207",
+      "id": "r208",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -7364,7 +7364,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r284",
+      "id": "r285",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -7397,7 +7397,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r328",
+      "id": "r327",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -7417,8 +7417,8 @@
       "retRaw": "2026-06-20",
       "month": 6,
       "year": 2026,
-      "price1": 247,
-      "price2": 454,
+      "price1": 243,
+      "price2": 449,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -7430,7 +7430,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r343",
+      "id": "r344",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -7463,7 +7463,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r479",
+      "id": "r481",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -7496,7 +7496,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r497",
+      "id": "r499",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -7529,7 +7529,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r562",
+      "id": "r564",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -7562,7 +7562,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r621",
+      "id": "r623",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -7595,7 +7595,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r630",
+      "id": "r632",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -7628,7 +7628,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r702",
+      "id": "r704",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -7694,7 +7694,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r118",
+      "id": "r119",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -7727,7 +7727,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r196",
+      "id": "r197",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -7760,7 +7760,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r258",
+      "id": "r259",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -7793,7 +7793,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r303",
+      "id": "r304",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -7826,7 +7826,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r365",
+      "id": "r366",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -7859,7 +7859,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r472",
+      "id": "r474",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -7892,7 +7892,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r505",
+      "id": "r507",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -7925,7 +7925,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r556",
+      "id": "r558",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -7958,7 +7958,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r626",
+      "id": "r628",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -8057,7 +8057,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r117",
+      "id": "r114",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -8078,7 +8078,7 @@
       "month": 6,
       "year": 2026,
       "price1": 85,
-      "price2": 166,
+      "price2": 162,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -8090,7 +8090,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r191",
+      "id": "r192",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -8123,7 +8123,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r252",
+      "id": "r253",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -8156,7 +8156,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r311",
+      "id": "r310",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -8176,8 +8176,8 @@
       "retRaw": "2026-06-24",
       "month": 6,
       "year": 2026,
-      "price1": 209,
-      "price2": 422,
+      "price1": 204,
+      "price2": 413,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -8189,7 +8189,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r348",
+      "id": "r349",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -8222,7 +8222,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r451",
+      "id": "r453",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -8255,7 +8255,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r500",
+      "id": "r502",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -8288,7 +8288,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r587",
+      "id": "r589",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -8321,7 +8321,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r616",
+      "id": "r618",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -8354,7 +8354,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r660",
+      "id": "r662",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -8486,7 +8486,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r214",
+      "id": "r215",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -8519,7 +8519,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r278",
+      "id": "r279",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -8552,7 +8552,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r316",
+      "id": "r314",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -8572,8 +8572,8 @@
       "retRaw": "2026-06-27",
       "month": 6,
       "year": 2026,
-      "price1": 234,
-      "price2": 439,
+      "price1": 230,
+      "price2": 434,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -8585,7 +8585,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r352",
+      "id": "r359",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -8606,7 +8606,7 @@
       "month": 6,
       "year": 2026,
       "price1": 104,
-      "price2": 246,
+      "price2": 251,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -8618,7 +8618,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r475",
+      "id": "r477",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -8651,7 +8651,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r506",
+      "id": "r508",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -8684,7 +8684,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r574",
+      "id": "r576",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -8717,7 +8717,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r639",
+      "id": "r641",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -8783,7 +8783,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r112",
+      "id": "r113",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -8816,7 +8816,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r188",
+      "id": "r189",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -8849,7 +8849,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r269",
+      "id": "r270",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -8915,7 +8915,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r502",
+      "id": "r504",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -8948,7 +8948,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r589",
+      "id": "r591",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -8981,7 +8981,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r635",
+      "id": "r637",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9047,7 +9047,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r87",
+      "id": "r88",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -9113,7 +9113,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r189",
+      "id": "r190",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -9146,7 +9146,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r370",
+      "id": "r371",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -9179,7 +9179,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r488",
+      "id": "r490",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -9212,7 +9212,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r499",
+      "id": "r501",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -9245,7 +9245,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r603",
+      "id": "r605",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -9278,7 +9278,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r624",
+      "id": "r626",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -9311,7 +9311,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r662",
+      "id": "r664",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9377,7 +9377,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r125",
+      "id": "r126",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -9398,7 +9398,7 @@
       "month": 7,
       "year": 2026,
       "price1": 95,
-      "price2": 206,
+      "price2": 201,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -9410,7 +9410,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r223",
+      "id": "r224",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -9443,7 +9443,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r385",
+      "id": "r386",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -9476,7 +9476,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r468",
+      "id": "r470",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -9509,7 +9509,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r537",
+      "id": "r538",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -9542,7 +9542,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r588",
+      "id": "r590",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -9575,7 +9575,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r661",
+      "id": "r663",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9641,7 +9641,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r143",
+      "id": "r141",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -9662,7 +9662,7 @@
       "month": 7,
       "year": 2026,
       "price1": 136,
-      "price2": 247,
+      "price2": 243,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -9674,7 +9674,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r198",
+      "id": "r199",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -9707,7 +9707,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r293",
+      "id": "r294",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -9740,7 +9740,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r317",
+      "id": "r318",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -9773,7 +9773,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r375",
+      "id": "r376",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -9806,7 +9806,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r528",
+      "id": "r530",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -9839,7 +9839,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r586",
+      "id": "r588",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -9872,7 +9872,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r664",
+      "id": "r666",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9938,7 +9938,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r88",
+      "id": "r86",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -9959,7 +9959,7 @@
       "month": 7,
       "year": 2026,
       "price1": 128,
-      "price2": 426,
+      "price2": 422,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -9971,7 +9971,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r145",
+      "id": "r146",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -10004,7 +10004,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r206",
+      "id": "r207",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -10037,7 +10037,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r297",
+      "id": "r298",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -10070,7 +10070,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r453",
+      "id": "r455",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -10103,7 +10103,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r509",
+      "id": "r511",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -10169,7 +10169,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r128",
+      "id": "r129",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -10202,7 +10202,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r234",
+      "id": "r235",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -10235,7 +10235,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r305",
+      "id": "r307",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -10289,7 +10289,7 @@
       "month": 7,
       "year": 2026,
       "price1": 104,
-      "price2": 428,
+      "price2": 423,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10301,7 +10301,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r480",
+      "id": "r482",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -10334,7 +10334,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r548",
+      "id": "r550",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -10367,7 +10367,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r599",
+      "id": "r601",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -10400,7 +10400,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r625",
+      "id": "r627",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -10433,7 +10433,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r657",
+      "id": "r659",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -10499,7 +10499,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r132",
+      "id": "r133",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -10532,7 +10532,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r201",
+      "id": "r202",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -10565,7 +10565,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r295",
+      "id": "r296",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -10598,7 +10598,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r318",
+      "id": "r319",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -10652,7 +10652,7 @@
       "month": 7,
       "year": 2026,
       "price1": 106,
-      "price2": 431,
+      "price2": 426,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10664,7 +10664,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r491",
+      "id": "r493",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -10697,7 +10697,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r550",
+      "id": "r552",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -10730,7 +10730,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r598",
+      "id": "r600",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -10763,7 +10763,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r670",
+      "id": "r672",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -10829,7 +10829,40 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r146",
+      "id": "r104",
+      "airline": "ryanair",
+      "from": "KRK",
+      "to": "BCN",
+      "fromCity": "Kraków",
+      "toCity": "Barcelona",
+      "flag": "🇪🇸",
+      "country": "Hiszpania",
+      "dept": "09:00",
+      "arr": "12:20",
+      "retDept": "21:00",
+      "retArr": "00:20",
+      "deptDay": "niedziela",
+      "retDay": "niedziela",
+      "dur": "3h 20m",
+      "date": "Nd, 12 Lip 2026",
+      "raw": "2026-07-12",
+      "retRaw": "2026-07-13",
+      "month": 7,
+      "year": 2026,
+      "price1": 226,
+      "price2": 494,
+      "sea": true,
+      "lgbt": true,
+      "lgbtN": "Barcelona – queer-friendly stolica Europy",
+      "distKm": 14,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true,
+      "pattern": "sun-only"
+    },
+    {
+      "id": "r147",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -10862,7 +10895,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r205",
+      "id": "r206",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -10895,7 +10928,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r292",
+      "id": "r293",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -10928,7 +10961,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r395",
+      "id": "r396",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -10949,7 +10982,7 @@
       "month": 7,
       "year": 2026,
       "price1": 156,
-      "price2": 480,
+      "price2": 476,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10961,7 +10994,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r471",
+      "id": "r473",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -10994,7 +11027,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r519",
+      "id": "r521",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -11027,7 +11060,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r607",
+      "id": "r609",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -11060,7 +11093,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r681",
+      "id": "r683",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -11093,7 +11126,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r142",
+      "id": "r144",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11126,7 +11159,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r245",
+      "id": "r246",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11159,7 +11192,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r307",
+      "id": "r308",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -11192,7 +11225,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r493",
+      "id": "r495",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -11225,7 +11258,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r623",
+      "id": "r625",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -11258,7 +11291,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r150",
+      "id": "r151",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11291,7 +11324,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r213",
+      "id": "r214",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11324,7 +11357,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r315",
+      "id": "r317",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -11390,7 +11423,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r149",
+      "id": "r150",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11423,7 +11456,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r215",
+      "id": "r216",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11456,7 +11489,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r299",
+      "id": "r300",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -11489,7 +11522,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r466",
+      "id": "r468",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -11522,7 +11555,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r540",
+      "id": "r541",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -11555,7 +11588,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r126",
+      "id": "r127",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11588,7 +11621,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r241",
+      "id": "r242",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11621,7 +11654,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r330",
+      "id": "r331",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -11654,7 +11687,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r478",
+      "id": "r480",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -11687,7 +11720,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r538",
+      "id": "r539",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -11720,7 +11753,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r157",
+      "id": "r158",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11753,7 +11786,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r224",
+      "id": "r225",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11786,7 +11819,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r309",
+      "id": "r311",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -11819,7 +11852,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r86",
+      "id": "r87",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -11852,7 +11885,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r168",
+      "id": "r169",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11885,7 +11918,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r236",
+      "id": "r237",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11918,7 +11951,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r288",
+      "id": "r289",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -11951,7 +11984,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r454",
+      "id": "r456",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -11984,7 +12017,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r511",
+      "id": "r513",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12017,7 +12050,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r130",
+      "id": "r131",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12050,7 +12083,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r301",
+      "id": "r302",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -12083,7 +12116,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r464",
+      "id": "r466",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -12116,7 +12149,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r541",
+      "id": "r542",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12182,7 +12215,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r140",
+      "id": "r142",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12215,7 +12248,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r337",
+      "id": "r338",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -12248,7 +12281,40 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r485",
+      "id": "r399",
+      "airline": "ryanair",
+      "from": "KRK",
+      "to": "STN",
+      "fromCity": "Kraków",
+      "toCity": "Londyn Stansted",
+      "flag": "🇬🇧",
+      "country": "Wielka Brytania",
+      "dept": "23:00",
+      "arr": "01:30",
+      "retDept": "11:00",
+      "retArr": "13:30",
+      "deptDay": "sobota",
+      "retDay": "niedziela",
+      "dur": "2h 30m",
+      "date": "Sb–Nd, 1–2 Sie 2026",
+      "raw": "2026-08-01",
+      "retRaw": "2026-08-04",
+      "month": 8,
+      "year": 2026,
+      "price1": 111,
+      "price2": 499,
+      "sea": false,
+      "lgbt": true,
+      "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
+      "distKm": 60,
+      "passport": true,
+      "visa": "brak",
+      "currency": "GBP £",
+      "englishOk": true,
+      "pattern": "sat-sun"
+    },
+    {
+      "id": "r487",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -12281,7 +12347,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r535",
+      "id": "r536",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12314,7 +12380,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r678",
+      "id": "r680",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -12347,7 +12413,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r147",
+      "id": "r148",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12367,8 +12433,8 @@
       "retRaw": "2026-08-03",
       "month": 8,
       "year": 2026,
-      "price1": 93,
-      "price2": 251,
+      "price1": 98,
+      "price2": 255,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -12380,7 +12446,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r225",
+      "id": "r226",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -12413,7 +12479,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r283",
+      "id": "r284",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -12446,7 +12512,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r470",
+      "id": "r472",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -12479,7 +12545,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r518",
+      "id": "r520",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12545,7 +12611,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r170",
+      "id": "r171",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12578,7 +12644,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r247",
+      "id": "r248",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -12611,7 +12677,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r336",
+      "id": "r335",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -12632,7 +12698,7 @@
       "month": 8,
       "year": 2026,
       "price1": 144,
-      "price2": 484,
+      "price2": 481,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -12665,7 +12731,7 @@
       "month": 8,
       "year": 2026,
       "price1": 182,
-      "price2": 462,
+      "price2": 448,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -12677,7 +12743,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r530",
+      "id": "r532",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12710,7 +12776,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r676",
+      "id": "r678",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -12743,7 +12809,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r158",
+      "id": "r159",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12776,7 +12842,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r218",
+      "id": "r219",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -12809,7 +12875,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r285",
+      "id": "r286",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -12842,7 +12908,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r335",
+      "id": "r336",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -12875,7 +12941,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r382",
+      "id": "r383",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -12908,7 +12974,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r532",
+      "id": "r533",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12941,7 +13007,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r138",
+      "id": "r139",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12974,7 +13040,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r216",
+      "id": "r217",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -13007,7 +13073,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r280",
+      "id": "r281",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -13040,7 +13106,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r396",
+      "id": "r397",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -13073,7 +13139,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r462",
+      "id": "r464",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -13106,7 +13172,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r508",
+      "id": "r510",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13139,7 +13205,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r153",
+      "id": "r154",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13172,7 +13238,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r390",
+      "id": "r391",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -13205,7 +13271,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r486",
+      "id": "r488",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -13238,7 +13304,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r605",
+      "id": "r607",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -13271,7 +13337,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r682",
+      "id": "r684",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -13304,7 +13370,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r169",
+      "id": "r170",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13337,7 +13403,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r244",
+      "id": "r245",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -13370,7 +13436,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r534",
+      "id": "r535",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13403,7 +13469,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r608",
+      "id": "r610",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -13436,7 +13502,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r685",
+      "id": "r687",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -13469,7 +13535,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r127",
+      "id": "r128",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13502,7 +13568,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r233",
+      "id": "r234",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -13535,7 +13601,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r463",
+      "id": "r465",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -13568,7 +13634,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r522",
+      "id": "r524",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13634,7 +13700,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r133",
+      "id": "r134",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13667,7 +13733,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r327",
+      "id": "r329",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -13700,7 +13766,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r526",
+      "id": "r528",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13733,7 +13799,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r686",
+      "id": "r688",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -13766,7 +13832,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r155",
+      "id": "r156",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13799,7 +13865,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r239",
+      "id": "r240",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -13832,7 +13898,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r319",
+      "id": "r320",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -13865,7 +13931,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r424",
+      "id": "r426",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -13898,7 +13964,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r484",
+      "id": "r486",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -13931,7 +13997,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r539",
+      "id": "r540",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13964,7 +14030,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r687",
+      "id": "r689",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -13997,7 +14063,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r171",
+      "id": "r172",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14030,7 +14096,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r243",
+      "id": "r244",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -14063,7 +14129,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r275",
+      "id": "r276",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -14096,7 +14162,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r461",
+      "id": "r463",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -14129,7 +14195,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r622",
+      "id": "r624",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -14162,7 +14228,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r134",
+      "id": "r135",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14195,7 +14261,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r248",
+      "id": "r249",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -14228,7 +14294,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r322",
+      "id": "r323",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -14261,7 +14327,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r483",
+      "id": "r485",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -14294,7 +14360,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r533",
+      "id": "r534",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -14327,7 +14393,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r684",
+      "id": "r685",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -14347,8 +14413,8 @@
       "retRaw": "2026-08-31",
       "month": 8,
       "year": 2026,
-      "price1": 358,
-      "price2": 456,
+      "price1": 353,
+      "price2": 451,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -14360,7 +14426,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r154",
+      "id": "r155",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14393,7 +14459,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r238",
+      "id": "r239",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -14426,7 +14492,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r323",
+      "id": "r325",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -14459,7 +14525,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r423",
+      "id": "r425",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -14492,7 +14558,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r473",
+      "id": "r475",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -14525,7 +14591,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r529",
+      "id": "r531",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -14558,7 +14624,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r706",
+      "id": "r708",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -14591,7 +14657,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r104",
+      "id": "r105",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -14624,7 +14690,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r141",
+      "id": "r143",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14657,7 +14723,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r235",
+      "id": "r236",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -14690,7 +14756,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r452",
+      "id": "r454",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -14723,7 +14789,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r517",
+      "id": "r519",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -14756,7 +14822,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r618",
+      "id": "r620",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -14855,7 +14921,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r135",
+      "id": "r136",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14888,7 +14954,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r296",
+      "id": "r297",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -14921,7 +14987,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r340",
+      "id": "r341",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -14954,7 +15020,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r397",
+      "id": "r398",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -14987,7 +15053,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r469",
+      "id": "r471",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -15020,7 +15086,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r523",
+      "id": "r525",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -15053,7 +15119,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r596",
+      "id": "r598",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -15086,7 +15152,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r680",
+      "id": "r682",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -15119,7 +15185,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r705",
+      "id": "r707",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -15185,7 +15251,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r172",
+      "id": "r173",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -15218,7 +15284,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r204",
+      "id": "r205",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -15251,7 +15317,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r277",
+      "id": "r278",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -15284,7 +15350,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r312",
+      "id": "r313",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -15317,7 +15383,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r476",
+      "id": "r478",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -15350,7 +15416,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r520",
+      "id": "r522",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -15383,7 +15449,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r597",
+      "id": "r599",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -15416,7 +15482,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r679",
+      "id": "r681",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -15449,7 +15515,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r707",
+      "id": "r709",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -15515,7 +15581,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r178",
+      "id": "r179",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -15548,7 +15614,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r219",
+      "id": "r220",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -15581,7 +15647,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r254",
+      "id": "r255",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -15614,7 +15680,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r394",
+      "id": "r395",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -15647,7 +15713,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r457",
+      "id": "r459",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -15680,7 +15746,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r514",
+      "id": "r516",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -15713,7 +15779,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r602",
+      "id": "r604",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -15746,7 +15812,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r683",
+      "id": "r686",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -15845,7 +15911,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r180",
+      "id": "r181",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -15878,7 +15944,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r231",
+      "id": "r232",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -15911,7 +15977,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r298",
+      "id": "r299",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -15944,7 +16010,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r331",
+      "id": "r332",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -15977,7 +16043,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r377",
+      "id": "r378",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -16010,7 +16076,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r409",
+      "id": "r411",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -16043,7 +16109,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r442",
+      "id": "r444",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -16076,7 +16142,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r489",
+      "id": "r491",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -16109,7 +16175,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r542",
+      "id": "r543",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -16142,7 +16208,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r578",
+      "id": "r580",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -16175,7 +16241,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r640",
+      "id": "r642",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -16208,7 +16274,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r701",
+      "id": "r703",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -16274,7 +16340,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r136",
+      "id": "r137",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -16307,7 +16373,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r230",
+      "id": "r231",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -16340,7 +16406,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r256",
+      "id": "r257",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -16373,7 +16439,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r341",
+      "id": "r342",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -16406,7 +16472,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r374",
+      "id": "r375",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -16439,7 +16505,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r410",
+      "id": "r412",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -16472,7 +16538,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r536",
+      "id": "r537",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -16505,7 +16571,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r583",
+      "id": "r585",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -16538,7 +16604,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r641",
+      "id": "r643",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -16571,7 +16637,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r693",
+      "id": "r695",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -16637,7 +16703,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r176",
+      "id": "r177",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -16670,7 +16736,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r232",
+      "id": "r233",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -16703,7 +16769,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r273",
+      "id": "r274",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -16736,7 +16802,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r443",
+      "id": "r445",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -16769,7 +16835,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r458",
+      "id": "r460",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -16802,7 +16868,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r503",
+      "id": "r505",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -16835,7 +16901,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r600",
+      "id": "r602",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -16868,7 +16934,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r674",
+      "id": "r676",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -16934,7 +17000,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r151",
+      "id": "r152",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -16967,7 +17033,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r249",
+      "id": "r250",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -17033,7 +17099,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r378",
+      "id": "r379",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -17066,7 +17132,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r427",
+      "id": "r429",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -17099,7 +17165,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r492",
+      "id": "r494",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -17132,7 +17198,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r543",
+      "id": "r544",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -17165,7 +17231,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r584",
+      "id": "r586",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -17198,7 +17264,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r651",
+      "id": "r653",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -17231,7 +17297,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r689",
+      "id": "r691",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -17330,7 +17396,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r131",
+      "id": "r132",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -17363,7 +17429,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r250",
+      "id": "r251",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -17396,7 +17462,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r274",
+      "id": "r275",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -17429,7 +17495,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r381",
+      "id": "r382",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -17462,7 +17528,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r414",
+      "id": "r416",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -17495,7 +17561,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r544",
+      "id": "r545",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -17528,7 +17594,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r580",
+      "id": "r582",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -17561,7 +17627,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r654",
+      "id": "r656",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -17693,7 +17759,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r137",
+      "id": "r138",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -17726,7 +17792,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r264",
+      "id": "r265",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -17759,7 +17825,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r391",
+      "id": "r393",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -17792,7 +17858,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r432",
+      "id": "r434",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -17825,7 +17891,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r460",
+      "id": "r462",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -17858,7 +17924,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r525",
+      "id": "r527",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -17891,7 +17957,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r595",
+      "id": "r597",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -17924,7 +17990,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r671",
+      "id": "r673",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -17990,7 +18056,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r162",
+      "id": "r163",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -18023,7 +18089,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r246",
+      "id": "r247",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -18056,7 +18122,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r369",
+      "id": "r370",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -18089,7 +18155,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r417",
+      "id": "r419",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -18122,7 +18188,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r433",
+      "id": "r435",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -18155,7 +18221,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r490",
+      "id": "r492",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -18188,7 +18254,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r564",
+      "id": "r566",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -18221,7 +18287,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r610",
+      "id": "r612",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -18254,7 +18320,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r659",
+      "id": "r661",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -18287,7 +18353,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r691",
+      "id": "r692",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -18320,7 +18386,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r41",
+      "id": "r42",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -18353,7 +18419,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r163",
+      "id": "r164",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -18386,7 +18452,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r242",
+      "id": "r243",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -18419,7 +18485,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r270",
+      "id": "r271",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -18452,7 +18518,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r362",
+      "id": "r363",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -18485,7 +18551,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r418",
+      "id": "r420",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -18518,7 +18584,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r524",
+      "id": "r526",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -18551,7 +18617,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r558",
+      "id": "r560",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -18584,7 +18650,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r636",
+      "id": "r638",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -18617,7 +18683,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r697",
+      "id": "r699",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -18683,7 +18749,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r177",
+      "id": "r178",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -18716,7 +18782,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r229",
+      "id": "r230",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -18749,7 +18815,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r257",
+      "id": "r258",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -18782,7 +18848,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r383",
+      "id": "r384",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -18815,7 +18881,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r428",
+      "id": "r430",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -18848,7 +18914,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r477",
+      "id": "r479",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -18881,7 +18947,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r521",
+      "id": "r523",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -18914,7 +18980,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r575",
+      "id": "r577",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -18947,7 +19013,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r648",
+      "id": "r650",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -19013,7 +19079,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r179",
+      "id": "r180",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -19046,7 +19112,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r222",
+      "id": "r223",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -19079,7 +19145,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r272",
+      "id": "r273",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -19112,7 +19178,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r339",
+      "id": "r340",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -19145,7 +19211,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r361",
+      "id": "r362",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -19178,7 +19244,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r407",
+      "id": "r409",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -19211,7 +19277,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r438",
+      "id": "r440",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -19244,7 +19310,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r481",
+      "id": "r483",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -19277,7 +19343,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r545",
+      "id": "r546",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -19310,7 +19376,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r565",
+      "id": "r567",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -19343,7 +19409,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r609",
+      "id": "r611",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -19376,7 +19442,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r663",
+      "id": "r665",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -19475,7 +19541,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r160",
+      "id": "r161",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -19508,7 +19574,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r212",
+      "id": "r213",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -19541,7 +19607,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r267",
+      "id": "r268",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -19574,7 +19640,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r366",
+      "id": "r367",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -19607,7 +19673,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r561",
+      "id": "r563",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -19640,7 +19706,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r642",
+      "id": "r644",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -19706,7 +19772,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r144",
+      "id": "r145",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -19739,7 +19805,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r203",
+      "id": "r204",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -19772,7 +19838,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r286",
+      "id": "r287",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -19805,7 +19871,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r320",
+      "id": "r321",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -19838,7 +19904,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r376",
+      "id": "r377",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -19871,7 +19937,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r429",
+      "id": "r431",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -19904,7 +19970,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r455",
+      "id": "r457",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -19937,7 +20003,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r590",
+      "id": "r592",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -19970,7 +20036,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r613",
+      "id": "r615",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -20003,7 +20069,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r649",
+      "id": "r651",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -20102,7 +20168,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r164",
+      "id": "r165",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -20135,7 +20201,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r221",
+      "id": "r222",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -20168,7 +20234,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r261",
+      "id": "r262",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -20201,7 +20267,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r329",
+      "id": "r330",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -20234,7 +20300,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r360",
+      "id": "r361",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -20267,7 +20333,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r406",
+      "id": "r408",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -20300,7 +20366,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r434",
+      "id": "r436",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -20333,7 +20399,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r551",
+      "id": "r553",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -20366,7 +20432,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r563",
+      "id": "r565",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -20399,7 +20465,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r612",
+      "id": "r614",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -20432,7 +20498,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r669",
+      "id": "r671",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -20531,7 +20597,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r165",
+      "id": "r166",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -20564,7 +20630,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r209",
+      "id": "r210",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -20597,7 +20663,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r289",
+      "id": "r290",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -20663,7 +20729,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r411",
+      "id": "r413",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -20696,7 +20762,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r555",
+      "id": "r557",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -20729,7 +20795,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r644",
+      "id": "r646",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -20861,7 +20927,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r175",
+      "id": "r176",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -20894,7 +20960,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r199",
+      "id": "r200",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -20927,7 +20993,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r271",
+      "id": "r272",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -20960,7 +21026,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r379",
+      "id": "r380",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -20993,7 +21059,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r445",
+      "id": "r447",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -21026,7 +21092,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r465",
+      "id": "r467",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -21059,7 +21125,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r581",
+      "id": "r583",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -21092,7 +21158,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r647",
+      "id": "r649",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -21191,7 +21257,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r174",
+      "id": "r175",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -21224,7 +21290,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r282",
+      "id": "r283",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -21257,7 +21323,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r332",
+      "id": "r337",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -21278,7 +21344,7 @@
       "month": 10,
       "year": 2026,
       "price1": 154,
-      "price2": 478,
+      "price2": 482,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -21290,7 +21356,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r371",
+      "id": "r372",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -21323,7 +21389,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r412",
+      "id": "r414",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -21356,7 +21422,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r435",
+      "id": "r437",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -21389,7 +21455,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r546",
+      "id": "r548",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -21422,7 +21488,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r573",
+      "id": "r575",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -21455,7 +21521,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r611",
+      "id": "r613",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -21488,7 +21554,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r643",
+      "id": "r645",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -21521,7 +21587,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r43",
+      "id": "r41",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -21541,8 +21607,8 @@
       "retRaw": "2026-10-20",
       "month": 10,
       "year": 2026,
-      "price1": 170,
-      "price2": 347,
+      "price1": 166,
+      "price2": 342,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -21620,7 +21686,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r166",
+      "id": "r167",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -21653,7 +21719,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r220",
+      "id": "r221",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -21686,7 +21752,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r276",
+      "id": "r277",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -21719,7 +21785,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r363",
+      "id": "r364",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -21752,7 +21818,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r559",
+      "id": "r561",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -21785,7 +21851,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r655",
+      "id": "r657",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -21818,7 +21884,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r42",
+      "id": "r43",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -21917,7 +21983,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r152",
+      "id": "r153",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -21950,7 +22016,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r217",
+      "id": "r218",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -21958,10 +22024,10 @@
       "toCity": "Rzym Ciampino",
       "flag": "🇮🇹",
       "country": "Włochy",
-      "dept": "09:00",
-      "arr": "11:20",
-      "retDept": "21:00",
-      "retArr": "23:20",
+      "dept": "17:00",
+      "arr": "19:20",
+      "retDept": "05:00",
+      "retArr": "07:20",
       "deptDay": "niedziela",
       "retDay": "niedziela",
       "dur": "2h 20m",
@@ -21983,7 +22049,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r279",
+      "id": "r280",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -22016,7 +22082,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r367",
+      "id": "r368",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -22049,7 +22115,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r436",
+      "id": "r438",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -22082,7 +22148,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r494",
+      "id": "r496",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -22115,7 +22181,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r582",
+      "id": "r584",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -22148,7 +22214,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r614",
+      "id": "r616",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -22181,7 +22247,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r650",
+      "id": "r652",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -22280,7 +22346,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r167",
+      "id": "r168",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -22313,7 +22379,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r227",
+      "id": "r228",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -22346,7 +22412,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r255",
+      "id": "r256",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -22379,7 +22445,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r313",
+      "id": "r315",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -22412,7 +22478,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r386",
+      "id": "r389",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -22445,7 +22511,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r437",
+      "id": "r439",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -22478,7 +22544,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r482",
+      "id": "r484",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -22511,7 +22577,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r572",
+      "id": "r574",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -22544,7 +22610,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r675",
+      "id": "r677",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -22610,7 +22676,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r156",
+      "id": "r157",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -22643,7 +22709,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r240",
+      "id": "r241",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -22676,7 +22742,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r325",
+      "id": "r328",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -22709,7 +22775,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r393",
+      "id": "r394",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -22742,7 +22808,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r570",
+      "id": "r572",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -22775,7 +22841,7 @@
       "pattern": "sat-sun"
     },
     {
-      "id": "r673",
+      "id": "r675",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -22841,7 +22907,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r181",
+      "id": "r182",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -22874,7 +22940,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r226",
+      "id": "r227",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -22907,7 +22973,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r287",
+      "id": "r288",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -22940,7 +23006,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r314",
+      "id": "r316",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -22973,7 +23039,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r380",
+      "id": "r381",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -23006,7 +23072,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r567",
+      "id": "r569",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -23039,7 +23105,7 @@
       "pattern": "sun-only"
     },
     {
-      "id": "r672",
+      "id": "r674",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -23138,7 +23204,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r148",
+      "id": "r149",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -23171,7 +23237,7 @@
       "pattern": "fri-sat"
     },
     {
-      "id": "r200",
+      "id": "r201",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -23204,7 +23270,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r294",
+      "id": "r295",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -23237,7 +23303,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r324",
+      "id": "r326",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -23270,7 +23336,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r594",
+      "id": "r596",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -23303,7 +23369,7 @@
       "pattern": "fri-sun"
     },
     {
-      "id": "r667",
+      "id": "r669",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
