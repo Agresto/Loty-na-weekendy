@@ -1,0 +1,145 @@
+name: Refresh flight prices
+
+# ═════════════════════════════════════════════════════════════════════════════
+# Codzienne odświeżanie cen lotów z Ryanair + Wizzair.
+# Wynikiem jest commit flights.json z najnowszymi cenami.
+#
+# GitHub Actions cron działa w UTC. 7:00 UTC = 8:00 CET (zima) / 9:00 CEST (lato)
+# ═════════════════════════════════════════════════════════════════════════════
+
+on:
+  # Codziennie o 7:00 UTC
+  schedule:
+    - cron: '0 7 * * *'
+
+  # Możliwość ręcznego uruchomienia z UI GitHub
+  workflow_dispatch:
+    inputs:
+      debug_mode:
+        description: 'Tryb debug (więcej logów + nie commituj wyników)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+  # Auto-uruchomienie po edycji skryptów (do testowania)
+  push:
+    paths:
+      - 'refresh-flights.js'
+      - 'generate-flights.js'
+      - '.github/workflows/refresh-flights.yml'
+
+# Pozwolenie na commit do repozytorium
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 📦 Checkout repozytorium
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js 20 (z fetch API)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🌐 Test połączenia z API (smoke test)
+        continue-on-error: true
+        run: |
+          echo "── Test Ryanair API ────────────────────────────────"
+          curl -sS -o /tmp/ry.json -w "HTTP %{http_code} | size %{size_download}B | time %{time_total}s\n" \
+            "https://www.ryanair.com/api/farfnd/v4/roundTripFares?departureAirportIataCode=KRK&arrivalAirportIataCode=STN&outboundDepartureDateFrom=2026-05-01&outboundDepartureDateTo=2026-05-31&inboundDepartureDateFrom=2026-05-01&inboundDepartureDateTo=2026-06-03&durationFrom=1&durationTo=3&outboundDepartureTimeFrom=00:00&outboundDepartureTimeTo=23:59&inboundDepartureTimeFrom=00:00&inboundDepartureTimeTo=23:59&adultPaxCount=1&teenPaxCount=0&childPaxCount=0&infantPaxCount=0&searchMode=ALL&currency=PLN&market=pl-pl" \
+            -H "accept: application/json" \
+            -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36" \
+            -H "referer: https://www.ryanair.com/pl/pl/fare-finder?originIata=KRK&destinationIata=STN" \
+            || echo "Ryanair: błąd połączenia"
+          echo "Pierwszy fragment odpowiedzi Ryanair:"
+          head -c 300 /tmp/ry.json 2>/dev/null || echo "(brak danych)"
+          echo ""
+          echo ""
+          echo "── Test Wizzair API ────────────────────────────────"
+          curl -sS -o /tmp/wz.json -w "HTTP %{http_code} | size %{size_download}B | time %{time_total}s\n" \
+            -X POST "https://be.wizzair.com/27.7.0/Api/search/search" \
+            -H "accept: application/json, text/plain, */*" \
+            -H "content-type: application/json;charset=UTF-8" \
+            -H "origin: https://wizzair.com" \
+            -H "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36" \
+            -H "referer: https://wizzair.com/pl-pl/loty/wyszukiwarka-lotow/krakow/wieden/0/0/0/1/0/0/2026-05-01/2026-05-01" \
+            -H "accept-language: pl-PL,pl;q=0.9,en;q=0.8" \
+            -d '{"isFlightChange":false,"isSeniorOrStudent":false,"flightList":[{"departureStation":"KRK","arrivalStation":"VIE","departureDate":"2026-05-01"}],"adultCount":1,"childCount":0,"infantCount":0,"wdc":false}' \
+            || echo "Wizzair: błąd połączenia"
+          echo "Pierwszy fragment odpowiedzi Wizzair:"
+          head -c 300 /tmp/wz.json 2>/dev/null || echo "(brak danych)"
+          echo ""
+
+      - name: 🔄 Pobierz najnowsze ceny lotów
+        id: refresh
+        run: node refresh-flights.js
+        env:
+          NODE_ENV: production
+
+      - name: 📊 Pokaż statystyki pliku
+        if: always()
+        run: |
+          if [ -f flights.json ]; then
+            echo "── Rozmiar i podgląd flights.json ──"
+            ls -lh flights.json
+            echo ""
+            node -e "
+              const d = require('./flights.json');
+              console.log('  Źródło:   ', d.source);
+              console.log('  Lotów:    ', d.totalCount);
+              console.log('  Ryanair:  ', d.flights.filter(f=>f.airline==='ryanair').length);
+              console.log('  Wizzair:  ', d.flights.filter(f=>f.airline==='wizzair').length);
+              console.log('  Aktualiz: ', d.lastUpdated);
+            "
+          else
+            echo "❌ Brak pliku flights.json"
+          fi
+
+      - name: 🔍 Pokaż próbki odpowiedzi API w logu
+        if: always()
+        run: |
+          if [ -f api-samples.json ]; then
+            echo "── Treść api-samples.json (pierwsze 4000 znaków) ──"
+            head -c 4000 api-samples.json
+            echo ""
+            echo "(... pełny plik dostępny w artefaktach)"
+          else
+            echo "ℹ️ Brak api-samples.json — żaden request nie został zarejestrowany"
+          fi
+
+      - name: 📤 Upload próbek odpowiedzi API (artefakt)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-samples-${{ github.run_number }}
+          path: api-samples.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: 💾 Commit i push (jeśli są zmiany)
+        if: github.event.inputs.debug_mode != 'true'
+        run: |
+          git config user.name  "Flight Bot"
+          git config user.email "bot@lotynaweekend.pl"
+          git add flights.json
+          if git diff --staged --quiet; then
+            echo "ℹ️ Brak zmian w cenach — pomijam commit"
+          else
+            COUNT=$(node -e "console.log(require('./flights.json').totalCount)")
+            SOURCE=$(node -e "console.log(require('./flights.json').source)")
+            git commit -m "🔄 Aktualizacja cen lotów ($(date -u +%Y-%m-%d) — $COUNT lotów ze źródła $SOURCE)"
+            git push
+            echo "✅ Wypchnięto zmiany do repo"
+          fi
+
+      - name: 🐛 Tryb debug — pomiń commit
+        if: github.event.inputs.debug_mode == 'true'
+        run: echo "🐛 Tryb debug aktywny — flights.json NIE został wypchnięty do repo"
