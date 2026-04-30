@@ -68,6 +68,9 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
   inboundDateTo.setDate(inboundDateTo.getDate() + 3);
   const inboundTo = inboundDateTo.toISOString().slice(0, 10);
 
+  // ⚠️ UWAGA: parametry MUSZĄ pasować do v4 roundTripFares.
+  // Niedozwolone (powodują HTTP 400): priceValueTo, outboundDepartureDaysOfWeek,
+  // limit. Filtrowanie weekendów i ceny robimy w Node.js po pobraniu danych.
   const params = new URLSearchParams({
     departureAirportIataCode:        from,
     arrivalAirportIataCode:          to,
@@ -75,19 +78,19 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
     outboundDepartureDateTo:         dateTo,
     inboundDepartureDateFrom:        dateFrom,
     inboundDepartureDateTo:          inboundTo,
-    outboundDepartureDaysOfWeek:     'FRIDAY,SATURDAY,SUNDAY',
     durationFrom:                    '1',
     durationTo:                      '3',
     outboundDepartureTimeFrom:       '00:00',
     outboundDepartureTimeTo:         '23:59',
     inboundDepartureTimeFrom:        '00:00',
     inboundDepartureTimeTo:          '23:59',
-    priceValueTo:                    String(MAX_BUDGET_RT),
     adultPaxCount:                   '1',
+    teenPaxCount:                    '0',
+    childPaxCount:                   '0',
+    infantPaxCount:                  '0',
     searchMode:                      'ALL',
     currency:                        'PLN',
     market:                          'pl-pl',
-    limit:                           '50',
   });
   const url = `https://www.ryanair.com/api/farfnd/v4/roundTripFares?${params}`;
 
@@ -103,7 +106,17 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
         'accept-language': 'pl-PL,pl;q=0.9,en;q=0.8',
       },
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    if (!res.ok) {
+      // Capture body for debugging — pomocne przy 400/403/429
+      const errBody = await res.text().catch(() => '');
+      if (!API_SAMPLES.ryanair.errorSample) {
+        API_SAMPLES.ryanair.errorSample = {
+          url, status: res.status, body: errBody.slice(0, 500),
+          capturedAt: new Date().toISOString(),
+        };
+      }
+      throw new Error(`HTTP ${res.status}`);
+    }
     const data = await res.json();
 
     // Zapisz pierwszą udaną odpowiedź jako próbkę do weryfikacji
@@ -185,9 +198,34 @@ async function fetchWizzairFares(from, to, dateFrom, dateTo) {
         body: JSON.stringify(body),
       });
 
-      if (!res.ok) throw new Error(`Wizzair HTTP ${res.status}`);
+      if (!res.ok) {
+        const errBody = await res.text().catch(() => '');
+        if (!API_SAMPLES.wizzair.errorSample) {
+          API_SAMPLES.wizzair.errorSample = {
+            url: 'https://be.wizzair.com/27.7.0/Api/search/search',
+            requestBody: body, status: res.status,
+            body: errBody.slice(0, 500),
+            capturedAt: new Date().toISOString(),
+          };
+        }
+        throw new Error(`Wizzair HTTP ${res.status}`);
+      }
 
       const data = await res.json();
+
+      // Diagnostyka: zapisz próbkę pierwszej PUSTEJ odpowiedzi z sukcesem,
+      // żeby odróżnić "API zwraca 200, ale brak lotów" od "API odpowiada błędem"
+      if (!API_SAMPLES.wizzair.emptyResponseSample &&
+          (!data.outboundFlights || data.outboundFlights.length === 0)) {
+        API_SAMPLES.wizzair.emptyResponseSample = {
+          route: `${from} → ${to}`,
+          date: chunk.from,
+          requestBody: body,
+          responseKeys: Object.keys(data),
+          responsePreview: JSON.stringify(data).slice(0, 500),
+          capturedAt: new Date().toISOString(),
+        };
+      }
 
       // Zapisz pierwszą udaną odpowiedź jako próbkę do weryfikacji
       if (!API_SAMPLES.wizzair.sampleResponse && data.outboundFlights?.length) {
@@ -202,20 +240,34 @@ async function fetchWizzairFares(from, to, dateFrom, dateTo) {
         };
       }
 
-      // Wizzair search API zwraca outboundFlights[] z fares[] na każdy lot
+      // Wizzair search API zwraca outboundFlights[] z fares[] na każdy lot.
+      //
+      // ⚠️ WAŻNE WYJAŚNIENIE FLAGI `wdc`:
+      // Wbrew pierwszej intuicji, `fare.wdc === true` NIE oznacza "to cena
+      // członkowska Wizz Discount Club". Flaga ta mówi tylko, że taryfa
+      // PODLEGA systemowi WDC — i dotyczy to praktycznie wszystkich taryf
+      // Wizzair, w tym tych standardowych w bundle BASIC.
+      //
+      // To, że pokazujemy ceny BEZ Wizz Discount Club, zapewnia parametr
+      // `wdc: false` w treści requestu — API zwraca wtedy `discountedPrice`
+      // równe `basePrice` (rabat WDC nie jest stosowany).
+      //
+      // Wybieramy więc najtańszą taryfę z bundle BASIC (najtańszy bilet
+      // dostępny dla każdego), bez filtrowania po fladze `wdc`.
       if (Array.isArray(data.outboundFlights)) {
         for (const f of data.outboundFlights) {
-          // Wybieramy NAJTAŃSZĄ taryfę BEZ Wizz Discount Club (wdc === false)
-          // Każda taryfa ma `discountedPrice.amount` (po rabatach niezwiązanych z WDC)
-          const standardFares = (f.fares || []).filter(fare => fare.wdc === false);
+          const allFares = f.fares || [];
+          if (!allFares.length) continue;
 
-          // Jeśli nie ma w ogóle taryf wdc:false, pomiń ten lot
-          // (czysto WDC-only fares — i tak nie pokazujemy)
-          if (!standardFares.length) continue;
+          // Preferuj BASIC bundle (najtańszy bilet); jeśli go nie ma,
+          // bierz najtańszą dostępną taryfę
+          const basicFares = allFares.filter(fare => fare.bundle === 'BASIC');
+          const candidates = basicFares.length ? basicFares : allFares;
 
-          // Wybieramy najtańszą z pozostałych (zwykle BASIC bundle)
-          const cheapest = standardFares.reduce((min, fare) => {
-            const p = fare.discountedPrice?.amount ?? fare.basePrice?.amount ?? Infinity;
+          // Wybieramy najtańszą — discountedPrice (po WDC), ale skoro
+          // wysłaliśmy wdc:false w request, to jest cena standardowa
+          const cheapest = candidates.reduce((min, fare) => {
+            const p    = fare.discountedPrice?.amount ?? fare.basePrice?.amount ?? Infinity;
             const minP = min.discountedPrice?.amount ?? min.basePrice?.amount ?? Infinity;
             return p < minP ? fare : min;
           });
