@@ -155,7 +155,7 @@ let FLIGHTS_META = {
 async function loadFlights() {
   try {
     // Cache buster — żeby zawsze pobrać najnowszą wersję pliku
-    const url = './data/flights.json?t=' + Date.now();
+    const url = './flights.json?t=' + Math.floor(Date.now() / 600000);
     const res = await fetch(url, { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
@@ -210,12 +210,24 @@ function updateLastUpdatedUI() {
   const el = document.getElementById('lastUpdated');
   if (!el) return;
   const ago = formatLastUpdated(FLIGHTS_META.lastUpdated);
-  const sourceIcon = FLIGHTS_META.source === 'fallback' ? '💾' : '☁️';
-  const sourceText = FLIGHTS_META.source === 'fallback'
-    ? 'tryb awaryjny'
-    : 'aktualne dane';
+  const isFallback = FLIGHTS_META.source === 'fallback' ||
+                     FLIGHTS_META.source === 'static-generator-fallback' ||
+                     FLIGHTS_META.source === 'static-generator';
+  const sourceIcon = isFallback ? '💾' : '☁️';
+  const sourceText = isFallback ? 'tryb awaryjny' : 'aktualne dane';
   el.innerHTML = `${sourceIcon} <strong>${FLIGHTS_META.totalCount}</strong> lotów · aktualizacja: <strong>${ago}</strong> · ${sourceText}`;
   el.title = `Źródło: ${FLIGHTS_META.source}\nDokładny czas: ${FLIGHTS_META.lastUpdated || 'nieznany'}`;
+
+  // Aktualizuj statystyki w hero (Bug 9)
+  const heroFlights  = document.getElementById('heroFlights');
+  const heroDests    = document.getElementById('heroDests');
+  const heroCheapest = document.getElementById('heroCheapest');
+  if (heroFlights)  heroFlights.textContent  = FLIGHTS.length.toLocaleString('pl-PL');
+  if (heroDests)    heroDests.textContent    = new Set(FLIGHTS.map(f => f.to)).size;
+  if (heroCheapest && FLIGHTS.length) {
+    const minP = Math.min(...FLIGHTS.map(f => f.price1));
+    heroCheapest.textContent = `${minP} PLN`;
+  }
 }
 
 /**
@@ -492,6 +504,14 @@ window.addEventListener('DOMContentLoaded', async () => {
   recomputeCheapest();
   updateLastUpdatedUI();
 
+  // Ustaw counter targets na podstawie rzeczywistych danych (Bug 10)
+  const cntF = document.getElementById('cntFlights');
+  const cntD = document.getElementById('cntDests');
+  const cntO = document.getElementById('cntOrigins');
+  if (cntF) cntF.dataset.target = FLIGHTS.length;
+  if (cntD) cntD.dataset.target = new Set(FLIGHTS.map(f => f.to)).size;
+  if (cntO) cntO.dataset.target = new Set(FLIGHTS.map(f => f.from)).size;
+
   // 5. Init UI
   initTicker(); initVibes(); initVibeScroll(); initMonths();
   setupOriginChips(); setupDestAC();
@@ -516,7 +536,10 @@ window.addEventListener('DOMContentLoaded', async () => {
     else clearTimeout(syncTimer);
   });
 
-  setTimeout(() => toast('info','✈','Witaj!','Sprawdź najtańsze oferty na weekendy'), 1200);
+  setTimeout(() => {
+    const ago = formatLastUpdated(FLIGHTS_META.lastUpdated);
+    toast('info','✈','Witaj!',`${FLIGHTS.length} lotów · dane z ${ago}`);
+  }, 1200);
 });
 
 /* ================================================================
@@ -690,7 +713,9 @@ async function sendWelcomeEmail(email, name) {
 async function submitNL(e) {
   e.preventDefault();
   const email  = document.getElementById('nlEmail').value.trim();
-  const origin = document.getElementById('nlOrigin').value.trim() || 'KTW';
+  const originRaw = document.getElementById('nlOrigin').value.trim();
+  const origin = AIRPORTS.find(a => a.code === originRaw.toUpperCase() ||
+                                     a.name.toLowerCase().includes(originRaw.toLowerCase()))?.code || 'KTW';
   const dest   = document.getElementById('nlDest').value.trim()   || 'Gdziekolwiek';
   const btn    = document.getElementById('nlBtn');
   const status = document.getElementById('nlStatus');
@@ -1126,7 +1151,10 @@ function parseDur(d){const m=d.match(/(\d+)h (\d+)m/);return m?+m[1]*60+ +m[2]:9
 
 function renderResults() {
   const fl=getFlights(), grid=document.getElementById('resultsGrid');
-  document.getElementById('resNum').textContent=fl.length;
+  const ryCount = fl.filter(f => f.airline === 'ryanair').length;
+  const wzCount = fl.filter(f => f.airline === 'wizzair').length;
+  document.getElementById('resNum').innerHTML =
+    `${fl.length} <span style="font-size:.75rem;opacity:.7">(🔵 ${ryCount} · 💜 ${wzCount})</span>`;
   if (!fl.length) {
     grid.innerHTML=''; grid.style.display='none'; document.getElementById('emptyDiv').style.display='block';
     let title='Nie znaleziono lotów', msg='Zmień kryteria lub zwiększ budżet.';
@@ -1498,6 +1526,72 @@ function showCTT(e,name,fi){const tt=document.getElementById('mapTt'),r=document
 function showATT(e,a,f){const tt=document.getElementById('mapTt'),r=document.getElementById('worldMap').getBoundingClientRect();tt.innerHTML=`<div class="map-tt-name">${a.flag} ${a.name}</div>${f?`<div class="map-tt-price">od ${f.price1} PLN</div><div class="map-tt-sub">${f.from} → ${a.code}</div>`:`<div class="map-tt-sub">${a.country}</div>`}`;tt.classList.add('vis');tt.style.left=(e.clientX-r.left+12)+'px';tt.style.top=Math.max(8,e.clientY-r.top-52)+'px';}
 function hideTT(){document.getElementById('mapTt').classList.remove('vis');}
 function goToMap(code,name){document.getElementById('destIn').value=`${name} (${code})`;S.destFilter=code.toLowerCase();showDestBadge(name);document.getElementById('search').scrollIntoView({behavior:'smooth'});}
+
+/* ================================================================
+   SEKCJA 13b: PANEL WERYFIKACJI CEN
+   Pozwala szybko porównać cenę z flights.json z tym, co pokazuje
+   ryanair.com / wizzair.com (Wizzair: ceny BEZ Wizz Discount Club).
+================================================================ */
+function openVerifyPanel() {
+  const panel = document.getElementById('verifyPanel');
+  if (!panel) return;
+  panel.style.display = 'block';
+  pickRandomFlightForVerify();
+  panel.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function closeVerifyPanel() {
+  const panel = document.getElementById('verifyPanel');
+  if (panel) panel.style.display = 'none';
+}
+function pickRandomFlightForVerify() {
+  const content = document.getElementById('verifyContent');
+  if (!content || !FLIGHTS.length) {
+    if (content) content.innerHTML = '<p style="color:var(--text-muted)">Brak lotów w bazie.</p>';
+    return;
+  }
+  const f = FLIGHTS[Math.floor(Math.random() * FLIGHTS.length)];
+  // Build verification URL identical to what we used for the buy buttons
+  const carrierUrl  = buildFlightUrl(f.airline, f.from, f.to, f.raw);
+  const fareFinderUrl = f.airline === 'ryanair'
+    ? `https://www.ryanair.com/pl/pl/fare-finder?originIata=${f.from}&destinationIata=${f.to}&isReturn=true&adults=1&dateOut=${f.raw}&dateIn=${f.retRaw}&daysTrip=2&nightsFrom=1&nightsTo=3&dayOfWeek=FRIDAY,SATURDAY,SUNDAY&isFlexibleDay=true`
+    : `https://www.wizzair.com/pl-pl/loty/wyszukiwarka-lotow/${f.from.toLowerCase()}/${f.to.toLowerCase()}/0/0/0/1/0/0/${f.raw}/${f.retRaw}?flexible=anytime&duration=weekend`;
+  const airlineLbl = f.airline === 'ryanair' ? '🔵 Ryanair' : '💜 Wizzair';
+  const note = f.airline === 'wizzair'
+    ? '<p style="font-size:.78rem;color:var(--color-accent);margin-top:6px">⚠ Na stronie Wizzair przełącz widok na <strong>Ceny standardowe</strong> (nie Wizz Discount Club).</p>'
+    : '';
+
+  content.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--bg-glass);padding:14px;border-radius:8px">
+      <div>
+        <div style="font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px">Trasa (${airlineLbl})</div>
+        <div style="font-size:1rem;font-weight:600;margin-top:4px">${f.fromCity} → ${f.toCity}</div>
+        <div style="font-size:.78rem;color:var(--text-secondary)">${f.from} → ${f.to}</div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px">Termin</div>
+        <div style="font-size:1rem;margin-top:4px">${f.date}</div>
+        <div style="font-size:.78rem;color:var(--text-secondary)">${f.raw} ⇄ ${f.retRaw}</div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px">Cena 1 strona</div>
+        <div style="font-size:1.3rem;font-weight:700;color:var(--color-accent);margin-top:4px">${f.price1} PLN</div>
+      </div>
+      <div>
+        <div style="font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px">Cena R/T</div>
+        <div style="font-size:1.3rem;font-weight:700;color:var(--color-accent);margin-top:4px">${f.price2} PLN</div>
+      </div>
+    </div>
+    ${note}
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+      <a href="${fareFinderUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="flex:1;justify-content:center;text-decoration:none">
+        🔎 Sprawdź na stronie linii
+      </a>
+      <a href="${carrierUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="flex:1;justify-content:center;text-decoration:none">
+        🎫 Otwórz konkretny lot
+      </a>
+    </div>
+  `;
+}
 
 /* ================================================================
    SEKCJA 14: ULUBIONE LOTNISKO

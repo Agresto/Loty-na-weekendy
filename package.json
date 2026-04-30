@@ -1,6 +1,6 @@
 {
   "name": "loty-na-weekend",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "description": "Polska porównywarka tanich lotów weekendowych — Ryanair + Wizzair",
   "type": "commonjs",
@@ -8,10 +8,10 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "generate": "node scripts/generate-flights.js",
-    "refresh":  "node scripts/refresh-flights.js",
+    "generate": "node generate-flights.js",
+    "refresh":  "node refresh-flights.js",
     "serve":    "python3 -m http.server 8080",
-    "test":     "node --check app.js && node --check scripts/generate-flights.js && node --check scripts/refresh-flights.js && echo '✅ All JS files OK'"
+    "test":     "node --check app.js && node --check generate-flights.js && node --check refresh-flights.js && echo '✅ All JS files OK'"
   },
   "keywords": ["ryanair", "wizzair", "loty", "weekend", "porownywarka"],
   "author": "Agnes",

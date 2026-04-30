@@ -1,0 +1,17 @@
+# Klucze i sekrety
+firebase-config.local.js
+.env
+.env.local
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Edytory
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logi
+*.log

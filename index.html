@@ -44,9 +44,9 @@
     <h1 class="hero-title">Najtańsze loty<br>na <span class="lg">weekend</span></h1>
     <div class="tw-wrap" aria-live="polite"><span class="tw-text" id="twEl"></span></div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">2&nbsp;847</div><div class="hero-stat-lbl">Lotów weekendowych</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">94</div><div class="hero-stat-lbl">Destynacji</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">149 PLN</div><div class="hero-stat-lbl">Najtańszy lot dziś</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="heroFlights">–</div><div class="hero-stat-lbl">Lotów weekendowych</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="heroDests">–</div><div class="hero-stat-lbl">Destynacji</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="heroCheapest">–</div><div class="hero-stat-lbl">Najtańszy lot dziś</div></div>
     </div>
     <div class="hero-cta">
       <a href="#search" class="btn btn-accent btn-lg">🔍 Znajdź lot</a>
@@ -60,9 +60,9 @@
   <div class="sec-inner">
     <div class="counter-wrap">
       <div class="counter-grid">
-        <div><span class="counter-num" data-target="2847">0</span><div class="counter-lbl">Lotów w bazie</div></div>
-        <div><span class="counter-num" data-target="94">0</span><div class="counter-lbl">Destynacji</div></div>
-        <div><span class="counter-num" data-target="18">0</span><div class="counter-lbl">Lotnisk startowych</div></div>
+        <div><span class="counter-num" id="cntFlights" data-target="0">0</span><div class="counter-lbl">Lotów w bazie</div></div>
+        <div><span class="counter-num" id="cntDests" data-target="0">0</span><div class="counter-lbl">Destynacji</div></div>
+        <div><span class="counter-num" id="cntOrigins" data-target="0">0</span><div class="counter-lbl">Lotnisk startowych</div></div>
         <div><span class="counter-num" data-target="1243">0</span><div class="counter-lbl">Zapisanych alertów</div></div>
       </div>
     </div>
@@ -116,14 +116,6 @@
             <input type="text" id="destIn" class="form-input" placeholder="Gdziekolwiek, Barcelona..." autocomplete="off" />
             <div id="destDrop" class="ac-drop" role="listbox"></div>
           </div>
-        </div>
-        <div class="form-group">
-          <label class="form-lbl" for="currSel">Waluta</label>
-          <select id="currSel" class="form-input">
-            <option value="PLN" selected>🇵🇱 PLN</option>
-            <option value="EUR">🇪🇺 EUR</option>
-            <option value="GBP">🇬🇧 GBP</option>
-          </select>
         </div>
       </div>
       <div style="margin-bottom:20px">
@@ -181,10 +173,29 @@
     <h2 class="sec-title" style="margin-bottom:8px">Wyniki wyszukiwania</h2>
     <!-- Last-updated bar — pokazuje liczbę lotów i czas ostatniej aktualizacji -->
     <div class="last-updated-bar">
-      <span id="lastUpdated" title="Klika by zobaczyć szczegóły źródła">💾 Ładowanie danych...</span>
+      <span id="lastUpdated" title="Kliknij, aby zweryfikować zgodność cen z linią lotniczą" style="cursor:pointer" onclick="openVerifyPanel()">💾 Ładowanie danych...</span>
       <button id="refreshBtn" class="btn-refresh" type="button"
               title="Pobierz najnowsze loty z serwera"
               aria-label="Odśwież listę lotów">🔄 Odśwież</button>
+    </div>
+    <!-- Panel weryfikacji cen (rozwijany po kliknięciu paska statusu) -->
+    <div id="verifyPanel" style="display:none;background:var(--bg-glass);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:18px 22px;margin:12px 0 22px;font-size:.86rem">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <strong style="font-size:.95rem">🔍 Weryfikacja zgodności cen</strong>
+        <button onclick="closeVerifyPanel()" style="margin-left:auto;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem">✕</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-bottom:14px;line-height:1.5">
+        Wybierz losowy lot z bazy. Skopiuj cenę z naszej aplikacji i kliknij przycisk
+        "Sprawdź na stronie linii", aby otworzyć tę samą trasę na ryanair.com lub
+        wizzair.com (Wizzair: <strong>Ceny standardowe</strong>, bez Wizz Discount Club).
+        Jeżeli kwoty się nie zgadzają o więcej niż kilka złotych, zgłoś to.
+      </p>
+      <div id="verifyContent" style="display:flex;flex-direction:column;gap:12px"></div>
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <button class="btn btn-ghost" onclick="pickRandomFlightForVerify()" style="flex:1;justify-content:center">
+          🎲 Wylosuj inny lot
+        </button>
+      </div>
     </div>
     <div class="results-bar">
       <div class="results-count">Znaleziono <span id="resNum">0</span> lotów</div>
