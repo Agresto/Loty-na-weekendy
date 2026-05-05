@@ -1239,41 +1239,49 @@ function formatDateShort(raw) {
  * @param {string} date     — data w formacie YYYY-MM-DD
  * @returns {string}        — pełny URL gotowy do href
  */
-function buildFlightUrl(airline, from, to, date) {
+function buildFlightUrl(airline, from, to, date, retDate) {
   // Walidacja wejścia — zabezpieczenie przed nieprawidłowymi danymi.
   // Fallback do strony głównej linii jeśli dane są niepoprawne.
   if (!from || !to || !date) {
-    console.error('[buildFlightUrl] Brak wymaganych parametrów:', {airline, from, to, date});
+    console.error('[buildFlightUrl] Brak wymaganych parametrów:', {airline, from, to, date, retDate});
     return airline === 'ryanair' ? 'https://www.ryanair.com/pl/pl' : 'https://www.wizzair.com/pl-pl';
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     console.error('[buildFlightUrl] Zły format daty (oczekiwane YYYY-MM-DD):', date);
     return airline === 'ryanair' ? 'https://www.ryanair.com/pl/pl' : 'https://www.wizzair.com/pl-pl';
   }
-  const fromU = from.toUpperCase(), toU = to.toUpperCase();
+  const fromU = from.toUpperCase();
+  const toU = to.toUpperCase();
 
   if (airline === 'ryanair') {
-    // Format zweryfikowany na ryanair.com — kolejność i nazwy parametrów
-    // dokładnie jak w URL-ach generowanych przez ich własną stronę.
     const params = new URLSearchParams([
-      ['adults', '1'], ['teens', '0'], ['children', '0'], ['infants', '0'],
-      ['dateOut', date],
-      ['isConnectedFlight', 'false'],
-      ['isReturn', 'false'],
-      ['discount', '0'],
       ['originIata', fromU], ['destinationIata', toU],
-      // Trip parameters (tp*) — wymagane przez Ryanair SPA do hydration
-      ['tpAdults', '1'], ['tpTeens', '0'], ['tpChildren', '0'], ['tpInfants', '0'],
-      ['tpStartDate', date],
-      ['tpDiscount', '0'],
-      ['tpOriginIata', fromU], ['tpDestinationIata', toU],
+      ['adults', '1'], ['children', '0'], ['teens', '0'], ['infants', '0'],
+      ['currency', 'PLN'], ['market', 'pl-pl'],
+      ['dateOut', date],
+      ['isFlexibleDay', 'true'],
+      ['dayOfWeek', 'FRIDAY,SATURDAY,SUNDAY'],
+      ['isReturn', retDate ? 'true' : 'false'],
     ]);
-    return `https://www.ryanair.com/pl/pl/trip/flights/select?${params.toString()}`;
+
+    if (retDate) {
+      params.append('dateIn', retDate);
+      params.append('daysTrip', '2');
+      params.append('nightsFrom', '1');
+      params.append('nightsTo', '3');
+    }
+
+    return `https://www.ryanair.com/pl/pl/fare-finder?${params.toString()}`;
   }
 
-  // Wizzair — REST URL (stabilny format, z prefiksem www.)
-  // /select-flight/{FROM}/{TO}/{DATE}/{DATE_IN}/{ADU}/{CHI}/{INF}/{PROMO}
-  return `https://www.wizzair.com/pl-pl/booking/select-flight/${fromU}/${toU}/${date}/null/1/0/0/null`;
+  if (airline === 'wizzair') {
+    if (retDate) {
+      return `https://www.wizzair.com/pl-pl/loty/wyszukiwarka-lotow/${fromU.toLowerCase()}/${toU.toLowerCase()}/0/0/0/1/0/0/${date}/${retDate}?flexible=anytime&duration=weekend`;
+    }
+    return `https://www.wizzair.com/pl-pl/booking/select-flight/${fromU}/${toU}/${date}/null/1/0/0/null`;
+  }
+
+  return airline === 'ryanair' ? 'https://www.ryanair.com/pl/pl' : 'https://www.wizzair.com/pl-pl';
 }
 
 function cardHTML(f, i) {
@@ -1288,9 +1296,13 @@ function cardHTML(f, i) {
 
   // ── Deep-linki do zakupu biletów ──────────────────────────────────────────
   // Wylot: od lotniska startowego do docelowego, na datę wylotu
-  const urlOut = buildFlightUrl(f.airline, f.from, f.to, f.raw);
+  const urlOut = S.roundtrip
+    ? buildFlightUrl(f.airline, f.from, f.to, f.raw, f.retRaw)
+    : buildFlightUrl(f.airline, f.from, f.to, f.raw);
   // Powrót: od lotniska docelowego z powrotem do startowego, na datę powrotu
-  const urlRet = buildFlightUrl(f.airline, f.to, f.from, f.retRaw);
+  const urlRet = S.roundtrip
+    ? buildFlightUrl(f.airline, f.from, f.to, f.raw, f.retRaw)
+    : buildFlightUrl(f.airline, f.to, f.from, f.retRaw);
 
   // Etykiety przycisków z datą i godziną wylotu — żeby użytkownik wiedział
   // który lot wybrać po otwarciu strony linii
@@ -1554,7 +1566,7 @@ function pickRandomFlightForVerify() {
   }
   const f = FLIGHTS[Math.floor(Math.random() * FLIGHTS.length)];
   // Build verification URL identical to what we used for the buy buttons
-  const carrierUrl  = buildFlightUrl(f.airline, f.from, f.to, f.raw);
+  const carrierUrl = buildFlightUrl(f.airline, f.from, f.to, f.raw, f.retRaw);
   const fareFinderUrl = f.airline === 'ryanair'
     ? `https://www.ryanair.com/pl/pl/fare-finder?originIata=${f.from}&destinationIata=${f.to}&isReturn=true&adults=1&dateOut=${f.raw}&dateIn=${f.retRaw}&daysTrip=2&nightsFrom=1&nightsTo=3&dayOfWeek=FRIDAY,SATURDAY,SUNDAY&isFlexibleDay=true`
     : `https://www.wizzair.com/pl-pl/loty/wyszukiwarka-lotow/${f.from.toLowerCase()}/${f.to.toLowerCase()}/0/0/0/1/0/0/${f.raw}/${f.retRaw}?flexible=anytime&duration=weekend`;

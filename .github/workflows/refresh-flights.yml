@@ -5,7 +5,7 @@ name: Refresh flight prices
 #
 # Dwa tryby:
 #   self-hosted  → Playwright aktywny → Wizzair: prawdziwe ceny
-#   ubuntu-latest → Playwright brak  → Wizzair: generator statyczny + ⚡
+#   ubuntu-latest → Playwright instalowany → Wizzair: prawdziwe ceny (jeśli dostępny)
 #
 # Jak skonfigurować self-hosted runner:
 #   1. Settings → Actions → Runners → New self-hosted runner
@@ -123,11 +123,11 @@ jobs:
             echo "✅ Wypchnięto zmiany"
           fi
 
-  # ─── Job 2: GitHub hosted runner (fallback bez Wizzaira) ─────────────────
+  # ─── Job 2: GitHub hosted runner (instalacja Playwright, Wizzair live) ───
   refresh:
-    name: refresh (GitHub hosted)
+    name: Refresh flight prices
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     # Uruchamia się gdy brak self-hosted runnera
     if: ${{ vars.USE_SELF_HOSTED_RUNNER != 'true' }}
 
@@ -139,6 +139,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: 📦 Install dependencies
+        run: |
+          npm ci
+          npx playwright install chromium
 
       - name: 🌐 Test połączenia z API (smoke test)
         run: |

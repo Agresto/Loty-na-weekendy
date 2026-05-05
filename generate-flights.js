@@ -24,6 +24,111 @@
 
 const fs = require('fs');
 const path = require('path');
+const { chromium } = require('playwright');
+
+function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
+
+async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) {
+  const context = await browser.newContext({
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    locale:    'pl-PL',
+    viewport:  { width: 1280, height: 800 },
+    extraHTTPHeaders: {
+      'accept-language': 'pl-PL,pl;q=0.9,en;q=0.8',
+    },
+  });
+
+  const collectedFlights = [];
+  let requestDone = false;
+
+  // Przechwytuj odpowiedzi z search API
+  context.on('response', async (response) => {
+    const url = response.url();
+    if (!url.includes('/Api/search/search')) return;
+    if (response.status() !== 200) return;
+
+    try {
+      const data = await response.json();
+      if (Array.isArray(data.outboundFlights)) {
+        collectedFlights.push(...data.outboundFlights);
+      }
+      requestDone = true;
+    } catch {}
+  });
+
+  const page = await context.newPage();
+
+  try {
+    // 1. Wejdź na stronę Wizzair (żeby zdobyć cookies/session)
+    await page.goto('https://wizzair.com/pl-pl', {
+      waitUntil: 'domcontentloaded',
+      timeout:   15000,
+    });
+
+    // 2. Małe opóźnienie — daj Cloudflare czas na ocenę
+    await sleep(1500);
+
+    // 3. Zrób request timetable przez fetch wewnątrz strony (ten sam kontekst = te same cookies)
+    const body = JSON.stringify({
+      flightList: [{ departureStation: from, arrivalStation: to, from: dateFrom, to: dateTo }],
+      priceType:   'regular',
+      adultCount:  1,
+      childCount:  0,
+      infantCount: 0,
+    });
+
+    // Wykryj aktualną wersję API ze strony (lub użyj ostatniej znanych)
+    const apiVersion = await page.evaluate(async (bodyStr) => {
+      // Spróbuj znaleźć wersję API w window.__NUXT__ lub meta tagach
+      try {
+        const meta = document.querySelector('meta[name="api-version"]');
+        if (meta) return meta.content;
+      } catch {}
+      return '30.0.0';
+    }, body);
+
+    // 4. Wykonaj request timetable wewnątrz kontekstu przeglądarki
+    const result = await page.evaluate(async ({ from, to, dateFrom, dateTo, apiVersion }) => {
+      const body = JSON.stringify({
+        flightList: [{ departureStation: from, arrivalStation: to, from: dateFrom, to: dateTo }],
+        priceType:   'regular',
+        adultCount:  1,
+        childCount:  0,
+        infantCount: 0,
+      });
+
+      try {
+        const res = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
+          method:  'POST',
+          headers: {
+            'content-type':    'application/json;charset=UTF-8',
+            'accept':          'application/json, text/plain, */*',
+            'origin':          'https://wizzair.com',
+            'referer':         'https://wizzair.com/pl-pl/flights/timetable',
+            'x-requestedwith': 'XMLHttpRequest',
+          },
+          body,
+        });
+
+        if (!res.ok) return { error: `HTTP ${res.status}`, flights: [] };
+        const data = await res.json();
+        return { flights: data.outboundFlights || [] };
+      } catch (e) {
+        return { error: e.message, flights: [] };
+      }
+    }, { from, to, dateFrom, dateTo, apiVersion });
+
+    if (result.error && result.flights.length === 0) {
+      throw new Error(result.error);
+    }
+
+    return result.flights;
+
+  } finally {
+    await page.close().catch(() => {});
+    await context.close().catch(() => {});
+  }
+}
 
 const MAX_BUDGET_RT = 500; // Maksymalna cena w obie strony (PLN)
 
@@ -255,9 +360,12 @@ function fmtDuration(min) {
 // ═════════════════════════════════════════════════════════════════════════════
 // GENERATOR LOTÓW
 // ═════════════════════════════════════════════════════════════════════════════
-function generateFlights(today = new Date()) {
+async function generateFlights(today = new Date()) {
   const flights = [];
   const dates = generateWeekendDates(today, 12);
+
+  const browser = await chromium.launch({ headless: true });
+  try {
 
   let id = 1;
   for (const route of ROUTES) {
@@ -266,10 +374,34 @@ function generateFlights(today = new Date()) {
     const destInfo = DESTS[dest];
     if (!origInfo || !destInfo) continue;
 
-    const pickedDates = pickDatesForRoute(dates, origin + dest, 5);
+    const pickedDates = pickDatesForRoute(dates, origin + dest, 2);
 
     for (const dInfo of pickedDates) {
-      const p1 = adjustPrice(basePrice, dInfo.raw, dInfo.pattern);
+      const threeMonthsFromNow = new Date(Date.now() + 6 * 30 * 24 * 60 * 60 * 1000);
+      const isNearFuture = new Date(dInfo.raw) <= threeMonthsFromNow;
+      await sleep(5000);
+      let p1;
+      if (airline === 'wizzair' && isNearFuture) {
+        try {
+          const outboundFlights = await fetchWizzairFaresPlaywright(browser, origin, dest, dInfo.raw, dInfo.retRaw !== dInfo.raw ? dInfo.retRaw : addDays(new Date(dInfo.raw), 1).toISOString().slice(0,10));
+          if (outboundFlights.length === 0) throw new Error('No flights');
+          const minOutbound = Math.min(...outboundFlights.map(f => f.price.amount));
+
+          let minReturn = 0;
+          if (dInfo.retRaw !== dInfo.raw) {
+            const returnFlights = await fetchWizzairFaresPlaywright(browser, dest, origin, dInfo.retRaw, addDays(new Date(dInfo.retRaw), 1).toISOString().slice(0,10));
+            if (returnFlights.length === 0) throw new Error('No return flights');
+            minReturn = Math.min(...returnFlights.map(f => f.price.amount));
+          }
+
+          p1 = minOutbound + minReturn;
+        } catch (e) {
+          console.warn(`Using static price for Wizzair ${origin}-${dest} on ${dInfo.raw}: ${e.message}`);
+          p1 = adjustPrice(basePrice, dInfo.raw, dInfo.pattern);
+        }
+      } else {
+        p1 = adjustPrice(basePrice, dInfo.raw, dInfo.pattern);
+      }
       const p2 = Math.round(p1 * 1.7);
       if (p2 > MAX_BUDGET_RT) continue;
 
@@ -318,6 +450,9 @@ function generateFlights(today = new Date()) {
 
   flights.sort((a, b) => a.raw.localeCompare(b.raw));
   return flights;
+  } finally {
+    await browser.close();
+  }
 }
 
 function pickDatesForRoute(allDates, routeKey, count) {
@@ -365,13 +500,13 @@ function simpleHash(s) {
 // ═════════════════════════════════════════════════════════════════════════════
 // MAIN — generuj i zapisz JSON
 // ═════════════════════════════════════════════════════════════════════════════
-function main() {
+async function main() {
   const today = new Date();
-  const flights = generateFlights(today);
+  const flights = await generateFlights(today);
 
   const output = {
     lastUpdated: today.toISOString(),
-    source:      'static-generator',
+    source:      'ryanair-static+wizzair-live-fallback',
     maxBudgetRT: MAX_BUDGET_RT,
     totalCount:  flights.length,
     flights:     flights,

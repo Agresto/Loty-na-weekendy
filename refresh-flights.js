@@ -28,7 +28,7 @@ const MAX_BUDGET_RT = 500;
 const MONTHS_AHEAD  = 6;
 const MAX_RETRY     = 2;
 const TIMEOUT_MS    = 20000;
-const WZ_DELAY      = 1200;  // ms między requestami Wizzair (ważne — ostrożnie)
+const WZ_DELAY      = 5000;  // ms między requestami Wizzair (ważne — ostrożnie)
 
 // ─── pomocnicze ───────────────────────────────────────────────────────────────
 function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
@@ -130,10 +130,10 @@ async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) 
   const collectedFlights = [];
   let requestDone = false;
 
-  // Przechwytuj odpowiedzi z timetable API
+  // Przechwytuj odpowiedzi z search API
   context.on('response', async (response) => {
     const url = response.url();
-    if (!url.includes('/Api/search/timetable')) return;
+    if (!url.includes('/Api/search/search')) return;
     if (response.status() !== 200) return;
 
     try {
@@ -173,7 +173,7 @@ async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) 
         const meta = document.querySelector('meta[name="api-version"]');
         if (meta) return meta.content;
       } catch {}
-      return '27.7.0';
+      return '30.0.0';
     }, body);
 
     // 4. Wykonaj request timetable wewnątrz kontekstu przeglądarki
@@ -187,7 +187,7 @@ async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) 
       });
 
       try {
-        const res = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/timetable`, {
+        const res = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
           method:  'POST',
           headers: {
             'content-type':    'application/json;charset=UTF-8',
@@ -486,6 +486,8 @@ async function fetchRealFlights() {
       if (!origInfo || !destInfo) continue;
 
       process.stdout.write(`[${i+1}/${wRoutes.length}] W ${from}→${to}... `);
+
+      await sleep(WZ_DELAY);
 
       let rawFlights = [];
       try {

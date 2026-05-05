@@ -9,11 +9,20 @@
   },
   "scripts": {
     "generate": "node generate-flights.js",
-    "refresh":  "node refresh-flights.js",
-    "serve":    "python3 -m http.server 8080",
-    "test":     "node --check app.js && node --check generate-flights.js && node --check refresh-flights.js && echo '✅ All JS files OK'"
+    "refresh": "node refresh-flights.js",
+    "serve": "python3 -m http.server 8080",
+    "test": "node --check app.js && node --check generate-flights.js && node --check refresh-flights.js && echo '✅ All JS files OK'"
   },
-  "keywords": ["ryanair", "wizzair", "loty", "weekend", "porownywarka"],
+  "keywords": [
+    "ryanair",
+    "wizzair",
+    "loty",
+    "weekend",
+    "porownywarka"
+  ],
   "author": "Agnes",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.59.1"
+  }
 }

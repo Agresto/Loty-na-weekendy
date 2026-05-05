@@ -1,0 +1,107 @@
+{
+  "capturedAt": "2026-05-05T14:34:37.973Z",
+  "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
+  "ryanair": {
+    "url": "https://www.ryanair.com/api/farfnd/v4/roundTripFares?...KTW→ALC",
+    "status": 200,
+    "sampleResponse": {
+      "route": "KTW → ALC",
+      "firstFare": {
+        "outbound": {
+          "departureAirport": {
+            "countryName": "Polska",
+            "iataCode": "KTW",
+            "name": "Katowice",
+            "seoName": "katowice",
+            "city": {
+              "code": "KATOWICE",
+              "countryCode": "pl",
+              "name": "Katowice"
+            }
+          },
+          "arrivalAirport": {
+            "countryName": "Hiszpania",
+            "iataCode": "ALC",
+            "name": "Alicante",
+            "seoName": "alicante",
+            "city": {
+              "code": "ALICANTE",
+              "countryCode": "es",
+              "name": "Alicante"
+            }
+          },
+          "departureDate": "2026-05-18T18:15:00",
+          "arrivalDate": "2026-05-18T21:35:00",
+          "price": {
+            "value": 113.26,
+            "valueMainUnit": "113",
+            "valueFractionalUnit": "26",
+            "currencyCode": "PLN",
+            "currencySymbol": "zł"
+          },
+          "flightKey": "FR~3950~ ~~KTW~05/18/2026 18:15~ALC~05/18/2026 21:35~~",
+          "flightNumber": "FR3950",
+          "previousPrice": null,
+          "priceUpdated": 1777976563000
+        },
+        "inbound": {
+          "departureAirport": {
+            "countryName": "Hiszpania",
+            "iataCode": "ALC",
+            "name": "Alicante",
+            "seoName": "alicante",
+            "city": {
+              "code": "ALICANTE",
+              "countryCode": "es",
+              "name": "Alicante"
+            }
+          },
+          "arrivalAirport": {
+            "countryName": "Polska",
+            "iataCode": "KTW",
+            "name": "Katowice",
+            "seoName": "katowice",
+            "city": {
+              "code": "KATOWICE",
+              "countryCode": "pl",
+              "name": "Katowice"
+            }
+          },
+          "departureDate": "2026-05-21T05:50:00",
+          "arrivalDate": "2026-05-21T08:55:00",
+          "price": {
+            "value": 119,
+            "valueMainUnit": "119",
+            "valueFractionalUnit": "00",
+            "currencyCode": "PLN",
+            "currencySymbol": "zł"
+          },
+          "flightKey": "FR~3597~ ~~ALC~05/21/2026 05:50~KTW~05/21/2026 08:55~~",
+          "flightNumber": "FR3597",
+          "previousPrice": null,
+          "priceUpdated": 1777983556000
+        },
+        "summary": {
+          "price": {
+            "value": 232.26,
+            "valueMainUnit": "232",
+            "valueFractionalUnit": "26",
+            "currencyCode": "PLN",
+            "currencySymbol": "zł"
+          },
+          "previousPrice": null,
+          "newRoute": false,
+          "tripDurationDays": 3
+        }
+      },
+      "totalFares": 132,
+      "capturedAt": "2026-05-05T14:34:37.973Z"
+    }
+  },
+  "wizzair": {
+    "url": null,
+    "status": null,
+    "sampleResponse": null,
+    "strategy": null
+  }
+}
