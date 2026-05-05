@@ -28,10 +28,14 @@ const MAX_BUDGET_RT = 500;
 const MONTHS_AHEAD  = 6;
 const MAX_RETRY     = 2;
 const TIMEOUT_MS    = 20000;
-const WZ_DELAY      = 5000;  // ms między requestami Wizzair (ważne — ostrożnie)
+const WZ_DELAY      = 15000;  // ms między requestami Wizzair — ZWIĘKSZONE z 5000ms
 
 // ─── pomocnicze ───────────────────────────────────────────────────────────────
 function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
+function addJitter(ms, percent = 10) {
+  const jitter = Math.random() * (ms * percent / 100) - (ms * percent / 200);
+  return Math.max(100, ms + jitter);
+}
 function isoDate(d)  { return d.toISOString().slice(0, 10); }
 function todayStr()  { return isoDate(new Date()); }
 

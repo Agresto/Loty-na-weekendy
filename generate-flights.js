@@ -27,6 +27,61 @@ const path = require('path');
 const { chromium } = require('playwright');
 
 function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
+function addJitter(ms, percent = 10) {
+  const jitter = Math.random() * (ms * percent / 100) - (ms * percent / 200);
+  return Math.max(100, ms + jitter);
+}
+
+// Retry z exponential backoff dla HTTP 429
+async function fetchWithRetry(page, url, body, maxRetries = 3) {
+  let lastError = null;
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      const res = await page.evaluate(
+        async ({ url, body }) => {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json;charset=UTF-8',
+              'accept': 'application/json, text/plain, */*',
+              'origin': 'https://wizzair.com',
+              'referer': 'https://wizzair.com/pl-pl/flights/timetable',
+              'x-requestedwith': 'XMLHttpRequest',
+            },
+            body,
+          });
+          const text = await response.text();
+          return { status: response.status, text };
+        },
+        { url, body }
+      );
+
+      if (res.status === 429) {
+        // Rate limited — czekaj z exponential backoff
+        const waitTime = Math.pow(2, attempt) * 5000;
+        console.warn(`  [Retry ${attempt + 1}/${maxRetries}] HTTP 429, czekam ${waitTime}ms...`);
+        await sleep(waitTime);
+        lastError = `HTTP 429 (attempt ${attempt + 1})`;
+        continue;
+      }
+
+      if (res.status !== 200) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+
+      const data = JSON.parse(res.text);
+      return { flights: data.outboundFlights || [] };
+    } catch (e) {
+      lastError = e.message;
+      if (attempt < maxRetries - 1) {
+        const waitTime = Math.pow(2, attempt) * 2000;
+        console.warn(`  [Retry ${attempt + 1}/${maxRetries}] ${e.message}, czekam ${waitTime}ms...`);
+        await sleep(waitTime);
+      }
+    }
+  }
+  throw new Error(lastError || 'Unknown error in fetchWithRetry');
+}
 
 async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) {
   const context = await browser.newContext({
@@ -36,24 +91,6 @@ async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) 
     extraHTTPHeaders: {
       'accept-language': 'pl-PL,pl;q=0.9,en;q=0.8',
     },
-  });
-
-  const collectedFlights = [];
-  let requestDone = false;
-
-  // Przechwytuj odpowiedzi z search API
-  context.on('response', async (response) => {
-    const url = response.url();
-    if (!url.includes('/Api/search/search')) return;
-    if (response.status() !== 200) return;
-
-    try {
-      const data = await response.json();
-      if (Array.isArray(data.outboundFlights)) {
-        collectedFlights.push(...data.outboundFlights);
-      }
-      requestDone = true;
-    } catch {}
   });
 
   const page = await context.newPage();
@@ -66,9 +103,9 @@ async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) 
     });
 
     // 2. Małe opóźnienie — daj Cloudflare czas na ocenę
-    await sleep(1500);
+    await sleep(addJitter(1500, 20));
 
-    // 3. Zrób request timetable przez fetch wewnątrz strony (ten sam kontekst = te same cookies)
+    // 3. Przygotuj request body
     const body = JSON.stringify({
       flightList: [{ departureStation: from, arrivalStation: to, from: dateFrom, to: dateTo }],
       priceType:   'regular',
@@ -77,52 +114,11 @@ async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) 
       infantCount: 0,
     });
 
-    // Wykryj aktualną wersję API ze strony (lub użyj ostatniej znanych)
-    const apiVersion = await page.evaluate(async (bodyStr) => {
-      // Spróbuj znaleźć wersję API w window.__NUXT__ lub meta tagach
-      try {
-        const meta = document.querySelector('meta[name="api-version"]');
-        if (meta) return meta.content;
-      } catch {}
-      return '30.0.0';
-    }, body);
-
-    // 4. Wykonaj request timetable wewnątrz kontekstu przeglądarki
-    const result = await page.evaluate(async ({ from, to, dateFrom, dateTo, apiVersion }) => {
-      const body = JSON.stringify({
-        flightList: [{ departureStation: from, arrivalStation: to, from: dateFrom, to: dateTo }],
-        priceType:   'regular',
-        adultCount:  1,
-        childCount:  0,
-        infantCount: 0,
-      });
-
-      try {
-        const res = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
-          method:  'POST',
-          headers: {
-            'content-type':    'application/json;charset=UTF-8',
-            'accept':          'application/json, text/plain, */*',
-            'origin':          'https://wizzair.com',
-            'referer':         'https://wizzair.com/pl-pl/flights/timetable',
-            'x-requestedwith': 'XMLHttpRequest',
-          },
-          body,
-        });
-
-        if (!res.ok) return { error: `HTTP ${res.status}`, flights: [] };
-        const data = await res.json();
-        return { flights: data.outboundFlights || [] };
-      } catch (e) {
-        return { error: e.message, flights: [] };
-      }
-    }, { from, to, dateFrom, dateTo, apiVersion });
-
-    if (result.error && result.flights.length === 0) {
-      throw new Error(result.error);
-    }
-
-    return result.flights;
+    // 4. Wykonaj request timetable z retry logiką
+    const apiVersion = '30.0.0';
+    const url = `https://be.wizzair.com/${apiVersion}/Api/search/search`;
+    const result = await fetchWithRetry(page, url, body, 3);
+    return result.flights || [];
 
   } finally {
     await page.close().catch(() => {});
@@ -379,10 +375,14 @@ async function generateFlights(today = new Date()) {
     for (const dInfo of pickedDates) {
       const threeMonthsFromNow = new Date(Date.now() + 6 * 30 * 24 * 60 * 60 * 1000);
       const isNearFuture = new Date(dInfo.raw) <= threeMonthsFromNow;
-      await sleep(5000);
+      
       let p1;
       if (airline === 'wizzair' && isNearFuture) {
         try {
+          // Opóźnienie PRZED żądaniem z jitter (10-15 sekund)
+          const delayMs = addJitter(12000, 15);
+          await sleep(delayMs);
+          
           const outboundFlights = await fetchWizzairFaresPlaywright(browser, origin, dest, dInfo.raw, dInfo.retRaw !== dInfo.raw ? dInfo.retRaw : addDays(new Date(dInfo.raw), 1).toISOString().slice(0,10));
           if (outboundFlights.length === 0) throw new Error('No flights');
           const minOutbound = Math.min(...outboundFlights.map(f => f.price.amount));
