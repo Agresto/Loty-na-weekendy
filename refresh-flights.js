@@ -28,7 +28,7 @@ const MAX_BUDGET_RT = 500;
 const MONTHS_AHEAD  = 6;
 const MAX_RETRY     = 2;
 const TIMEOUT_MS    = 20000;
-const WZ_DELAY      = 15000;  // ms między requestami Wizzair — ZWIĘKSZONE z 5000ms
+const WZ_DELAY      = 1000;  // Delay między requestami Kiwi (1s)
 
 // ─── pomocnicze ───────────────────────────────────────────────────────────────
 function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
@@ -98,129 +98,47 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
   return Array.isArray(data.fares) ? data.fares : [];
 }
 
-// ─── Wizzair przez Playwright ─────────────────────────────────────────────────
-
-/** Sprawdza czy Playwright jest zainstalowany */
-function isPlaywrightAvailable() {
-  try {
-    require.resolve('playwright');
-    return true;
-  } catch {
-    return false;
-  }
-}
+// ─── Wizzair przez Kiwi API ─────────────────────────────────────────────────
 
 /**
- * Pobiera loty Wizzair dla jednej trasy przez Playwright.
- * Przeglądarka musi być już uruchomiona (przekazana jako parametr).
+ * Pobiera loty Wizzair dla jednej trasy przez Kiwi API.
+ * Kiwi agreguje ceny z linii lotniczych, w tym Wizzair.
  *
- * @param {import('playwright').Browser} browser
  * @param {string} from - IATA lotniska startowego
  * @param {string} to   - IATA lotniska docelowego
  * @param {string} dateFrom - YYYY-MM-DD
  * @param {string} dateTo   - YYYY-MM-DD
  * @returns {Promise<Array>} - tablica surowych danych lotu
  */
-async function fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo) {
-  const context = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    locale:    'pl-PL',
-    viewport:  { width: 1280, height: 800 },
-    extraHTTPHeaders: {
-      'accept-language': 'pl-PL,pl;q=0.9,en;q=0.8',
+async function fetchWizzairFaresKiwi(from, to, dateFrom, dateTo) {
+  const apiKey = process.env.KIWI_API_KEY || 'YOUR_FREE_API_KEY'; // Zarejestruj się na https://tequila.kiwi.com/portal/login dla bezpłatnego klucza
+
+  const params = new URLSearchParams({
+    fly_from: from,
+    fly_to: to,
+    date_from: dateFrom,
+    date_to: dateTo,
+    return_from: dateFrom,
+    return_to: dateTo,
+    adults: 1,
+    curr: 'PLN',
+    locale: 'pl',
+    limit: 1000,
+    sort: 'price',
+    selected_airlines: 'W6', // Wizzair IATA code
+  });
+
+  const url = `https://tequila-api.kiwi.com/v2/search?${params}`;
+  const res = await fetchWithTimeout(url, {
+    headers: {
+      'apikey': apiKey,
+      'accept': 'application/json',
     },
   });
 
-  const collectedFlights = [];
-  let requestDone = false;
-
-  // Przechwytuj odpowiedzi z search API
-  context.on('response', async (response) => {
-    const url = response.url();
-    if (!url.includes('/Api/search/search')) return;
-    if (response.status() !== 200) return;
-
-    try {
-      const data = await response.json();
-      if (Array.isArray(data.outboundFlights)) {
-        collectedFlights.push(...data.outboundFlights);
-      }
-      requestDone = true;
-    } catch {}
-  });
-
-  const page = await context.newPage();
-
-  try {
-    // 1. Wejdź na stronę Wizzair (żeby zdobyć cookies/session)
-    await page.goto('https://wizzair.com/pl-pl', {
-      waitUntil: 'domcontentloaded',
-      timeout:   15000,
-    });
-
-    // 2. Małe opóźnienie — daj Cloudflare czas na ocenę
-    await sleep(1500);
-
-    // 3. Zrób request timetable przez fetch wewnątrz strony (ten sam kontekst = te same cookies)
-    const body = JSON.stringify({
-      flightList: [{ departureStation: from, arrivalStation: to, from: dateFrom, to: dateTo }],
-      priceType:   'regular',
-      adultCount:  1,
-      childCount:  0,
-      infantCount: 0,
-    });
-
-    // Wykryj aktualną wersję API ze strony (lub użyj ostatniej znanych)
-    const apiVersion = await page.evaluate(async (bodyStr) => {
-      // Spróbuj znaleźć wersję API w window.__NUXT__ lub meta tagach
-      try {
-        const meta = document.querySelector('meta[name="api-version"]');
-        if (meta) return meta.content;
-      } catch {}
-      return '30.0.0';
-    }, body);
-
-    // 4. Wykonaj request timetable wewnątrz kontekstu przeglądarki
-    const result = await page.evaluate(async ({ from, to, dateFrom, dateTo, apiVersion }) => {
-      const body = JSON.stringify({
-        flightList: [{ departureStation: from, arrivalStation: to, from: dateFrom, to: dateTo }],
-        priceType:   'regular',
-        adultCount:  1,
-        childCount:  0,
-        infantCount: 0,
-      });
-
-      try {
-        const res = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
-          method:  'POST',
-          headers: {
-            'content-type':    'application/json;charset=UTF-8',
-            'accept':          'application/json, text/plain, */*',
-            'origin':          'https://wizzair.com',
-            'referer':         'https://wizzair.com/pl-pl/flights/timetable',
-            'x-requestedwith': 'XMLHttpRequest',
-          },
-          body,
-        });
-
-        if (!res.ok) return { error: `HTTP ${res.status}`, flights: [] };
-        const data = await res.json();
-        return { flights: data.outboundFlights || [] };
-      } catch (e) {
-        return { error: e.message, flights: [] };
-      }
-    }, { from, to, dateFrom, dateTo, apiVersion });
-
-    if (result.error && result.flights.length === 0) {
-      throw new Error(result.error);
-    }
-
-    return result.flights;
-
-  } finally {
-    await page.close().catch(() => {});
-    await context.close().catch(() => {});
-  }
+  if (!res.ok) throw new Error(`Kiwi API HTTP ${res.status}`);
+  const data = await res.json();
+  return data.data || [];
 }
 
 // ─── Formatowanie dat ─────────────────────────────────────────────────────────
@@ -331,35 +249,34 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   };
 }
 
-// ─── Normalizacja Wizzair ─────────────────────────────────────────────────────
-function normalizeWizzairFlight(f, from, to, origInfo, destInfo, id) {
-  if (!f.departureDate) return null;
+// ─── Normalizacja Kiwi (dla Wizzair) ──────────────────────────────────────────
+function normalizeKiwiFlight(f, from, to, origInfo, destInfo, id) {
+  if (!f.route || f.route.length < 2) return null;
 
-  const dateStr = f.departureDate.slice(0, 10);
+  const outbound = f.route[0];
+  const inbound = f.route[1];
+  if (!outbound || !inbound) return null;
+
+  const dateStr = outbound.local_departure.slice(0, 10);
   if (dateStr < todayStr()) return null;
 
   const dow = classifyDow(dateStr);
   if (!dow) return null;
 
-  // Wizzair timetable zwraca price.amount (cena 1-stronna)
-  const price1 = Math.round(
-    f.price?.amount
-    ?? f.regularFare?.fares?.[0]?.amount
-    ?? f.lowestFare?.price?.amount
-    ?? 0
-  );
-  if (!price1) return null;
+  // Cena round-trip z Kiwi
+  const rtPrice = f.price || 0;
+  if (!rtPrice || rtPrice > MAX_BUDGET_RT) return null;
 
-  const price2 = Math.round(price1 * 1.75); // Wizzair cena powrotu zwykle ~175% ceny w jedną stronę
-  if (price2 > MAX_BUDGET_RT) return null;
+  const price1 = Math.round(rtPrice / 2);
+  const price2 = rtPrice;
 
-  const [dH, dM] = parseTimes(f.departureDate);
-  const [aH, aM] = parseTimes(f.arrivalDate);
-  const durStr = (f.arrivalDate && f.departureDate) ? calcDur(f.departureDate, f.arrivalDate) : null;
+  const [dH, dM] = parseTimes(outbound.local_departure);
+  const [aH, aM] = parseTimes(outbound.local_arrival);
+  const durStr = calcDur(outbound.local_departure, outbound.local_arrival);
   const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
 
   return {
-    id: `w${id}`, airline: 'wizzair',
+    id: `k${id}`, airline: 'wizzair',
     from, to, fromCity: origInfo.city, toCity: destInfo.city,
     flag: destInfo.flag, country: destInfo.country,
     ...weekend,
@@ -367,7 +284,7 @@ function normalizeWizzairFlight(f, from, to, origInfo, destInfo, id) {
     sea: destInfo.sea, lgbt: destInfo.lgbt, lgbtN: destInfo.lgbtN,
     distKm: destInfo.distKm, passport: destInfo.passport,
     visa: destInfo.visa, currency: destInfo.currency, englishOk: destInfo.englishOk,
-    flightCode: f.flightCode || '',
+    flightCode: outbound.flight_no || '',
   };
 }
 
@@ -398,6 +315,7 @@ async function fetchRealFlights() {
   const flights  = [];
   let idCounter  = 1;
   let errors     = 0;
+  const routeLastRequest = new Map(); // Per-route throttling: minimalny odstęp między requestami dla tej samej trasy
 
   // ── Ryanair ────────────────────────────────────────────────────────────────
   const rRoutes = ROUTES.filter(r => r[2] === 'ryanair');
@@ -450,38 +368,9 @@ async function fetchRealFlights() {
   // ── Wizzair ────────────────────────────────────────────────────────────────
   const wRoutes = ROUTES.filter(r => r[2] === 'wizzair');
 
-  if (!isPlaywrightAvailable()) {
-    console.log(`\n[Wizzair] ⚠ Playwright niedostępny — używam generatora statycznego`);
-    console.log(`[Wizzair]   Aby pobrać prawdziwe ceny, skonfiguruj self-hosted runner.`);
-    console.log(`[Wizzair]   Instrukcja: patrz README-firebase-emailjs.md sekcja "Self-hosted runner"`);
-    apiSamples.wizzair.strategy = 'static-generator (playwright-missing)';
-    saveApiSamples();
+  console.log(`\n[refresh] Pobieranie ${wRoutes.length} tras Wizzair przez Kiwi API...`);
 
-    const staticAll  = generateFlights(new Date());
-    const staticWizz = staticAll.filter(f => f.airline === 'wizzair');
-    flights.push(...staticWizz);
-    return { flights, source: 'ryanair-api+wizzair-static', errors };
-  }
-
-  // Playwright dostępny — uruchom przeglądarkę raz dla wszystkich tras
-  const { chromium } = require('playwright');
-  let browser;
-
-  console.log(`\n[refresh] Pobieranie ${wRoutes.length} tras Wizzair przez Playwright...`);
-  console.log(`[Wizzair] Uruchamiam Chromium...`);
-
-  try {
-    browser = await chromium.launch({
-      headless:  true,
-      args: [
-        '--no-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-blink-features=AutomationControlled',
-        '--disable-web-security',
-      ],
-    });
-
-    let wizzOk = 0, wizzFail = 0;
+  let wizzOk = 0, wizzFail = 0;
 
     for (let i = 0; i < wRoutes.length; i++) {
       const [from, to] = wRoutes[i];
@@ -491,21 +380,34 @@ async function fetchRealFlights() {
 
       process.stdout.write(`[${i+1}/${wRoutes.length}] W ${from}→${to}... `);
 
+      // Per-route throttling: sprawdź czas od ostatniego requestu dla tej trasy
+      const routeKey = `${from}-${to}`;
+      const now = Date.now();
+      const lastReq = routeLastRequest.get(routeKey) || 0;
+      const timeSinceLast = now - lastReq;
+      const minInterval = 30000; // 30 sekund minimalny odstęp dla tej samej trasy
+      if (timeSinceLast < minInterval) {
+        const extraSleep = minInterval - timeSinceLast;
+        console.log(`(dodatkowe ${extraSleep}ms dla trasy ${routeKey})`);
+        await sleep(extraSleep);
+      }
+      routeLastRequest.set(routeKey, Date.now());
+
       await sleep(WZ_DELAY);
 
       let rawFlights = [];
       try {
-        rawFlights = await fetchWizzairFaresPlaywright(browser, from, to, dateFrom, dateTo);
+        rawFlights = await fetchWizzairFaresKiwi(from, to, dateFrom, dateTo);
       } catch (err) {
         console.log(`✗ ${err.message}`);
         wizzFail++;
-        await sleep(WZ_DELAY);
+        await sleep(1000); // Krótszy delay dla Kiwi
         continue;
       }
 
       let added = 0;
       for (const f of rawFlights) {
-        const rec = normalizeWizzairFlight(f, from, to, origInfo, destInfo, idCounter);
+        const rec = normalizeKiwiFlight(f, from, to, origInfo, destInfo, idCounter);
         if (rec) { flights.push(rec); idCounter++; added++; }
       }
 
@@ -515,8 +417,8 @@ async function fetchRealFlights() {
       // Zapisz próbkę
       if (!apiSamples.wizzair.status && rawFlights.length > 0) {
         apiSamples.wizzair.status   = 200;
-        apiSamples.wizzair.strategy = 'playwright-headless';
-        apiSamples.wizzair.url      = `https://be.wizzair.com/.../Api/search/timetable`;
+        apiSamples.wizzair.strategy = 'kiwi-api';
+        apiSamples.wizzair.url      = `https://tequila-api.kiwi.com/v2/search?...${from}→${to}`;
         apiSamples.wizzair.sampleResponse = {
           route: `${from} → ${to}`, firstFlight: rawFlights[0],
           totalFlights: rawFlights.length, capturedAt: new Date().toISOString(),
@@ -529,7 +431,7 @@ async function fetchRealFlights() {
 
     console.log(`\n[Wizzair] Wynik: ${wizzOk}/${wRoutes.length} tras OK, ${wizzFail} błędów`);
 
-    const source = wizzOk > 0 ? 'ryanair+wizzair-api' : 'ryanair-api+wizzair-static';
+    const source = wizzOk > 0 ? 'ryanair+kiwi-api' : 'ryanair-api+wizzair-static';
 
     if (wizzOk === 0) {
       const staticWizz = generateFlights(new Date()).filter(f => f.airline === 'wizzair');
@@ -537,10 +439,6 @@ async function fetchRealFlights() {
     }
 
     return { flights, source, errors };
-
-  } finally {
-    if (browser) await browser.close().catch(() => {});
-  }
 }
 
 // ─── Zapis i podsumowanie ─────────────────────────────────────────────────────
