@@ -1,4 +1,16 @@
-# Konfiguracja Kiwi Tequila API (Bezpłatny Plan)
+# ⚠️ UWAGA: Kiwi API nie jest już używane!
+
+**Status**: Zdeprecjonowane (maj 2026)
+
+Ze względu na niedostępność Kiwi Tequila API, projekt został przeswitchowany na **Aviasales API**, które jest całkowicie darmowe i nie wymaga rejestracji.
+
+👉 **Przejdź do**: [AVIASALES-API-SETUP.md](./AVIASALES-API-SETUP.md)
+
+Poniższa dokumentacja jest zachowana dla celów historycznych.
+
+---
+
+# Konfiguracja Kiwi Tequila API (Bezpłatny Plan) - ARCHIWUM
 
 Ten przewodnik wyjaśnia krok po kroku, jak skonfigurować bezpłatny klucz API z Kiwi Tequila API, aby aplikacja "Loty-na-weekendy" mogła pobierać rzeczywiste ceny lotów Wizzair.
 

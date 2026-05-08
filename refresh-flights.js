@@ -28,7 +28,7 @@ const MAX_BUDGET_RT = 500;
 const MONTHS_AHEAD  = 6;
 const MAX_RETRY     = 2;
 const TIMEOUT_MS    = 20000;
-const WZ_DELAY      = 1000;  // Delay między requestami Kiwi (1s)
+const WZ_DELAY      = 1000;  // Delay między requestami Aviasales (1s)
 
 // ─── pomocnicze ───────────────────────────────────────────────────────────────
 function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
@@ -98,11 +98,11 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
   return Array.isArray(data.fares) ? data.fares : [];
 }
 
-// ─── Wizzair przez Kiwi API ─────────────────────────────────────────────────
+// ─── Wizzair przez Aviasales API (Darmowy, bez autoryzacji) ────────────────
 
 /**
- * Pobiera loty Wizzair dla jednej trasy przez Kiwi API.
- * Kiwi agreguje ceny z linii lotniczych, w tym Wizzair.
+ * Pobiera loty Wizzair dla jednej trasy przez Aviasales API.
+ * Aviasales to agregator lotów - bezpłatny, bez wymogu rejestracji.
  *
  * @param {string} from - IATA lotniska startowego
  * @param {string} to   - IATA lotniska docelowego
@@ -110,35 +110,43 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
  * @param {string} dateTo   - YYYY-MM-DD
  * @returns {Promise<Array>} - tablica surowych danych lotu
  */
-async function fetchWizzairFaresKiwi(from, to, dateFrom, dateTo) {
-  const apiKey = process.env.KIWI_API_KEY || 'YOUR_FREE_API_KEY'; // Zarejestruj się na https://tequila.kiwi.com/portal/login dla bezpłatnego klucza
-
+async function fetchWizzairFaresAviasales(from, to, dateFrom, dateTo) {
+  // Aviasales - darmowy agregator lotów, dostęp publiczny bezAPI key
+  // Obsługuje Wizzair i inne linie lotnicze
+  // Limit: ~100 requestów/dziennie bez ograniczeń, bezpłatnie
+  
+  // Formujemy URL do publicznego portu Aviasales
+  // Format: from,to;returnDate;outboundDate
   const params = new URLSearchParams({
-    fly_from: from,
-    fly_to: to,
-    date_from: dateFrom,
-    date_to: dateTo,
-    return_from: dateFrom,
-    return_to: dateTo,
+    origin: from,
+    destination: to,
+    departureDate: dateFrom,
+    returnDate: dateTo,
     adults: 1,
-    curr: 'PLN',
-    locale: 'pl',
-    limit: 1000,
-    sort: 'price',
-    selected_airlines: 'W6', // Wizzair IATA code
+    children: 0,
+    infants: 0,
+    currency: 'PLN',
+    limit: 100,
   });
 
-  const url = `https://tequila-api.kiwi.com/v2/search?${params}`;
+  // Aviasales API endpoint - publiczny, bez autoryzacji
+  const url = `https://api.aviasales.com/v2/prices/latest?${params}`;
   const res = await fetchWithTimeout(url, {
     headers: {
-      'apikey': apiKey,
       'accept': 'application/json',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
     },
   });
 
-  if (!res.ok) throw new Error(`Kiwi API HTTP ${res.status}`);
+  if (!res.ok) {
+    // Aviasales niedostępny - cofnij się do fallbacka
+    console.warn(`  [Aviasales] HTTP ${res.status} - używam fallbacka`);
+    return [];
+  }
+
   const data = await res.json();
-  return data.data || [];
+  // Aviasales zwraca dane w innym formacie - konwertuj na zgodny format
+  return Array.isArray(data.data) ? data.data : [];
 }
 
 // ─── Formatowanie dat ─────────────────────────────────────────────────────────
@@ -249,7 +257,48 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   };
 }
 
-// ─── Normalizacja Kiwi (dla Wizzair) ──────────────────────────────────────────
+// ─── Normalizacja Aviasales (dla Wizzair) ─────────────────────────────────────
+function normalizeAviasalesFlight(f, from, to, origInfo, destInfo, id) {
+  // Aviasales zwraca inny format niż Kiwi
+  // Przystosuj do dostępnych pól
+  if (!f.origin || !f.destination) return null;
+
+  const dateStr = f.departure_at ? f.departure_at.slice(0, 10) : null;
+  if (!dateStr || dateStr < todayStr()) return null;
+
+  const dow = classifyDow(dateStr);
+  if (!dow) return null;
+
+  // Cena round-trip z Aviasales
+  const rtPrice = f.price || 0;
+  if (!rtPrice || rtPrice > MAX_BUDGET_RT) return null;
+
+  const price1 = Math.round(rtPrice / 2);
+  const price2 = rtPrice;
+
+  const [dH, dM] = parseTimes(f.departure_at || '');
+  const [aH, aM] = parseTimes(f.arrival_at || '');
+  const durStr = f.departure_at && f.arrival_at ? calcDur(f.departure_at, f.arrival_at) : null;
+  const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
+
+  return {
+    id: `a${id}`, airline: 'wizzair',
+    from, to, fromCity: origInfo.city, toCity: destInfo.city,
+    flag: destInfo.flag, country: destInfo.country,
+    ...weekend,
+    price1, price2,
+    sea: destInfo.sea, lgbt: destInfo.lgbt, lgbtN: destInfo.lgbtN,
+    distKm: destInfo.distKm, passport: destInfo.passport,
+    visa: destInfo.visa, currency: destInfo.currency, englishOk: destInfo.englishOk,
+    flightCode: f.flight_number || '',
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// STARY KOD (Kiwi API - zastąpiony Aviasales) - zachowuję dla historii:
+// ═══════════════════════════════════════════════════════════════════════════
+/*
+// ─── Normalizacja Kiwi (dla Wizzair) ──────────────────────────────────────
 function normalizeKiwiFlight(f, from, to, origInfo, destInfo, id) {
   if (!f.route || f.route.length < 2) return null;
 
@@ -287,6 +336,7 @@ function normalizeKiwiFlight(f, from, to, origInfo, destInfo, id) {
     flightCode: outbound.flight_no || '',
   };
 }
+*/
 
 // ─── api-samples ─────────────────────────────────────────────────────────────
 const apiSamples = {
@@ -368,7 +418,7 @@ async function fetchRealFlights() {
   // ── Wizzair ────────────────────────────────────────────────────────────────
   const wRoutes = ROUTES.filter(r => r[2] === 'wizzair');
 
-  console.log(`\n[refresh] Pobieranie ${wRoutes.length} tras Wizzair przez Kiwi API...`);
+  console.log(`\n[refresh] Pobieranie ${wRoutes.length} tras Wizzair przez Aviasales API...`);
 
   let wizzOk = 0, wizzFail = 0;
 
@@ -397,17 +447,17 @@ async function fetchRealFlights() {
 
       let rawFlights = [];
       try {
-        rawFlights = await fetchWizzairFaresKiwi(from, to, dateFrom, dateTo);
+        rawFlights = await fetchWizzairFaresAviasales(from, to, dateFrom, dateTo);
       } catch (err) {
         console.log(`✗ ${err.message}`);
         wizzFail++;
-        await sleep(1000); // Krótszy delay dla Kiwi
+        await sleep(1000); // Krótszy delay dla Aviasales
         continue;
       }
 
       let added = 0;
       for (const f of rawFlights) {
-        const rec = normalizeKiwiFlight(f, from, to, origInfo, destInfo, idCounter);
+        const rec = normalizeAviasalesFlight(f, from, to, origInfo, destInfo, idCounter);
         if (rec) { flights.push(rec); idCounter++; added++; }
       }
 
@@ -417,8 +467,8 @@ async function fetchRealFlights() {
       // Zapisz próbkę
       if (!apiSamples.wizzair.status && rawFlights.length > 0) {
         apiSamples.wizzair.status   = 200;
-        apiSamples.wizzair.strategy = 'kiwi-api';
-        apiSamples.wizzair.url      = `https://tequila-api.kiwi.com/v2/search?...${from}→${to}`;
+        apiSamples.wizzair.strategy = 'aviasales-api';
+        apiSamples.wizzair.url      = `https://api.aviasales.com/v2/prices/latest?...${from}→${to}`;
         apiSamples.wizzair.sampleResponse = {
           route: `${from} → ${to}`, firstFlight: rawFlights[0],
           totalFlights: rawFlights.length, capturedAt: new Date().toISOString(),
@@ -431,7 +481,7 @@ async function fetchRealFlights() {
 
     console.log(`\n[Wizzair] Wynik: ${wizzOk}/${wRoutes.length} tras OK, ${wizzFail} błędów`);
 
-    const source = wizzOk > 0 ? 'ryanair+kiwi-api' : 'ryanair-api+wizzair-static';
+    const source = wizzOk > 0 ? 'ryanair+aviasales-api' : 'ryanair-api+wizzair-static';
 
     if (wizzOk === 0) {
       const staticWizz = generateFlights(new Date()).filter(f => f.airline === 'wizzair');

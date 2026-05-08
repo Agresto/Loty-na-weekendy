@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-05T14:34:37.973Z",
+  "capturedAt": "2026-05-06T16:43:18.415Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "https://www.ryanair.com/api/farfnd/v4/roundTripFares?...KTW→ALC",
@@ -33,16 +33,16 @@
           "departureDate": "2026-05-18T18:15:00",
           "arrivalDate": "2026-05-18T21:35:00",
           "price": {
-            "value": 113.26,
-            "valueMainUnit": "113",
-            "valueFractionalUnit": "26",
+            "value": 115.55,
+            "valueMainUnit": "115",
+            "valueFractionalUnit": "55",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~3950~ ~~KTW~05/18/2026 18:15~ALC~05/18/2026 21:35~~",
           "flightNumber": "FR3950",
           "previousPrice": null,
-          "priceUpdated": 1777976563000
+          "priceUpdated": 1778079173000
         },
         "inbound": {
           "departureAirport": {
@@ -70,22 +70,22 @@
           "departureDate": "2026-05-21T05:50:00",
           "arrivalDate": "2026-05-21T08:55:00",
           "price": {
-            "value": 119,
-            "valueMainUnit": "119",
-            "valueFractionalUnit": "00",
+            "value": 138.49,
+            "valueMainUnit": "138",
+            "valueFractionalUnit": "49",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~3597~ ~~ALC~05/21/2026 05:50~KTW~05/21/2026 08:55~~",
           "flightNumber": "FR3597",
           "previousPrice": null,
-          "priceUpdated": 1777983556000
+          "priceUpdated": 1778085518000
         },
         "summary": {
           "price": {
-            "value": 232.26,
-            "valueMainUnit": "232",
-            "valueFractionalUnit": "26",
+            "value": 254.04,
+            "valueMainUnit": "254",
+            "valueFractionalUnit": "04",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -94,8 +94,8 @@
           "tripDurationDays": 3
         }
       },
-      "totalFares": 132,
-      "capturedAt": "2026-05-05T14:34:37.973Z"
+      "totalFares": 131,
+      "capturedAt": "2026-05-06T16:43:18.415Z"
     }
   },
   "wizzair": {
