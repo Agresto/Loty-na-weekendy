@@ -5,13 +5,13 @@
  * Pobiera prawdziwe ceny lotów z Ryanair API + Wizzair (przez Playwright).
  *
  * Strategia Wizzair:
- *   • Jeśli dostępny Playwright (self-hosted runner) → pełny scraping z cenami
- *   • Jeśli Playwright niedostępny (GitHub hosted) → generator statyczny + ikona ⚡
+ *   • Playwright → Wizzair farechart API (omija Kasada/Cloudflare WAF)
+ *   • Jeśli Playwright niedostępny → generator statyczny + ikona ⚡
  *
  * Ryanair: roundTripFares API (bez blokad, publiczne)
- * Wizzair: timetable API przez headless Chromium (omija Cloudflare WAF)
+ * Wizzair: farechart API przez headless Chromium (ominięcie Kasada)
  *
- * Uruchomienie lokalne / self-hosted:
+ * Uruchomienie:
  *   npm install playwright
  *   npx playwright install chromium
  *   node refresh-flights.js
@@ -24,23 +24,36 @@ const path = require('path');
 const { generateFlights, ROUTES, DESTS, ORIGINS } = require('./generate-flights.js');
 
 // ─── konfiguracja ─────────────────────────────────────────────────────────────
-const MAX_BUDGET_RT = 500;
-const MONTHS_AHEAD  = 6;
-const MAX_RETRY     = 2;
-const TIMEOUT_MS    = 20000;
-const WZ_DELAY      = 1000;  // Delay między requestami Aviasales (1s)
+const MAX_BUDGET_RT       = 500;
+const MONTHS_AHEAD        = 6;
+const MAX_RETRY           = 2;
+const TIMEOUT_MS          = 20000;
+const WIZZAIR_API_VERSION = '28.9.0'; // Aktualna wersja API Wizzair (auto-wykrywana)
+const FARECHART_INTERVAL  = 10;       // Pokrycie każdego zapytania (±10 dni)
+const FARECHART_STEP      = 12;       // Krok iteracji → 180/12 = 15 iteracji / destynację
+const KASADA_MAX_REQUESTS = 42;       // Maks. farechart calls per context (Kasada limit ~42-45, renew at 42)
+
+// ─── Playwright (opcjonalny) ──────────────────────────────────────────────────
+let chromium = null;
+try {
+  chromium = require('playwright').chromium;
+} catch(e) {
+  // Playwright niedostępny - Wizzair będzie z generatora statycznego
+}
 
 // ─── pomocnicze ───────────────────────────────────────────────────────────────
-function sleep(ms)   { return new Promise(r => setTimeout(r, ms)); }
-function addJitter(ms, percent = 10) {
-  const jitter = Math.random() * (ms * percent / 100) - (ms * percent / 200);
-  return Math.max(100, ms + jitter);
+function sleep(ms)  { return new Promise(r => setTimeout(r, ms)); }
+function isoDate(d) { return d.toISOString().slice(0, 10); }
+function todayStr() { return isoDate(new Date()); }
+
+function addDays(dateStr, n) {
+  const d = new Date(dateStr + 'T12:00:00');
+  d.setDate(d.getDate() + n);
+  return isoDate(d);
 }
-function isoDate(d)  { return d.toISOString().slice(0, 10); }
-function todayStr()  { return isoDate(new Date()); }
 
 function addMonths(dateStr, n) {
-  const d = new Date(dateStr);
+  const d = new Date(dateStr + 'T12:00:00');
   d.setMonth(d.getMonth() + n);
   return isoDate(d);
 }
@@ -57,9 +70,7 @@ async function fetchWithTimeout(url, opts = {}) {
 
 // ─── Ryanair ──────────────────────────────────────────────────────────────────
 async function fetchRyanairFares(from, to, dateFrom, dateTo) {
-  const inboundTo = isoDate((() => {
-    const d = new Date(dateTo); d.setDate(d.getDate() + 3); return d;
-  })());
+  const inboundTo = addDays(dateTo, 3);
 
   const params = new URLSearchParams({
     departureAirportIataCode:  from,
@@ -98,55 +109,197 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
   return Array.isArray(data.fares) ? data.fares : [];
 }
 
-// ─── Wizzair przez Aviasales API (Darmowy, bez autoryzacji) ────────────────
+// ─── Wizzair przez Playwright + farechart API ─────────────────────────────────
+/**
+ * Tworzy nowy kontekst przeglądarki z świeżą sesją Kasada.
+ * Każdy nowy kontekst ma nowe tokeny JS i cookie.
+ */
+async function createFreshWizzairPage(browser, apiVersionRef) {
+  const ctx = await browser.newContext({
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    locale:    'pl-PL',
+    viewport:  { width: 1280, height: 800 },
+    extraHTTPHeaders: { 'accept-language': 'pl-PL,pl;q=0.9,en;q=0.8' },
+  });
+  const page = await ctx.newPage();
+
+  // Wykryj wersję API Wizzair z pierwszego żądania
+  page.on('response', (response) => {
+    const match = response.url().match(/be\.wizzair\.com\/([0-9]+\.[0-9]+\.[0-9]+)\//);
+    if (match && apiVersionRef) apiVersionRef.value = match[1];
+  });
+
+  try {
+    await page.goto('https://wizzair.com/pl-pl', { waitUntil: 'domcontentloaded', timeout: 20000 });
+  } catch(e) { /* timeout OK */ }
+
+  await sleep(8000); // Poczekaj na inicjalizację Kasada (8s wymagane przy odnowieniu)
+
+  return { ctx, page };
+}
 
 /**
- * Pobiera loty Wizzair dla jednej trasy przez Aviasales API.
- * Aviasales to agregator lotów - bezpłatny, bez wymogu rejestracji.
- *
- * @param {string} from - IATA lotniska startowego
- * @param {string} to   - IATA lotniska docelowego
- * @param {string} dateFrom - YYYY-MM-DD
- * @param {string} dateTo   - YYYY-MM-DD
- * @returns {Promise<Array>} - tablica surowych danych lotu
+ * Inicjalizuje przeglądarkę Playwright.
  */
-async function fetchWizzairFaresAviasales(from, to, dateFrom, dateTo) {
-  // Aviasales - darmowy agregator lotów, dostęp publiczny bezAPI key
-  // Obsługuje Wizzair i inne linie lotnicze
-  // Limit: ~100 requestów/dziennie bez ograniczeń, bezpłatnie
-  
-  // Formujemy URL do publicznego portu Aviasales
-  // Format: from,to;returnDate;outboundDate
-  const params = new URLSearchParams({
-    origin: from,
-    destination: to,
-    departureDate: dateFrom,
-    returnDate: dateTo,
-    adults: 1,
-    children: 0,
-    infants: 0,
-    currency: 'PLN',
-    limit: 100,
+async function initWizzairBrowser() {
+  if (!chromium) return null;
+
+  try {
+    const browser = await chromium.launch({ headless: true });
+    const apiVersionRef = { value: WIZZAIR_API_VERSION };
+
+    console.log('[Wizzair] Inicjalizacja Playwright...');
+    const { ctx, page } = await createFreshWizzairPage(browser, apiVersionRef);
+    console.log(`[Wizzair] Wersja API Wizzair: ${apiVersionRef.value}`);
+
+    return { browser, page, ctx, apiVersionRef };
+  } catch(e) {
+    console.error('[Wizzair] Błąd Playwright:', e.message);
+    return null;
+  }
+}
+
+/**
+ * Wywołuje farechart API dla jednej trasy i daty środkowej.
+ * Zwraca tablicę wylotów lub [] przy błędzie.
+ */
+async function callFarechart(page, from, to, centerDateStr, apiVersion) {
+  const body = JSON.stringify({
+    isRescueFare:   false,
+    adultCount:     1,
+    childCount:     0,
+    dayInterval:    FARECHART_INTERVAL,
+    wdc:            false,
+    isFlightChange: false,
+    flightList: [
+      { departureStation: from, arrivalStation: to, date: centerDateStr + 'T00:00:00' },
+      { departureStation: to,   arrivalStation: from, date: centerDateStr + 'T00:00:00' },
+    ],
   });
 
-  // Aviasales API endpoint - publiczny, bez autoryzacji
-  const url = `https://api.aviasales.com/v2/prices/latest?${params}`;
-  const res = await fetchWithTimeout(url, {
-    headers: {
-      'accept': 'application/json',
-      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    },
-  });
+  try {
+    const result = await page.evaluate(async ({ body, apiVersion }) => {
+      const r = await fetch(`https://be.wizzair.com/${apiVersion}/Api/asset/farechart`, {
+        method:  'POST',
+        headers: {
+          'content-type': 'application/json;charset=UTF-8',
+          'accept':        'application/json, text/plain, */*',
+          'origin':        'https://wizzair.com',
+          'referer':       'https://wizzair.com/pl-pl',
+        },
+        body,
+      });
+      if (!r.ok) return { ok: false, status: r.status };
+      const data = await r.json();
+      return { ok: true, status: r.status, outbound: data.outboundFlights || [] };
+    }, { body, apiVersion });
 
-  if (!res.ok) {
-    // Aviasales niedostępny - cofnij się do fallbacka
-    console.warn(`  [Aviasales] HTTP ${res.status} - używam fallbacka`);
-    return [];
+    return result;
+  } catch(e) {
+    return { ok: false, status: 0, error: e.message };
+  }
+}
+
+/**
+ * Pobiera wszystkie ceny Wizzair dla podanych tras przez farechart API.
+ *
+ * Strategia "okno-pierwsze" (transponowana pętla):
+ *   Zewnętrzna pętla = okna dat (co 20 dni, łącznie 9 okien na 180 dni)
+ *   Wewnętrzna pętla = wszystkie trasy dla danego okna (1 request/trasę)
+ *
+ * Każde okno = świeża przeglądarka (brak odnowień wewnątrz okna).
+ * 46 tras × 1 req = ~46 req/okno — poniżej limitu Kasada (42-45).
+ * Między oknami: 45s przerwa (cooldown IP Kasada).
+ */
+async function fetchWizzairViaPlaywright(wRoutes) {
+  if (!chromium) return null;
+
+  const today   = todayStr();
+  const maxDate = addMonths(today, MONTHS_AHEAD);
+  const seen       = new Set();
+  const allFlights = [];
+  let totalAdded   = 0;
+  let windowsDone  = 0;
+
+  const WINDOW_STEP    = 20; // dni między centrami okien (step=interval*2 = brak przerw)
+  const WINDOW_COOLDOWN = 45000; // 45s przerwa między oknami (cooldown Kasada)
+
+  for (let daysOffset = 0; daysOffset < 180; daysOffset += WINDOW_STEP) {
+    const centerD = new Date(today + 'T12:00:00');
+    centerD.setDate(centerD.getDate() + daysOffset);
+    const centerStr = isoDate(centerD);
+    if (centerStr > maxDate) break;
+
+    process.stdout.write(`\n[Wizzair] Okno ${windowsDone + 1} (centrum ${centerStr}): `);
+
+    // Świeża przeglądarka dla każdego okna
+    let browser, page, ctx, apiVersionRef;
+    try {
+      const init = await initWizzairBrowser();
+      if (!init) break;
+      browser = init.browser;
+      page = init.page;
+      ctx = init.ctx;
+      apiVersionRef = init.apiVersionRef;
+    } catch(e) {
+      console.error(`init błąd: ${e.message}`);
+      break;
+    }
+
+    let windowAdded = 0;
+    let reqCount    = 0;
+
+    try {
+      for (const route of wRoutes) {
+        const [from, to] = route;
+        if (!ORIGINS[from] || !DESTS[to]) continue;
+
+        // Zatrzymaj gdy Kasada zaczyna blokować
+        if (reqCount >= KASADA_MAX_REQUESTS) break;
+
+        const result = await callFarechart(page, from, to, centerStr, apiVersionRef.value);
+        reqCount++;
+
+        if (!result.ok) {
+          if (result.status === 503 || result.status === 429) break; // limit osiągnięty
+          continue;
+        }
+
+        for (const f of result.outbound || []) {
+          if (f.departureStation !== from || f.arrivalStation !== to) continue;
+          const dateStr = f.date ? f.date.slice(0, 10) : null;
+          if (!dateStr || dateStr < today || dateStr > maxDate) continue;
+          const key = `${from}-${to}-${dateStr}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          allFlights.push({ ...f, _route: route });
+          windowAdded++;
+          totalAdded++;
+        }
+
+        await sleep(200);
+      }
+    } catch(e) {
+      console.error(`błąd okna: ${e.message}`);
+    }
+
+    // Zamknij przeglądarkę
+    try { await ctx.close(); } catch(e) {}
+    try { await browser.close(); } catch(e) {}
+
+    console.log(`${windowAdded} nowych lotów (${reqCount} req)`);
+    windowsDone++;
+
+    // Przerwa między oknami (nie po ostatnim)
+    if (daysOffset + WINDOW_STEP < 180) {
+      process.stdout.write(`[Wizzair] Cooldown ${WINDOW_COOLDOWN/1000}s... `);
+      await sleep(WINDOW_COOLDOWN);
+      process.stdout.write('gotowe\n');
+    }
   }
 
-  const data = await res.json();
-  // Aviasales zwraca dane w innym formacie - konwertuj na zgodny format
-  return Array.isArray(data.data) ? data.data : [];
+  console.log(`\n[Wizzair] Łącznie: ${totalAdded} lotów (${windowsDone} okien)`);
+  return allFlights;
 }
 
 // ─── Formatowanie dat ─────────────────────────────────────────────────────────
@@ -232,7 +385,6 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   const dow = classifyDow(dateStr);
   if (!dow) return null;
 
-  // Cena round-trip z summary (oba loty łącznie)
   const rtPrice = fare.summary?.price?.value
     || ((out.price?.value || 0) + (fare.inbound?.price?.value || 0));
 
@@ -257,86 +409,53 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   };
 }
 
-// ─── Normalizacja Aviasales (dla Wizzair) ─────────────────────────────────────
-function normalizeAviasalesFlight(f, from, to, origInfo, destInfo, id) {
-  // Aviasales zwraca inny format niż Kiwi
-  // Przystosuj do dostępnych pól
-  if (!f.origin || !f.destination) return null;
-
-  const dateStr = f.departure_at ? f.departure_at.slice(0, 10) : null;
+// ─── Normalizacja Wizzair farechart ───────────────────────────────────────────
+function normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, id) {
+  const dateStr = f.date ? f.date.slice(0, 10) : null;
   if (!dateStr || dateStr < todayStr()) return null;
 
   const dow = classifyDow(dateStr);
   if (!dow) return null;
 
-  // Cena round-trip z Aviasales
-  const rtPrice = f.price || 0;
-  if (!rtPrice || rtPrice > MAX_BUDGET_RT) return null;
+  // farechart zwraca cenę jednego kierunku w PLN
+  const price1 = Math.round(f.price?.amount || 0);
+  if (!price1 || price1 <= 0) return null;
 
-  const price1 = Math.round(rtPrice / 2);
-  const price2 = rtPrice;
+  // Szacujemy round-trip: cena powrotu ~= cena wylotu
+  const price2 = Math.round(price1 * 2);
+  if (price2 > MAX_BUDGET_RT) return null;
 
-  const [dH, dM] = parseTimes(f.departure_at || '');
-  const [aH, aM] = parseTimes(f.arrival_at || '');
-  const durStr = f.departure_at && f.arrival_at ? calcDur(f.departure_at, f.arrival_at) : null;
-  const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
+  // Czasy lotu z danych ROUTES (brak w farechart)
+  const [, , , , durMin, deptHour] = route;
+  const totalMin = durMin || 120;
+  const arrTotalMin = deptHour * 60 + totalMin;
+  const arrH = Math.floor(arrTotalMin / 60) % 24;
+  const arrM = arrTotalMin % 60;
+  const durStr = `${Math.floor(totalMin / 60)}h ${String(totalMin % 60).padStart(2, '0')}m`;
 
-  return {
-    id: `a${id}`, airline: 'wizzair',
-    from, to, fromCity: origInfo.city, toCity: destInfo.city,
-    flag: destInfo.flag, country: destInfo.country,
-    ...weekend,
-    price1, price2,
-    sea: destInfo.sea, lgbt: destInfo.lgbt, lgbtN: destInfo.lgbtN,
-    distKm: destInfo.distKm, passport: destInfo.passport,
-    visa: destInfo.visa, currency: destInfo.currency, englishOk: destInfo.englishOk,
-    flightCode: f.flight_number || '',
-  };
-}
-
-// ═══════════════════════════════════════════════════════════════════════════
-// STARY KOD (Kiwi API - zastąpiony Aviasales) - zachowuję dla historii:
-// ═══════════════════════════════════════════════════════════════════════════
-/*
-// ─── Normalizacja Kiwi (dla Wizzair) ──────────────────────────────────────
-function normalizeKiwiFlight(f, from, to, origInfo, destInfo, id) {
-  if (!f.route || f.route.length < 2) return null;
-
-  const outbound = f.route[0];
-  const inbound = f.route[1];
-  if (!outbound || !inbound) return null;
-
-  const dateStr = outbound.local_departure.slice(0, 10);
-  if (dateStr < todayStr()) return null;
-
-  const dow = classifyDow(dateStr);
-  if (!dow) return null;
-
-  // Cena round-trip z Kiwi
-  const rtPrice = f.price || 0;
-  if (!rtPrice || rtPrice > MAX_BUDGET_RT) return null;
-
-  const price1 = Math.round(rtPrice / 2);
-  const price2 = rtPrice;
-
-  const [dH, dM] = parseTimes(outbound.local_departure);
-  const [aH, aM] = parseTimes(outbound.local_arrival);
-  const durStr = calcDur(outbound.local_departure, outbound.local_arrival);
-  const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
+  const weekend = buildWeekendRecord(dateStr, dow, deptHour || 8, 0, arrH, arrM, durStr);
 
   return {
-    id: `k${id}`, airline: 'wizzair',
-    from, to, fromCity: origInfo.city, toCity: destInfo.city,
-    flag: destInfo.flag, country: destInfo.country,
+    id:      `w${id}`,
+    airline: 'wizzair',
+    from, to,
+    fromCity: origInfo.city,
+    toCity:   destInfo.city,
+    flag:     destInfo.flag,
+    country:  destInfo.country,
     ...weekend,
-    price1, price2,
-    sea: destInfo.sea, lgbt: destInfo.lgbt, lgbtN: destInfo.lgbtN,
-    distKm: destInfo.distKm, passport: destInfo.passport,
-    visa: destInfo.visa, currency: destInfo.currency, englishOk: destInfo.englishOk,
-    flightCode: outbound.flight_no || '',
+    price1,
+    price2,
+    sea:       destInfo.sea,
+    lgbt:      destInfo.lgbt,
+    lgbtN:     destInfo.lgbtN,
+    distKm:    destInfo.distKm,
+    passport:  destInfo.passport,
+    visa:      destInfo.visa,
+    currency:  destInfo.currency,
+    englishOk: destInfo.englishOk,
   };
 }
-*/
 
 // ─── api-samples ─────────────────────────────────────────────────────────────
 const apiSamples = {
@@ -360,24 +479,23 @@ function saveApiSamples() {
 async function fetchRealFlights() {
   const dateFrom = todayStr();
   const dateTo   = addMonths(dateFrom, MONTHS_AHEAD);
-  const today    = dateFrom;
 
   const flights  = [];
   let idCounter  = 1;
   let errors     = 0;
-  const routeLastRequest = new Map(); // Per-route throttling: minimalny odstęp między requestami dla tej samej trasy
 
   // ── Ryanair ────────────────────────────────────────────────────────────────
   const rRoutes = ROUTES.filter(r => r[2] === 'ryanair');
   console.log(`[refresh] Pobieranie ${rRoutes.length} tras Ryanair (${dateFrom} → ${dateTo})...`);
 
   for (let i = 0; i < rRoutes.length; i++) {
-    const [from, to] = rRoutes[i];
+    const route = rRoutes[i];
+    const [from, to] = route;
     const origInfo = ORIGINS[from];
     const destInfo = DESTS[to];
     if (!origInfo || !destInfo) continue;
 
-    process.stdout.write(`[${i+1}/${rRoutes.length}] R ${from}→${to}... `);
+    process.stdout.write(`[${i + 1}/${rRoutes.length}] R ${from}→${to}... `);
 
     let fares = [], lastErr;
     for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
@@ -385,7 +503,7 @@ async function fetchRealFlights() {
         fares = await fetchRyanairFares(from, to, dateFrom, dateTo);
         if (!apiSamples.ryanair.status && fares.length > 0) {
           apiSamples.ryanair.status = 200;
-          apiSamples.ryanair.url = `https://www.ryanair.com/api/farfnd/v4/roundTripFares?...${from}→${to}`;
+          apiSamples.ryanair.url = `ryanair/farfnd/v4/roundTripFares ${from}→${to}`;
           apiSamples.ryanair.sampleResponse = {
             route: `${from} → ${to}`, firstFare: fares[0],
             totalFares: fares.length, capturedAt: new Date().toISOString(),
@@ -417,78 +535,58 @@ async function fetchRealFlights() {
 
   // ── Wizzair ────────────────────────────────────────────────────────────────
   const wRoutes = ROUTES.filter(r => r[2] === 'wizzair');
+  console.log(`\n[refresh] Pobieranie ${wRoutes.length} tras Wizzair przez farechart API (Playwright)...`);
 
-  console.log(`\n[refresh] Pobieranie ${wRoutes.length} tras Wizzair przez Aviasales API...`);
+  let wizzSource = 'wizzair-static';
+  let rawWizzFlights = null;
 
-  let wizzOk = 0, wizzFail = 0;
+  if (chromium) {
+    rawWizzFlights = await fetchWizzairViaPlaywright(wRoutes);
+  } else {
+    console.log('[Wizzair] Playwright niedostępny — używam generatora statycznego');
+  }
 
-    for (let i = 0; i < wRoutes.length; i++) {
-      const [from, to] = wRoutes[i];
+  if (rawWizzFlights && rawWizzFlights.length > 0) {
+    // Normalizuj loty z farechart
+    let wizzAdded = 0;
+    for (const f of rawWizzFlights) {
+      const route    = f._route;
+      const [from, to] = route;
       const origInfo = ORIGINS[from];
       const destInfo = DESTS[to];
       if (!origInfo || !destInfo) continue;
 
-      process.stdout.write(`[${i+1}/${wRoutes.length}] W ${from}→${to}... `);
-
-      // Per-route throttling: sprawdź czas od ostatniego requestu dla tej trasy
-      const routeKey = `${from}-${to}`;
-      const now = Date.now();
-      const lastReq = routeLastRequest.get(routeKey) || 0;
-      const timeSinceLast = now - lastReq;
-      const minInterval = 30000; // 30 sekund minimalny odstęp dla tej samej trasy
-      if (timeSinceLast < minInterval) {
-        const extraSleep = minInterval - timeSinceLast;
-        console.log(`(dodatkowe ${extraSleep}ms dla trasy ${routeKey})`);
-        await sleep(extraSleep);
-      }
-      routeLastRequest.set(routeKey, Date.now());
-
-      await sleep(WZ_DELAY);
-
-      let rawFlights = [];
-      try {
-        rawFlights = await fetchWizzairFaresAviasales(from, to, dateFrom, dateTo);
-      } catch (err) {
-        console.log(`✗ ${err.message}`);
-        wizzFail++;
-        await sleep(1000); // Krótszy delay dla Aviasales
-        continue;
-      }
-
-      let added = 0;
-      for (const f of rawFlights) {
-        const rec = normalizeAviasalesFlight(f, from, to, origInfo, destInfo, idCounter);
-        if (rec) { flights.push(rec); idCounter++; added++; }
-      }
-
-      console.log(`✓ ${rawFlights.length} ofert (${added} weekendowych)`);
-      wizzOk++;
-
-      // Zapisz próbkę
-      if (!apiSamples.wizzair.status && rawFlights.length > 0) {
-        apiSamples.wizzair.status   = 200;
-        apiSamples.wizzair.strategy = 'aviasales-api';
-        apiSamples.wizzair.url      = `https://api.aviasales.com/v2/prices/latest?...${from}→${to}`;
-        apiSamples.wizzair.sampleResponse = {
-          route: `${from} → ${to}`, firstFlight: rawFlights[0],
-          totalFlights: rawFlights.length, capturedAt: new Date().toISOString(),
-        };
-        saveApiSamples();
-      }
-
-      await sleep(WZ_DELAY);
+      const rec = normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, idCounter);
+      if (rec) { flights.push(rec); idCounter++; wizzAdded++; }
     }
 
-    console.log(`\n[Wizzair] Wynik: ${wizzOk}/${wRoutes.length} tras OK, ${wizzFail} błędów`);
+    console.log(`[Wizzair] Znormalizowano ${wizzAdded} weekendowych lotów`);
 
-    const source = wizzOk > 0 ? 'ryanair+aviasales-api' : 'ryanair-api+wizzair-static';
-
-    if (wizzOk === 0) {
-      const staticWizz = generateFlights(new Date()).filter(f => f.airline === 'wizzair');
-      flights.push(...staticWizz);
+    // Zapisz próbkę
+    if (rawWizzFlights.length > 0) {
+      apiSamples.wizzair.status   = 200;
+      apiSamples.wizzair.strategy = 'playwright-farechart';
+      apiSamples.wizzair.url      = `be.wizzair.com/${WIZZAIR_API_VERSION}/Api/asset/farechart`;
+      apiSamples.wizzair.sampleResponse = {
+        totalRaw:   rawWizzFlights.length,
+        normalized: wizzAdded,
+        sample:     rawWizzFlights[0],
+        capturedAt: new Date().toISOString(),
+      };
+      saveApiSamples();
     }
 
-    return { flights, source, errors };
+    wizzSource = 'wizzair-farechart-live';
+  } else {
+    // Fallback: generator statyczny
+    console.log('[Wizzair] Brak danych z farechart — fallback do generatora statycznego');
+    const staticWizz = (await generateFlights(new Date())).filter(f => f.airline === 'wizzair');
+    flights.push(...staticWizz);
+    wizzSource = 'wizzair-static';
+  }
+
+  const source = `ryanair-api+${wizzSource}`;
+  return { flights, source, errors };
 }
 
 // ─── Zapis i podsumowanie ─────────────────────────────────────────────────────
@@ -515,7 +613,7 @@ function writeOutput(flights, source) {
   console.log(`   Plik:    ${outPath}`);
   console.log(`   Źródło:  ${source}`);
   console.log(`   Ryanair: ${ry}`);
-  console.log(`   Wizzair: ${wz} ${source.includes('static') ? '(generator)' : '(prawdziwe API)'}`);
+  console.log(`   Wizzair: ${wz} ${source.includes('static') ? '(generator)' : '(prawdziwe ceny)'}`);
   console.log('═══════════════════════════════════════════════════');
 }
 
@@ -523,11 +621,12 @@ function writeOutput(flights, source) {
 async function main() {
   console.log('═══════════════════════════════════════════════════');
   console.log('  REFRESH FLIGHTS — Ryanair + Wizzair');
+  console.log(`  Playwright: ${chromium ? '✓ dostępny' : '✗ niedostępny'}`);
   console.log('═══════════════════════════════════════════════════\n');
 
   if (typeof fetch === 'undefined') {
     console.log('⚠️  fetch() niedostępny — wymagany Node.js 18+. Używam generatora.\n');
-    writeOutput(generateFlights(new Date()), 'static-generator-fallback');
+    writeOutput(await generateFlights(new Date()), 'static-generator-fallback');
     return;
   }
 
@@ -537,13 +636,13 @@ async function main() {
   } catch (err) {
     console.error(`\n✗ Krytyczny błąd: ${err.message}`);
     console.log('   Używam fallback generatora');
-    writeOutput(generateFlights(new Date()), 'static-generator-fallback');
+    writeOutput(await generateFlights(new Date()), 'static-generator-fallback');
     return;
   }
 
-  if (result.flights.length === 0) {
+  if (!result || !Array.isArray(result.flights) || result.flights.length === 0) {
     console.log('\n⚠️  API zwróciło 0 lotów — fallback do generatora');
-    writeOutput(generateFlights(new Date()), 'static-generator-fallback');
+    writeOutput(await generateFlights(new Date()), 'static-generator-fallback');
     return;
   }
 
