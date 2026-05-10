@@ -29,9 +29,8 @@ const MONTHS_AHEAD        = 6;
 const MAX_RETRY           = 2;
 const TIMEOUT_MS          = 20000;
 const WIZZAIR_API_VERSION = '28.9.0'; // Aktualna wersja API Wizzair (auto-wykrywana)
-const FARECHART_INTERVAL  = 10;       // Pokrycie każdego zapytania (±10 dni)
-const FARECHART_STEP      = 12;       // Krok iteracji → 180/12 = 15 iteracji / destynację
-const KASADA_MAX_REQUESTS = 42;       // Maks. farechart calls per context (Kasada limit ~42-45, renew at 42)
+const FARECHART_INTERVAL  = 10;       // Pokrycie każdego zapytania (±10 dni); API nie akceptuje >10
+const KASADA_MAX_REQUESTS = 42;       // Maks. farechart calls per sesję (Kasada limit ~42-45)
 
 // ─── Playwright (opcjonalny) ──────────────────────────────────────────────────
 let chromium = null;
@@ -222,7 +221,8 @@ async function fetchWizzairViaPlaywright(wRoutes) {
   let windowsDone  = 0;
 
   const WINDOW_STEP    = 20; // dni między centrami okien (step=interval*2 = brak przerw)
-  const WINDOW_COOLDOWN = 45000; // 45s przerwa między oknami (cooldown Kasada)
+  // GitHub Actions (CI=true) dostaje świeże IP → cooldown zbędny; lokalnie 45s na reset Kasada
+  const WINDOW_COOLDOWN = process.env.CI ? 8000 : 45000;
 
   for (let daysOffset = 0; daysOffset < 180; daysOffset += WINDOW_STEP) {
     const centerD = new Date(today + 'T12:00:00');
