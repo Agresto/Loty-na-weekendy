@@ -190,7 +190,7 @@ async function callFarechart(page, from, to, centerDateStr, apiVersion) {
       });
       if (!r.ok) return { ok: false, status: r.status };
       const data = await r.json();
-      return { ok: true, status: r.status, outbound: data.outboundFlights || [] };
+      return { ok: true, status: r.status, outbound: data.outboundFlights || [], inbound: data.inboundFlights || [] };
     }, { body, apiVersion });
 
     return result;
@@ -215,8 +215,9 @@ async function fetchWizzairViaPlaywright(wRoutes) {
 
   const today   = todayStr();
   const maxDate = addMonths(today, MONTHS_AHEAD);
-  const seen       = new Set();
-  const allFlights = [];
+  const seen          = new Set();
+  const allFlights    = [];
+  const returnPriceMap = new Map();
   let totalAdded   = 0;
   let windowsDone  = 0;
 
@@ -277,6 +278,17 @@ async function fetchWizzairViaPlaywright(wRoutes) {
           totalAdded++;
         }
 
+        for (const f of result.inbound || []) {
+          const dateStr = f.date ? f.date.slice(0, 10) : null;
+          if (!dateStr || dateStr < today || dateStr > maxDate) continue;
+          const amount = f.price?.amount || 0;
+          if (amount > 0) {
+            const key = `${f.departureStation}-${f.arrivalStation}-${dateStr}`;
+            if (!returnPriceMap.has(key) || returnPriceMap.get(key) > amount)
+              returnPriceMap.set(key, amount);
+          }
+        }
+
         await sleep(200);
       }
     } catch(e) {
@@ -299,7 +311,93 @@ async function fetchWizzairViaPlaywright(wRoutes) {
   }
 
   console.log(`\n[Wizzair] Łącznie: ${totalAdded} lotów (${windowsDone} okien)`);
-  return allFlights;
+  return { allFlights, returnPriceMap };
+}
+
+// ─── Wizzair: pobieranie godzin lotów przez search API ───────────────────────
+async function fetchWizzairTimesViaSearch(wRoutes, allFlights) {
+  if (!chromium || !allFlights.length) return new Map();
+
+  const timesMap = new Map();
+  const today = todayStr();
+  const eightWeeksOut = addDays(today, 56);
+
+  // Zbierz trasy z lotami w najbliższych 8 tygodniach (oba kierunki)
+  const nearRoutes = new Set();
+  for (const f of allFlights) {
+    const dateStr = f.date ? f.date.slice(0, 10) : null;
+    if (!dateStr || dateStr > eightWeeksOut) continue;
+    const [from, to] = f._route;
+    nearRoutes.add(`${from}|${to}`);
+    nearRoutes.add(`${to}|${from}`);
+  }
+  if (!nearRoutes.size) return timesMap;
+
+  const routePairs = [...nearRoutes].map(k => k.split('|'));
+  console.log(`\n[Wizzair Times] Pobieranie godzin dla ${routePairs.length} kierunków...`);
+
+  const init = await initWizzairBrowser();
+  if (!init) { console.log('[Wizzair Times] Playwright niedostępny'); return timesMap; }
+  const { browser, ctx, page, apiVersionRef } = init;
+
+  try {
+    let reqCount = 0;
+    for (const [from, to] of routePairs) {
+      if (reqCount >= KASADA_MAX_REQUESTS) break;
+
+      const body = JSON.stringify({
+        flightList: [{ departureStation: from, arrivalStation: to, from: today, to: eightWeeksOut }],
+        priceType: 'regular', adultCount: 1, childCount: 0, infantCount: 0,
+      });
+
+      const result = await page.evaluate(async ({ body, apiVersion }) => {
+        const r = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json;charset=UTF-8',
+            'accept': 'application/json, text/plain, */*',
+            'origin': 'https://wizzair.com',
+            'referer': 'https://wizzair.com/pl-pl',
+          },
+          body,
+        });
+        if (!r.ok) return { ok: false, status: r.status };
+        const data = await r.json();
+        return { ok: true, outbound: data.outboundFlights || [] };
+      }, { body, apiVersion: apiVersionRef.value });
+
+      reqCount++;
+
+      if (result.ok) {
+        for (const f of result.outbound || []) {
+          const depStr = f.scheduledDepartureDateTime || f.departureDateTime || f.departureDatTime;
+          const arrStr = f.scheduledArrivalDateTime  || f.arrivalDateTime   || f.arrivalDatTime;
+          if (!depStr || depStr.length < 16) continue;
+          const dateStr = depStr.slice(0, 10);
+          if (dateStr < today || dateStr > eightWeeksOut) continue;
+          const key = `${from}-${to}-${dateStr}`;
+          if (!timesMap.has(key)) {
+            const dept   = depStr.slice(11, 16);
+            const arr    = arrStr && arrStr.length >= 16 ? arrStr.slice(11, 16) : null;
+            const durMin = arr ? Math.round((new Date(arrStr.slice(0, 19)) - new Date(depStr.slice(0, 19))) / 60000) : 0;
+            const dur    = durMin > 0 && durMin < 720
+              ? `${Math.floor(durMin / 60)}h ${String(durMin % 60).padStart(2, '0')}m`
+              : null;
+            timesMap.set(key, { dept, arr, dur });
+          }
+        }
+      }
+      await sleep(300);
+    }
+    console.log(`[Wizzair Times] ${timesMap.size} godzin lotów (${reqCount} zapytań)`);
+  } catch(e) {
+    console.error(`[Wizzair Times] Błąd: ${e.message}`);
+  } finally {
+    await ctx.close().catch(() => {});
+    await browser.close().catch(() => {});
+  }
+
+  return timesMap;
 }
 
 // ─── Formatowanie dat ─────────────────────────────────────────────────────────
@@ -410,30 +508,51 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
 }
 
 // ─── Normalizacja Wizzair farechart ───────────────────────────────────────────
-function normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, id) {
+function normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, id, returnPriceMap, timesMap) {
   const dateStr = f.date ? f.date.slice(0, 10) : null;
   if (!dateStr || dateStr < todayStr()) return null;
 
   const dow = classifyDow(dateStr);
   if (!dow) return null;
 
-  // farechart zwraca cenę jednego kierunku w PLN
   const price1 = Math.round(f.price?.amount || 0);
   if (!price1 || price1 <= 0) return null;
 
-  // Szacujemy round-trip: cena powrotu ~= cena wylotu
-  const price2 = Math.round(price1 * 2);
+  // Rzeczywista cena powrotu z farechart (jeśli dostępna), inaczej szacunek ×2
+  const retDate = dow === 'sat' ? addDays(dateStr, 1)
+    : dow === 'fri' ? addDays(dateStr, 2)
+    : dateStr;
+  const retPrice = returnPriceMap?.get(`${to}-${from}-${retDate}`) || 0;
+  const price2 = retPrice > 0 ? Math.round(price1 + retPrice) : Math.round(price1 * 2);
   if (price2 > MAX_BUDGET_RT) return null;
 
-  // Czasy lotu z danych ROUTES (brak w farechart)
-  const [, , , , durMin, deptHour] = route;
-  const totalMin = durMin || 120;
-  const arrTotalMin = deptHour * 60 + totalMin;
-  const arrH = Math.floor(arrTotalMin / 60) % 24;
-  const arrM = arrTotalMin % 60;
-  const durStr = `${Math.floor(totalMin / 60)}h ${String(totalMin % 60).padStart(2, '0')}m`;
+  // Godziny wylotu: z search API (jeśli pobrane), inaczej ze statycznych ROUTES
+  const outTimes = timesMap?.get(`${from}-${to}-${dateStr}`);
+  let deptH, deptM, arrH, arrM, durStr;
+  if (outTimes?.dept) {
+    [deptH, deptM] = outTimes.dept.split(':').map(Number);
+    [arrH,  arrM]  = (outTimes.arr || '00:00').split(':').map(Number);
+    durStr = outTimes.dur;
+  } else {
+    const [, , , , durMin, deptHour] = route;
+    const totalMin = durMin || 120;
+    deptH = deptHour || 8; deptM = 0;
+    const arrTotal = deptH * 60 + totalMin;
+    arrH = Math.floor(arrTotal / 60) % 24;
+    arrM = arrTotal % 60;
+    durStr = `${Math.floor(totalMin / 60)}h ${String(totalMin % 60).padStart(2, '0')}m`;
+  }
 
-  const weekend = buildWeekendRecord(dateStr, dow, deptHour || 8, 0, arrH, arrM, durStr);
+  const weekend = buildWeekendRecord(dateStr, dow, deptH, deptM, arrH, arrM, durStr);
+
+  // Godziny powrotu z search API (jeśli dostępne)
+  if (retDate !== dateStr) {
+    const retTimes = timesMap?.get(`${to}-${from}-${retDate}`);
+    if (retTimes?.dept) {
+      weekend.retDept = retTimes.dept;
+      if (retTimes.arr) weekend.retArr = retTimes.arr;
+    }
+  }
 
   return {
     id:      `w${id}`,
@@ -539,9 +658,15 @@ async function fetchRealFlights() {
 
   let wizzSource = 'wizzair-static';
   let rawWizzFlights = null;
+  let wizzReturnPriceMap = new Map();
+  let wizzTimesMap = new Map();
 
   if (chromium) {
-    rawWizzFlights = await fetchWizzairViaPlaywright(wRoutes);
+    const wizzResult = await fetchWizzairViaPlaywright(wRoutes);
+    rawWizzFlights    = wizzResult?.allFlights || null;
+    wizzReturnPriceMap = wizzResult?.returnPriceMap || new Map();
+    if (rawWizzFlights?.length > 0)
+      wizzTimesMap = await fetchWizzairTimesViaSearch(wRoutes, rawWizzFlights);
   } else {
     console.log('[Wizzair] Playwright niedostępny — używam generatora statycznego');
   }
@@ -556,7 +681,7 @@ async function fetchRealFlights() {
       const destInfo = DESTS[to];
       if (!origInfo || !destInfo) continue;
 
-      const rec = normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, idCounter);
+      const rec = normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, idCounter, wizzReturnPriceMap, wizzTimesMap);
       if (rec) { flights.push(rec); idCounter++; wizzAdded++; }
     }
 

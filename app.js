@@ -1349,9 +1349,11 @@ function cardHTML(f, i) {
     <hr class="leg-divider"/>
     <div class="return-leg">
       <div class="leg-lbl">
-        ↩ Powrót: ${retStr} &nbsp;·&nbsp;
-        <span style="color:var(--color-accent)">${f.to}</span> →
-        <span style="color:var(--color-accent)">${f.from}</span>
+        <span class="leg-lbl-txt">↩ Powrót: ${retStr} &nbsp;·&nbsp;
+          <span style="color:var(--color-accent)">${f.to}</span> →
+          <span style="color:var(--color-accent)">${f.from}</span>
+        </span>
+        <span class="leg-price">${f.price2 - f.price1} PLN</span>
       </div>
       <div class="leg-row">
         <div class="t-block">
@@ -1419,7 +1421,10 @@ function cardHTML(f, i) {
     </div>
 
     <div class="fc-times">
-      <div class="leg-lbl">✈ Wylot: ${cap(f.deptDay)} · ${f.from} → ${f.to} · ${f.toCity}</div>
+      <div class="leg-lbl">
+        <span class="leg-lbl-txt">✈ Wylot: ${cap(f.deptDay)} · ${f.from} → ${f.to} · ${f.toCity}</span>
+        <span class="leg-price">${f.price1} PLN</span>
+      </div>
       <div class="leg-row">
         <div class="t-block">
           <div class="t-val">${f.dept}</div>

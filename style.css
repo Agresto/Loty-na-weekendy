@@ -1315,7 +1315,23 @@ section {
 
 /* Leg / times */
 .fc-times { margin-bottom: 12px; }
-.leg-lbl { font-size: .72rem; color: var(--text-muted); margin-bottom: 6px; }
+.leg-lbl {
+  font-size: .72rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.leg-lbl-txt { min-width: 0; }
+.leg-price {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
 .leg-row {
   display: flex;
