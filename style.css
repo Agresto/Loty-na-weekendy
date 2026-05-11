@@ -24,6 +24,7 @@
 
   --color-ryanair:    #5e9eff;
   --color-wizzair:    #c066f0;
+  --color-secondary:  #7888aa;
 
   --text-primary:     #f0ece8;
   --text-secondary:   #a09090;
@@ -68,6 +69,7 @@
 
   --color-ryanair:    #0057b8;
   --color-wizzair:    #8b00cc;
+  --color-secondary:  #5566aa;
 
   --text-primary:     #1a1018;
   --text-secondary:   #5a4a4a;
@@ -479,6 +481,13 @@ section {
   flex-wrap: wrap;
 }
 
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
 .hero-stat-num {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
@@ -602,9 +611,15 @@ section {
   flex-shrink: 0;
   transition: background var(--transition), border-color var(--transition);
   z-index: 2;
+  backdrop-filter: blur(8px);
 }
 
 .vibe-arrow:hover { background: var(--bg-glass-hover); border-color: var(--border-input); }
+.vibe-arrow-l, .vibe-arrow-r { position: relative; }
+
+@media (max-width: 600px) {
+  .vibe-arrow-l, .vibe-arrow-r { display: none; }
+}
 
 .vibe-card {
   scroll-snap-align: start;
@@ -910,6 +925,14 @@ section {
   flex: 1;
   height: 1px;
   background: var(--border-subtle);
+}
+
+/* Month section wrapper */
+.month-sec {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
 }
 
 /* Year tabs */
@@ -1506,6 +1529,61 @@ section {
   to   { opacity: 1; transform: none; }
 }
 
+/* ─── 12b. SVG MAP PATHS & ROUTES ─────────────────────────── */
+
+/* Country paths */
+.cp {
+  fill: rgba(255,255,255,.04);
+  stroke: rgba(255,255,255,.12);
+  stroke-width: .8;
+  cursor: default;
+  transition: fill .15s ease;
+}
+
+[data-theme="light"] .cp {
+  fill: rgba(0,0,0,.04);
+  stroke: rgba(0,0,0,.12);
+}
+
+.cp.has-f {
+  fill: rgba(245,140,61,.13);
+  stroke: rgba(245,140,61,.35);
+  cursor: pointer;
+}
+
+.cp.has-f:hover {
+  fill: rgba(245,140,61,.25);
+  stroke: rgba(245,140,61,.7);
+}
+
+.cp.cheapest {
+  fill: rgba(245,140,61,.22);
+  stroke: var(--color-accent);
+  stroke-width: 1.5;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px var(--color-accent-glow));
+}
+
+.cp.cheapest:hover {
+  fill: rgba(245,140,61,.38);
+}
+
+/* Route lines */
+.route-line {
+  stroke-width: 1.2;
+  opacity: .3;
+  stroke-linecap: round;
+  transition: opacity .15s ease, stroke-width .15s ease;
+  pointer-events: none;
+}
+
+.rl-ryanair { stroke: var(--color-ryanair); }
+.rl-wizzair { stroke: var(--color-wizzair); }
+
+/* Airport dots */
+.ap-dot { cursor: pointer; }
+.ap-dot:hover circle:last-of-type { r: 6; }
+
 /* ─── 13. MAP SECTION ──────────────────────────────────────── */
 
 .map-controls {
@@ -2028,6 +2106,18 @@ footer p {
 }
 
 .vibe-card:hover img { transform: scale(1.06); }
+
+/* .si = scroll-in — elements start invisible, .vis = visible (added by IntersectionObserver) */
+.si {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.si.vis {
+  opacity: 1;
+  transform: none;
+}
 
 .vibe-card.si {
   background: linear-gradient(135deg, #1e3a5f, #2e1f5e);

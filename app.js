@@ -518,6 +518,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   // 5. Init UI
   initTicker(); initVibes(); initVibeScroll(); initMonths();
   setupOriginChips(); setupDestAC();
+  _syncSliderFill(document.getElementById('budgetR'));
   renderResults(); initMap(); initTW(); initCounters(); initIO();
 
   // 6. Event listeners
@@ -1067,8 +1068,24 @@ function togAirline(a) {
   btn.classList.toggle(`a-${a}`,S.airlines[a]); btn.setAttribute('aria-pressed',S.airlines[a]);
 }
 function togDay(btn) { const d=btn.dataset.day; if(S.days.includes(d)){S.days=S.days.filter(x=>x!==d);btn.classList.remove('on');btn.setAttribute('aria-pressed','false');}else{S.days.push(d);btn.classList.add('on');btn.setAttribute('aria-pressed','true');} }
-function updBudget(v) { S.budget=+v; document.getElementById('budgetV').textContent=S.budget>=3000?'Bez limitu':`${S.budget} PLN`; document.querySelectorAll('.b-chip').forEach(c=>c.classList.remove('on')); }
-function setBudget(v) { S.budget=v; document.getElementById('budgetR').value=v; document.getElementById('budgetV').textContent=v>=3000?'Bez limitu':`${v} PLN`; document.querySelectorAll('.b-chip').forEach(c=>c.classList.toggle('on',c.textContent.includes(v>=3000?'limit':v))); }
+function updBudget(v) {
+  S.budget = +v;
+  document.getElementById('budgetV').textContent = S.budget >= 3000 ? 'Bez limitu' : `${S.budget} PLN`;
+  document.querySelectorAll('.b-chip').forEach(c => c.classList.remove('on'));
+  _syncSliderFill(document.getElementById('budgetR'));
+}
+function setBudget(v) {
+  S.budget = v;
+  const r = document.getElementById('budgetR');
+  r.value = v;
+  document.getElementById('budgetV').textContent = v >= 3000 ? 'Bez limitu' : `${v} PLN`;
+  document.querySelectorAll('.b-chip').forEach(c => c.classList.toggle('on', c.textContent.includes(v >= 3000 ? 'limit' : v)));
+  _syncSliderFill(r);
+}
+function _syncSliderFill(r) {
+  const pct = ((r.value - r.min) / (r.max - r.min) * 100).toFixed(1) + '%';
+  r.style.setProperty('--val', pct);
+}
 function togSw(el) { el.classList.toggle('on'); const on=el.classList.contains('on'); el.setAttribute('aria-checked',on); if(el.id==='swRound')S.roundtrip=on; if(el.id==='swSea')S.seaOnly=on; if(el.id==='swLgbt')S.lgbtOnly=on; }
 
 /* ================================================================
@@ -1674,7 +1691,7 @@ function toggleTheme(){const h=document.documentElement,d=h.getAttribute('data-t
 ================================================================ */
 function toast(type,icon,title,msg){
   const c=document.getElementById('toastWrap'),t=document.createElement('div');
-  t.className='toast';t.setAttribute('role','alert');
+  t.className=`toast ${type||'info'}`;t.setAttribute('role','alert');
   t.innerHTML=`<span class="toast-ico">${icon}</span><div><div class="toast-title">${title}</div>${msg?`<div class="toast-msg">${msg}</div>`:''}</div>`;
   c.appendChild(t);
   setTimeout(()=>{t.style.transition='all .3s ease';t.style.transform='translateX(110%)';t.style.opacity='0';setTimeout(()=>t.remove(),300);},3500);
