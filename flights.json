@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-05-19T14:34:00.828Z",
+  "lastUpdated": "2026-05-19T14:59:35.332Z",
   "source": "ryanair-api+wizzair-farechart-live",
   "maxBudgetRT": 500,
-  "totalCount": 1464,
+  "totalCount": 1458,
   "flights": [
     {
       "id": "r175",
@@ -125,8 +125,8 @@
       "retDept": "04:00",
       "retArr": "06:30",
       "dur": "2h 30m",
-      "price1": 191,
-      "price2": 382,
+      "price1": 228,
+      "price2": 456,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Norwegia – zalegalizowane małżeństwa jednopłciowe od 2009",
@@ -236,40 +236,7 @@
       "englishOk": true
     },
     {
-      "id": "w719",
-      "airline": "wizzair",
-      "from": "WAW",
-      "to": "TIA",
-      "fromCity": "Warszawa",
-      "toCity": "Tirana",
-      "flag": "🇦🇱",
-      "country": "Albania",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 22–24 Maj 2026",
-      "raw": "2026-05-22",
-      "retRaw": "2026-05-24",
-      "month": 5,
-      "year": 2026,
-      "dept": "13:00",
-      "arr": "15:45",
-      "retDept": "01:00",
-      "retArr": "03:45",
-      "dur": "2h 45m",
-      "price1": 234,
-      "price2": 468,
-      "sea": false,
-      "lgbt": false,
-      "lgbtN": "Albania – brak pełnych praw LGBTQ+",
-      "distKm": 4,
-      "passport": false,
-      "visa": "brak",
-      "currency": "ALL L",
-      "englishOk": false
-    },
-    {
-      "id": "w724",
+      "id": "w723",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -335,7 +302,7 @@
       "englishOk": true
     },
     {
-      "id": "r186",
+      "id": "r188",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -356,8 +323,8 @@
       "retDept": "09:00",
       "retArr": "10:50",
       "dur": "1h 45m",
-      "price1": 197,
-      "price2": 394,
+      "price1": 217,
+      "price2": 434,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -368,7 +335,7 @@
       "englishOk": true
     },
     {
-      "id": "r213",
+      "id": "r212",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -488,8 +455,8 @@
       "retDept": "18:00",
       "retArr": "20:40",
       "dur": "2h 40m",
-      "price1": 77,
-      "price2": 154,
+      "price1": 93,
+      "price2": 186,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Albania – brak pełnych praw LGBTQ+",
@@ -599,7 +566,7 @@
       "englishOk": true
     },
     {
-      "id": "w721",
+      "id": "w720",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -665,7 +632,7 @@
       "englishOk": true
     },
     {
-      "id": "r130",
+      "id": "r139",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -686,8 +653,8 @@
       "retDept": "22:00",
       "retArr": "00:10",
       "dur": "1h 45m",
-      "price1": 106,
-      "price2": 213,
+      "price1": 119,
+      "price2": 239,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -698,7 +665,7 @@
       "englishOk": true
     },
     {
-      "id": "r206",
+      "id": "r219",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -719,8 +686,8 @@
       "retDept": "05:00",
       "retArr": "07:30",
       "dur": "2h 00m",
-      "price1": 159,
-      "price2": 318,
+      "price1": 173,
+      "price2": 347,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -818,8 +785,8 @@
       "retDept": "04:00",
       "retArr": "06:20",
       "dur": "2h 00m",
-      "price1": 94,
-      "price2": 189,
+      "price1": 97,
+      "price2": 193,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -1016,8 +983,8 @@
       "retDept": "01:00",
       "retArr": "03:45",
       "dur": "2h 45m",
-      "price1": 163,
-      "price2": 326,
+      "price1": 191,
+      "price2": 382,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -1193,7 +1160,7 @@
       "englishOk": true
     },
     {
-      "id": "w722",
+      "id": "w721",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -1457,7 +1424,7 @@
       "englishOk": true
     },
     {
-      "id": "r500",
+      "id": "r501",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -1544,8 +1511,8 @@
       "retDept": "06:00",
       "retArr": "07:55",
       "dur": "1h 55m",
-      "price1": 234,
-      "price2": 468,
+      "price1": 217,
+      "price2": 434,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
@@ -1721,7 +1688,7 @@
       "englishOk": true
     },
     {
-      "id": "w720",
+      "id": "w719",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -1742,8 +1709,8 @@
       "retDept": "01:00",
       "retArr": "03:45",
       "dur": "2h 45m",
-      "price1": 217,
-      "price2": 434,
+      "price1": 234,
+      "price2": 468,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Albania – brak pełnych praw LGBTQ+",
@@ -1754,7 +1721,7 @@
       "englishOk": false
     },
     {
-      "id": "w723",
+      "id": "w722",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -1985,7 +1952,7 @@
       "englishOk": true
     },
     {
-      "id": "r540",
+      "id": "r551",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -2006,8 +1973,8 @@
       "retDept": "20:00",
       "retArr": "22:00",
       "dur": "2h 00m",
-      "price1": 225,
-      "price2": 450,
+      "price1": 247,
+      "price2": 494,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -2051,7 +2018,7 @@
       "englishOk": true
     },
     {
-      "id": "w725",
+      "id": "w724",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -2084,7 +2051,7 @@
       "englishOk": false
     },
     {
-      "id": "w746",
+      "id": "w745",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -2117,7 +2084,7 @@
       "englishOk": true
     },
     {
-      "id": "w755",
+      "id": "w753",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -2150,7 +2117,40 @@
       "englishOk": true
     },
     {
-      "id": "w797",
+      "id": "w776",
+      "airline": "wizzair",
+      "from": "WAW",
+      "to": "BGY",
+      "fromCity": "Warszawa",
+      "toCity": "Bergamo (Mediolan)",
+      "flag": "🇮🇹",
+      "country": "Włochy",
+      "deptDay": "sobota",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
+      "date": "Sb–Nd, 30–31 Maj 2026",
+      "raw": "2026-05-30",
+      "retRaw": "2026-05-31",
+      "month": 5,
+      "year": 2026,
+      "dept": "15:00",
+      "arr": "17:10",
+      "retDept": "03:00",
+      "retArr": "05:10",
+      "dur": "2h 10m",
+      "price1": 234,
+      "price2": 468,
+      "sea": false,
+      "lgbt": true,
+      "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
+      "distKm": 50,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
+      "id": "w796",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -2381,7 +2381,7 @@
       "englishOk": true
     },
     {
-      "id": "w726",
+      "id": "w725",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -2414,7 +2414,7 @@
       "englishOk": false
     },
     {
-      "id": "w736",
+      "id": "w735",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -2447,7 +2447,7 @@
       "englishOk": true
     },
     {
-      "id": "w747",
+      "id": "w746",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -2480,7 +2480,7 @@
       "englishOk": true
     },
     {
-      "id": "w759",
+      "id": "w757",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -2513,7 +2513,7 @@
       "englishOk": true
     },
     {
-      "id": "w763",
+      "id": "w761",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -2546,7 +2546,7 @@
       "englishOk": true
     },
     {
-      "id": "w773",
+      "id": "w771",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -2579,7 +2579,7 @@
       "englishOk": true
     },
     {
-      "id": "w778",
+      "id": "w777",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -2612,7 +2612,7 @@
       "englishOk": true
     },
     {
-      "id": "w785",
+      "id": "w784",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -2645,7 +2645,7 @@
       "englishOk": true
     },
     {
-      "id": "w798",
+      "id": "w797",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -2711,7 +2711,7 @@
       "englishOk": true
     },
     {
-      "id": "r139",
+      "id": "r137",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -2732,8 +2732,8 @@
       "retDept": "11:00",
       "retArr": "13:05",
       "dur": "1h 45m",
-      "price1": 117,
-      "price2": 235,
+      "price1": 115,
+      "price2": 231,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -2909,7 +2909,7 @@
       "englishOk": true
     },
     {
-      "id": "w731",
+      "id": "w730",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -2942,7 +2942,7 @@
       "englishOk": true
     },
     {
-      "id": "w741",
+      "id": "w740",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -2975,7 +2975,7 @@
       "englishOk": true
     },
     {
-      "id": "w748",
+      "id": "w747",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -3008,7 +3008,7 @@
       "englishOk": true
     },
     {
-      "id": "w756",
+      "id": "w754",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -3041,7 +3041,7 @@
       "englishOk": true
     },
     {
-      "id": "w764",
+      "id": "w762",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -3062,8 +3062,8 @@
       "retDept": "20:00",
       "retArr": "22:55",
       "dur": "2h 55m",
-      "price1": 62,
-      "price2": 124,
+      "price1": 77,
+      "price2": 154,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
@@ -3074,7 +3074,7 @@
       "englishOk": true
     },
     {
-      "id": "w768",
+      "id": "w766",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -3095,8 +3095,8 @@
       "retDept": "19:00",
       "retArr": "22:15",
       "dur": "3h 15m",
-      "price1": 163,
-      "price2": 326,
+      "price1": 191,
+      "price2": 382,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -3107,7 +3107,7 @@
       "englishOk": true
     },
     {
-      "id": "w779",
+      "id": "w778",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -3140,7 +3140,7 @@
       "englishOk": true
     },
     {
-      "id": "w786",
+      "id": "w785",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -3173,7 +3173,7 @@
       "englishOk": true
     },
     {
-      "id": "w794",
+      "id": "w793",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -3206,7 +3206,7 @@
       "englishOk": false
     },
     {
-      "id": "w802",
+      "id": "w801",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -3272,7 +3272,7 @@
       "englishOk": true
     },
     {
-      "id": "r135",
+      "id": "r130",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -3293,8 +3293,8 @@
       "retDept": "09:00",
       "retArr": "10:50",
       "dur": "1h 45m",
-      "price1": 109,
-      "price2": 218,
+      "price1": 107,
+      "price2": 214,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -3470,7 +3470,7 @@
       "englishOk": true
     },
     {
-      "id": "r533",
+      "id": "r531",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -3491,8 +3491,8 @@
       "retDept": "20:00",
       "retArr": "22:00",
       "dur": "2h 00m",
-      "price1": 219,
-      "price2": 438,
+      "price1": 215,
+      "price2": 429,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -3602,7 +3602,7 @@
       "englishOk": true
     },
     {
-      "id": "w727",
+      "id": "w726",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -3635,7 +3635,7 @@
       "englishOk": false
     },
     {
-      "id": "w732",
+      "id": "w731",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -3668,7 +3668,7 @@
       "englishOk": true
     },
     {
-      "id": "w749",
+      "id": "w748",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -3701,7 +3701,7 @@
       "englishOk": true
     },
     {
-      "id": "w754",
+      "id": "w752",
       "airline": "wizzair",
       "from": "KRK",
       "to": "EIN",
@@ -3722,8 +3722,8 @@
       "retDept": "08:00",
       "retArr": "09:50",
       "dur": "1h 50m",
-      "price1": 217,
-      "price2": 434,
+      "price1": 234,
+      "price2": 468,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
@@ -3734,7 +3734,7 @@
       "englishOk": true
     },
     {
-      "id": "w757",
+      "id": "w755",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -3767,7 +3767,7 @@
       "englishOk": true
     },
     {
-      "id": "w771",
+      "id": "w769",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -3800,7 +3800,7 @@
       "englishOk": true
     },
     {
-      "id": "w774",
+      "id": "w772",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -3833,7 +3833,7 @@
       "englishOk": true
     },
     {
-      "id": "w780",
+      "id": "w779",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -3866,7 +3866,7 @@
       "englishOk": true
     },
     {
-      "id": "w791",
+      "id": "w790",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -3899,7 +3899,7 @@
       "englishOk": true
     },
     {
-      "id": "w796",
+      "id": "w795",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -3932,7 +3932,7 @@
       "englishOk": true
     },
     {
-      "id": "w799",
+      "id": "w798",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -3953,8 +3953,8 @@
       "retDept": "20:00",
       "retArr": "23:25",
       "dur": "3h 25m",
-      "price1": 174,
-      "price2": 348,
+      "price1": 157,
+      "price2": 314,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -4130,7 +4130,7 @@
       "englishOk": true
     },
     {
-      "id": "r267",
+      "id": "r263",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -4151,8 +4151,8 @@
       "retDept": "08:00",
       "retArr": "10:25",
       "dur": "2h 15m",
-      "price1": 163,
-      "price2": 325,
+      "price1": 158,
+      "price2": 317,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -4250,8 +4250,8 @@
       "retDept": "04:00",
       "retArr": "06:20",
       "dur": "2h 00m",
-      "price1": 107,
-      "price2": 214,
+      "price1": 105,
+      "price2": 210,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -4328,7 +4328,7 @@
       "englishOk": true
     },
     {
-      "id": "w728",
+      "id": "w727",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -4361,7 +4361,7 @@
       "englishOk": false
     },
     {
-      "id": "w733",
+      "id": "w732",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -4382,8 +4382,8 @@
       "retDept": "18:00",
       "retArr": "21:20",
       "dur": "3h 20m",
-      "price1": 132,
-      "price2": 264,
+      "price1": 116,
+      "price2": 232,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -4394,7 +4394,7 @@
       "englishOk": true
     },
     {
-      "id": "w737",
+      "id": "w736",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -4427,7 +4427,7 @@
       "englishOk": true
     },
     {
-      "id": "w739",
+      "id": "w738",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -4460,7 +4460,7 @@
       "englishOk": true
     },
     {
-      "id": "w744",
+      "id": "w743",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -4481,8 +4481,8 @@
       "retDept": "17:00",
       "retArr": "19:30",
       "dur": "2h 30m",
-      "price1": 191,
-      "price2": 382,
+      "price1": 217,
+      "price2": 434,
       "sea": true,
       "lgbt": false,
       "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
@@ -4493,7 +4493,7 @@
       "englishOk": true
     },
     {
-      "id": "w750",
+      "id": "w749",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -4526,7 +4526,7 @@
       "englishOk": true
     },
     {
-      "id": "w760",
+      "id": "w758",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -4559,7 +4559,7 @@
       "englishOk": true
     },
     {
-      "id": "w765",
+      "id": "w763",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -4592,7 +4592,7 @@
       "englishOk": true
     },
     {
-      "id": "w769",
+      "id": "w767",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -4625,7 +4625,7 @@
       "englishOk": true
     },
     {
-      "id": "w775",
+      "id": "w773",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -4658,7 +4658,7 @@
       "englishOk": true
     },
     {
-      "id": "w781",
+      "id": "w780",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -4691,7 +4691,7 @@
       "englishOk": true
     },
     {
-      "id": "w787",
+      "id": "w786",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -4724,7 +4724,7 @@
       "englishOk": true
     },
     {
-      "id": "w792",
+      "id": "w791",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -4757,7 +4757,7 @@
       "englishOk": true
     },
     {
-      "id": "w800",
+      "id": "w799",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -4778,8 +4778,8 @@
       "retDept": "20:00",
       "retArr": "23:25",
       "dur": "3h 25m",
-      "price1": 191,
-      "price2": 382,
+      "price1": 228,
+      "price2": 456,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -4955,7 +4955,7 @@
       "englishOk": true
     },
     {
-      "id": "r291",
+      "id": "r290",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -4976,8 +4976,8 @@
       "retDept": "18:00",
       "retArr": "20:15",
       "dur": "2h 15m",
-      "price1": 218,
-      "price2": 437,
+      "price1": 214,
+      "price2": 428,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -5087,7 +5087,7 @@
       "englishOk": true
     },
     {
-      "id": "r498",
+      "id": "r496",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -5108,8 +5108,8 @@
       "retDept": "01:00",
       "retArr": "03:10",
       "dur": "2h 00m",
-      "price1": 133,
-      "price2": 267,
+      "price1": 125,
+      "price2": 250,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -5219,7 +5219,7 @@
       "englishOk": true
     },
     {
-      "id": "w734",
+      "id": "w733",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -5252,7 +5252,7 @@
       "englishOk": true
     },
     {
-      "id": "w742",
+      "id": "w741",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -5285,40 +5285,7 @@
       "englishOk": true
     },
     {
-      "id": "w751",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 12–14 Cze 2026",
-      "raw": "2026-06-12",
-      "retRaw": "2026-06-14",
-      "month": 6,
-      "year": 2026,
-      "dept": "11:00",
-      "arr": "13:55",
-      "retDept": "23:00",
-      "retArr": "01:55",
-      "dur": "2h 55m",
-      "price1": 233,
-      "price2": 466,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w758",
+      "id": "w756",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -5351,7 +5318,7 @@
       "englishOk": true
     },
     {
-      "id": "w761",
+      "id": "w759",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -5384,7 +5351,7 @@
       "englishOk": true
     },
     {
-      "id": "w766",
+      "id": "w764",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -5417,7 +5384,7 @@
       "englishOk": true
     },
     {
-      "id": "w770",
+      "id": "w768",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -5450,7 +5417,7 @@
       "englishOk": true
     },
     {
-      "id": "w776",
+      "id": "w774",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -5483,7 +5450,7 @@
       "englishOk": true
     },
     {
-      "id": "w782",
+      "id": "w781",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -5516,7 +5483,7 @@
       "englishOk": true
     },
     {
-      "id": "w788",
+      "id": "w787",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -5549,7 +5516,7 @@
       "englishOk": true
     },
     {
-      "id": "w795",
+      "id": "w794",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -5582,7 +5549,7 @@
       "englishOk": false
     },
     {
-      "id": "w803",
+      "id": "w802",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -5615,7 +5582,7 @@
       "englishOk": true
     },
     {
-      "id": "w804",
+      "id": "w803",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -5780,7 +5747,7 @@
       "englishOk": true
     },
     {
-      "id": "r278",
+      "id": "r277",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -5801,8 +5768,8 @@
       "retDept": "08:00",
       "retArr": "10:20",
       "dur": "2h 15m",
-      "price1": 191,
-      "price2": 381,
+      "price1": 186,
+      "price2": 373,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -5945,7 +5912,7 @@
       "englishOk": true
     },
     {
-      "id": "r511",
+      "id": "r508",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -5966,8 +5933,8 @@
       "retDept": "20:00",
       "retArr": "22:00",
       "dur": "2h 00m",
-      "price1": 176,
-      "price2": 352,
+      "price1": 170,
+      "price2": 339,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -6044,7 +6011,7 @@
       "englishOk": true
     },
     {
-      "id": "r684",
+      "id": "r685",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -6077,7 +6044,7 @@
       "englishOk": true
     },
     {
-      "id": "w729",
+      "id": "w728",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -6110,7 +6077,7 @@
       "englishOk": false
     },
     {
-      "id": "w735",
+      "id": "w734",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -6143,7 +6110,7 @@
       "englishOk": true
     },
     {
-      "id": "w743",
+      "id": "w742",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -6176,7 +6143,7 @@
       "englishOk": true
     },
     {
-      "id": "w752",
+      "id": "w750",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -6209,7 +6176,7 @@
       "englishOk": true
     },
     {
-      "id": "w772",
+      "id": "w770",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -6242,7 +6209,7 @@
       "englishOk": true
     },
     {
-      "id": "w783",
+      "id": "w782",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -6275,7 +6242,7 @@
       "englishOk": true
     },
     {
-      "id": "w789",
+      "id": "w788",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -6308,7 +6275,7 @@
       "englishOk": true
     },
     {
-      "id": "w793",
+      "id": "w792",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -6341,7 +6308,7 @@
       "englishOk": true
     },
     {
-      "id": "w801",
+      "id": "w800",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -6362,8 +6329,8 @@
       "retDept": "20:00",
       "retArr": "23:25",
       "dur": "3h 25m",
-      "price1": 174,
-      "price2": 348,
+      "price1": 191,
+      "price2": 382,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -6440,7 +6407,7 @@
       "englishOk": true
     },
     {
-      "id": "r119",
+      "id": "r120",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -6527,8 +6494,8 @@
       "retDept": "08:00",
       "retArr": "10:25",
       "dur": "2h 15m",
-      "price1": 172,
-      "price2": 343,
+      "price1": 165,
+      "price2": 331,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -6659,8 +6626,8 @@
       "retDept": "04:00",
       "retArr": "06:20",
       "dur": "2h 00m",
-      "price1": 80,
-      "price2": 161,
+      "price1": 76,
+      "price2": 153,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -6770,7 +6737,7 @@
       "englishOk": true
     },
     {
-      "id": "w730",
+      "id": "w729",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -6803,7 +6770,7 @@
       "englishOk": false
     },
     {
-      "id": "w738",
+      "id": "w737",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -6836,7 +6803,7 @@
       "englishOk": true
     },
     {
-      "id": "w740",
+      "id": "w739",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -6857,8 +6824,8 @@
       "retDept": "01:00",
       "retArr": "03:45",
       "dur": "2h 45m",
-      "price1": 93,
-      "price2": 186,
+      "price1": 99,
+      "price2": 198,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -6869,7 +6836,7 @@
       "englishOk": true
     },
     {
-      "id": "w745",
+      "id": "w744",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -6902,7 +6869,7 @@
       "englishOk": true
     },
     {
-      "id": "w753",
+      "id": "w751",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -6935,7 +6902,7 @@
       "englishOk": true
     },
     {
-      "id": "w762",
+      "id": "w760",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -6968,7 +6935,7 @@
       "englishOk": true
     },
     {
-      "id": "w767",
+      "id": "w765",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -7001,7 +6968,7 @@
       "englishOk": true
     },
     {
-      "id": "w777",
+      "id": "w775",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -7034,7 +7001,7 @@
       "englishOk": true
     },
     {
-      "id": "w784",
+      "id": "w783",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -7067,7 +7034,7 @@
       "englishOk": true
     },
     {
-      "id": "w790",
+      "id": "w789",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -7100,7 +7067,7 @@
       "englishOk": true
     },
     {
-      "id": "r12",
+      "id": "r13",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -7121,8 +7088,8 @@
       "retDept": "04:00",
       "retArr": "05:25",
       "dur": "1h 20m",
-      "price1": 113,
-      "price2": 226,
+      "price1": 118,
+      "price2": 235,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -7232,7 +7199,7 @@
       "englishOk": true
     },
     {
-      "id": "r302",
+      "id": "r301",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -7253,8 +7220,8 @@
       "retDept": "18:00",
       "retArr": "20:15",
       "dur": "2h 15m",
-      "price1": 239,
-      "price2": 479,
+      "price1": 235,
+      "price2": 470,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -7352,8 +7319,8 @@
       "retDept": "01:00",
       "retArr": "03:10",
       "dur": "2h 00m",
-      "price1": 133,
-      "price2": 266,
+      "price1": 129,
+      "price2": 257,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -7562,6 +7529,39 @@
       "englishOk": true
     },
     {
+      "id": "w839",
+      "airline": "wizzair",
+      "from": "KRK",
+      "to": "NCE",
+      "fromCity": "Kraków",
+      "toCity": "Nicea",
+      "flag": "🇫🇷",
+      "country": "Francja",
+      "deptDay": "piątek",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
+      "date": "Pt–Nd, 19–21 Cze 2026",
+      "raw": "2026-06-19",
+      "retRaw": "2026-06-21",
+      "month": 6,
+      "year": 2026,
+      "dept": "11:00",
+      "arr": "13:55",
+      "retDept": "23:00",
+      "retArr": "01:55",
+      "dur": "2h 55m",
+      "price1": 202,
+      "price2": 404,
+      "sea": true,
+      "lgbt": true,
+      "lgbtN": "Francja – progresywna polityka LGBTQ+",
+      "distKm": 7,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
       "id": "w848",
       "airline": "wizzair",
       "from": "KRK",
@@ -7727,7 +7727,7 @@
       "englishOk": true
     },
     {
-      "id": "w879",
+      "id": "w878",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -7760,7 +7760,7 @@
       "englishOk": true
     },
     {
-      "id": "w888",
+      "id": "w887",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -7793,7 +7793,7 @@
       "englishOk": true
     },
     {
-      "id": "w901",
+      "id": "w900",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -7826,7 +7826,7 @@
       "englishOk": false
     },
     {
-      "id": "w911",
+      "id": "w910",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -7859,7 +7859,7 @@
       "englishOk": true
     },
     {
-      "id": "w913",
+      "id": "w912",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -7958,7 +7958,7 @@
       "englishOk": true
     },
     {
-      "id": "r120",
+      "id": "r117",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -7979,8 +7979,8 @@
       "retDept": "09:00",
       "retArr": "10:50",
       "dur": "1h 45m",
-      "price1": 86,
-      "price2": 171,
+      "price1": 84,
+      "price2": 167,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -8024,7 +8024,7 @@
       "englishOk": true
     },
     {
-      "id": "r264",
+      "id": "r265",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -8156,7 +8156,7 @@
       "englishOk": true
     },
     {
-      "id": "r504",
+      "id": "r503",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -8177,8 +8177,8 @@
       "retDept": "20:00",
       "retArr": "22:00",
       "dur": "2h 00m",
-      "price1": 146,
-      "price2": 292,
+      "price1": 140,
+      "price2": 280,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -8255,7 +8255,7 @@
       "englishOk": true
     },
     {
-      "id": "w805",
+      "id": "w804",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -8276,8 +8276,8 @@
       "retDept": "18:00",
       "retArr": "20:40",
       "dur": "2h 40m",
-      "price1": 108,
-      "price2": 216,
+      "price1": 93,
+      "price2": 186,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Albania – brak pełnych praw LGBTQ+",
@@ -8288,7 +8288,7 @@
       "englishOk": false
     },
     {
-      "id": "w811",
+      "id": "w810",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -8309,8 +8309,8 @@
       "retDept": "18:00",
       "retArr": "21:20",
       "dur": "3h 20m",
-      "price1": 191,
-      "price2": 382,
+      "price1": 217,
+      "price2": 434,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -8453,7 +8453,7 @@
       "englishOk": true
     },
     {
-      "id": "w880",
+      "id": "w879",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -8474,8 +8474,8 @@
       "retDept": "03:00",
       "retArr": "05:10",
       "dur": "2h 10m",
-      "price1": 108,
-      "price2": 216,
+      "price1": 116,
+      "price2": 232,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -8486,7 +8486,7 @@
       "englishOk": true
     },
     {
-      "id": "w889",
+      "id": "w888",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -8519,7 +8519,7 @@
       "englishOk": true
     },
     {
-      "id": "w897",
+      "id": "w896",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -8540,8 +8540,8 @@
       "retDept": "21:00",
       "retArr": "00:50",
       "dur": "3h 50m",
-      "price1": 234,
-      "price2": 468,
+      "price1": 217,
+      "price2": 434,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Hiszpania – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -8552,7 +8552,7 @@
       "englishOk": true
     },
     {
-      "id": "w903",
+      "id": "w902",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -8585,7 +8585,7 @@
       "englishOk": true
     },
     {
-      "id": "w906",
+      "id": "w905",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -8684,7 +8684,7 @@
       "englishOk": true
     },
     {
-      "id": "r136",
+      "id": "r135",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -8705,8 +8705,8 @@
       "retDept": "22:00",
       "retArr": "00:10",
       "dur": "1h 45m",
-      "price1": 113,
-      "price2": 226,
+      "price1": 111,
+      "price2": 222,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -8717,7 +8717,7 @@
       "englishOk": true
     },
     {
-      "id": "r209",
+      "id": "r208",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -8750,7 +8750,7 @@
       "englishOk": true
     },
     {
-      "id": "r271",
+      "id": "r270",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -8771,8 +8771,8 @@
       "retDept": "08:00",
       "retArr": "10:25",
       "dur": "2h 15m",
-      "price1": 174,
-      "price2": 348,
+      "price1": 170,
+      "price2": 340,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -8936,8 +8936,8 @@
       "retDept": "04:00",
       "retArr": "06:20",
       "dur": "2h 00m",
-      "price1": 91,
-      "price2": 181,
+      "price1": 86,
+      "price2": 173,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -9047,7 +9047,7 @@
       "englishOk": true
     },
     {
-      "id": "w806",
+      "id": "w805",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -9080,7 +9080,7 @@
       "englishOk": false
     },
     {
-      "id": "w812",
+      "id": "w811",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -9233,8 +9233,8 @@
       "retDept": "17:00",
       "retArr": "19:30",
       "dur": "2h 30m",
-      "price1": 108,
-      "price2": 216,
+      "price1": 116,
+      "price2": 232,
       "sea": true,
       "lgbt": false,
       "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
@@ -9410,40 +9410,7 @@
       "englishOk": true
     },
     {
-      "id": "w874",
-      "airline": "wizzair",
-      "from": "WAW",
-      "to": "MLA",
-      "fromCity": "Warszawa",
-      "toCity": "Malta",
-      "flag": "🇲🇹",
-      "country": "Malta",
-      "deptDay": "niedziela",
-      "retDay": "niedziela",
-      "pattern": "sun-only",
-      "date": "Nd, 21 Cze 2026",
-      "raw": "2026-06-21",
-      "retRaw": "2026-06-21",
-      "month": 6,
-      "year": 2026,
-      "dept": "11:00",
-      "arr": "14:20",
-      "retDept": "23:00",
-      "retArr": "02:20",
-      "dur": "3h 20m",
-      "price1": 234,
-      "price2": 468,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
-      "distKm": 8,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w881",
+      "id": "w880",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -9476,7 +9443,7 @@
       "englishOk": true
     },
     {
-      "id": "w890",
+      "id": "w889",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -9509,7 +9476,7 @@
       "englishOk": true
     },
     {
-      "id": "w898",
+      "id": "w897",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -9542,7 +9509,7 @@
       "englishOk": true
     },
     {
-      "id": "w904",
+      "id": "w903",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -9575,7 +9542,7 @@
       "englishOk": true
     },
     {
-      "id": "w907",
+      "id": "w906",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -9761,8 +9728,8 @@
       "retDept": "00:00",
       "retArr": "02:35",
       "dur": "2h 15m",
-      "price1": 248,
-      "price2": 496,
+      "price1": 244,
+      "price2": 487,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -9839,7 +9806,7 @@
       "englishOk": true
     },
     {
-      "id": "r501",
+      "id": "r498",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -9860,8 +9827,8 @@
       "retDept": "01:00",
       "retArr": "03:10",
       "dur": "2h 00m",
-      "price1": 138,
-      "price2": 275,
+      "price1": 131,
+      "price2": 263,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -9905,7 +9872,7 @@
       "englishOk": true
     },
     {
-      "id": "r634",
+      "id": "r639",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9926,8 +9893,8 @@
       "retDept": "00:00",
       "retArr": "01:20",
       "dur": "1h 05m",
-      "price1": 115,
-      "price2": 230,
+      "price1": 125,
+      "price2": 249,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -9938,7 +9905,7 @@
       "englishOk": true
     },
     {
-      "id": "w813",
+      "id": "w812",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -10157,8 +10124,8 @@
       "retDept": "06:00",
       "retArr": "07:30",
       "dur": "1h 30m",
-      "price1": 246,
-      "price2": 492,
+      "price1": 228,
+      "price2": 456,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Węgry – konstytucja zakazuje małżeństw jednopłciowych",
@@ -10202,7 +10169,7 @@
       "englishOk": true
     },
     {
-      "id": "w875",
+      "id": "w874",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -10235,7 +10202,7 @@
       "englishOk": true
     },
     {
-      "id": "w882",
+      "id": "w881",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -10268,7 +10235,7 @@
       "englishOk": true
     },
     {
-      "id": "w891",
+      "id": "w890",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -10532,7 +10499,7 @@
       "englishOk": true
     },
     {
-      "id": "r635",
+      "id": "r634",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -10565,7 +10532,7 @@
       "englishOk": true
     },
     {
-      "id": "w807",
+      "id": "w806",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -10664,7 +10631,7 @@
       "englishOk": true
     },
     {
-      "id": "w876",
+      "id": "w875",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -10697,7 +10664,7 @@
       "englishOk": true
     },
     {
-      "id": "w883",
+      "id": "w882",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -10730,7 +10697,7 @@
       "englishOk": true
     },
     {
-      "id": "w892",
+      "id": "w891",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -10895,7 +10862,7 @@
       "englishOk": true
     },
     {
-      "id": "r496",
+      "id": "r499",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -10916,8 +10883,8 @@
       "retDept": "04:00",
       "retArr": "06:20",
       "dur": "2h 00m",
-      "price1": 129,
-      "price2": 258,
+      "price1": 133,
+      "price2": 267,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -10994,7 +10961,7 @@
       "englishOk": true
     },
     {
-      "id": "w808",
+      "id": "w807",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -11015,8 +10982,8 @@
       "retDept": "18:00",
       "retArr": "20:40",
       "dur": "2h 40m",
-      "price1": 165,
-      "price2": 330,
+      "price1": 183,
+      "price2": 366,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Albania – brak pełnych praw LGBTQ+",
@@ -11291,7 +11258,7 @@
       "englishOk": true
     },
     {
-      "id": "w884",
+      "id": "w883",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -11324,7 +11291,7 @@
       "englishOk": true
     },
     {
-      "id": "w893",
+      "id": "w892",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -11357,7 +11324,7 @@
       "englishOk": true
     },
     {
-      "id": "w908",
+      "id": "w907",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -11654,6 +11621,39 @@
       "englishOk": true
     },
     {
+      "id": "w813",
+      "airline": "wizzair",
+      "from": "KTW",
+      "to": "BCN",
+      "fromCity": "Katowice",
+      "toCity": "Barcelona",
+      "flag": "🇪🇸",
+      "country": "Hiszpania",
+      "deptDay": "piątek",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
+      "date": "Pt–Nd, 3–5 Lip 2026",
+      "raw": "2026-07-03",
+      "retRaw": "2026-07-05",
+      "month": 7,
+      "year": 2026,
+      "dept": "06:00",
+      "arr": "09:20",
+      "retDept": "18:00",
+      "retArr": "21:20",
+      "dur": "3h 20m",
+      "price1": 174,
+      "price2": 348,
+      "sea": true,
+      "lgbt": true,
+      "lgbtN": "Barcelona – queer-friendly stolica Europy",
+      "distKm": 14,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
       "id": "w825",
       "airline": "wizzair",
       "from": "KTW",
@@ -11714,39 +11714,6 @@
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
       "distKm": 9,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w839",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "BCN",
-      "fromCity": "Kraków",
-      "toCity": "Barcelona",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 3–5 Lip 2026",
-      "raw": "2026-07-03",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "14:00",
-      "arr": "17:25",
-      "retDept": "02:00",
-      "retArr": "05:25",
-      "dur": "3h 25m",
-      "price1": 174,
-      "price2": 348,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Barcelona – queer-friendly stolica Europy",
-      "distKm": 14,
       "passport": false,
       "visa": "brak",
       "currency": "EUR €",
@@ -11885,7 +11852,7 @@
       "englishOk": true
     },
     {
-      "id": "w877",
+      "id": "w876",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -11918,7 +11885,7 @@
       "englishOk": true
     },
     {
-      "id": "w885",
+      "id": "w884",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -11951,7 +11918,7 @@
       "englishOk": true
     },
     {
-      "id": "w894",
+      "id": "w893",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -11984,7 +11951,7 @@
       "englishOk": true
     },
     {
-      "id": "w899",
+      "id": "w898",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -12017,7 +11984,7 @@
       "englishOk": true
     },
     {
-      "id": "w902",
+      "id": "w901",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -12050,7 +12017,7 @@
       "englishOk": false
     },
     {
-      "id": "w912",
+      "id": "w911",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -12215,7 +12182,7 @@
       "englishOk": true
     },
     {
-      "id": "r277",
+      "id": "r278",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -12413,7 +12380,7 @@
       "englishOk": true
     },
     {
-      "id": "w809",
+      "id": "w808",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -12467,8 +12434,8 @@
       "retDept": "18:00",
       "retArr": "21:20",
       "dur": "3h 20m",
-      "price1": 98,
-      "price2": 196,
+      "price1": 115,
+      "price2": 230,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -12500,8 +12467,8 @@
       "retDept": "06:00",
       "retArr": "07:55",
       "dur": "1h 55m",
-      "price1": 123,
-      "price2": 246,
+      "price1": 140,
+      "price2": 280,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
@@ -12578,7 +12545,7 @@
       "englishOk": true
     },
     {
-      "id": "w878",
+      "id": "w877",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -12611,7 +12578,7 @@
       "englishOk": true
     },
     {
-      "id": "w886",
+      "id": "w885",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -12644,7 +12611,7 @@
       "englishOk": true
     },
     {
-      "id": "w895",
+      "id": "w894",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -12677,7 +12644,7 @@
       "englishOk": true
     },
     {
-      "id": "w905",
+      "id": "w904",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -12710,7 +12677,7 @@
       "englishOk": true
     },
     {
-      "id": "w909",
+      "id": "w908",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -12941,7 +12908,7 @@
       "englishOk": true
     },
     {
-      "id": "r503",
+      "id": "r504",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12974,7 +12941,7 @@
       "englishOk": true
     },
     {
-      "id": "w810",
+      "id": "w809",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -13337,7 +13304,7 @@
       "englishOk": true
     },
     {
-      "id": "w887",
+      "id": "w886",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -13358,8 +13325,8 @@
       "retDept": "03:00",
       "retArr": "05:10",
       "dur": "2h 10m",
-      "price1": 98,
-      "price2": 196,
+      "price1": 115,
+      "price2": 230,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -13370,7 +13337,7 @@
       "englishOk": true
     },
     {
-      "id": "w896",
+      "id": "w895",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -13403,7 +13370,7 @@
       "englishOk": true
     },
     {
-      "id": "w900",
+      "id": "w899",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -13436,7 +13403,7 @@
       "englishOk": true
     },
     {
-      "id": "w910",
+      "id": "w909",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -13535,7 +13502,7 @@
       "englishOk": true
     },
     {
-      "id": "r117",
+      "id": "r118",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13733,7 +13700,7 @@
       "englishOk": true
     },
     {
-      "id": "w920",
+      "id": "w919",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -13766,7 +13733,7 @@
       "englishOk": true
     },
     {
-      "id": "w926",
+      "id": "w925",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -13799,7 +13766,7 @@
       "englishOk": true
     },
     {
-      "id": "w932",
+      "id": "w931",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -13832,7 +13799,7 @@
       "englishOk": true
     },
     {
-      "id": "w948",
+      "id": "w947",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -13865,7 +13832,7 @@
       "englishOk": true
     },
     {
-      "id": "w959",
+      "id": "w958",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -13898,7 +13865,7 @@
       "englishOk": true
     },
     {
-      "id": "w961",
+      "id": "w960",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -13931,7 +13898,7 @@
       "englishOk": true
     },
     {
-      "id": "w967",
+      "id": "w966",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -13964,7 +13931,7 @@
       "englishOk": true
     },
     {
-      "id": "w973",
+      "id": "w972",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -13985,8 +13952,8 @@
       "retDept": "19:00",
       "retArr": "22:15",
       "dur": "3h 15m",
-      "price1": 174,
-      "price2": 348,
+      "price1": 157,
+      "price2": 314,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -13997,7 +13964,7 @@
       "englishOk": true
     },
     {
-      "id": "w984",
+      "id": "w983",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -14030,7 +13997,7 @@
       "englishOk": true
     },
     {
-      "id": "w991",
+      "id": "w990",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -14063,7 +14030,7 @@
       "englishOk": true
     },
     {
-      "id": "w1000",
+      "id": "w999",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -14096,7 +14063,7 @@
       "englishOk": true
     },
     {
-      "id": "w1009",
+      "id": "w1008",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -14129,7 +14096,7 @@
       "englishOk": true
     },
     {
-      "id": "w1014",
+      "id": "w1013",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -14162,7 +14129,7 @@
       "englishOk": false
     },
     {
-      "id": "w1026",
+      "id": "w1024",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -14228,7 +14195,7 @@
       "englishOk": true
     },
     {
-      "id": "r118",
+      "id": "r119",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14426,7 +14393,7 @@
       "englishOk": true
     },
     {
-      "id": "r545",
+      "id": "r544",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -14525,7 +14492,7 @@
       "englishOk": true
     },
     {
-      "id": "w914",
+      "id": "w913",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -14558,7 +14525,7 @@
       "englishOk": false
     },
     {
-      "id": "w921",
+      "id": "w920",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -14591,7 +14558,7 @@
       "englishOk": true
     },
     {
-      "id": "w949",
+      "id": "w948",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -14624,7 +14591,7 @@
       "englishOk": true
     },
     {
-      "id": "w957",
+      "id": "w956",
       "airline": "wizzair",
       "from": "KRK",
       "to": "EIN",
@@ -14657,7 +14624,7 @@
       "englishOk": true
     },
     {
-      "id": "w974",
+      "id": "w973",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -14690,7 +14657,7 @@
       "englishOk": true
     },
     {
-      "id": "w982",
+      "id": "w981",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -14723,7 +14690,7 @@
       "englishOk": true
     },
     {
-      "id": "w985",
+      "id": "w984",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -14756,7 +14723,7 @@
       "englishOk": true
     },
     {
-      "id": "w992",
+      "id": "w991",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -14789,7 +14756,7 @@
       "englishOk": true
     },
     {
-      "id": "w1001",
+      "id": "w1000",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -14822,7 +14789,7 @@
       "englishOk": true
     },
     {
-      "id": "w1010",
+      "id": "w1009",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -14855,7 +14822,7 @@
       "englishOk": true
     },
     {
-      "id": "w1021",
+      "id": "w1019",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -15152,7 +15119,7 @@
       "englishOk": true
     },
     {
-      "id": "w915",
+      "id": "w914",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -15185,7 +15152,7 @@
       "englishOk": false
     },
     {
-      "id": "w923",
+      "id": "w922",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -15218,7 +15185,7 @@
       "englishOk": true
     },
     {
-      "id": "w927",
+      "id": "w926",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -15251,7 +15218,7 @@
       "englishOk": true
     },
     {
-      "id": "w933",
+      "id": "w932",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -15284,7 +15251,7 @@
       "englishOk": true
     },
     {
-      "id": "w939",
+      "id": "w938",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -15317,7 +15284,7 @@
       "englishOk": true
     },
     {
-      "id": "w942",
+      "id": "w941",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -15338,8 +15305,8 @@
       "retDept": "02:00",
       "retArr": "05:25",
       "dur": "3h 25m",
-      "price1": 99,
-      "price2": 198,
+      "price1": 115,
+      "price2": 230,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -15350,7 +15317,7 @@
       "englishOk": true
     },
     {
-      "id": "w950",
+      "id": "w949",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -15383,7 +15350,7 @@
       "englishOk": true
     },
     {
-      "id": "w962",
+      "id": "w961",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -15416,7 +15383,7 @@
       "englishOk": true
     },
     {
-      "id": "w968",
+      "id": "w967",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -15449,7 +15416,7 @@
       "englishOk": true
     },
     {
-      "id": "w975",
+      "id": "w974",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -15482,7 +15449,7 @@
       "englishOk": true
     },
     {
-      "id": "w993",
+      "id": "w992",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -15515,7 +15482,7 @@
       "englishOk": true
     },
     {
-      "id": "w1002",
+      "id": "w1001",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -15548,7 +15515,7 @@
       "englishOk": true
     },
     {
-      "id": "w1011",
+      "id": "w1010",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -15581,7 +15548,7 @@
       "englishOk": true
     },
     {
-      "id": "w1016",
+      "id": "w1014",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -15680,7 +15647,7 @@
       "englishOk": true
     },
     {
-      "id": "r214",
+      "id": "r213",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -15746,7 +15713,7 @@
       "englishOk": true
     },
     {
-      "id": "w924",
+      "id": "w923",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -15779,7 +15746,7 @@
       "englishOk": true
     },
     {
-      "id": "w928",
+      "id": "w927",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -15812,7 +15779,7 @@
       "englishOk": true
     },
     {
-      "id": "w934",
+      "id": "w933",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -15845,7 +15812,7 @@
       "englishOk": true
     },
     {
-      "id": "w943",
+      "id": "w942",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -15878,7 +15845,7 @@
       "englishOk": true
     },
     {
-      "id": "w951",
+      "id": "w950",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -15911,7 +15878,7 @@
       "englishOk": true
     },
     {
-      "id": "w960",
+      "id": "w959",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -15944,7 +15911,7 @@
       "englishOk": true
     },
     {
-      "id": "w963",
+      "id": "w962",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -15977,7 +15944,7 @@
       "englishOk": true
     },
     {
-      "id": "w969",
+      "id": "w968",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -16010,7 +15977,7 @@
       "englishOk": true
     },
     {
-      "id": "w976",
+      "id": "w975",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -16031,8 +15998,8 @@
       "retDept": "19:00",
       "retArr": "22:15",
       "dur": "3h 15m",
-      "price1": 246,
-      "price2": 492,
+      "price1": 228,
+      "price2": 456,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -16043,7 +16010,7 @@
       "englishOk": true
     },
     {
-      "id": "w986",
+      "id": "w985",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -16076,7 +16043,7 @@
       "englishOk": true
     },
     {
-      "id": "w994",
+      "id": "w993",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -16109,7 +16076,7 @@
       "englishOk": true
     },
     {
-      "id": "w1003",
+      "id": "w1002",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -16142,7 +16109,7 @@
       "englishOk": true
     },
     {
-      "id": "w1012",
+      "id": "w1011",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -16173,39 +16140,6 @@
       "visa": "brak",
       "currency": "EUR €",
       "englishOk": true
-    },
-    {
-      "id": "w1015",
-      "airline": "wizzair",
-      "from": "WAW",
-      "to": "TIA",
-      "fromCity": "Warszawa",
-      "toCity": "Tirana",
-      "flag": "🇦🇱",
-      "country": "Albania",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 17–19 Lip 2026",
-      "raw": "2026-07-17",
-      "retRaw": "2026-07-19",
-      "month": 7,
-      "year": 2026,
-      "dept": "13:00",
-      "arr": "15:45",
-      "retDept": "01:00",
-      "retArr": "03:45",
-      "dur": "2h 45m",
-      "price1": 228,
-      "price2": 456,
-      "sea": false,
-      "lgbt": false,
-      "lgbtN": "Albania – brak pełnych praw LGBTQ+",
-      "distKm": 4,
-      "passport": false,
-      "visa": "brak",
-      "currency": "ALL L",
-      "englishOk": false
     },
     {
       "id": "r108",
@@ -16340,7 +16274,7 @@
       "englishOk": true
     },
     {
-      "id": "r549",
+      "id": "r548",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -16373,7 +16307,7 @@
       "englishOk": true
     },
     {
-      "id": "w922",
+      "id": "w921",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -16406,7 +16340,7 @@
       "englishOk": true
     },
     {
-      "id": "w935",
+      "id": "w934",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -16439,7 +16373,7 @@
       "englishOk": true
     },
     {
-      "id": "w952",
+      "id": "w951",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -16472,7 +16406,7 @@
       "englishOk": true
     },
     {
-      "id": "w977",
+      "id": "w976",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -16505,7 +16439,7 @@
       "englishOk": true
     },
     {
-      "id": "w987",
+      "id": "w986",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -16538,7 +16472,7 @@
       "englishOk": true
     },
     {
-      "id": "w995",
+      "id": "w994",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -16571,7 +16505,7 @@
       "englishOk": true
     },
     {
-      "id": "w1004",
+      "id": "w1003",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -16604,7 +16538,7 @@
       "englishOk": true
     },
     {
-      "id": "w1017",
+      "id": "w1015",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -16637,7 +16571,7 @@
       "englishOk": true
     },
     {
-      "id": "w1022",
+      "id": "w1020",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -16736,7 +16670,7 @@
       "englishOk": true
     },
     {
-      "id": "r210",
+      "id": "r209",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -16769,7 +16703,7 @@
       "englishOk": true
     },
     {
-      "id": "r301",
+      "id": "r302",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -16868,7 +16802,7 @@
       "englishOk": true
     },
     {
-      "id": "w916",
+      "id": "w915",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -16901,7 +16835,7 @@
       "englishOk": false
     },
     {
-      "id": "w929",
+      "id": "w928",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -16922,8 +16856,8 @@
       "retDept": "01:00",
       "retArr": "03:45",
       "dur": "2h 45m",
-      "price1": 99,
-      "price2": 198,
+      "price1": 115,
+      "price2": 230,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -16934,7 +16868,7 @@
       "englishOk": true
     },
     {
-      "id": "w944",
+      "id": "w943",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -16967,7 +16901,7 @@
       "englishOk": true
     },
     {
-      "id": "w953",
+      "id": "w952",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -17000,7 +16934,7 @@
       "englishOk": true
     },
     {
-      "id": "w958",
+      "id": "w957",
       "airline": "wizzair",
       "from": "KRK",
       "to": "EIN",
@@ -17033,7 +16967,7 @@
       "englishOk": true
     },
     {
-      "id": "w964",
+      "id": "w963",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -17066,7 +17000,7 @@
       "englishOk": true
     },
     {
-      "id": "w970",
+      "id": "w969",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -17099,7 +17033,7 @@
       "englishOk": true
     },
     {
-      "id": "w978",
+      "id": "w977",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -17132,7 +17066,7 @@
       "englishOk": true
     },
     {
-      "id": "w988",
+      "id": "w987",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -17165,7 +17099,7 @@
       "englishOk": true
     },
     {
-      "id": "w996",
+      "id": "w995",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -17198,7 +17132,7 @@
       "englishOk": true
     },
     {
-      "id": "w1005",
+      "id": "w1004",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -17231,7 +17165,7 @@
       "englishOk": true
     },
     {
-      "id": "w1018",
+      "id": "w1016",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -17264,7 +17198,7 @@
       "englishOk": true
     },
     {
-      "id": "w1023",
+      "id": "w1021",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -17528,7 +17462,7 @@
       "englishOk": true
     },
     {
-      "id": "w917",
+      "id": "w916",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -17561,7 +17495,7 @@
       "englishOk": false
     },
     {
-      "id": "w930",
+      "id": "w929",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -17594,7 +17528,7 @@
       "englishOk": true
     },
     {
-      "id": "w936",
+      "id": "w935",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -17627,7 +17561,7 @@
       "englishOk": true
     },
     {
-      "id": "w940",
+      "id": "w939",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -17660,7 +17594,7 @@
       "englishOk": true
     },
     {
-      "id": "w945",
+      "id": "w944",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -17693,7 +17627,7 @@
       "englishOk": true
     },
     {
-      "id": "w954",
+      "id": "w953",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -17726,7 +17660,7 @@
       "englishOk": true
     },
     {
-      "id": "w965",
+      "id": "w964",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -17759,7 +17693,7 @@
       "englishOk": true
     },
     {
-      "id": "w971",
+      "id": "w970",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -17792,7 +17726,7 @@
       "englishOk": true
     },
     {
-      "id": "w979",
+      "id": "w978",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -17825,7 +17759,7 @@
       "englishOk": true
     },
     {
-      "id": "w989",
+      "id": "w988",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -17858,7 +17792,7 @@
       "englishOk": true
     },
     {
-      "id": "w997",
+      "id": "w996",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -17891,7 +17825,7 @@
       "englishOk": true
     },
     {
-      "id": "w1006",
+      "id": "w1005",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -17924,7 +17858,7 @@
       "englishOk": true
     },
     {
-      "id": "w1027",
+      "id": "w1025",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -17957,7 +17891,7 @@
       "englishOk": true
     },
     {
-      "id": "w1028",
+      "id": "w1026",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -18122,7 +18056,7 @@
       "englishOk": true
     },
     {
-      "id": "w918",
+      "id": "w917",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -18155,7 +18089,7 @@
       "englishOk": false
     },
     {
-      "id": "w937",
+      "id": "w936",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -18188,7 +18122,7 @@
       "englishOk": true
     },
     {
-      "id": "w946",
+      "id": "w945",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -18221,7 +18155,7 @@
       "englishOk": true
     },
     {
-      "id": "w955",
+      "id": "w954",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -18254,7 +18188,7 @@
       "englishOk": true
     },
     {
-      "id": "w980",
+      "id": "w979",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -18287,7 +18221,7 @@
       "englishOk": true
     },
     {
-      "id": "w983",
+      "id": "w982",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -18320,7 +18254,7 @@
       "englishOk": true
     },
     {
-      "id": "w998",
+      "id": "w997",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -18353,7 +18287,7 @@
       "englishOk": true
     },
     {
-      "id": "w1007",
+      "id": "w1006",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -18386,7 +18320,7 @@
       "englishOk": true
     },
     {
-      "id": "w1019",
+      "id": "w1017",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -18419,7 +18353,7 @@
       "englishOk": true
     },
     {
-      "id": "w1024",
+      "id": "w1022",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -18485,7 +18419,7 @@
       "englishOk": true
     },
     {
-      "id": "r137",
+      "id": "r136",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -18650,7 +18584,7 @@
       "englishOk": true
     },
     {
-      "id": "r508",
+      "id": "r509",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -18683,7 +18617,7 @@
       "englishOk": true
     },
     {
-      "id": "w919",
+      "id": "w918",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -18716,7 +18650,7 @@
       "englishOk": false
     },
     {
-      "id": "w925",
+      "id": "w924",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -18749,7 +18683,7 @@
       "englishOk": true
     },
     {
-      "id": "w931",
+      "id": "w930",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -18782,7 +18716,7 @@
       "englishOk": true
     },
     {
-      "id": "w938",
+      "id": "w937",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -18815,7 +18749,7 @@
       "englishOk": true
     },
     {
-      "id": "w941",
+      "id": "w940",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -18848,7 +18782,7 @@
       "englishOk": true
     },
     {
-      "id": "w947",
+      "id": "w946",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -18881,7 +18815,7 @@
       "englishOk": true
     },
     {
-      "id": "w956",
+      "id": "w955",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -18914,7 +18848,7 @@
       "englishOk": true
     },
     {
-      "id": "w966",
+      "id": "w965",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -18947,7 +18881,7 @@
       "englishOk": true
     },
     {
-      "id": "w972",
+      "id": "w971",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -18980,7 +18914,7 @@
       "englishOk": true
     },
     {
-      "id": "w981",
+      "id": "w980",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -19013,7 +18947,7 @@
       "englishOk": true
     },
     {
-      "id": "w990",
+      "id": "w989",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -19034,8 +18968,8 @@
       "retDept": "23:00",
       "retArr": "02:20",
       "dur": "3h 20m",
-      "price1": 228,
-      "price2": 456,
+      "price1": 246,
+      "price2": 492,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -19046,7 +18980,7 @@
       "englishOk": true
     },
     {
-      "id": "w999",
+      "id": "w998",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -19079,7 +19013,7 @@
       "englishOk": true
     },
     {
-      "id": "w1008",
+      "id": "w1007",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -19112,7 +19046,7 @@
       "englishOk": true
     },
     {
-      "id": "w1013",
+      "id": "w1012",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -19145,7 +19079,7 @@
       "englishOk": true
     },
     {
-      "id": "w1020",
+      "id": "w1018",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -19178,7 +19112,7 @@
       "englishOk": true
     },
     {
-      "id": "w1025",
+      "id": "w1023",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -19376,7 +19310,7 @@
       "englishOk": true
     },
     {
-      "id": "r544",
+      "id": "r543",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -19409,40 +19343,7 @@
       "englishOk": true
     },
     {
-      "id": "w1029",
-      "airline": "wizzair",
-      "from": "KTW",
-      "to": "TIA",
-      "fromCity": "Katowice",
-      "toCity": "Tirana",
-      "flag": "🇦🇱",
-      "country": "Albania",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 31 Lip – 2 Sie 2026",
-      "raw": "2026-07-31",
-      "retRaw": "2026-08-02",
-      "month": 7,
-      "year": 2026,
-      "dept": "06:00",
-      "arr": "08:40",
-      "retDept": "18:00",
-      "retArr": "20:40",
-      "dur": "2h 40m",
-      "price1": 165,
-      "price2": 330,
-      "sea": false,
-      "lgbt": false,
-      "lgbtN": "Albania – brak pełnych praw LGBTQ+",
-      "distKm": 4,
-      "passport": false,
-      "visa": "brak",
-      "currency": "ALL L",
-      "englishOk": false
-    },
-    {
-      "id": "w1038",
+      "id": "w1035",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -19475,7 +19376,7 @@
       "englishOk": true
     },
     {
-      "id": "w1043",
+      "id": "w1040",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -19508,7 +19409,7 @@
       "englishOk": true
     },
     {
-      "id": "w1048",
+      "id": "w1045",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -19541,7 +19442,7 @@
       "englishOk": true
     },
     {
-      "id": "w1054",
+      "id": "w1051",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -19574,7 +19475,7 @@
       "englishOk": true
     },
     {
-      "id": "w1061",
+      "id": "w1058",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -19607,7 +19508,7 @@
       "englishOk": true
     },
     {
-      "id": "w1070",
+      "id": "w1067",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -19640,7 +19541,7 @@
       "englishOk": true
     },
     {
-      "id": "w1076",
+      "id": "w1072",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -19673,7 +19574,7 @@
       "englishOk": true
     },
     {
-      "id": "w1081",
+      "id": "w1077",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -19706,7 +19607,7 @@
       "englishOk": true
     },
     {
-      "id": "w1087",
+      "id": "w1083",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -19739,7 +19640,7 @@
       "englishOk": true
     },
     {
-      "id": "w1100",
+      "id": "w1096",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -19772,7 +19673,7 @@
       "englishOk": true
     },
     {
-      "id": "w1109",
+      "id": "w1105",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -19805,7 +19706,7 @@
       "englishOk": true
     },
     {
-      "id": "w1119",
+      "id": "w1115",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -19838,7 +19739,7 @@
       "englishOk": false
     },
     {
-      "id": "w1131",
+      "id": "w1127",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -19871,7 +19772,7 @@
       "englishOk": true
     },
     {
-      "id": "w1134",
+      "id": "w1130",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -20003,7 +19904,7 @@
       "englishOk": true
     },
     {
-      "id": "r547",
+      "id": "r546",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -20069,7 +19970,7 @@
       "englishOk": true
     },
     {
-      "id": "w1030",
+      "id": "w1027",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -20102,7 +20003,7 @@
       "englishOk": false
     },
     {
-      "id": "w1039",
+      "id": "w1036",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -20135,7 +20036,7 @@
       "englishOk": true
     },
     {
-      "id": "w1055",
+      "id": "w1052",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -20156,8 +20057,8 @@
       "retDept": "06:00",
       "retArr": "07:55",
       "dur": "1h 55m",
-      "price1": 228,
-      "price2": 456,
+      "price1": 246,
+      "price2": 492,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
@@ -20168,7 +20069,7 @@
       "englishOk": true
     },
     {
-      "id": "w1071",
+      "id": "w1068",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -20201,7 +20102,7 @@
       "englishOk": true
     },
     {
-      "id": "w1088",
+      "id": "w1084",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -20234,7 +20135,7 @@
       "englishOk": true
     },
     {
-      "id": "w1101",
+      "id": "w1097",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -20267,7 +20168,7 @@
       "englishOk": true
     },
     {
-      "id": "w1110",
+      "id": "w1106",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -20300,7 +20201,7 @@
       "englishOk": true
     },
     {
-      "id": "w1126",
+      "id": "w1122",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -20366,7 +20267,7 @@
       "englishOk": true
     },
     {
-      "id": "r217",
+      "id": "r216",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -20498,7 +20399,7 @@
       "englishOk": true
     },
     {
-      "id": "w1031",
+      "id": "w1028",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -20531,7 +20432,7 @@
       "englishOk": false
     },
     {
-      "id": "w1044",
+      "id": "w1041",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -20564,7 +20465,7 @@
       "englishOk": true
     },
     {
-      "id": "w1049",
+      "id": "w1046",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -20597,7 +20498,7 @@
       "englishOk": true
     },
     {
-      "id": "w1062",
+      "id": "w1059",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -20630,7 +20531,7 @@
       "englishOk": true
     },
     {
-      "id": "w1067",
+      "id": "w1064",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -20663,7 +20564,7 @@
       "englishOk": true
     },
     {
-      "id": "w1077",
+      "id": "w1073",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -20696,7 +20597,7 @@
       "englishOk": true
     },
     {
-      "id": "w1082",
+      "id": "w1078",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -20729,7 +20630,7 @@
       "englishOk": true
     },
     {
-      "id": "w1089",
+      "id": "w1085",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -20762,7 +20663,7 @@
       "englishOk": true
     },
     {
-      "id": "w1102",
+      "id": "w1098",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -20795,7 +20696,7 @@
       "englishOk": true
     },
     {
-      "id": "w1111",
+      "id": "w1107",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -20828,7 +20729,7 @@
       "englishOk": true
     },
     {
-      "id": "w1122",
+      "id": "w1118",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -20861,7 +20762,7 @@
       "englishOk": true
     },
     {
-      "id": "w1127",
+      "id": "w1123",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -21092,7 +20993,7 @@
       "englishOk": true
     },
     {
-      "id": "w1032",
+      "id": "w1029",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -21125,7 +21026,7 @@
       "englishOk": false
     },
     {
-      "id": "w1040",
+      "id": "w1037",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -21158,7 +21059,7 @@
       "englishOk": true
     },
     {
-      "id": "w1050",
+      "id": "w1047",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -21191,7 +21092,7 @@
       "englishOk": true
     },
     {
-      "id": "w1056",
+      "id": "w1053",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -21224,7 +21125,7 @@
       "englishOk": true
     },
     {
-      "id": "w1063",
+      "id": "w1060",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -21257,7 +21158,7 @@
       "englishOk": true
     },
     {
-      "id": "w1072",
+      "id": "w1069",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -21290,7 +21191,7 @@
       "englishOk": true
     },
     {
-      "id": "w1078",
+      "id": "w1074",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -21323,7 +21224,7 @@
       "englishOk": true
     },
     {
-      "id": "w1083",
+      "id": "w1079",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -21356,7 +21257,7 @@
       "englishOk": true
     },
     {
-      "id": "w1090",
+      "id": "w1086",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -21389,7 +21290,7 @@
       "englishOk": true
     },
     {
-      "id": "w1103",
+      "id": "w1099",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -21422,7 +21323,7 @@
       "englishOk": true
     },
     {
-      "id": "w1112",
+      "id": "w1108",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -21455,7 +21356,7 @@
       "englishOk": true
     },
     {
-      "id": "w1120",
+      "id": "w1116",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -21488,7 +21389,7 @@
       "englishOk": false
     },
     {
-      "id": "w1132",
+      "id": "w1128",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -21537,10 +21438,10 @@
       "retRaw": "2026-08-09",
       "month": 8,
       "year": 2026,
-      "dept": "12:40",
-      "arr": "14:25",
-      "retDept": "00:00",
-      "retArr": "02:25",
+      "dept": "21:05",
+      "arr": "22:50",
+      "retDept": "09:00",
+      "retArr": "10:50",
       "dur": "1h 45m",
       "price1": 156,
       "price2": 312,
@@ -21554,7 +21455,7 @@
       "englishOk": true
     },
     {
-      "id": "r212",
+      "id": "r211",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -21719,7 +21620,7 @@
       "englishOk": true
     },
     {
-      "id": "w1033",
+      "id": "w1030",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -21752,7 +21653,7 @@
       "englishOk": false
     },
     {
-      "id": "w1041",
+      "id": "w1038",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -21785,7 +21686,7 @@
       "englishOk": true
     },
     {
-      "id": "w1057",
+      "id": "w1054",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -21818,40 +21719,7 @@
       "englishOk": true
     },
     {
-      "id": "w1073",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 8–9 Sie 2026",
-      "raw": "2026-08-08",
-      "retRaw": "2026-08-09",
-      "month": 8,
-      "year": 2026,
-      "dept": "11:00",
-      "arr": "13:55",
-      "retDept": "23:00",
-      "retArr": "01:55",
-      "dur": "2h 55m",
-      "price1": 234,
-      "price2": 468,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w1091",
+      "id": "w1087",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -21884,7 +21752,7 @@
       "englishOk": true
     },
     {
-      "id": "w1095",
+      "id": "w1091",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -21917,7 +21785,7 @@
       "englishOk": true
     },
     {
-      "id": "w1096",
+      "id": "w1092",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -21950,7 +21818,7 @@
       "englishOk": true
     },
     {
-      "id": "w1104",
+      "id": "w1100",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -21983,7 +21851,7 @@
       "englishOk": true
     },
     {
-      "id": "w1113",
+      "id": "w1109",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -22016,7 +21884,7 @@
       "englishOk": true
     },
     {
-      "id": "w1123",
+      "id": "w1119",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -22049,7 +21917,7 @@
       "englishOk": true
     },
     {
-      "id": "w1128",
+      "id": "w1124",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -22115,7 +21983,7 @@
       "englishOk": true
     },
     {
-      "id": "r211",
+      "id": "r210",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -22280,7 +22148,7 @@
       "englishOk": true
     },
     {
-      "id": "w1034",
+      "id": "w1031",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -22313,7 +22181,7 @@
       "englishOk": false
     },
     {
-      "id": "w1042",
+      "id": "w1039",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -22346,7 +22214,7 @@
       "englishOk": true
     },
     {
-      "id": "w1045",
+      "id": "w1042",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -22379,7 +22247,7 @@
       "englishOk": true
     },
     {
-      "id": "w1051",
+      "id": "w1048",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -22400,8 +22268,8 @@
       "retDept": "01:00",
       "retArr": "03:45",
       "dur": "2h 45m",
-      "price1": 115,
-      "price2": 230,
+      "price1": 99,
+      "price2": 198,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -22412,7 +22280,7 @@
       "englishOk": true
     },
     {
-      "id": "w1058",
+      "id": "w1055",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -22445,7 +22313,7 @@
       "englishOk": true
     },
     {
-      "id": "w1064",
+      "id": "w1061",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -22478,7 +22346,7 @@
       "englishOk": true
     },
     {
-      "id": "w1084",
+      "id": "w1080",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -22511,7 +22379,7 @@
       "englishOk": true
     },
     {
-      "id": "w1092",
+      "id": "w1088",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -22544,7 +22412,7 @@
       "englishOk": true
     },
     {
-      "id": "w1105",
+      "id": "w1101",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -22577,7 +22445,7 @@
       "englishOk": true
     },
     {
-      "id": "w1114",
+      "id": "w1110",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -22610,7 +22478,7 @@
       "englishOk": true
     },
     {
-      "id": "w1118",
+      "id": "w1114",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -22643,7 +22511,7 @@
       "englishOk": true
     },
     {
-      "id": "w1124",
+      "id": "w1120",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -22676,7 +22544,7 @@
       "englishOk": true
     },
     {
-      "id": "w1129",
+      "id": "w1125",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -22841,7 +22709,7 @@
       "englishOk": true
     },
     {
-      "id": "w1035",
+      "id": "w1032",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -22874,7 +22742,7 @@
       "englishOk": false
     },
     {
-      "id": "w1046",
+      "id": "w1043",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -22907,7 +22775,7 @@
       "englishOk": true
     },
     {
-      "id": "w1052",
+      "id": "w1049",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -22940,7 +22808,7 @@
       "englishOk": true
     },
     {
-      "id": "w1059",
+      "id": "w1056",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -22973,7 +22841,7 @@
       "englishOk": true
     },
     {
-      "id": "w1065",
+      "id": "w1062",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -23006,7 +22874,7 @@
       "englishOk": true
     },
     {
-      "id": "w1068",
+      "id": "w1065",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -23039,7 +22907,7 @@
       "englishOk": true
     },
     {
-      "id": "w1074",
+      "id": "w1070",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -23072,7 +22940,7 @@
       "englishOk": true
     },
     {
-      "id": "w1079",
+      "id": "w1075",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -23093,8 +22961,8 @@
       "retDept": "06:00",
       "retArr": "07:30",
       "dur": "1h 30m",
-      "price1": 115,
-      "price2": 230,
+      "price1": 99,
+      "price2": 198,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Węgry – konstytucja zakazuje małżeństw jednopłciowych",
@@ -23105,7 +22973,7 @@
       "englishOk": true
     },
     {
-      "id": "w1085",
+      "id": "w1081",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -23138,7 +23006,7 @@
       "englishOk": true
     },
     {
-      "id": "w1097",
+      "id": "w1093",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -23171,7 +23039,7 @@
       "englishOk": true
     },
     {
-      "id": "w1106",
+      "id": "w1102",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -23204,7 +23072,7 @@
       "englishOk": true
     },
     {
-      "id": "w1115",
+      "id": "w1111",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -23237,7 +23105,7 @@
       "englishOk": true
     },
     {
-      "id": "w1121",
+      "id": "w1117",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -23270,7 +23138,7 @@
       "englishOk": false
     },
     {
-      "id": "w1133",
+      "id": "w1129",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -23303,7 +23171,7 @@
       "englishOk": true
     },
     {
-      "id": "w1135",
+      "id": "w1131",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -23402,7 +23270,7 @@
       "englishOk": true
     },
     {
-      "id": "r543",
+      "id": "r542",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -23435,7 +23303,7 @@
       "englishOk": true
     },
     {
-      "id": "w1036",
+      "id": "w1033",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -23456,8 +23324,8 @@
       "retDept": "18:00",
       "retArr": "20:40",
       "dur": "2h 40m",
-      "price1": 81,
-      "price2": 162,
+      "price1": 98,
+      "price2": 196,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Albania – brak pełnych praw LGBTQ+",
@@ -23468,7 +23336,7 @@
       "englishOk": false
     },
     {
-      "id": "w1060",
+      "id": "w1057",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -23501,7 +23369,7 @@
       "englishOk": true
     },
     {
-      "id": "w1093",
+      "id": "w1089",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -23534,7 +23402,7 @@
       "englishOk": true
     },
     {
-      "id": "w1098",
+      "id": "w1094",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -23567,7 +23435,7 @@
       "englishOk": true
     },
     {
-      "id": "w1107",
+      "id": "w1103",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -23600,7 +23468,7 @@
       "englishOk": true
     },
     {
-      "id": "w1116",
+      "id": "w1112",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -23633,7 +23501,7 @@
       "englishOk": true
     },
     {
-      "id": "w1130",
+      "id": "w1126",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -23798,7 +23666,7 @@
       "englishOk": true
     },
     {
-      "id": "w1037",
+      "id": "w1034",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -23831,7 +23699,7 @@
       "englishOk": false
     },
     {
-      "id": "w1047",
+      "id": "w1044",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -23864,7 +23732,7 @@
       "englishOk": true
     },
     {
-      "id": "w1053",
+      "id": "w1050",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -23897,7 +23765,7 @@
       "englishOk": true
     },
     {
-      "id": "w1066",
+      "id": "w1063",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -23930,7 +23798,7 @@
       "englishOk": true
     },
     {
-      "id": "w1069",
+      "id": "w1066",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -23963,7 +23831,7 @@
       "englishOk": true
     },
     {
-      "id": "w1075",
+      "id": "w1071",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -23996,7 +23864,7 @@
       "englishOk": true
     },
     {
-      "id": "w1080",
+      "id": "w1076",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -24029,7 +23897,7 @@
       "englishOk": true
     },
     {
-      "id": "w1086",
+      "id": "w1082",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -24062,7 +23930,7 @@
       "englishOk": true
     },
     {
-      "id": "w1094",
+      "id": "w1090",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -24095,7 +23963,7 @@
       "englishOk": true
     },
     {
-      "id": "w1099",
+      "id": "w1095",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -24128,7 +23996,7 @@
       "englishOk": true
     },
     {
-      "id": "w1108",
+      "id": "w1104",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -24161,7 +24029,7 @@
       "englishOk": true
     },
     {
-      "id": "w1117",
+      "id": "w1113",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -24194,7 +24062,7 @@
       "englishOk": true
     },
     {
-      "id": "w1125",
+      "id": "w1121",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -24458,7 +24326,7 @@
       "englishOk": true
     },
     {
-      "id": "w1136",
+      "id": "w1132",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -24491,7 +24359,7 @@
       "englishOk": false
     },
     {
-      "id": "w1143",
+      "id": "w1139",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -24524,7 +24392,7 @@
       "englishOk": true
     },
     {
-      "id": "w1153",
+      "id": "w1148",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -24557,7 +24425,7 @@
       "englishOk": true
     },
     {
-      "id": "w1158",
+      "id": "w1153",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -24590,7 +24458,7 @@
       "englishOk": true
     },
     {
-      "id": "w1170",
+      "id": "w1165",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -24623,7 +24491,7 @@
       "englishOk": true
     },
     {
-      "id": "w1173",
+      "id": "w1168",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -24656,7 +24524,7 @@
       "englishOk": true
     },
     {
-      "id": "w1179",
+      "id": "w1174",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -24689,7 +24557,7 @@
       "englishOk": true
     },
     {
-      "id": "w1187",
+      "id": "w1182",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -24710,8 +24578,8 @@
       "retDept": "23:00",
       "retArr": "02:20",
       "dur": "3h 20m",
-      "price1": 157,
-      "price2": 314,
+      "price1": 174,
+      "price2": 348,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -24722,7 +24590,7 @@
       "englishOk": true
     },
     {
-      "id": "w1193",
+      "id": "w1188",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -24755,7 +24623,7 @@
       "englishOk": true
     },
     {
-      "id": "w1202",
+      "id": "w1197",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -24788,7 +24656,7 @@
       "englishOk": true
     },
     {
-      "id": "w1211",
+      "id": "w1206",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -24821,7 +24689,7 @@
       "englishOk": false
     },
     {
-      "id": "w1218",
+      "id": "w1213",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -24854,7 +24722,7 @@
       "englishOk": true
     },
     {
-      "id": "w1220",
+      "id": "w1215",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -25151,7 +25019,7 @@
       "englishOk": true
     },
     {
-      "id": "w1137",
+      "id": "w1133",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -25184,7 +25052,7 @@
       "englishOk": false
     },
     {
-      "id": "w1185",
+      "id": "w1180",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -25217,7 +25085,7 @@
       "englishOk": true
     },
     {
-      "id": "w1194",
+      "id": "w1189",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -25250,7 +25118,7 @@
       "englishOk": true
     },
     {
-      "id": "w1203",
+      "id": "w1198",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -25283,7 +25151,7 @@
       "englishOk": true
     },
     {
-      "id": "w1214",
+      "id": "w1209",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -25415,7 +25283,7 @@
       "englishOk": true
     },
     {
-      "id": "r551",
+      "id": "r550",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -25481,7 +25349,7 @@
       "englishOk": true
     },
     {
-      "id": "w1138",
+      "id": "w1134",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -25514,7 +25382,7 @@
       "englishOk": false
     },
     {
-      "id": "w1146",
+      "id": "w1142",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -25535,8 +25403,8 @@
       "retDept": "23:00",
       "retArr": "01:25",
       "dur": "2h 25m",
-      "price1": 165,
-      "price2": 330,
+      "price1": 140,
+      "price2": 280,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -25547,7 +25415,7 @@
       "englishOk": true
     },
     {
-      "id": "w1150",
+      "id": "w1145",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -25580,7 +25448,7 @@
       "englishOk": true
     },
     {
-      "id": "w1159",
+      "id": "w1154",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -25613,7 +25481,7 @@
       "englishOk": true
     },
     {
-      "id": "w1164",
+      "id": "w1159",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -25646,7 +25514,7 @@
       "englishOk": true
     },
     {
-      "id": "w1174",
+      "id": "w1169",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -25679,7 +25547,7 @@
       "englishOk": true
     },
     {
-      "id": "w1183",
+      "id": "w1178",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -25712,7 +25580,7 @@
       "englishOk": true
     },
     {
-      "id": "w1188",
+      "id": "w1183",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -25745,7 +25613,7 @@
       "englishOk": true
     },
     {
-      "id": "w1195",
+      "id": "w1190",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -25778,7 +25646,7 @@
       "englishOk": true
     },
     {
-      "id": "w1204",
+      "id": "w1199",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -25811,7 +25679,7 @@
       "englishOk": true
     },
     {
-      "id": "w1215",
+      "id": "w1210",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -26009,7 +25877,7 @@
       "englishOk": true
     },
     {
-      "id": "w1139",
+      "id": "w1135",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -26042,7 +25910,7 @@
       "englishOk": false
     },
     {
-      "id": "w1144",
+      "id": "w1140",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -26075,40 +25943,7 @@
       "englishOk": true
     },
     {
-      "id": "w1147",
-      "airline": "wizzair",
-      "from": "KTW",
-      "to": "FCO",
-      "fromCity": "Katowice",
-      "toCity": "Rzym Fiumicino",
-      "flag": "🇮🇹",
-      "country": "Włochy",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 28–30 Sie 2026",
-      "raw": "2026-08-28",
-      "retRaw": "2026-08-30",
-      "month": 8,
-      "year": 2026,
-      "dept": "11:00",
-      "arr": "13:25",
-      "retDept": "23:00",
-      "retArr": "01:25",
-      "dur": "2h 25m",
-      "price1": 183,
-      "price2": 366,
-      "sea": false,
-      "lgbt": true,
-      "lgbtN": "Rzym – aktywna społeczność queer",
-      "distKm": 30,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w1151",
+      "id": "w1146",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -26141,7 +25976,7 @@
       "englishOk": true
     },
     {
-      "id": "w1154",
+      "id": "w1149",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -26174,7 +26009,7 @@
       "englishOk": true
     },
     {
-      "id": "w1160",
+      "id": "w1155",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -26207,7 +26042,7 @@
       "englishOk": true
     },
     {
-      "id": "w1171",
+      "id": "w1166",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -26240,7 +26075,7 @@
       "englishOk": true
     },
     {
-      "id": "w1175",
+      "id": "w1170",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -26273,7 +26108,7 @@
       "englishOk": true
     },
     {
-      "id": "w1180",
+      "id": "w1175",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -26306,7 +26141,7 @@
       "englishOk": true
     },
     {
-      "id": "w1189",
+      "id": "w1184",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -26339,7 +26174,7 @@
       "englishOk": true
     },
     {
-      "id": "w1196",
+      "id": "w1191",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -26372,7 +26207,7 @@
       "englishOk": true
     },
     {
-      "id": "w1205",
+      "id": "w1200",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -26405,7 +26240,7 @@
       "englishOk": true
     },
     {
-      "id": "w1212",
+      "id": "w1207",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -26438,7 +26273,7 @@
       "englishOk": false
     },
     {
-      "id": "w1219",
+      "id": "w1214",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -26570,7 +26405,7 @@
       "englishOk": true
     },
     {
-      "id": "r548",
+      "id": "r547",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -26669,7 +26504,7 @@
       "englishOk": true
     },
     {
-      "id": "w1140",
+      "id": "w1136",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -26702,7 +26537,7 @@
       "englishOk": false
     },
     {
-      "id": "w1197",
+      "id": "w1192",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -26735,7 +26570,7 @@
       "englishOk": true
     },
     {
-      "id": "w1206",
+      "id": "w1201",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -26768,7 +26603,7 @@
       "englishOk": true
     },
     {
-      "id": "w1216",
+      "id": "w1211",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -26966,7 +26801,7 @@
       "englishOk": true
     },
     {
-      "id": "w1148",
+      "id": "w1143",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -26987,8 +26822,8 @@
       "retDept": "23:00",
       "retArr": "01:25",
       "dur": "2h 25m",
-      "price1": 123,
-      "price2": 246,
+      "price1": 140,
+      "price2": 280,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -26999,7 +26834,7 @@
       "englishOk": true
     },
     {
-      "id": "w1152",
+      "id": "w1147",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -27032,7 +26867,7 @@
       "englishOk": true
     },
     {
-      "id": "w1155",
+      "id": "w1150",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -27065,7 +26900,7 @@
       "englishOk": true
     },
     {
-      "id": "w1161",
+      "id": "w1156",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -27098,7 +26933,7 @@
       "englishOk": true
     },
     {
-      "id": "w1165",
+      "id": "w1160",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -27131,7 +26966,7 @@
       "englishOk": true
     },
     {
-      "id": "w1166",
+      "id": "w1161",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -27164,7 +26999,7 @@
       "englishOk": true
     },
     {
-      "id": "w1176",
+      "id": "w1171",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -27197,7 +27032,7 @@
       "englishOk": true
     },
     {
-      "id": "w1184",
+      "id": "w1179",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -27230,7 +27065,7 @@
       "englishOk": true
     },
     {
-      "id": "w1198",
+      "id": "w1193",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -27263,7 +27098,7 @@
       "englishOk": true
     },
     {
-      "id": "w1207",
+      "id": "w1202",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -27296,7 +27131,7 @@
       "englishOk": true
     },
     {
-      "id": "w1217",
+      "id": "w1212",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -27659,7 +27494,7 @@
       "englishOk": true
     },
     {
-      "id": "w1156",
+      "id": "w1151",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -27692,7 +27527,7 @@
       "englishOk": true
     },
     {
-      "id": "w1162",
+      "id": "w1157",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -27725,7 +27560,7 @@
       "englishOk": true
     },
     {
-      "id": "w1167",
+      "id": "w1162",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -27758,7 +27593,7 @@
       "englishOk": true
     },
     {
-      "id": "w1172",
+      "id": "w1167",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -27791,7 +27626,7 @@
       "englishOk": true
     },
     {
-      "id": "w1177",
+      "id": "w1172",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -27824,7 +27659,7 @@
       "englishOk": true
     },
     {
-      "id": "w1181",
+      "id": "w1176",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -27857,7 +27692,7 @@
       "englishOk": true
     },
     {
-      "id": "w1190",
+      "id": "w1185",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -27890,7 +27725,7 @@
       "englishOk": true
     },
     {
-      "id": "w1199",
+      "id": "w1194",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -27923,7 +27758,7 @@
       "englishOk": true
     },
     {
-      "id": "w1208",
+      "id": "w1203",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -27956,7 +27791,7 @@
       "englishOk": true
     },
     {
-      "id": "w1213",
+      "id": "w1208",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -28220,7 +28055,7 @@
       "englishOk": true
     },
     {
-      "id": "w1141",
+      "id": "w1137",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -28253,7 +28088,7 @@
       "englishOk": false
     },
     {
-      "id": "w1157",
+      "id": "w1152",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -28286,7 +28121,7 @@
       "englishOk": true
     },
     {
-      "id": "w1168",
+      "id": "w1163",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -28319,7 +28154,7 @@
       "englishOk": true
     },
     {
-      "id": "w1186",
+      "id": "w1181",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -28352,7 +28187,7 @@
       "englishOk": true
     },
     {
-      "id": "w1191",
+      "id": "w1186",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -28385,7 +28220,7 @@
       "englishOk": true
     },
     {
-      "id": "w1200",
+      "id": "w1195",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -28418,7 +28253,7 @@
       "englishOk": true
     },
     {
-      "id": "w1209",
+      "id": "w1204",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -28682,7 +28517,7 @@
       "englishOk": true
     },
     {
-      "id": "r499",
+      "id": "r500",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -28814,7 +28649,7 @@
       "englishOk": true
     },
     {
-      "id": "w1142",
+      "id": "w1138",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -28847,7 +28682,7 @@
       "englishOk": false
     },
     {
-      "id": "w1145",
+      "id": "w1141",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -28880,7 +28715,7 @@
       "englishOk": true
     },
     {
-      "id": "w1149",
+      "id": "w1144",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -28913,7 +28748,7 @@
       "englishOk": true
     },
     {
-      "id": "w1163",
+      "id": "w1158",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -28946,7 +28781,7 @@
       "englishOk": true
     },
     {
-      "id": "w1169",
+      "id": "w1164",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -28979,7 +28814,7 @@
       "englishOk": true
     },
     {
-      "id": "w1178",
+      "id": "w1173",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -29012,7 +28847,7 @@
       "englishOk": true
     },
     {
-      "id": "w1182",
+      "id": "w1177",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -29045,7 +28880,7 @@
       "englishOk": true
     },
     {
-      "id": "w1192",
+      "id": "w1187",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -29078,7 +28913,7 @@
       "englishOk": true
     },
     {
-      "id": "w1201",
+      "id": "w1196",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -29111,7 +28946,7 @@
       "englishOk": true
     },
     {
-      "id": "w1210",
+      "id": "w1205",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -29342,7 +29177,7 @@
       "englishOk": true
     },
     {
-      "id": "r542",
+      "id": "r541",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -29408,7 +29243,7 @@
       "englishOk": true
     },
     {
-      "id": "r638",
+      "id": "r637",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -29474,7 +29309,7 @@
       "englishOk": true
     },
     {
-      "id": "w1221",
+      "id": "w1216",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -29507,7 +29342,7 @@
       "englishOk": false
     },
     {
-      "id": "w1236",
+      "id": "w1231",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -29540,7 +29375,7 @@
       "englishOk": true
     },
     {
-      "id": "w1244",
+      "id": "w1239",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -29573,7 +29408,7 @@
       "englishOk": true
     },
     {
-      "id": "w1248",
+      "id": "w1243",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -29606,7 +29441,7 @@
       "englishOk": true
     },
     {
-      "id": "w1256",
+      "id": "w1251",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -29639,7 +29474,7 @@
       "englishOk": true
     },
     {
-      "id": "w1263",
+      "id": "w1258",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -29672,7 +29507,7 @@
       "englishOk": true
     },
     {
-      "id": "w1273",
+      "id": "w1267",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -29705,7 +29540,7 @@
       "englishOk": true
     },
     {
-      "id": "w1281",
+      "id": "w1275",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -29738,7 +29573,7 @@
       "englishOk": true
     },
     {
-      "id": "w1290",
+      "id": "w1284",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -30200,7 +30035,7 @@
       "englishOk": true
     },
     {
-      "id": "w1222",
+      "id": "w1217",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -30233,7 +30068,7 @@
       "englishOk": false
     },
     {
-      "id": "w1227",
+      "id": "w1222",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -30266,7 +30101,7 @@
       "englishOk": true
     },
     {
-      "id": "w1237",
+      "id": "w1232",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -30299,7 +30134,7 @@
       "englishOk": true
     },
     {
-      "id": "w1249",
+      "id": "w1244",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -30332,7 +30167,7 @@
       "englishOk": true
     },
     {
-      "id": "w1274",
+      "id": "w1268",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -30365,7 +30200,7 @@
       "englishOk": true
     },
     {
-      "id": "w1282",
+      "id": "w1276",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -30386,8 +30221,8 @@
       "retDept": "01:00",
       "retArr": "03:25",
       "dur": "2h 25m",
-      "price1": 147,
-      "price2": 294,
+      "price1": 165,
+      "price2": 330,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
@@ -30728,7 +30563,7 @@
       "englishOk": true
     },
     {
-      "id": "w1223",
+      "id": "w1218",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -30761,7 +30596,7 @@
       "englishOk": false
     },
     {
-      "id": "w1228",
+      "id": "w1223",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -30794,7 +30629,7 @@
       "englishOk": true
     },
     {
-      "id": "w1232",
+      "id": "w1227",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -30827,7 +30662,7 @@
       "englishOk": true
     },
     {
-      "id": "w1238",
+      "id": "w1233",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -30860,7 +30695,7 @@
       "englishOk": true
     },
     {
-      "id": "w1245",
+      "id": "w1240",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -30893,7 +30728,7 @@
       "englishOk": true
     },
     {
-      "id": "w1250",
+      "id": "w1245",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -30926,7 +30761,7 @@
       "englishOk": true
     },
     {
-      "id": "w1259",
+      "id": "w1254",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -30959,7 +30794,7 @@
       "englishOk": true
     },
     {
-      "id": "w1264",
+      "id": "w1259",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -30992,7 +30827,7 @@
       "englishOk": true
     },
     {
-      "id": "w1275",
+      "id": "w1269",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -31025,7 +30860,7 @@
       "englishOk": true
     },
     {
-      "id": "w1283",
+      "id": "w1277",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -31058,7 +30893,7 @@
       "englishOk": true
     },
     {
-      "id": "w1289",
+      "id": "w1283",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -31322,7 +31157,7 @@
       "englishOk": true
     },
     {
-      "id": "r541",
+      "id": "r540",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -31454,7 +31289,7 @@
       "englishOk": true
     },
     {
-      "id": "w1229",
+      "id": "w1224",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -31487,7 +31322,7 @@
       "englishOk": true
     },
     {
-      "id": "w1239",
+      "id": "w1234",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -31520,7 +31355,7 @@
       "englishOk": true
     },
     {
-      "id": "w1251",
+      "id": "w1246",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -31553,7 +31388,7 @@
       "englishOk": true
     },
     {
-      "id": "w1257",
+      "id": "w1252",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -31586,7 +31421,7 @@
       "englishOk": true
     },
     {
-      "id": "w1260",
+      "id": "w1255",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -31619,7 +31454,7 @@
       "englishOk": true
     },
     {
-      "id": "w1265",
+      "id": "w1260",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -31652,7 +31487,7 @@
       "englishOk": true
     },
     {
-      "id": "w1276",
+      "id": "w1270",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -31685,7 +31520,7 @@
       "englishOk": true
     },
     {
-      "id": "w1284",
+      "id": "w1278",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -31718,7 +31553,7 @@
       "englishOk": true
     },
     {
-      "id": "w1291",
+      "id": "w1285",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -31899,10 +31734,10 @@
       "retRaw": "2026-09-20",
       "month": 9,
       "year": 2026,
-      "dept": "05:50",
-      "arr": "07:15",
-      "retDept": "17:00",
-      "retArr": "19:15",
+      "dept": "23:30",
+      "arr": "00:55",
+      "retDept": "11:00",
+      "retArr": "12:55",
       "dur": "1h 25m",
       "price1": 196,
       "price2": 393,
@@ -31949,7 +31784,7 @@
       "englishOk": true
     },
     {
-      "id": "r531",
+      "id": "r532",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -32048,7 +31883,7 @@
       "englishOk": true
     },
     {
-      "id": "w1224",
+      "id": "w1219",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -32081,7 +31916,7 @@
       "englishOk": false
     },
     {
-      "id": "w1240",
+      "id": "w1235",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -32114,7 +31949,7 @@
       "englishOk": true
     },
     {
-      "id": "w1252",
+      "id": "w1247",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -32147,7 +31982,7 @@
       "englishOk": true
     },
     {
-      "id": "w1271",
+      "id": "w1265",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -32180,7 +32015,7 @@
       "englishOk": true
     },
     {
-      "id": "w1277",
+      "id": "w1271",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -32213,7 +32048,7 @@
       "englishOk": true
     },
     {
-      "id": "w1285",
+      "id": "w1279",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -32642,7 +32477,7 @@
       "englishOk": true
     },
     {
-      "id": "w1225",
+      "id": "w1220",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -32675,7 +32510,7 @@
       "englishOk": false
     },
     {
-      "id": "w1230",
+      "id": "w1225",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -32696,8 +32531,8 @@
       "retDept": "18:00",
       "retArr": "21:20",
       "dur": "3h 20m",
-      "price1": 217,
-      "price2": 434,
+      "price1": 179,
+      "price2": 358,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -32708,7 +32543,7 @@
       "englishOk": true
     },
     {
-      "id": "w1233",
+      "id": "w1228",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -32741,7 +32576,7 @@
       "englishOk": true
     },
     {
-      "id": "w1234",
+      "id": "w1229",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -32774,7 +32609,7 @@
       "englishOk": true
     },
     {
-      "id": "w1241",
+      "id": "w1236",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -32807,7 +32642,7 @@
       "englishOk": true
     },
     {
-      "id": "w1246",
+      "id": "w1241",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -32840,7 +32675,7 @@
       "englishOk": true
     },
     {
-      "id": "w1253",
+      "id": "w1248",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -32873,7 +32708,7 @@
       "englishOk": true
     },
     {
-      "id": "w1261",
+      "id": "w1256",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -32906,7 +32741,7 @@
       "englishOk": true
     },
     {
-      "id": "w1266",
+      "id": "w1261",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -32939,7 +32774,7 @@
       "englishOk": true
     },
     {
-      "id": "w1268",
+      "id": "w1263",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -32972,7 +32807,7 @@
       "englishOk": true
     },
     {
-      "id": "w1278",
+      "id": "w1272",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -33005,7 +32840,7 @@
       "englishOk": true
     },
     {
-      "id": "w1286",
+      "id": "w1280",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -33038,7 +32873,7 @@
       "englishOk": true
     },
     {
-      "id": "w1293",
+      "id": "w1287",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -33153,10 +32988,10 @@
       "retRaw": "2026-09-27",
       "month": 9,
       "year": 2026,
-      "dept": "20:50",
-      "arr": "22:35",
-      "retDept": "08:00",
-      "retArr": "10:35",
+      "dept": "23:20",
+      "arr": "01:05",
+      "retDept": "11:00",
+      "retArr": "13:05",
       "dur": "1h 45m",
       "price1": 147,
       "price2": 294,
@@ -33434,7 +33269,7 @@
       "englishOk": true
     },
     {
-      "id": "w1235",
+      "id": "w1230",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -33467,7 +33302,7 @@
       "englishOk": true
     },
     {
-      "id": "w1242",
+      "id": "w1237",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -33500,7 +33335,7 @@
       "englishOk": true
     },
     {
-      "id": "w1247",
+      "id": "w1242",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -33533,7 +33368,7 @@
       "englishOk": true
     },
     {
-      "id": "w1254",
+      "id": "w1249",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -33566,7 +33401,7 @@
       "englishOk": true
     },
     {
-      "id": "w1258",
+      "id": "w1253",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -33599,7 +33434,7 @@
       "englishOk": true
     },
     {
-      "id": "w1262",
+      "id": "w1257",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -33632,7 +33467,7 @@
       "englishOk": true
     },
     {
-      "id": "w1267",
+      "id": "w1262",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -33665,40 +33500,7 @@
       "englishOk": true
     },
     {
-      "id": "w1269",
-      "airline": "wizzair",
-      "from": "WAW",
-      "to": "BCN",
-      "fromCity": "Warszawa",
-      "toCity": "Barcelona",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 25–27 Wrz 2026",
-      "raw": "2026-09-25",
-      "retRaw": "2026-09-27",
-      "month": 9,
-      "year": 2026,
-      "dept": "07:00",
-      "arr": "10:15",
-      "retDept": "19:00",
-      "retArr": "22:15",
-      "dur": "3h 15m",
-      "price1": 217,
-      "price2": 434,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Barcelona – queer-friendly stolica Europy",
-      "distKm": 14,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w1272",
+      "id": "w1266",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -33731,7 +33533,7 @@
       "englishOk": true
     },
     {
-      "id": "w1279",
+      "id": "w1273",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -33764,7 +33566,7 @@
       "englishOk": true
     },
     {
-      "id": "w1287",
+      "id": "w1281",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -33797,7 +33599,7 @@
       "englishOk": true
     },
     {
-      "id": "w1292",
+      "id": "w1286",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -33830,7 +33632,7 @@
       "englishOk": false
     },
     {
-      "id": "w1295",
+      "id": "w1289",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -33912,10 +33714,10 @@
       "retRaw": "2026-09-27",
       "month": 9,
       "year": 2026,
-      "dept": "12:40",
-      "arr": "14:25",
-      "retDept": "00:00",
-      "retArr": "02:25",
+      "dept": "21:05",
+      "arr": "22:50",
+      "retDept": "09:00",
+      "retArr": "10:50",
       "dur": "1h 45m",
       "price1": 120,
       "price2": 240,
@@ -33962,7 +33764,7 @@
       "englishOk": true
     },
     {
-      "id": "r290",
+      "id": "r291",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -34259,7 +34061,7 @@
       "englishOk": true
     },
     {
-      "id": "w1226",
+      "id": "w1221",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -34280,8 +34082,8 @@
       "retDept": "18:00",
       "retArr": "20:40",
       "dur": "2h 40m",
-      "price1": 77,
-      "price2": 154,
+      "price1": 93,
+      "price2": 186,
       "sea": false,
       "lgbt": false,
       "lgbtN": "Albania – brak pełnych praw LGBTQ+",
@@ -34292,7 +34094,7 @@
       "englishOk": false
     },
     {
-      "id": "w1231",
+      "id": "w1226",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -34325,7 +34127,7 @@
       "englishOk": true
     },
     {
-      "id": "w1243",
+      "id": "w1238",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -34358,7 +34160,7 @@
       "englishOk": true
     },
     {
-      "id": "w1255",
+      "id": "w1250",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -34391,7 +34193,7 @@
       "englishOk": true
     },
     {
-      "id": "w1270",
+      "id": "w1264",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -34424,7 +34226,7 @@
       "englishOk": true
     },
     {
-      "id": "w1280",
+      "id": "w1274",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -34457,7 +34259,7 @@
       "englishOk": true
     },
     {
-      "id": "w1288",
+      "id": "w1282",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -34490,7 +34292,7 @@
       "englishOk": true
     },
     {
-      "id": "w1294",
+      "id": "w1288",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -34655,7 +34457,7 @@
       "englishOk": true
     },
     {
-      "id": "r265",
+      "id": "r266",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -34886,7 +34688,7 @@
       "englishOk": true
     },
     {
-      "id": "w1296",
+      "id": "w1290",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -34919,7 +34721,7 @@
       "englishOk": false
     },
     {
-      "id": "w1301",
+      "id": "w1295",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -34952,7 +34754,7 @@
       "englishOk": true
     },
     {
-      "id": "w1306",
+      "id": "w1299",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -34985,7 +34787,7 @@
       "englishOk": true
     },
     {
-      "id": "w1309",
+      "id": "w1302",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -35018,7 +34820,7 @@
       "englishOk": true
     },
     {
-      "id": "w1319",
+      "id": "w1312",
       "airline": "wizzair",
       "from": "KTW",
       "to": "VAR",
@@ -35051,7 +34853,7 @@
       "englishOk": true
     },
     {
-      "id": "w1322",
+      "id": "w1316",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -35084,7 +34886,7 @@
       "englishOk": true
     },
     {
-      "id": "w1330",
+      "id": "w1324",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -35117,7 +34919,7 @@
       "englishOk": true
     },
     {
-      "id": "w1334",
+      "id": "w1328",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -35150,7 +34952,7 @@
       "englishOk": true
     },
     {
-      "id": "w1338",
+      "id": "w1332",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -35183,7 +34985,7 @@
       "englishOk": true
     },
     {
-      "id": "w1342",
+      "id": "w1336",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -35216,7 +35018,7 @@
       "englishOk": true
     },
     {
-      "id": "w1353",
+      "id": "w1347",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -35249,7 +35051,7 @@
       "englishOk": true
     },
     {
-      "id": "w1361",
+      "id": "w1355",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -35282,7 +35084,7 @@
       "englishOk": true
     },
     {
-      "id": "w1369",
+      "id": "w1363",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -35315,7 +35117,7 @@
       "englishOk": true
     },
     {
-      "id": "w1378",
+      "id": "w1372",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -35678,7 +35480,7 @@
       "englishOk": true
     },
     {
-      "id": "r532",
+      "id": "r533",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -35810,7 +35612,7 @@
       "englishOk": true
     },
     {
-      "id": "w1313",
+      "id": "w1306",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -35843,7 +35645,7 @@
       "englishOk": true
     },
     {
-      "id": "w1320",
+      "id": "w1313",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -35876,7 +35678,7 @@
       "englishOk": true
     },
     {
-      "id": "w1323",
+      "id": "w1317",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -35909,7 +35711,7 @@
       "englishOk": true
     },
     {
-      "id": "w1331",
+      "id": "w1325",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -35942,7 +35744,7 @@
       "englishOk": true
     },
     {
-      "id": "w1335",
+      "id": "w1329",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -35975,7 +35777,7 @@
       "englishOk": true
     },
     {
-      "id": "w1339",
+      "id": "w1333",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -36008,7 +35810,7 @@
       "englishOk": true
     },
     {
-      "id": "w1343",
+      "id": "w1337",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -36041,7 +35843,7 @@
       "englishOk": true
     },
     {
-      "id": "w1354",
+      "id": "w1348",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -36074,7 +35876,7 @@
       "englishOk": true
     },
     {
-      "id": "w1362",
+      "id": "w1356",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -36107,7 +35909,7 @@
       "englishOk": true
     },
     {
-      "id": "w1372",
+      "id": "w1366",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -36239,7 +36041,7 @@
       "englishOk": true
     },
     {
-      "id": "r208",
+      "id": "r207",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -36404,7 +36206,7 @@
       "englishOk": true
     },
     {
-      "id": "w1297",
+      "id": "w1291",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -36437,7 +36239,7 @@
       "englishOk": false
     },
     {
-      "id": "w1302",
+      "id": "w1296",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -36470,7 +36272,7 @@
       "englishOk": true
     },
     {
-      "id": "w1314",
+      "id": "w1307",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -36503,7 +36305,7 @@
       "englishOk": true
     },
     {
-      "id": "w1324",
+      "id": "w1318",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -36536,7 +36338,7 @@
       "englishOk": true
     },
     {
-      "id": "w1344",
+      "id": "w1338",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -36569,7 +36371,7 @@
       "englishOk": true
     },
     {
-      "id": "w1350",
+      "id": "w1344",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -36602,7 +36404,7 @@
       "englishOk": true
     },
     {
-      "id": "w1355",
+      "id": "w1349",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -36635,7 +36437,7 @@
       "englishOk": true
     },
     {
-      "id": "w1363",
+      "id": "w1357",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -36668,7 +36470,7 @@
       "englishOk": true
     },
     {
-      "id": "w1379",
+      "id": "w1373",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -36701,7 +36503,7 @@
       "englishOk": true
     },
     {
-      "id": "r13",
+      "id": "r12",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -36800,7 +36602,7 @@
       "englishOk": true
     },
     {
-      "id": "r207",
+      "id": "r206",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -37097,7 +36899,7 @@
       "englishOk": true
     },
     {
-      "id": "w1298",
+      "id": "w1292",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -37130,40 +36932,7 @@
       "englishOk": false
     },
     {
-      "id": "w1303",
-      "airline": "wizzair",
-      "from": "KTW",
-      "to": "BCN",
-      "fromCity": "Katowice",
-      "toCity": "Barcelona",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "niedziela",
-      "retDay": "niedziela",
-      "pattern": "sun-only",
-      "date": "Nd, 4 Paź 2026",
-      "raw": "2026-10-04",
-      "retRaw": "2026-10-04",
-      "month": 10,
-      "year": 2026,
-      "dept": "06:00",
-      "arr": "09:20",
-      "retDept": "18:00",
-      "retArr": "21:20",
-      "dur": "3h 20m",
-      "price1": 116,
-      "price2": 232,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Barcelona – queer-friendly stolica Europy",
-      "distKm": 14,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w1307",
+      "id": "w1300",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -37196,7 +36965,7 @@
       "englishOk": true
     },
     {
-      "id": "w1310",
+      "id": "w1303",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -37229,7 +36998,7 @@
       "englishOk": true
     },
     {
-      "id": "w1315",
+      "id": "w1308",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -37262,7 +37031,40 @@
       "englishOk": true
     },
     {
-      "id": "w1325",
+      "id": "w1314",
+      "airline": "wizzair",
+      "from": "KRK",
+      "to": "BCN",
+      "fromCity": "Kraków",
+      "toCity": "Barcelona",
+      "flag": "🇪🇸",
+      "country": "Hiszpania",
+      "deptDay": "niedziela",
+      "retDay": "niedziela",
+      "pattern": "sun-only",
+      "date": "Nd, 4 Paź 2026",
+      "raw": "2026-10-04",
+      "retRaw": "2026-10-04",
+      "month": 10,
+      "year": 2026,
+      "dept": "14:00",
+      "arr": "17:25",
+      "retDept": "02:00",
+      "retArr": "05:25",
+      "dur": "3h 25m",
+      "price1": 116,
+      "price2": 232,
+      "sea": true,
+      "lgbt": true,
+      "lgbtN": "Barcelona – queer-friendly stolica Europy",
+      "distKm": 14,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
+      "id": "w1319",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -37295,7 +37097,7 @@
       "englishOk": true
     },
     {
-      "id": "w1340",
+      "id": "w1334",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -37328,7 +37130,7 @@
       "englishOk": true
     },
     {
-      "id": "w1345",
+      "id": "w1339",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -37361,7 +37163,7 @@
       "englishOk": true
     },
     {
-      "id": "w1351",
+      "id": "w1345",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -37394,7 +37196,7 @@
       "englishOk": true
     },
     {
-      "id": "w1356",
+      "id": "w1350",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -37427,7 +37229,7 @@
       "englishOk": true
     },
     {
-      "id": "w1364",
+      "id": "w1358",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -37460,7 +37262,7 @@
       "englishOk": true
     },
     {
-      "id": "w1375",
+      "id": "w1369",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -37493,7 +37295,7 @@
       "englishOk": true
     },
     {
-      "id": "w1380",
+      "id": "w1374",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -37625,7 +37427,7 @@
       "englishOk": true
     },
     {
-      "id": "r219",
+      "id": "r218",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -37658,7 +37460,7 @@
       "englishOk": true
     },
     {
-      "id": "r266",
+      "id": "r267",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -37823,7 +37625,7 @@
       "englishOk": true
     },
     {
-      "id": "r550",
+      "id": "r549",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -37955,7 +37757,7 @@
       "englishOk": true
     },
     {
-      "id": "w1311",
+      "id": "w1304",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -37988,7 +37790,7 @@
       "englishOk": true
     },
     {
-      "id": "w1316",
+      "id": "w1309",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -38021,7 +37823,7 @@
       "englishOk": true
     },
     {
-      "id": "w1321",
+      "id": "w1315",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -38054,7 +37856,7 @@
       "englishOk": true
     },
     {
-      "id": "w1326",
+      "id": "w1320",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -38087,7 +37889,7 @@
       "englishOk": true
     },
     {
-      "id": "w1332",
+      "id": "w1326",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -38120,7 +37922,7 @@
       "englishOk": true
     },
     {
-      "id": "w1346",
+      "id": "w1340",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -38153,7 +37955,7 @@
       "englishOk": true
     },
     {
-      "id": "w1357",
+      "id": "w1351",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -38186,7 +37988,7 @@
       "englishOk": true
     },
     {
-      "id": "w1365",
+      "id": "w1359",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -38219,7 +38021,7 @@
       "englishOk": true
     },
     {
-      "id": "w1370",
+      "id": "w1364",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -38252,7 +38054,7 @@
       "englishOk": true
     },
     {
-      "id": "w1373",
+      "id": "w1367",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -38549,7 +38351,7 @@
       "englishOk": true
     },
     {
-      "id": "r637",
+      "id": "r636",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -38582,7 +38384,7 @@
       "englishOk": true
     },
     {
-      "id": "w1299",
+      "id": "w1293",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -38615,7 +38417,7 @@
       "englishOk": false
     },
     {
-      "id": "w1317",
+      "id": "w1310",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -38648,7 +38450,7 @@
       "englishOk": true
     },
     {
-      "id": "w1327",
+      "id": "w1321",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -38681,7 +38483,7 @@
       "englishOk": true
     },
     {
-      "id": "w1347",
+      "id": "w1341",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -38714,7 +38516,7 @@
       "englishOk": true
     },
     {
-      "id": "w1352",
+      "id": "w1346",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -38747,7 +38549,7 @@
       "englishOk": true
     },
     {
-      "id": "w1358",
+      "id": "w1352",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -38780,7 +38582,7 @@
       "englishOk": true
     },
     {
-      "id": "w1366",
+      "id": "w1360",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -38813,7 +38615,7 @@
       "englishOk": true
     },
     {
-      "id": "w1376",
+      "id": "w1370",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -38978,7 +38780,7 @@
       "englishOk": true
     },
     {
-      "id": "r270",
+      "id": "r271",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -39176,7 +38978,7 @@
       "englishOk": true
     },
     {
-      "id": "w1300",
+      "id": "w1294",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -39209,7 +39011,7 @@
       "englishOk": false
     },
     {
-      "id": "w1304",
+      "id": "w1297",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -39242,7 +39044,7 @@
       "englishOk": true
     },
     {
-      "id": "w1308",
+      "id": "w1301",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -39275,7 +39077,7 @@
       "englishOk": true
     },
     {
-      "id": "w1312",
+      "id": "w1305",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -39308,7 +39110,7 @@
       "englishOk": true
     },
     {
-      "id": "w1328",
+      "id": "w1322",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -39341,7 +39143,7 @@
       "englishOk": true
     },
     {
-      "id": "w1336",
+      "id": "w1330",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -39374,7 +39176,7 @@
       "englishOk": true
     },
     {
-      "id": "w1341",
+      "id": "w1335",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -39407,7 +39209,7 @@
       "englishOk": true
     },
     {
-      "id": "w1348",
+      "id": "w1342",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -39440,7 +39242,7 @@
       "englishOk": true
     },
     {
-      "id": "w1359",
+      "id": "w1353",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -39473,7 +39275,7 @@
       "englishOk": true
     },
     {
-      "id": "w1367",
+      "id": "w1361",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -39506,7 +39308,7 @@
       "englishOk": true
     },
     {
-      "id": "w1371",
+      "id": "w1365",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -39539,7 +39341,7 @@
       "englishOk": true
     },
     {
-      "id": "w1377",
+      "id": "w1371",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -39572,7 +39374,7 @@
       "englishOk": true
     },
     {
-      "id": "w1381",
+      "id": "w1375",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -39869,7 +39671,7 @@
       "englishOk": true
     },
     {
-      "id": "r546",
+      "id": "r545",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -39968,7 +39770,7 @@
       "englishOk": true
     },
     {
-      "id": "r636",
+      "id": "r635",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -40001,7 +39803,7 @@
       "englishOk": true
     },
     {
-      "id": "w1305",
+      "id": "w1298",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -40034,7 +39836,7 @@
       "englishOk": true
     },
     {
-      "id": "w1318",
+      "id": "w1311",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -40067,7 +39869,7 @@
       "englishOk": true
     },
     {
-      "id": "w1329",
+      "id": "w1323",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -40100,7 +39902,7 @@
       "englishOk": true
     },
     {
-      "id": "w1333",
+      "id": "w1327",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -40133,7 +39935,7 @@
       "englishOk": true
     },
     {
-      "id": "w1337",
+      "id": "w1331",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -40166,7 +39968,7 @@
       "englishOk": true
     },
     {
-      "id": "w1349",
+      "id": "w1343",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -40199,7 +40001,7 @@
       "englishOk": true
     },
     {
-      "id": "w1360",
+      "id": "w1354",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -40232,7 +40034,7 @@
       "englishOk": true
     },
     {
-      "id": "w1368",
+      "id": "w1362",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -40265,7 +40067,7 @@
       "englishOk": true
     },
     {
-      "id": "w1374",
+      "id": "w1368",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -40298,7 +40100,7 @@
       "englishOk": false
     },
     {
-      "id": "w1382",
+      "id": "w1376",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -40628,7 +40430,7 @@
       "englishOk": true
     },
     {
-      "id": "r639",
+      "id": "r638",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -40661,7 +40463,7 @@
       "englishOk": true
     },
     {
-      "id": "w1383",
+      "id": "w1377",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -40694,7 +40496,7 @@
       "englishOk": false
     },
     {
-      "id": "w1386",
+      "id": "w1380",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -40727,7 +40529,7 @@
       "englishOk": true
     },
     {
-      "id": "w1396",
+      "id": "w1390",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -40760,7 +40562,7 @@
       "englishOk": true
     },
     {
-      "id": "w1404",
+      "id": "w1398",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -40793,7 +40595,7 @@
       "englishOk": true
     },
     {
-      "id": "w1421",
+      "id": "w1415",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -40826,7 +40628,7 @@
       "englishOk": true
     },
     {
-      "id": "w1427",
+      "id": "w1421",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -40859,7 +40661,7 @@
       "englishOk": true
     },
     {
-      "id": "w1434",
+      "id": "w1428",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -40892,7 +40694,7 @@
       "englishOk": true
     },
     {
-      "id": "w1442",
+      "id": "w1436",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -40925,7 +40727,7 @@
       "englishOk": true
     },
     {
-      "id": "w1452",
+      "id": "w1446",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -40958,7 +40760,7 @@
       "englishOk": true
     },
     {
-      "id": "w1456",
+      "id": "w1450",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -41090,7 +40892,7 @@
       "englishOk": true
     },
     {
-      "id": "r218",
+      "id": "r217",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -41387,7 +41189,7 @@
       "englishOk": true
     },
     {
-      "id": "w1384",
+      "id": "w1378",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -41420,7 +41222,7 @@
       "englishOk": false
     },
     {
-      "id": "w1387",
+      "id": "w1381",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -41453,7 +41255,7 @@
       "englishOk": true
     },
     {
-      "id": "w1391",
+      "id": "w1385",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -41486,7 +41288,7 @@
       "englishOk": true
     },
     {
-      "id": "w1393",
+      "id": "w1387",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -41519,7 +41321,7 @@
       "englishOk": true
     },
     {
-      "id": "w1397",
+      "id": "w1391",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -41552,7 +41354,7 @@
       "englishOk": true
     },
     {
-      "id": "w1405",
+      "id": "w1399",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -41585,7 +41387,7 @@
       "englishOk": true
     },
     {
-      "id": "w1414",
+      "id": "w1408",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -41618,7 +41420,7 @@
       "englishOk": true
     },
     {
-      "id": "w1419",
+      "id": "w1413",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -41651,7 +41453,7 @@
       "englishOk": true
     },
     {
-      "id": "w1422",
+      "id": "w1416",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -41684,7 +41486,7 @@
       "englishOk": true
     },
     {
-      "id": "w1429",
+      "id": "w1423",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -41717,7 +41519,7 @@
       "englishOk": true
     },
     {
-      "id": "w1435",
+      "id": "w1429",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -41750,7 +41552,7 @@
       "englishOk": true
     },
     {
-      "id": "w1443",
+      "id": "w1437",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -41783,7 +41585,7 @@
       "englishOk": true
     },
     {
-      "id": "w1457",
+      "id": "w1451",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -42245,7 +42047,7 @@
       "englishOk": true
     },
     {
-      "id": "w1394",
+      "id": "w1388",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -42266,8 +42068,8 @@
       "retDept": "01:00",
       "retArr": "03:45",
       "dur": "2h 45m",
-      "price1": 217,
-      "price2": 434,
+      "price1": 179,
+      "price2": 358,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -42278,7 +42080,7 @@
       "englishOk": true
     },
     {
-      "id": "w1398",
+      "id": "w1392",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -42311,7 +42113,7 @@
       "englishOk": true
     },
     {
-      "id": "w1401",
+      "id": "w1395",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -42344,7 +42146,7 @@
       "englishOk": true
     },
     {
-      "id": "w1406",
+      "id": "w1400",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -42377,7 +42179,7 @@
       "englishOk": true
     },
     {
-      "id": "w1411",
+      "id": "w1405",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -42410,7 +42212,7 @@
       "englishOk": true
     },
     {
-      "id": "w1415",
+      "id": "w1409",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -42443,7 +42245,7 @@
       "englishOk": true
     },
     {
-      "id": "w1420",
+      "id": "w1414",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -42476,7 +42278,7 @@
       "englishOk": true
     },
     {
-      "id": "w1423",
+      "id": "w1417",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -42509,7 +42311,7 @@
       "englishOk": true
     },
     {
-      "id": "w1436",
+      "id": "w1430",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -42542,7 +42344,7 @@
       "englishOk": true
     },
     {
-      "id": "w1444",
+      "id": "w1438",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -42575,7 +42377,7 @@
       "englishOk": true
     },
     {
-      "id": "w1451",
+      "id": "w1445",
       "airline": "wizzair",
       "from": "WAW",
       "to": "TIA",
@@ -42608,7 +42410,7 @@
       "englishOk": false
     },
     {
-      "id": "w1462",
+      "id": "w1456",
       "airline": "wizzair",
       "from": "GDN",
       "to": "PMI",
@@ -42641,7 +42443,7 @@
       "englishOk": true
     },
     {
-      "id": "w1463",
+      "id": "w1457",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -42938,7 +42740,7 @@
       "englishOk": true
     },
     {
-      "id": "w1385",
+      "id": "w1379",
       "airline": "wizzair",
       "from": "KTW",
       "to": "TIA",
@@ -42971,7 +42773,7 @@
       "englishOk": false
     },
     {
-      "id": "w1388",
+      "id": "w1382",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -43004,7 +42806,7 @@
       "englishOk": true
     },
     {
-      "id": "w1399",
+      "id": "w1393",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -43037,7 +42839,7 @@
       "englishOk": true
     },
     {
-      "id": "w1407",
+      "id": "w1401",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -43070,7 +42872,7 @@
       "englishOk": true
     },
     {
-      "id": "w1424",
+      "id": "w1418",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -43103,7 +42905,7 @@
       "englishOk": true
     },
     {
-      "id": "w1428",
+      "id": "w1422",
       "airline": "wizzair",
       "from": "WAW",
       "to": "PMI",
@@ -43136,7 +42938,7 @@
       "englishOk": true
     },
     {
-      "id": "w1437",
+      "id": "w1431",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -43169,7 +42971,7 @@
       "englishOk": true
     },
     {
-      "id": "w1445",
+      "id": "w1439",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -43202,7 +43004,7 @@
       "englishOk": true
     },
     {
-      "id": "w1453",
+      "id": "w1447",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -43235,7 +43037,7 @@
       "englishOk": true
     },
     {
-      "id": "w1458",
+      "id": "w1452",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -43631,7 +43433,7 @@
       "englishOk": true
     },
     {
-      "id": "w1395",
+      "id": "w1389",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -43664,7 +43466,7 @@
       "englishOk": true
     },
     {
-      "id": "w1402",
+      "id": "w1396",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -43697,7 +43499,7 @@
       "englishOk": true
     },
     {
-      "id": "w1408",
+      "id": "w1402",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -43730,7 +43532,7 @@
       "englishOk": true
     },
     {
-      "id": "w1412",
+      "id": "w1406",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -43763,7 +43565,7 @@
       "englishOk": true
     },
     {
-      "id": "w1416",
+      "id": "w1410",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -43796,7 +43598,7 @@
       "englishOk": true
     },
     {
-      "id": "w1425",
+      "id": "w1419",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -43829,7 +43631,7 @@
       "englishOk": true
     },
     {
-      "id": "w1430",
+      "id": "w1424",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -43862,7 +43664,7 @@
       "englishOk": true
     },
     {
-      "id": "w1438",
+      "id": "w1432",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -43895,7 +43697,7 @@
       "englishOk": true
     },
     {
-      "id": "w1446",
+      "id": "w1440",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -43928,7 +43730,7 @@
       "englishOk": true
     },
     {
-      "id": "w1450",
+      "id": "w1444",
       "airline": "wizzair",
       "from": "WAW",
       "to": "AGP",
@@ -43961,7 +43763,7 @@
       "englishOk": true
     },
     {
-      "id": "w1454",
+      "id": "w1448",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -43994,7 +43796,7 @@
       "englishOk": true
     },
     {
-      "id": "w1459",
+      "id": "w1453",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -44456,7 +44258,7 @@
       "englishOk": true
     },
     {
-      "id": "w1392",
+      "id": "w1386",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -44489,7 +44291,7 @@
       "englishOk": true
     },
     {
-      "id": "w1403",
+      "id": "w1397",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BCN",
@@ -44522,7 +44324,7 @@
       "englishOk": true
     },
     {
-      "id": "w1410",
+      "id": "w1404",
       "airline": "wizzair",
       "from": "KRK",
       "to": "EIN",
@@ -44555,7 +44357,7 @@
       "englishOk": true
     },
     {
-      "id": "w1413",
+      "id": "w1407",
       "airline": "wizzair",
       "from": "KRK",
       "to": "OSL",
@@ -44588,7 +44390,7 @@
       "englishOk": true
     },
     {
-      "id": "w1417",
+      "id": "w1411",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -44621,7 +44423,7 @@
       "englishOk": true
     },
     {
-      "id": "w1431",
+      "id": "w1425",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -44654,7 +44456,7 @@
       "englishOk": true
     },
     {
-      "id": "w1439",
+      "id": "w1433",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -44687,7 +44489,7 @@
       "englishOk": true
     },
     {
-      "id": "w1447",
+      "id": "w1441",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -44720,7 +44522,7 @@
       "englishOk": true
     },
     {
-      "id": "w1455",
+      "id": "w1449",
       "airline": "wizzair",
       "from": "WRO",
       "to": "AGP",
@@ -44753,7 +44555,7 @@
       "englishOk": true
     },
     {
-      "id": "w1460",
+      "id": "w1454",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -44786,7 +44588,7 @@
       "englishOk": true
     },
     {
-      "id": "w1464",
+      "id": "w1458",
       "airline": "wizzair",
       "from": "GDN",
       "to": "AGP",
@@ -45182,7 +44984,7 @@
       "englishOk": true
     },
     {
-      "id": "w1389",
+      "id": "w1383",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -45215,7 +45017,7 @@
       "englishOk": true
     },
     {
-      "id": "w1400",
+      "id": "w1394",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -45248,7 +45050,7 @@
       "englishOk": true
     },
     {
-      "id": "w1432",
+      "id": "w1426",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -45281,7 +45083,7 @@
       "englishOk": true
     },
     {
-      "id": "w1440",
+      "id": "w1434",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -45314,7 +45116,7 @@
       "englishOk": true
     },
     {
-      "id": "w1448",
+      "id": "w1442",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -45710,7 +45512,7 @@
       "englishOk": true
     },
     {
-      "id": "w1390",
+      "id": "w1384",
       "airline": "wizzair",
       "from": "KTW",
       "to": "BCN",
@@ -45743,7 +45545,7 @@
       "englishOk": true
     },
     {
-      "id": "w1409",
+      "id": "w1403",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -45776,7 +45578,7 @@
       "englishOk": true
     },
     {
-      "id": "w1418",
+      "id": "w1412",
       "airline": "wizzair",
       "from": "KRK",
       "to": "BUD",
@@ -45809,7 +45611,7 @@
       "englishOk": true
     },
     {
-      "id": "w1426",
+      "id": "w1420",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BCN",
@@ -45842,7 +45644,7 @@
       "englishOk": true
     },
     {
-      "id": "w1433",
+      "id": "w1427",
       "airline": "wizzair",
       "from": "WAW",
       "to": "MLA",
@@ -45875,7 +45677,7 @@
       "englishOk": true
     },
     {
-      "id": "w1441",
+      "id": "w1435",
       "airline": "wizzair",
       "from": "WAW",
       "to": "BGY",
@@ -45908,7 +45710,7 @@
       "englishOk": true
     },
     {
-      "id": "w1449",
+      "id": "w1443",
       "airline": "wizzair",
       "from": "WAW",
       "to": "SOF",
@@ -45941,7 +45743,7 @@
       "englishOk": true
     },
     {
-      "id": "w1461",
+      "id": "w1455",
       "airline": "wizzair",
       "from": "GDN",
       "to": "BCN",
@@ -46040,7 +45842,7 @@
       "englishOk": true
     },
     {
-      "id": "r188",
+      "id": "r187",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -46155,10 +45957,10 @@
       "retRaw": "2026-11-08",
       "month": 11,
       "year": 2026,
-      "dept": "06:10",
-      "arr": "07:40",
-      "retDept": "18:00",
-      "retArr": "19:40",
+      "dept": "07:45",
+      "arr": "09:15",
+      "retDept": "19:00",
+      "retArr": "21:15",
       "dur": "1h 30m",
       "price1": 184,
       "price2": 368,
@@ -46403,7 +46205,7 @@
       "englishOk": true
     },
     {
-      "id": "r187",
+      "id": "r186",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -47046,10 +46848,10 @@
       "retRaw": "2026-11-15",
       "month": 11,
       "year": 2026,
-      "dept": "18:15",
-      "arr": "20:05",
-      "retDept": "06:00",
-      "retArr": "08:05",
+      "dept": "05:50",
+      "arr": "07:40",
+      "retDept": "17:00",
+      "retArr": "19:40",
       "dur": "1h 50m",
       "price1": 146,
       "price2": 292,
@@ -47558,7 +47360,7 @@
       "englishOk": true
     },
     {
-      "id": "r215",
+      "id": "r214",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -47789,7 +47591,7 @@
       "englishOk": true
     },
     {
-      "id": "r509",
+      "id": "r510",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -48020,7 +47822,7 @@
       "englishOk": true
     },
     {
-      "id": "r216",
+      "id": "r215",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -48053,7 +47855,7 @@
       "englishOk": true
     },
     {
-      "id": "r263",
+      "id": "r264",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -48185,7 +47987,7 @@
       "englishOk": true
     },
     {
-      "id": "r510",
+      "id": "r511",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -48284,7 +48086,7 @@
       "englishOk": true
     },
     {
-      "id": "r685",
+      "id": "r684",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -48305,8 +48107,8 @@
       "retDept": "04:00",
       "retArr": "05:50",
       "dur": "1h 45m",
-      "price1": 199,
-      "price2": 398,
+      "price1": 197,
+      "price2": 394,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",

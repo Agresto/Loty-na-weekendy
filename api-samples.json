@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-19T14:34:00.838Z",
+  "capturedAt": "2026-05-19T14:59:35.342Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→ALC",
@@ -33,16 +33,16 @@
           "departureDate": "2026-05-26T20:15:00",
           "arrivalDate": "2026-05-26T23:35:00",
           "price": {
-            "value": 96.68,
-            "valueMainUnit": "96",
-            "valueFractionalUnit": "68",
+            "value": 103.71,
+            "valueMainUnit": "103",
+            "valueFractionalUnit": "71",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~3596~ ~~KTW~05/26/2026 20:15~ALC~05/26/2026 23:35~~",
           "flightNumber": "FR3596",
           "previousPrice": null,
-          "priceUpdated": 1779193702000
+          "priceUpdated": 1779201802000
         },
         "inbound": {
           "departureAirport": {
@@ -83,9 +83,9 @@
         },
         "summary": {
           "price": {
-            "value": 205.01,
-            "valueMainUnit": "205",
-            "valueFractionalUnit": "01",
+            "value": 212.04,
+            "valueMainUnit": "212",
+            "valueFractionalUnit": "04",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -95,15 +95,15 @@
         }
       },
       "totalFares": 131,
-      "capturedAt": "2026-05-19T14:20:38.566Z"
+      "capturedAt": "2026-05-19T14:44:36.796Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 5787,
-      "normalized": 768,
+      "totalRaw": 5784,
+      "normalized": 762,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "TIA",
@@ -126,7 +126,7 @@
           6
         ]
       },
-      "capturedAt": "2026-05-19T14:34:00.819Z"
+      "capturedAt": "2026-05-19T14:59:35.324Z"
     },
     "strategy": "playwright-farechart"
   }
