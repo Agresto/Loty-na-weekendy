@@ -235,17 +235,128 @@ function updateLastUpdatedUI() {
 /**
  * Ręczne odświeżenie danych — wywoływane przyciskiem "🔄 Odśwież".
  */
+/* ── Odświeżanie przez serwer lokalny (server.js) ─────────────────────── */
+let _refreshPollTimer = null;
+
+async function _serverAvailable() {
+  try {
+    const r = await fetch('/api/refresh/status', { method: 'GET', signal: AbortSignal.timeout(1500) });
+    return r.ok;
+  } catch { return false; }
+}
+
+function openRefreshModal() {
+  const m = document.getElementById('refreshModal');
+  if (m) m.classList.add('open');
+}
+function closeRefreshModal() {
+  const m = document.getElementById('refreshModal');
+  if (m) m.classList.remove('open');
+  if (_refreshPollTimer) { clearInterval(_refreshPollTimer); _refreshPollTimer = null; }
+}
+
+async function stopRefresh() {
+  try { await fetch('/api/refresh/stop', { method: 'POST' }); } catch {}
+  closeRefreshModal();
+  const btn = document.getElementById('refreshBtn');
+  if (btn) { btn.disabled = false; btn.textContent = '🔄 Odśwież'; }
+}
+
+function _setRefreshStatus(txt, cls) {
+  const el = document.getElementById('rfStatus');
+  if (!el) return;
+  el.textContent = txt;
+  el.className = 'rf-status ' + (cls || '');
+}
+
+function _appendLog(lines) {
+  const box = document.getElementById('rfLog');
+  if (!box) return;
+  lines.forEach(l => {
+    const d = document.createElement('div');
+    d.className = 'rf-line';
+    if (l.startsWith('[błąd]') || l.includes('❌')) d.className += ' rf-err';
+    else if (l.includes('✅') || l.includes('Zakończono')) d.className += ' rf-ok';
+    else if (l.includes('Wizzair') || l.includes('Okno') || l.includes('Cooldown')) d.className += ' rf-wzz';
+    else if (l.includes('Ryanair') || l.startsWith('[')) d.className += ' rf-ry';
+    d.textContent = l;
+    box.appendChild(d);
+  });
+  box.scrollTop = box.scrollHeight;
+}
+
+async function _pollRefreshStatus() {
+  try {
+    const r   = await fetch('/api/refresh/status');
+    const dat = await r.json();
+
+    const box = document.getElementById('rfLog');
+    const cur = box ? box.children.length : 0;
+    const newLines = dat.log.slice(cur);
+    if (newLines.length) _appendLog(newLines);
+
+    if (dat.status === 'running') {
+      const sec = dat.startedAt
+        ? Math.round((Date.now() - new Date(dat.startedAt)) / 1000)
+        : 0;
+      const min = Math.floor(sec / 60), s = sec % 60;
+      _setRefreshStatus(`⏳ Pobieranie… ${min}m ${s}s`, 'rf-running');
+    } else if (dat.status === 'done') {
+      _setRefreshStatus('✅ Gotowe — przeładowuję dane…', 'rf-done');
+      clearInterval(_refreshPollTimer); _refreshPollTimer = null;
+      setTimeout(async () => {
+        await loadFlights(); recomputeCheapest(); updateLastUpdatedUI(); renderResults();
+        if (LMap) { LMarkers.forEach(m=>LMap.removeLayer(m)); LRoutes.forEach(l=>LMap.removeLayer(l)); LMarkers=[]; LRoutes=[]; drawDots(); drawRoutes(); }
+        closeRefreshModal();
+        const btn = document.getElementById('refreshBtn');
+        if (btn) { btn.disabled = false; btn.textContent = '🔄 Odśwież'; }
+        toast('success','✅','Zaktualizowano!',`${FLIGHTS.length} lotów · świeże dane`);
+      }, 1200);
+    } else if (dat.status === 'error') {
+      _setRefreshStatus('❌ Błąd scrapera — sprawdź log', 'rf-err');
+      clearInterval(_refreshPollTimer); _refreshPollTimer = null;
+      const btn = document.getElementById('refreshBtn');
+      if (btn) { btn.disabled = false; btn.textContent = '🔄 Odśwież'; }
+    }
+  } catch(e) {
+    _setRefreshStatus('⚠️ Utracono połączenie z serwerem', 'rf-err');
+  }
+}
+
 async function refreshFlights() {
   const btn = document.getElementById('refreshBtn');
+
+  // Tryb serwerowy: POST /api/refresh i pokaż modal postępu
+  if (await _serverAvailable()) {
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Pobieranie…'; }
+
+    const box = document.getElementById('rfLog');
+    if (box) box.innerHTML = '';
+    _setRefreshStatus('⏳ Łączenie ze scraperem…', 'rf-running');
+    openRefreshModal();
+
+    try {
+      const r   = await fetch('/api/refresh', { method: 'POST' });
+      const dat = await r.json();
+      if (dat.status === 'already-running') {
+        _setRefreshStatus('⏳ Scraper już działa…', 'rf-running');
+      }
+    } catch(e) {
+      _setRefreshStatus('❌ Nie udało się połączyć z serwerem', 'rf-err');
+      if (btn) { btn.disabled = false; btn.textContent = '🔄 Odśwież'; }
+      return;
+    }
+
+    _refreshPollTimer = setInterval(_pollRefreshStatus, 2500);
+    return;
+  }
+
+  // Tryb statyczny (fallback): przeładuj flights.json z CDN/dysku
   if (btn) { btn.disabled = true; btn.textContent = '⏳ Ładowanie...'; }
   toast('info','🔄','Odświeżanie...','Pobieranie aktualnych lotów');
-
   const ok = await loadFlights();
-  updateLastUpdatedUI();
-  renderResults();
-
+  updateLastUpdatedUI(); renderResults();
   if (btn) { btn.disabled = false; btn.textContent = '🔄 Odśwież'; }
-
   if (ok) toast('success','✅','Zaktualizowano!',`Załadowano ${FLIGHTS.length} lotów`);
   else    toast('warning','⚠️','Tryb awaryjny','Używam zapisanych danych. Sprawdź połączenie.');
 }

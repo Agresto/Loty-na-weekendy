@@ -326,6 +326,26 @@
 
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
+<!-- REFRESH MODAL — widoczny tylko gdy serwer (server.js) jest uruchomiony -->
+<div class="modal-ov" id="refreshModal" role="dialog" aria-modal="true" aria-labelledby="rfTitle">
+  <div class="modal rf-modal">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+      <span style="font-size:1.4rem">🔄</span>
+      <div class="modal-title" id="rfTitle" style="margin:0">Pobieranie aktualnych cen</div>
+      <button class="modal-close" style="margin-left:auto;position:static" onclick="stopRefresh()">✕</button>
+    </div>
+    <div id="rfStatus" class="rf-status rf-running">⏳ Łączenie ze scraperem…</div>
+    <div class="rf-info">
+      Scraper łączy się bezpośrednio z Ryanair API i Wizzair przez Playwright.<br>
+      Pełne odświeżenie zajmuje ok. <strong>10–12 minut</strong> (9 sesji Wizzair × 45s przerwy).
+    </div>
+    <div id="rfLog" class="rf-log" aria-live="polite" aria-label="Log odświeżania"></div>
+    <div style="display:flex;gap:10px;margin-top:16px">
+      <button class="btn btn-ghost" style="flex:1;justify-content:center" onclick="stopRefresh()">✕ Anuluj</button>
+    </div>
+  </div>
+</div>
+
 <footer role="contentinfo">
   <div class="sec-inner" style="max-width:1400px">
     <div class="footer-logo">✈ Loty na Weekend</div>

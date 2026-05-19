@@ -316,59 +316,78 @@ async function fetchWizzairViaPlaywright(wRoutes) {
 
 // ─── Wizzair: pobieranie godzin lotów przez search API ───────────────────────
 async function fetchWizzairTimesViaSearch(wRoutes, allFlights) {
-  if (!chromium || !allFlights.length) return new Map();
+  if (!chromium) return new Map();
 
   const timesMap = new Map();
   const today = todayStr();
   const eightWeeksOut = addDays(today, 56);
 
-  // Zbierz trasy z lotami w najbliższych 8 tygodniach (oba kierunki)
-  const nearRoutes = new Set();
-  for (const f of allFlights) {
-    const dateStr = f.date ? f.date.slice(0, 10) : null;
-    if (!dateStr || dateStr > eightWeeksOut) continue;
-    const [from, to] = f._route;
-    nearRoutes.add(`${from}|${to}`);
-    nearRoutes.add(`${to}|${from}`);
+  // Jeśli allFlights dostarczone — filtruj do tras z bliskimi lotami
+  // Jeśli null — pobierz godziny dla WSZYSTKICH tras (wywołanie przed farechart)
+  let routePairs;
+  if (allFlights && allFlights.length) {
+    const nearRoutes = new Set();
+    for (const f of allFlights) {
+      const dateStr = f.date ? f.date.slice(0, 10) : null;
+      if (!dateStr || dateStr > eightWeeksOut) continue;
+      const [from, to] = f._route;
+      nearRoutes.add(`${from}|${to}`);
+      nearRoutes.add(`${to}|${from}`);
+    }
+    if (!nearRoutes.size) return timesMap;
+    routePairs = [...nearRoutes].map(k => k.split('|'));
+  } else {
+    // Przed farechart: szukaj godzin dla wszystkich tras (oba kierunki)
+    const allPairs = new Set();
+    wRoutes.forEach(([from, to]) => { allPairs.add(`${from}|${to}`); allPairs.add(`${to}|${from}`); });
+    routePairs = [...allPairs].map(k => k.split('|'));
   }
-  if (!nearRoutes.size) return timesMap;
+  const CHUNK = 38; // Zapytań na sesję — poniżej limitu Kasada (42-45)
+  const chunks = [];
+  for (let i = 0; i < routePairs.length; i += CHUNK) chunks.push(routePairs.slice(i, i + CHUNK));
+  console.log(`\n[Wizzair Times] ${routePairs.length} kierunków → ${chunks.length} sesji (max ${CHUNK}/sesja)...`);
 
-  const routePairs = [...nearRoutes].map(k => k.split('|'));
-  console.log(`\n[Wizzair Times] Pobieranie godzin dla ${routePairs.length} kierunków...`);
+  let totalReq = 0;
 
-  const init = await initWizzairBrowser();
-  if (!init) { console.log('[Wizzair Times] Playwright niedostępny'); return timesMap; }
-  const { browser, ctx, page, apiVersionRef } = init;
+  for (let ci = 0; ci < chunks.length; ci++) {
+    const chunk = chunks[ci];
+    process.stdout.write(`[Wizzair Times] Sesja ${ci + 1}/${chunks.length}: `);
 
-  try {
-    let reqCount = 0;
-    for (const [from, to] of routePairs) {
-      if (reqCount >= KASADA_MAX_REQUESTS) break;
+    const init = await initWizzairBrowser();
+    if (!init) { console.log('Playwright niedostępny'); break; }
+    const { browser, ctx, page, apiVersionRef } = init;
 
-      const body = JSON.stringify({
-        flightList: [{ departureStation: from, arrivalStation: to, from: today, to: eightWeeksOut }],
-        priceType: 'regular', adultCount: 1, childCount: 0, infantCount: 0,
-      });
-
-      const result = await page.evaluate(async ({ body, apiVersion }) => {
-        const r = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json;charset=UTF-8',
-            'accept': 'application/json, text/plain, */*',
-            'origin': 'https://wizzair.com',
-            'referer': 'https://wizzair.com/pl-pl',
-          },
-          body,
+    try {
+      let chunkReq = 0;
+      for (const [from, to] of chunk) {
+        const body = JSON.stringify({
+          flightList: [{ departureStation: from, arrivalStation: to, from: today, to: eightWeeksOut }],
+          priceType: 'regular', adultCount: 1, childCount: 0, infantCount: 0,
         });
-        if (!r.ok) return { ok: false, status: r.status };
-        const data = await r.json();
-        return { ok: true, outbound: data.outboundFlights || [] };
-      }, { body, apiVersion: apiVersionRef.value });
 
-      reqCount++;
+        const result = await page.evaluate(async ({ body, apiVersion }) => {
+          const r = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json;charset=UTF-8',
+              'accept': 'application/json, text/plain, */*',
+              'origin': 'https://wizzair.com',
+              'referer': 'https://wizzair.com/pl-pl',
+            },
+            body,
+          });
+          if (!r.ok) return { ok: false, status: r.status };
+          const data = await r.json();
+          return { ok: true, outbound: data.outboundFlights || [] };
+        }, { body, apiVersion: apiVersionRef.value });
 
-      if (result.ok) {
+        chunkReq++; totalReq++;
+
+        if (!result.ok) {
+          if (result.status === 503 || result.status === 429) break;
+          continue;
+        }
+
         for (const f of result.outbound || []) {
           const depStr = f.scheduledDepartureDateTime || f.departureDateTime || f.departureDatTime;
           const arrStr = f.scheduledArrivalDateTime  || f.arrivalDateTime   || f.arrivalDatTime;
@@ -386,17 +405,26 @@ async function fetchWizzairTimesViaSearch(wRoutes, allFlights) {
             timesMap.set(key, { dept, arr, dur });
           }
         }
+        await sleep(300);
       }
-      await sleep(300);
+      console.log(`${timesMap.size} godzin (${chunkReq} req)`);
+    } catch(e) {
+      console.error(`błąd: ${e.message}`);
+    } finally {
+      await ctx.close().catch(() => {});
+      await browser.close().catch(() => {});
     }
-    console.log(`[Wizzair Times] ${timesMap.size} godzin lotów (${reqCount} zapytań)`);
-  } catch(e) {
-    console.error(`[Wizzair Times] Błąd: ${e.message}`);
-  } finally {
-    await ctx.close().catch(() => {});
-    await browser.close().catch(() => {});
+
+    // Cooldown między sesjami (nie po ostatniej)
+    if (ci + 1 < chunks.length) {
+      const cd = process.env.CI ? 8000 : 45000;
+      process.stdout.write(`[Wizzair Times] Cooldown ${cd / 1000}s... `);
+      await sleep(cd);
+      process.stdout.write('gotowe\n');
+    }
   }
 
+  console.log(`[Wizzair Times] Łącznie: ${timesMap.size} godzin (${totalReq} zapytań)`);
   return timesMap;
 }
 
@@ -662,11 +690,12 @@ async function fetchRealFlights() {
   let wizzTimesMap = new Map();
 
   if (chromium) {
+    // 1. Godziny lotów PRZED farechart — świeża sesja Kasada, brak limitu
+    wizzTimesMap = await fetchWizzairTimesViaSearch(wRoutes, null);
+
     const wizzResult = await fetchWizzairViaPlaywright(wRoutes);
     rawWizzFlights    = wizzResult?.allFlights || null;
     wizzReturnPriceMap = wizzResult?.returnPriceMap || new Map();
-    if (rawWizzFlights?.length > 0)
-      wizzTimesMap = await fetchWizzairTimesViaSearch(wRoutes, rawWizzFlights);
   } else {
     console.log('[Wizzair] Playwright niedostępny — używam generatora statycznego');
   }
