@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-10T17:28:17.260Z",
+  "capturedAt": "2026-05-19T14:34:00.838Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→ALC",
@@ -30,19 +30,19 @@
               "name": "Alicante"
             }
           },
-          "departureDate": "2026-05-19T20:15:00",
-          "arrivalDate": "2026-05-19T23:35:00",
+          "departureDate": "2026-05-26T20:15:00",
+          "arrivalDate": "2026-05-26T23:35:00",
           "price": {
-            "value": 119,
-            "valueMainUnit": "119",
-            "valueFractionalUnit": "00",
+            "value": 96.68,
+            "valueMainUnit": "96",
+            "valueFractionalUnit": "68",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
-          "flightKey": "FR~3596~ ~~KTW~05/19/2026 20:15~ALC~05/19/2026 23:35~~",
+          "flightKey": "FR~3596~ ~~KTW~05/26/2026 20:15~ALC~05/26/2026 23:35~~",
           "flightNumber": "FR3596",
           "previousPrice": null,
-          "priceUpdated": 1778415600000
+          "priceUpdated": 1779193702000
         },
         "inbound": {
           "departureAirport": {
@@ -67,25 +67,25 @@
               "name": "Katowice"
             }
           },
-          "departureDate": "2026-05-21T05:50:00",
-          "arrivalDate": "2026-05-21T08:55:00",
+          "departureDate": "2026-05-28T05:50:00",
+          "arrivalDate": "2026-05-28T08:55:00",
           "price": {
-            "value": 115.68,
-            "valueMainUnit": "115",
-            "valueFractionalUnit": "68",
+            "value": 108.33,
+            "valueMainUnit": "108",
+            "valueFractionalUnit": "33",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
-          "flightKey": "FR~3597~ ~~ALC~05/21/2026 05:50~KTW~05/21/2026 08:55~~",
+          "flightKey": "FR~3597~ ~~ALC~05/28/2026 05:50~KTW~05/28/2026 08:55~~",
           "flightNumber": "FR3597",
           "previousPrice": null,
-          "priceUpdated": 1778416071000
+          "priceUpdated": 1779193591000
         },
         "summary": {
           "price": {
-            "value": 234.68,
-            "valueMainUnit": "234",
-            "valueFractionalUnit": "68",
+            "value": 205.01,
+            "valueMainUnit": "205",
+            "valueFractionalUnit": "01",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -94,28 +94,28 @@
           "tripDurationDays": 2
         }
       },
-      "totalFares": 132,
-      "capturedAt": "2026-05-10T17:14:35.936Z"
+      "totalFares": 131,
+      "capturedAt": "2026-05-19T14:20:38.566Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 5779,
-      "normalized": 696,
+      "totalRaw": 5787,
+      "normalized": 768,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "TIA",
         "price": {
-          "amount": 0,
+          "amount": 407.6,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "noData",
-        "date": "2026-05-10T00:00:00+01:00",
-        "classOfService": null,
+        "priceType": "price",
+        "date": "2026-05-19T00:00:00",
+        "classOfService": "IJ",
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -126,7 +126,7 @@
           6
         ]
       },
-      "capturedAt": "2026-05-10T17:28:16.898Z"
+      "capturedAt": "2026-05-19T14:34:00.819Z"
     },
     "strategy": "playwright-farechart"
   }
