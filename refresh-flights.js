@@ -540,21 +540,24 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
 
   // Override return times with real inbound flight data from API
+  // Only when inbound falls on a weekend day (Fri/Sat/Sun) — if cheapest inbound
+  // is Mon-Thu, keep the buildWeekendRecord estimate so dates/patterns stay consistent
   if (inb?.departureDate && inb.departureDate.length >= 16) {
-    const [rDH, rDM] = parseTimes(inb.departureDate);
-    weekend.retDept = `${String(rDH).padStart(2,'0')}:${String(rDM).padStart(2,'0')}`;
-    if (inb.arrivalDate && inb.arrivalDate.length >= 16) {
-      const [rAH, rAM] = parseTimes(inb.arrivalDate);
-      weekend.retArr = `${String(rAH).padStart(2,'0')}:${String(rAM).padStart(2,'0')}`;
-    }
-    // Update retRaw to actual inbound date (may differ from the +2 day estimate)
     const actualRetDate = inb.departureDate.slice(0, 10);
-    if (actualRetDate !== weekend.retRaw) {
-      const actualRetDow = classifyDow(actualRetDate);
-      weekend.retRaw = actualRetDate;
-      if (actualRetDow === 'sat') { weekend.retDay = 'sobota'; weekend.pattern = dow === 'fri' ? 'fri-sat' : 'sat-only'; }
-      else if (actualRetDow === 'sun') { weekend.retDay = 'niedziela'; }
-      else if (actualRetDow === 'fri') { weekend.retDay = 'piątek'; }
+    const actualRetDow = classifyDow(actualRetDate);
+    if (actualRetDow) {
+      const [rDH, rDM] = parseTimes(inb.departureDate);
+      weekend.retDept = `${String(rDH).padStart(2,'0')}:${String(rDM).padStart(2,'0')}`;
+      if (inb.arrivalDate && inb.arrivalDate.length >= 16) {
+        const [rAH, rAM] = parseTimes(inb.arrivalDate);
+        weekend.retArr = `${String(rAH).padStart(2,'0')}:${String(rAM).padStart(2,'0')}`;
+      }
+      if (actualRetDate !== weekend.retRaw) {
+        weekend.retRaw = actualRetDate;
+        if (actualRetDow === 'sat') { weekend.retDay = 'sobota'; weekend.pattern = dow === 'fri' ? 'fri-sat' : 'sat-only'; }
+        else if (actualRetDow === 'fri') { weekend.retDay = 'piątek'; }
+        // 'sun' → retDay already 'niedziela' from buildWeekendRecord
+      }
     }
   }
 
