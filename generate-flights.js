@@ -225,33 +225,14 @@ const ROUTES = [
   ['KRK','BUD','wizzair', 99,  90,  18],
   ['KRK','SOF','wizzair', 159, 175, 8],
   ['KRK','SKP','wizzair', 169, 145, 10],
-  // ── WAW ──
-  ['WAW','BCN','wizzair', 199, 195, 7],
-  ['WAW','PMI','wizzair', 229, 215, 8],
-  ['WAW','OSL','wizzair', 149, 145, 17],
-  ['WAW','RIX','wizzair', 119, 90,  19],
-  ['WAW','MLA','wizzair', 219, 200, 11],
-  ['WAW','BGY','wizzair', 139, 130, 15],
-  ['WAW','SOF','wizzair', 159, 145, 13],
-  ['WAW','AGP','wizzair', 209, 230, 9],
-  ['WAW','TIA','wizzair', 159, 165, 13],
-  ['WAW','DUB','wizzair', 189, 195, 11],
+  // ── WAW ──  (Wizzair: tylko Ryanair — Wizzair ograniczony do KTW+KRK dla lepszego pokrycia)
   // ── WRO ──
   ['WRO','BCN','ryanair', 169, 200, 8],
-  ['WRO','FCO','wizzair', 179, 150, 12],
-  ['WRO','AGP','wizzair', 209, 235, 9],
-  ['WRO','ATH','wizzair', 209, 215, 10],
   ['WRO','PMI','ryanair', 229, 220, 7],
   ['WRO','DUB','ryanair', 179, 195, 9],
   ['WRO','MLA','ryanair', 219, 200, 16],
   ['WRO','BVA','ryanair', 139, 150, 14],
-  ['WRO','OSL','wizzair', 149, 145, 18],
   // ── GDN ──
-  ['GDN','BCN','wizzair', 189, 205, 8],
-  ['GDN','PMI','wizzair', 229, 220, 11],
-  ['GDN','AGP','wizzair', 219, 235, 10],
-  ['GDN','OSL','wizzair', 99,  110, 17],
-  ['GDN','LIS','wizzair', 209, 200, 14],
   ['GDN','STN','ryanair', 169, 155, 8],
   ['GDN','DUB','ryanair', 189, 195, 6],
   ['GDN','AMS','ryanair', 159, 115, 7],
@@ -260,8 +241,6 @@ const ROUTES = [
   ['POZ','STN','ryanair', 159, 145, 8],
   ['POZ','DUB','ryanair', 189, 190, 11],
   ['POZ','PMI','ryanair', 229, 220, 12],
-  ['POZ','OSL','wizzair', 129, 125, 16],
-  ['POZ','ATH','wizzair', 219, 220, 14],
 ];
 
 // ═════════════════════════════════════════════════════════════════════════════

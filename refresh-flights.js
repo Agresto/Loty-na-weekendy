@@ -30,7 +30,7 @@ const MAX_RETRY           = 2;
 const TIMEOUT_MS          = 20000;
 const WIZZAIR_API_VERSION = '28.9.0'; // Aktualna wersja API Wizzair (auto-wykrywana)
 const FARECHART_INTERVAL  = 10;       // Pokrycie każdego zapytania (±10 dni); API nie akceptuje >10
-const KASADA_MAX_REQUESTS = 42;       // Maks. farechart calls per sesję (Kasada limit ~42-45)
+const KASADA_MAX_REQUESTS = 48;       // Maks. farechart calls per sesję — testowane do ~48 bez blokady
 
 // ─── Patchright (stealth Playwright — omija Kasada fingerprinting) ───────────
 // Fallback: zwykły Playwright, ostateczny fallback: generator statyczny
