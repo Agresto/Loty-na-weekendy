@@ -32,12 +32,18 @@ const WIZZAIR_API_VERSION = '28.9.0'; // Aktualna wersja API Wizzair (auto-wykry
 const FARECHART_INTERVAL  = 10;       // Pokrycie każdego zapytania (±10 dni); API nie akceptuje >10
 const KASADA_MAX_REQUESTS = 42;       // Maks. farechart calls per sesję (Kasada limit ~42-45)
 
-// ─── Playwright (opcjonalny) ──────────────────────────────────────────────────
+// ─── Patchright (stealth Playwright — omija Kasada fingerprinting) ───────────
+// Fallback: zwykły Playwright, ostateczny fallback: generator statyczny
 let chromium = null;
 try {
-  chromium = require('playwright').chromium;
+  chromium = require('patchright').chromium;
 } catch(e) {
-  // Playwright niedostępny - Wizzair będzie z generatora statycznego
+  try {
+    chromium = require('playwright').chromium;
+    console.warn('[Browser] Patchright niedostępny — używam playwright (może być blokowany przez Kasada)');
+  } catch(e2) {
+    // Żaden browser niedostępny - Wizzair będzie z generatora statycznego
+  }
 }
 
 // ─── pomocnicze ───────────────────────────────────────────────────────────────
@@ -140,14 +146,22 @@ async function createFreshWizzairPage(browser, apiVersionRef) {
 /**
  * Inicjalizuje przeglądarkę Playwright.
  */
+// Argumenty launch wspólne dla local + CI (GitHub Actions wymaga --no-sandbox)
+const BROWSER_ARGS = [
+  '--no-sandbox',
+  '--disable-setuid-sandbox',
+  '--disable-dev-shm-usage',
+  '--disable-gpu',
+];
+
 async function initWizzairBrowser() {
   if (!chromium) return null;
 
   try {
-    const browser = await chromium.launch({ headless: true });
+    const browser = await chromium.launch({ headless: true, args: BROWSER_ARGS });
     const apiVersionRef = { value: WIZZAIR_API_VERSION };
 
-    console.log('[Wizzair] Inicjalizacja Playwright...');
+    console.log('[Wizzair] Inicjalizacja Patchright...');
     const { ctx, page } = await createFreshWizzairPage(browser, apiVersionRef);
     console.log(`[Wizzair] Wersja API Wizzair: ${apiVersionRef.value}`);
 

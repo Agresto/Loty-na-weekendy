@@ -3,15 +3,10 @@ name: Refresh flight prices
 # ═════════════════════════════════════════════════════════════════════════════
 # Codzienne odświeżanie cen lotów z Ryanair + Wizzair.
 #
-# Dwa tryby:
-#   self-hosted  → Playwright aktywny → Wizzair: prawdziwe ceny
-#   ubuntu-latest → Playwright instalowany → Wizzair: prawdziwe ceny (jeśli dostępny)
-#
-# Jak skonfigurować self-hosted runner:
-#   1. Settings → Actions → Runners → New self-hosted runner
-#   2. Wybierz Linux / macOS → skopiuj i uruchom podane komendy
-#   3. Dodaj etykietę "wizzair-runner" podczas konfiguracji
-#   4. npm install playwright && npx playwright install chromium
+# Strategia anty-bot:
+#   Patchright (stealth Playwright) omija Kasada fingerprinting Wizzair.
+#   Kasada wykrywa flagi automatyzacji przeglądarki — Patchright je usuwa.
+#   ubuntu-latest → Patchright + patched Chromium → Wizzair: prawdziwe ceny
 #
 # GitHub Actions cron działa w UTC. 7:00 UTC = 8:00 CET / 9:00 CEST
 # ═════════════════════════════════════════════════════════════════════════════
@@ -48,14 +43,14 @@ jobs:
         with:
           node-version: '20'
 
-      - name: 🎭 Sprawdź Playwright
+      - name: 🎭 Sprawdź Patchright
         run: |
-          if ! node -e "require('playwright')" 2>/dev/null; then
-            echo "Instaluję Playwright..."
-            npm install playwright
-            npx playwright install chromium
+          if ! node -e "require('patchright')" 2>/dev/null; then
+            echo "Instaluję Patchright..."
+            npm install patchright
+            npx patchright install chromium
           else
-            echo "✅ Playwright dostępny"
+            echo "✅ Patchright dostępny"
           fi
 
       - name: 🌐 Test API (smoke test)
@@ -143,7 +138,7 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           npm ci
-          npx playwright install chromium
+          npx patchright install chromium
 
       - name: 🌐 Test połączenia z API (smoke test)
         run: |
