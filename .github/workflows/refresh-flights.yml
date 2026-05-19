@@ -106,8 +106,8 @@ jobs:
         run: |
           git config user.name  "Flight Bot"
           git config user.email "bot@lotynaweekend.pl"
-          git add flights.json api-samples.json
           git pull --rebase origin main
+          git add flights.json api-samples.json
           if git diff --staged --quiet; then
             echo "ℹ️ Brak zmian — pomijam commit"
           else
@@ -209,8 +209,8 @@ jobs:
         run: |
           git config user.name  "Flight Bot"
           git config user.email "bot@lotynaweekend.pl"
-          git add flights.json api-samples.json
           git pull --rebase origin main
+          git add flights.json api-samples.json
           if git diff --staged --quiet; then
             echo "ℹ️ Brak zmian w cenach — pomijam commit"
           else
