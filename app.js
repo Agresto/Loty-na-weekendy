@@ -58,50 +58,49 @@ let EMAILJS_READY  = false;
 ================================================================ */
 
 const AIRPORTS = [
-  {code:'KTW',name:'Katowice Pyrzowice',        country:'Polska',          flag:'🇵🇱',x:490,y:148,isPL:true},
-  {code:'KRK',name:'Kraków Balice',              country:'Polska',          flag:'🇵🇱',x:495,y:152,isPL:true},
-  {code:'WAW',name:'Warszawa Chopin',             country:'Polska',          flag:'🇵🇱',x:505,y:140,isPL:true},
-  {code:'WRO',name:'Wrocław Strachowice',         country:'Polska',          flag:'🇵🇱',x:472,y:145,isPL:true},
-  {code:'GDN',name:'Gdańsk im. Wałęsy',           country:'Polska',          flag:'🇵🇱',x:488,y:126,isPL:true},
-  {code:'POZ',name:'Poznań Ławica',               country:'Polska',          flag:'🇵🇱',x:468,y:136,isPL:true},
-  {code:'BCN',name:'Barcelona El Prat',           country:'Hiszpania',       flag:'🇪🇸',x:362,y:168},
-  {code:'MAD',name:'Madryt Barajas',              country:'Hiszpania',       flag:'🇪🇸',x:344,y:172},
-  {code:'ALC',name:'Alicante',                    country:'Hiszpania',       flag:'🇪🇸',x:354,y:178},
-  {code:'PMI',name:'Palma de Mallorca',           country:'Hiszpania',       flag:'🇪🇸',x:372,y:174},
-  {code:'LIS',name:'Lizbona Humberto Delgado',    country:'Portugalia',      flag:'🇵🇹',x:322,y:178},
-  {code:'OPO',name:'Porto Francisco Sá Carneiro', country:'Portugalia',      flag:'🇵🇹',x:318,y:170},
-  {code:'FCO',name:'Rzym Fiumicino',              country:'Włochy',          flag:'🇮🇹',x:432,y:172},
-  {code:'MXP',name:'Mediolan Malpensa',           country:'Włochy',          flag:'🇮🇹',x:415,y:157},
-  {code:'NAP',name:'Neapol',                      country:'Włochy',          flag:'🇮🇹',x:444,y:178},
-  {code:'ATH',name:'Ateny Eleftherios Venizelos', country:'Grecja',          flag:'🇬🇷',x:492,y:185},
-  {code:'HER',name:'Heraklion Kreta',             country:'Grecja',          flag:'🇬🇷',x:494,y:198},
-  {code:'DUB',name:'Dublin',                      country:'Irlandia',        flag:'🇮🇪',x:334,y:126},
-  {code:'STN',name:'Londyn Stansted',             country:'Wielka Brytania', flag:'🇬🇧',x:366,y:126},
-  {code:'AMS',name:'Amsterdam Schiphol',          country:'Holandia',        flag:'🇳🇱',x:400,y:126},
-  {code:'CDG',name:'Paryż Charles de Gaulle',     country:'Francja',         flag:'🇫🇷',x:385,y:142},
-  {code:'TXL',name:'Berlin Brandenburg',          country:'Niemcy',          flag:'🇩🇪',x:440,y:130},
-  {code:'VIE',name:'Wiedeń',                      country:'Austria',         flag:'🇦🇹',x:462,y:150},
-  {code:'BUD',name:'Budapeszt',                   country:'Węgry',           flag:'🇭🇺',x:474,y:156},
-  {code:'TIA',name:'Tirana',                      country:'Albania',         flag:'🇦🇱',x:474,y:182},
-  {code:'SKP',name:'Skopje',                      country:'Macedonia Pn.',   flag:'🇲🇰',x:480,y:178},
-  {code:'SSH',name:'Sharm el-Sheikh',             country:'Egipt',           flag:'🇪🇬',x:532,y:208},
-  {code:'HRG',name:'Hurghada',                    country:'Egipt',           flag:'🇪🇬',x:528,y:210},
-  {code:'RIX',name:'Ryga',                        country:'Łotwa',           flag:'🇱🇻',x:502,y:116},
-  {code:'PRG',name:'Praga Václava Havla',         country:'Czechy',          flag:'🇨🇿',x:452,y:142},
-  {code:'BRU',name:'Bruksela',                    country:'Belgia',          flag:'🇧🇪',x:396,y:132},
-  // Lotniska dodane w v2 (po dodaniu większej liczby tras):
-  {code:'EIN',name:'Eindhoven',                   country:'Holandia',        flag:'🇳🇱',x:404,y:130},
-  {code:'MLA',name:'Malta',                       country:'Malta',           flag:'🇲🇹',x:444,y:200},
-  {code:'SOF',name:'Sofia',                       country:'Bułgaria',        flag:'🇧🇬',x:496,y:172},
-  {code:'OSL',name:'Oslo Torp',                   country:'Norwegia',        flag:'🇳🇴',x:432,y:78},
-  {code:'CIA',name:'Rzym Ciampino',               country:'Włochy',          flag:'🇮🇹',x:434,y:174},
-  {code:'OTP',name:'Bukareszt',                   country:'Rumunia',         flag:'🇷🇴',x:516,y:160},
-  {code:'BVA',name:'Paryż Beauvais',              country:'Francja',         flag:'🇫🇷',x:386,y:140},
-  {code:'AGP',name:'Malaga',                      country:'Hiszpania',       flag:'🇪🇸',x:336,y:194},
-  {code:'BGY',name:'Bergamo (Mediolan)',          country:'Włochy',          flag:'🇮🇹',x:417,y:158},
-  {code:'RHO',name:'Rodos',                       country:'Grecja',          flag:'🇬🇷',x:514,y:194},
-  {code:'NCE',name:'Nicea',                       country:'Francja',         flag:'🇫🇷',x:402,y:172},
-  {code:'VAR',name:'Warna',                       country:'Bułgaria',        flag:'🇧🇬',x:514,y:170},
+  {code:'KTW',name:'Katowice Pyrzowice',        country:'Polska',          flag:'🇵🇱',lat:50.4743,lng:19.0800,isPL:true},
+  {code:'KRK',name:'Kraków Balice',              country:'Polska',          flag:'🇵🇱',lat:50.0777,lng:19.7848,isPL:true},
+  {code:'WAW',name:'Warszawa Chopin',             country:'Polska',          flag:'🇵🇱',lat:52.1672,lng:20.9679,isPL:true},
+  {code:'WRO',name:'Wrocław Strachowice',         country:'Polska',          flag:'🇵🇱',lat:51.1027,lng:16.8858,isPL:true},
+  {code:'GDN',name:'Gdańsk im. Wałęsy',           country:'Polska',          flag:'🇵🇱',lat:54.3776,lng:18.4662,isPL:true},
+  {code:'POZ',name:'Poznań Ławica',               country:'Polska',          flag:'🇵🇱',lat:52.4210,lng:16.8263,isPL:true},
+  {code:'BCN',name:'Barcelona El Prat',           country:'Hiszpania',       flag:'🇪🇸',lat:41.2971,lng:2.0785},
+  {code:'MAD',name:'Madryt Barajas',              country:'Hiszpania',       flag:'🇪🇸',lat:40.4983,lng:-3.5676},
+  {code:'ALC',name:'Alicante',                    country:'Hiszpania',       flag:'🇪🇸',lat:38.2822,lng:-0.5582},
+  {code:'PMI',name:'Palma de Mallorca',           country:'Hiszpania',       flag:'🇪🇸',lat:39.5517,lng:2.7388},
+  {code:'LIS',name:'Lizbona Humberto Delgado',    country:'Portugalia',      flag:'🇵🇹',lat:38.7742,lng:-9.1342},
+  {code:'OPO',name:'Porto Francisco Sá Carneiro', country:'Portugalia',      flag:'🇵🇹',lat:41.2481,lng:-8.6814},
+  {code:'FCO',name:'Rzym Fiumicino',              country:'Włochy',          flag:'🇮🇹',lat:41.8003,lng:12.2389},
+  {code:'MXP',name:'Mediolan Malpensa',           country:'Włochy',          flag:'🇮🇹',lat:45.6301,lng:8.7232},
+  {code:'NAP',name:'Neapol',                      country:'Włochy',          flag:'🇮🇹',lat:40.8860,lng:14.2908},
+  {code:'ATH',name:'Ateny Eleftherios Venizelos', country:'Grecja',          flag:'🇬🇷',lat:37.9364,lng:23.9445},
+  {code:'HER',name:'Heraklion Kreta',             country:'Grecja',          flag:'🇬🇷',lat:35.3397,lng:25.1803},
+  {code:'DUB',name:'Dublin',                      country:'Irlandia',        flag:'🇮🇪',lat:53.4213,lng:-6.2701},
+  {code:'STN',name:'Londyn Stansted',             country:'Wielka Brytania', flag:'🇬🇧',lat:51.8850,lng:0.2350},
+  {code:'AMS',name:'Amsterdam Schiphol',          country:'Holandia',        flag:'🇳🇱',lat:52.3086,lng:4.7639},
+  {code:'CDG',name:'Paryż Charles de Gaulle',     country:'Francja',         flag:'🇫🇷',lat:49.0097,lng:2.5479},
+  {code:'TXL',name:'Berlin Brandenburg',          country:'Niemcy',          flag:'🇩🇪',lat:52.3667,lng:13.5033},
+  {code:'VIE',name:'Wiedeń',                      country:'Austria',         flag:'🇦🇹',lat:48.1103,lng:16.5697},
+  {code:'BUD',name:'Budapeszt',                   country:'Węgry',           flag:'🇭🇺',lat:47.4298,lng:19.2611},
+  {code:'TIA',name:'Tirana',                      country:'Albania',         flag:'🇦🇱',lat:41.4147,lng:19.7206},
+  {code:'SKP',name:'Skopje',                      country:'Macedonia Pn.',   flag:'🇲🇰',lat:41.9616,lng:21.6214},
+  {code:'SSH',name:'Sharm el-Sheikh',             country:'Egipt',           flag:'🇪🇬',lat:27.9773,lng:34.3950},
+  {code:'HRG',name:'Hurghada',                    country:'Egipt',           flag:'🇪🇬',lat:27.1784,lng:33.7994},
+  {code:'RIX',name:'Ryga',                        country:'Łotwa',           flag:'🇱🇻',lat:56.9236,lng:23.9711},
+  {code:'PRG',name:'Praga Václava Havla',         country:'Czechy',          flag:'🇨🇿',lat:50.1008,lng:14.2600},
+  {code:'BRU',name:'Bruksela',                    country:'Belgia',          flag:'🇧🇪',lat:50.9010,lng:4.4844},
+  {code:'EIN',name:'Eindhoven',                   country:'Holandia',        flag:'🇳🇱',lat:51.4501,lng:5.3745},
+  {code:'MLA',name:'Malta',                       country:'Malta',           flag:'🇲🇹',lat:35.8574,lng:14.4775},
+  {code:'SOF',name:'Sofia',                       country:'Bułgaria',        flag:'🇧🇬',lat:42.6967,lng:23.4114},
+  {code:'OSL',name:'Oslo Torp',                   country:'Norwegia',        flag:'🇳🇴',lat:59.1869,lng:10.2558},
+  {code:'CIA',name:'Rzym Ciampino',               country:'Włochy',          flag:'🇮🇹',lat:41.7994,lng:12.5949},
+  {code:'OTP',name:'Bukareszt',                   country:'Rumunia',         flag:'🇷🇴',lat:44.5711,lng:26.0850},
+  {code:'BVA',name:'Paryż Beauvais',              country:'Francja',         flag:'🇫🇷',lat:49.4544,lng:2.1128},
+  {code:'AGP',name:'Malaga',                      country:'Hiszpania',       flag:'🇪🇸',lat:36.6749,lng:-4.4991},
+  {code:'BGY',name:'Bergamo (Mediolan)',           country:'Włochy',          flag:'🇮🇹',lat:45.6739,lng:9.7042},
+  {code:'RHO',name:'Rodos',                       country:'Grecja',          flag:'🇬🇷',lat:36.4054,lng:28.0862},
+  {code:'NCE',name:'Nicea',                       country:'Francja',         flag:'🇫🇷',lat:43.6584,lng:7.2150},
+  {code:'VAR',name:'Warna',                       country:'Bułgaria',        flag:'🇧🇬',lat:43.2321,lng:27.8251},
 ];
 
 /**
@@ -272,43 +271,11 @@ const TICKER_DATA = [
   {from:'KRK',to:'Lizbona',   p:'419 PLN'},{from:'KTW',to:'Mallorca',  p:'449 PLN'},
 ];
 
-const CPATHS = [
-  {n:'Norwegia',        d:'M378,58 L438,48 L464,62 L460,98 L428,110 L390,108 L376,80 Z'},
-  {n:'Szwecja',         d:'M444,50 L492,44 L516,62 L520,98 L500,122 L460,124 L446,100 Z'},
-  {n:'Finlandia',       d:'M500,50 L556,46 L564,78 L550,110 L516,115 L498,100 Z'},
-  {n:'Dania',           d:'M414,96 L452,92 L458,108 L448,122 L418,120 Z'},
-  {n:'Białoruś',        d:'M506,106 L564,100 L572,118 L562,140 L530,146 L506,136 Z',noF:true},
-  {n:'Ukraina',         d:'M506,115 L582,106 L598,126 L588,155 L556,164 L510,162 L498,143 Z',noF:true},
-  {n:'Łotwa',           d:'M484,104 L524,100 L530,114 L522,126 L490,126 L482,114 Z',cn:'Łotwa'},
-  {n:'Litwa',           d:'M472,116 L510,112 L518,126 L508,138 L476,138 L470,126 Z'},
-  {n:'Polska',          d:'M452,113 L532,105 L542,120 L536,148 L510,156 L472,156 L450,146 Z'},
-  {n:'Niemcy',          d:'M394,107 L474,102 L482,120 L476,152 L454,158 L424,155 L394,147 Z',cn:'Niemcy'},
-  {n:'Holandia',        d:'M382,108 L420,104 L426,122 L418,134 L386,134 Z',cn:'Holandia'},
-  {n:'Belgia',          d:'M378,126 L412,122 L418,138 L408,148 L382,148 Z',cn:'Belgia'},
-  {n:'Wielka Brytania', d:'M342,93 L394,89 L400,110 L390,138 L364,142 L345,136 L340,112 Z',cn:'Wielka Brytania'},
-  {n:'Irlandia',        d:'M313,107 L342,103 L348,125 L338,136 L318,133 L311,120 Z',cn:'Irlandia'},
-  {n:'Francja',         d:'M330,126 L398,120 L428,136 L424,162 L404,168 L366,165 L334,158 Z',cn:'Francja'},
-  {n:'Szwajcaria',      d:'M396,148 L430,140 L436,154 L428,164 L398,164 Z'},
-  {n:'Austria',         d:'M423,148 L480,140 L488,152 L480,165 L444,168 L422,162 Z',cn:'Austria'},
-  {n:'Czechy',          d:'M432,128 L480,122 L488,136 L482,150 L456,154 L432,149 Z',cn:'Czechy'},
-  {n:'Słowacja',        d:'M454,147 L504,138 L512,150 L502,161 L473,162 L454,157 Z'},
-  {n:'Węgry',           d:'M452,156 L502,148 L512,162 L502,174 L472,176 L452,168 Z',cn:'Węgry'},
-  {n:'Włochy',          d:'M401,146 L440,138 L463,150 L470,168 L464,186 L450,202 L440,215 L430,210 L422,196 L414,180 L405,165 L400,152 Z',cn:'Włochy'},
-  {n:'Chorwacja',       d:'M432,162 L462,156 L472,172 L463,185 L443,184 Z'},
-  {n:'Serbia',          d:'M455,170 L500,163 L509,177 L500,190 L473,192 L454,182 Z'},
-  {n:'Rumunia',         d:'M488,138 L547,130 L556,147 L549,168 L521,175 L494,171 Z'},
-  {n:'Bułgaria',        d:'M488,168 L536,162 L543,178 L530,193 L496,196 L484,183 Z'},
-  {n:'Macedonia Pn.',   d:'M468,182 L500,178 L506,190 L496,200 L472,200 Z',cn:'Macedonia Pn.'},
-  {n:'Albania',         d:'M462,182 L484,178 L491,194 L484,208 L465,210 Z',cn:'Albania'},
-  {n:'Grecja',          d:'M456,193 L512,186 L522,200 L511,218 L490,226 L467,222 Z',cn:'Grecja'},
-  {n:'Turcja',          d:'M502,178 L578,168 L592,182 L580,200 L543,204 L504,196 Z',noF:true},
-  {n:'Portugalia',      d:'M303,154 L337,148 L343,170 L336,198 L303,196 Z',cn:'Portugalia'},
-  {n:'Hiszpania',       d:'M314,144 L400,136 L410,153 L403,182 L378,196 L344,197 L313,180 Z',cn:'Hiszpania'},
-  {n:'Maroko',          d:'M310,205 L384,200 L388,230 L368,252 L315,255 L305,235 Z',noF:true},
-  {n:'Egipt',           d:'M490,197 L566,191 L573,241 L540,258 L492,261 L482,239 Z',cn:'Egipt'},
-  {n:'USA',             d:'M70,130 L200,118 L215,158 L200,210 L155,230 L85,225 L62,195 Z',noF:true},
-  {n:'Kanada',          d:'M65,75 L215,60 L220,118 L70,130 Z',noF:true},
-];
+// Leaflet map state
+let LMap         = null;
+let LTileLayer   = null;
+let LRoutes      = [];
+let LMarkers     = [];
 
 // Najtańsze loty per kraj (dla mapy) — przeliczane po każdym loadFlights()
 let CHEAPEST_BY_COUNTRY = {};
@@ -1104,6 +1071,9 @@ function runSearch() {
       saveUserDataToFirestore();
     }
     toast('success','✈','Loty znalezione!','Aktualne oferty na weekendy');
+    // Fly map to searched destination if specific one was chosen
+    const codeMatch = document.getElementById('destIn').value.match(/\(([A-Z]{3})\)$/);
+    if (codeMatch) flyMapTo(codeMatch[1]);
   }, 900);
 }
 function showLoad() { document.getElementById('loadingDiv').style.display='block'; document.getElementById('resultsGrid').style.display='none'; document.getElementById('emptyDiv').style.display='none'; }
@@ -1506,63 +1476,181 @@ function togFav(id,btn) {
   if (document.getElementById('userPanel').classList.contains('open')) renderPanel();
 }
 
+
 /* ================================================================
-   SEKCJA 13: MAPA SVG
+   SEKCJA 13: MAPA — Leaflet (OpenStreetMap + CartoDB tiles)
 ================================================================ */
-function initMap() {
-  const cg=document.getElementById('cPaths');
-  CPATHS.forEach(c => {
-    const fi=CHEAPEST_BY_COUNTRY[c.n]||CHEAPEST_BY_COUNTRY[c.cn];
-    const isCheap=TOP3.has(c.n)||TOP3.has(c.cn);
-    const hasFl=!!fi&&!c.noF;
-    let cls='cp'; if(isCheap&&!c.noF)cls+=' cheapest'; else if(hasFl)cls+=' has-f';
-    const p=document.createElementNS('http://www.w3.org/2000/svg','path');
-    p.setAttribute('d',c.d); p.setAttribute('class',cls);
-    if(hasFl){p.addEventListener('mouseenter',e=>showCTT(e,c.n,fi));p.addEventListener('mouseleave',hideTT);p.addEventListener('click',()=>goToMap(fi.to,fi.toCity));}
-    cg.appendChild(p);
-  });
-  drawRoutes(); drawDots();
+
+/** Generate a smooth arc between two lat/lng points */
+function arcPoints(lat1, lng1, lat2, lng2, steps) {
+  steps = steps || 60;
+  var dlat = lat2 - lat1, dlng = lng2 - lng1;
+  var len  = Math.hypot(dlat, dlng);
+  var px = -dlng / len, py = dlat / len;
+  var h  = len * 0.20;
+  var pts = [];
+  for (var i = 0; i <= steps; i++) {
+    var t   = i / steps;
+    var arc = h * Math.sin(Math.PI * t);
+    pts.push([lat1 + dlat * t + px * arc, lng1 + dlng * t + py * arc]);
+  }
+  return pts;
 }
 
-function drawRoutes(origins=['KTW','KRK']) {
-  const lg=document.getElementById('rLines'); lg.innerHTML='';
-  const ors=AIRPORTS.filter(a=>origins.includes(a.code));
-  FLIGHTS.forEach(f => {
-    const o=ors.find(x=>x.code===f.from), d=AIRPORTS.find(a=>a.code===f.to);
-    if(!o||!d)return;
-    const l=document.createElementNS('http://www.w3.org/2000/svg','line');
-    l.setAttribute('x1',o.x);l.setAttribute('y1',o.y);l.setAttribute('x2',d.x);l.setAttribute('y2',d.y);
-    l.setAttribute('class',`route-line rl-${f.airline}`);l.setAttribute('data-from',f.from);l.setAttribute('data-to',f.to);
-    lg.appendChild(l);
+function makeTileLayer(isDark) {
+  var url = isDark
+    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  return L.tileLayer(url, {
+    attribution: '\u00a9 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors \u00a9 <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19,
+  });
+}
+
+function initMap() {
+  if (LMap) return;
+  var isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+
+  LMap = L.map('worldMap', {
+    center: [50.5, 18],
+    zoom: 4,
+    minZoom: 2,
+    maxZoom: 12,
+    zoomControl: true,
+    attributionControl: true,
+  });
+
+  LTileLayer = makeTileLayer(isDark);
+  LTileLayer.addTo(LMap);
+
+  drawDots();
+  drawRoutes();
+  setTimeout(function() { if (LMap) LMap.invalidateSize(); }, 300);
+}
+
+function drawRoutes(origins) {
+  if (!LMap) return;
+  origins = origins || ['KTW', 'KRK'];
+  LRoutes.forEach(function(l) { LMap.removeLayer(l); });
+  LRoutes = [];
+
+  var ors = AIRPORTS.filter(function(a) { return origins.includes(a.code); });
+  var seen = new Set();
+
+  FLIGHTS.forEach(function(f) {
+    var key = f.from + '\u2192' + f.to;
+    if (seen.has(key)) return;
+    var o = ors.find(function(x) { return x.code === f.from; });
+    var d = AIRPORTS.find(function(a) { return a.code === f.to; });
+    if (!o || !d) return;
+    seen.add(key);
+
+    var pts   = arcPoints(o.lat, o.lng, d.lat, d.lng);
+    var color = f.airline === 'ryanair' ? '#5e9eff' : '#c066f0';
+
+    var line = L.polyline(pts, { color: color, weight: 1.8, opacity: 0.38, smoothFactor: 1 });
+    line._toCode   = f.to;
+    line._fromCode = f.from;
+    line.addTo(LMap);
+    LRoutes.push(line);
   });
 }
 
 function drawDots() {
-  const dg=document.getElementById('aDots');
-  AIRPORTS.forEach(a => {
-    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
-    g.setAttribute('class','ap-dot');g.setAttribute('role','button');g.setAttribute('tabindex','0');g.setAttribute('aria-label',a.name);
-    if(a.isPL){const ring=document.createElementNS('http://www.w3.org/2000/svg','circle');ring.setAttribute('cx',a.x);ring.setAttribute('cy',a.y);ring.setAttribute('r',10);ring.setAttribute('fill','var(--color-accent)');ring.setAttribute('opacity','.14');g.appendChild(ring);}
-    const dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
-    dot.setAttribute('cx',a.x);dot.setAttribute('cy',a.y);dot.setAttribute('r',a.isPL?6:4);
-    dot.setAttribute('fill',a.isPL?'var(--color-accent)':'var(--color-secondary)');dot.setAttribute('opacity','.9');
-    g.appendChild(dot);
-    if(a.isPL){const lbl=document.createElementNS('http://www.w3.org/2000/svg','text');lbl.setAttribute('x',a.x+9);lbl.setAttribute('y',a.y+4);lbl.setAttribute('fill','var(--text-primary)');lbl.setAttribute('font-size','8');lbl.setAttribute('font-family','Source Sans 3,sans-serif');lbl.setAttribute('opacity','.72');lbl.textContent=a.code;g.appendChild(lbl);}
-    const cf=FLIGHTS.filter(f=>f.to===a.code).sort((x,y)=>x.price1-y.price1)[0];
-    g.addEventListener('mouseenter',e=>{showATT(e,a,cf);if(cf)hlRoutes(a.code);});
-    g.addEventListener('mouseleave',()=>{hideTT();clRoutes();});
-    g.addEventListener('click',()=>{if(!a.isPL)goToMap(a.code,a.name);});
-    dg.appendChild(g);
+  if (!LMap) return;
+  LMarkers.forEach(function(m) { LMap.removeLayer(m); });
+  LMarkers = [];
+
+  AIRPORTS.forEach(function(a) {
+    var cheapest = FLIGHTS
+      .filter(function(f) { return f.to === a.code; })
+      .sort(function(x, y) { return x.price1 - y.price1; })[0];
+
+    if (a.isPL) {
+      var icon = L.divIcon({
+        className: '',
+        html: '<div class="dep-marker"><div class="dep-pulse"></div><div class="dep-dot"></div><div class="dep-lbl">' + a.code + '</div></div>',
+        iconSize:   [52, 52],
+        iconAnchor: [14, 14],
+      });
+      var m = L.marker([a.lat, a.lng], { icon: icon, zIndexOffset: 1000 });
+      m.bindTooltip(
+        '<div class="ltt-name">' + a.flag + ' ' + a.name + '</div><div class="ltt-sub">\u2708 Lotnisko startowe</div>',
+        { direction: 'top', className: 'ltt', offset: [0, -10] }
+      );
+      m.addTo(LMap);
+      LMarkers.push(m);
+
+    } else if (cheapest) {
+      var isCheap = TOP3.has(a.country);
+      var color = isCheap ? '#f58c3d' : (cheapest.airline === 'ryanair' ? '#5e9eff' : '#c066f0');
+
+      var circle = L.circleMarker([a.lat, a.lng], {
+        radius: isCheap ? 8 : 6,
+        fillColor: color,
+        color: '#ffffff',
+        weight: 1.5,
+        opacity: 0.9,
+        fillOpacity: 0.85,
+      });
+
+      var airlineLbl = cheapest.airline === 'ryanair' ? 'Ryanair' : 'Wizzair';
+      var ttHtml = '<div class="ltt-name">' + a.flag + ' ' + a.name + '</div>' +
+        '<div class="ltt-price">od ' + cheapest.price1 + ' PLN</div>' +
+        '<div class="ltt-sub">' + cheapest.from + ' \u2192 ' + a.code + ' \u00b7 ' + airlineLbl + '</div>';
+      circle.bindTooltip(ttHtml, { direction: 'top', className: 'ltt', offset: [0, -4], sticky: false });
+
+      (function(code, name) {
+        circle.on('mouseover', function() { hlRoutes(code); });
+        circle.on('mouseout',  function() { clRoutes(); });
+        circle.on('click',     function() { goToMap(code, name); });
+      })(a.code, a.name);
+
+      circle.addTo(LMap);
+      LMarkers.push(circle);
+    }
   });
 }
 
-function updateMapRoutes(){const codes=S.origins.map(o=>o.code);if(S.favAp&&!codes.includes(S.favAp.code))codes.push(S.favAp.code);drawRoutes(codes.length?codes:['KTW','KRK']);}
-function hlRoutes(code){document.querySelectorAll('.route-line').forEach(l=>{const m=l.getAttribute('data-to')===code;l.style.opacity=m?'0.9':'0.07';l.style.strokeWidth=m?'2.5':'';});}
-function clRoutes(){document.querySelectorAll('.route-line').forEach(l=>{l.style.opacity='.3';l.style.strokeWidth='';});}
-function showCTT(e,name,fi){const tt=document.getElementById('mapTt'),r=document.getElementById('worldMap').getBoundingClientRect();tt.innerHTML=`<div class="map-tt-name">${name}</div><div class="map-tt-price">od ${fi.price1} PLN</div><div class="map-tt-sub">${fi.from} → ${fi.to} · ${fi.airline==='ryanair'?'Ryanair':'Wizzair'}</div>`;tt.classList.add('vis');tt.style.left=(e.clientX-r.left+12)+'px';tt.style.top=Math.max(8,e.clientY-r.top-62)+'px';}
-function showATT(e,a,f){const tt=document.getElementById('mapTt'),r=document.getElementById('worldMap').getBoundingClientRect();tt.innerHTML=`<div class="map-tt-name">${a.flag} ${a.name}</div>${f?`<div class="map-tt-price">od ${f.price1} PLN</div><div class="map-tt-sub">${f.from} → ${a.code}</div>`:`<div class="map-tt-sub">${a.country}</div>`}`;tt.classList.add('vis');tt.style.left=(e.clientX-r.left+12)+'px';tt.style.top=Math.max(8,e.clientY-r.top-52)+'px';}
-function hideTT(){document.getElementById('mapTt').classList.remove('vis');}
-function goToMap(code,name){document.getElementById('destIn').value=`${name} (${code})`;S.destFilter=code.toLowerCase();showDestBadge(name);document.getElementById('search').scrollIntoView({behavior:'smooth'});}
+function hlRoutes(toCode) {
+  LRoutes.forEach(function(l) {
+    var match = l._toCode === toCode;
+    l.setStyle({ opacity: match ? 0.92 : 0.05, weight: match ? 3.5 : 1.8 });
+    if (match) l.bringToFront();
+  });
+}
+
+function clRoutes() {
+  LRoutes.forEach(function(l) { l.setStyle({ opacity: 0.38, weight: 1.8 }); });
+}
+
+function updateMapRoutes() {
+  var codes = S.origins.map(function(o) { return o.code; });
+  if (S.favAp && !codes.includes(S.favAp.code)) codes.push(S.favAp.code);
+  drawRoutes(codes.length ? codes : ['KTW', 'KRK']);
+}
+
+function goToMap(code, name) {
+  document.getElementById('destIn').value = name + ' (' + code + ')';
+  S.destFilter = code.toLowerCase();
+  showDestBadge(name);
+  document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
+}
+
+function flyMapTo(toCode) {
+  if (!LMap) return;
+  var ap = AIRPORTS.find(function(a) { return a.code === toCode; });
+  if (ap) LMap.flyTo([ap.lat, ap.lng], 6, { duration: 1.2 });
+}
+
+function updateMapTheme(isDark) {
+  if (!LMap || !LTileLayer) return;
+  LMap.removeLayer(LTileLayer);
+  LTileLayer = makeTileLayer(isDark);
+  LTileLayer.addTo(LMap);
+}
+
 
 /* ================================================================
    SEKCJA 13b: PANEL WERYFIKACJI CEN
@@ -1689,7 +1777,7 @@ function switchTab(t){document.getElementById('loginF').style.display=t==='login
 /* ================================================================
    SEKCJA 17: MOTYW
 ================================================================ */
-function toggleTheme(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'☀️':'🌙';localStorage.setItem('lnw_th',d?'light':'dark');}
+function toggleTheme(){const h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');document.getElementById('themeBtn').textContent=d?'☀️':'🌙';localStorage.setItem('lnw_th',d?'light':'dark');updateMapTheme(!d);}
 
 /* ================================================================
    SEKCJA 18: TOAST

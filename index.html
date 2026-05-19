@@ -10,6 +10,7 @@
   <meta property="og:locale" content="pl_PL" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -232,24 +233,15 @@
     </div>
     <div class="map-controls">
       <div class="map-legend">
-        <div class="leg-item"><div class="leg-dot" style="background:var(--color-accent);box-shadow:0 0 5px var(--color-accent)"></div><span>Najtańsze</span></div>
-        <div class="leg-item"><div class="leg-dot" style="background:rgba(245,140,61,.38)"></div><span>Dostępne loty</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--color-accent);box-shadow:0 0 6px var(--color-accent)"></div><span>Lotnisko startowe</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:var(--color-accent);opacity:.5"></div><span>Najtańsze</span></div>
         <div class="leg-item"><div class="leg-dot" style="background:#5e9eff"></div><span>Ryanair</span></div>
-        <div class="leg-item"><div class="leg-dot" style="background:#ff69c9"></div><span>Wizzair</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#c066f0"></div><span>Wizzair</span></div>
       </div>
       <div id="favApBadge" style="display:none;margin-left:auto;font-size:.8rem;color:var(--color-accent);align-items:center;gap:6px">⭐ Loty z: <strong id="favApLabel">–</strong></div>
     </div>
     <div class="map-container">
-      <div class="map-tt" id="mapTt" role="tooltip"></div>
-      <svg class="map-svg" viewBox="0 0 1000 500" id="worldMap" role="img" aria-label="Mapa tras lotów">
-        <rect width="1000" height="500" fill="rgba(13,8,16,.5)" rx="16"/>
-        <g stroke="rgba(255,255,255,.022)" stroke-width=".8">
-          <line x1="0" y1="125" x2="1000" y2="125"/><line x1="0" y1="250" x2="1000" y2="250"/>
-          <line x1="0" y1="375" x2="1000" y2="375"/><line x1="250" y1="0" x2="250" y2="500"/>
-          <line x1="500" y1="0" x2="500" y2="500"/><line x1="750" y1="0" x2="750" y2="500"/>
-        </g>
-        <g id="cPaths"></g><g id="rLines"></g><g id="aDots"></g>
-      </svg>
+      <div id="worldMap" class="map-leaflet" role="region" aria-label="Mapa tras lotów"></div>
     </div>
   </div>
 </section>
@@ -360,6 +352,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLEg=" crossorigin=""></script>
 <script src="app.js"></script>
 </body>
 </html>

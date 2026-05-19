@@ -1602,6 +1602,141 @@ section {
 
 /* ─── 13. MAP SECTION ──────────────────────────────────────── */
 
+/* Leaflet map container — must have explicit height */
+.map-leaflet {
+  width: 100%;
+  height: 520px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  z-index: 0;
+}
+
+@media (max-width: 640px) {
+  .map-leaflet { height: 360px; }
+}
+
+/* Override Leaflet attribution to match theme */
+.leaflet-control-attribution {
+  background: var(--bg-raised) !important;
+  color: var(--text-muted) !important;
+  font-size: .65rem !important;
+  border-radius: var(--radius-sm) 0 0 0 !important;
+}
+
+.leaflet-control-attribution a { color: var(--color-accent) !important; }
+
+/* Zoom controls */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: var(--shadow-md) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background: var(--bg-raised) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-subtle) !important;
+  font-size: 1rem !important;
+  line-height: 26px !important;
+  transition: background var(--transition) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--bg-glass-hover) !important;
+  color: var(--color-accent) !important;
+}
+
+/* ── Departure airport marker (pulsing orange pin) ─────────── */
+.dep-marker {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+.dep-pulse {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(245,140,61,.3);
+  animation: dep-ping 2s ease-out infinite;
+}
+
+.dep-dot {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2.5px solid #fff;
+  box-shadow: 0 2px 10px rgba(245,140,61,.6);
+  z-index: 1;
+}
+
+.dep-lbl {
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  margin-top: 3px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: var(--color-accent);
+  background: var(--bg-raised);
+  padding: 1px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  pointer-events: none;
+}
+
+@keyframes dep-ping {
+  0%   { transform: translate(-50%,-50%) scale(1); opacity: .6; }
+  70%  { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+  100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+}
+
+/* ── Leaflet custom tooltip (.ltt) ─────────────────────────── */
+.ltt {
+  background: var(--bg-raised) !important;
+  border: 1px solid var(--border-input) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  padding: 8px 12px !important;
+  font-family: 'Source Sans 3', sans-serif !important;
+  white-space: nowrap;
+}
+
+.ltt::before { display: none !important; }
+
+.ltt-name {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.ltt-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: 2px;
+}
+
+.ltt-sub {
+  font-size: .72rem;
+  color: var(--text-muted);
+}
+
+/* ── Route arc lines (Leaflet SVG overlay) ─────────────────── */
+.leaflet-overlay-pane path {
+  transition: opacity .18s ease, stroke-width .18s ease;
+}
+
 .map-controls {
   display: flex;
   align-items: center;
@@ -1638,34 +1773,6 @@ section {
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-md);
 }
-
-.map-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.map-tt {
-  position: absolute;
-  background: var(--bg-raised);
-  border: 1px solid var(--border-input);
-  border-radius: var(--radius-md);
-  padding: 10px 14px;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity var(--transition), transform var(--transition);
-  box-shadow: var(--shadow-md);
-  z-index: 10;
-  max-width: 220px;
-  white-space: nowrap;
-}
-
-.map-tt.vis { opacity: 1; transform: none; }
-
-.map-tt-name { font-size: .88rem; font-weight: 700; color: var(--text-primary); }
-.map-tt-price { font-size: .95rem; font-weight: 800; color: var(--color-accent); margin: 4px 0 2px; }
-.map-tt-sub { font-size: .75rem; color: var(--text-muted); }
 
 /* ─── 14. NEWSLETTER ───────────────────────────────────────── */
 
