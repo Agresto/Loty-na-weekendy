@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-19T16:35:43.691Z",
+  "capturedAt": "2026-05-19T16:48:24.450Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→ALC",
@@ -95,15 +95,15 @@
         }
       },
       "totalFares": 131,
-      "capturedAt": "2026-05-19T16:31:50.919Z"
+      "capturedAt": "2026-05-19T16:44:51.006Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 375,
-      "normalized": 45,
+      "totalRaw": 524,
+      "normalized": 76,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "TIA",
@@ -126,7 +126,7 @@
           6
         ]
       },
-      "capturedAt": "2026-05-19T16:35:43.676Z"
+      "capturedAt": "2026-05-19T16:48:24.435Z"
     },
     "strategy": "playwright-farechart"
   }
