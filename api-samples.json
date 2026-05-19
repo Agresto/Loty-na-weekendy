@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-19T14:59:35.342Z",
+  "capturedAt": "2026-05-19T15:49:29.402Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→ALC",
@@ -70,22 +70,22 @@
           "departureDate": "2026-05-28T05:50:00",
           "arrivalDate": "2026-05-28T08:55:00",
           "price": {
-            "value": 108.33,
-            "valueMainUnit": "108",
-            "valueFractionalUnit": "33",
+            "value": 113.25,
+            "valueMainUnit": "113",
+            "valueFractionalUnit": "25",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~3597~ ~~ALC~05/28/2026 05:50~KTW~05/28/2026 08:55~~",
           "flightNumber": "FR3597",
           "previousPrice": null,
-          "priceUpdated": 1779193591000
+          "priceUpdated": 1779202295000
         },
         "summary": {
           "price": {
-            "value": 212.04,
-            "valueMainUnit": "212",
-            "valueFractionalUnit": "04",
+            "value": 216.96,
+            "valueMainUnit": "216",
+            "valueFractionalUnit": "96",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -95,27 +95,27 @@
         }
       },
       "totalFares": 131,
-      "capturedAt": "2026-05-19T14:44:36.796Z"
+      "capturedAt": "2026-05-19T15:45:36.237Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 5784,
-      "normalized": 762,
+      "totalRaw": 376,
+      "normalized": 28,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "TIA",
         "price": {
-          "amount": 407.6,
+          "amount": 0,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "price",
-        "date": "2026-05-19T00:00:00",
-        "classOfService": "IJ",
+        "priceType": "noData",
+        "date": "2026-05-19T00:00:00+01:00",
+        "classOfService": null,
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -126,7 +126,7 @@
           6
         ]
       },
-      "capturedAt": "2026-05-19T14:59:35.324Z"
+      "capturedAt": "2026-05-19T15:49:29.390Z"
     },
     "strategy": "playwright-farechart"
   }
