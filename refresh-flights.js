@@ -24,7 +24,7 @@ const path = require('path');
 const { generateFlights, ROUTES, DESTS, ORIGINS } = require('./generate-flights.js');
 
 // ─── konfiguracja ─────────────────────────────────────────────────────────────
-const MAX_BUDGET_RT       = 500;
+const MAX_BUDGET_RT       = 800;
 const MONTHS_AHEAD        = 6;
 const MAX_RETRY           = 2;
 const TIMEOUT_MS          = 20000;
