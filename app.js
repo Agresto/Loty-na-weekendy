@@ -138,6 +138,11 @@ const FALLBACK_FLIGHTS = [
 // Aktywna lista lotów — wczytywana dynamicznie z flights.json przez loadFlights()
 let FLIGHTS = FALLBACK_FLIGHTS.slice();
 
+// Paginacja wyników — pokazujemy po PAGE_SIZE kart naraz
+const PAGE_SIZE = 48;
+let _cachedFlights = [];
+let _shownCount = 0;
+
 // Metadane ostatniej aktualizacji (uzupełniane po fetch)
 let FLIGHTS_META = {
   lastUpdated: null,        // ISO string
@@ -164,6 +169,8 @@ async function loadFlights() {
     }
 
     FLIGHTS = data.flights;
+    // Pre-compute timestamps once for fast filter/sort (avoids new Date() per-item per-render)
+    FLIGHTS.forEach(f => { f._ts = Date.parse(f.raw); f._tsRet = Date.parse(f.retRaw); });
     FLIGHTS_META = {
       lastUpdated: data.lastUpdated || new Date().toISOString(),
       source:      data.source || 'remote',
@@ -174,6 +181,7 @@ async function loadFlights() {
   } catch (err) {
     console.warn(`[loadFlights] ⚠️ Nie udało się załadować flights.json: ${err.message}. Używam fallback.`);
     FLIGHTS = FALLBACK_FLIGHTS.slice();
+    FLIGHTS.forEach(f => { f._ts = Date.parse(f.raw); f._tsRet = Date.parse(f.retRaw); });
     FLIGHTS_META = {
       lastUpdated: new Date().toISOString(),
       source:      'fallback',
@@ -1194,29 +1202,27 @@ function showLoad() { document.getElementById('loadingDiv').style.display='block
 function hideLoad() { document.getElementById('loadingDiv').style.display='none'; document.getElementById('resultsGrid').style.display='grid'; }
 
 function getFlights() {
-  const today=new Date(); today.setHours(0,0,0,0);
+  const _now = new Date(); _now.setHours(0,0,0,0);
+  const todayTs = _now.getTime();
   const destRaw=document.getElementById('destIn').value.trim().toLowerCase();
   const codeMatch=destRaw.match(/\(([a-z]{3})\)$/i);
   const destCode=codeMatch?codeMatch[1].toUpperCase():'';
   const destCity=destRaw.replace(/\s*\([a-z]{3}\)$/i,'').trim();
 
+  // Pre-compute cheapest to avoid O(n²) spread inside filter
+  const cheapestMin = S.filter==='cheapest'
+    ? Math.min.apply(null, FLIGHTS.map(x=>S.roundtrip?x.price2:x.price1))
+    : 0;
+
   let fl = FLIGHTS.filter(f => {
-    const flDate=new Date(f.raw); flDate.setHours(0,0,0,0);
-    if (flDate<today) return false;                            // Zawsze odrzucaj przeszłe
+    if ((f._ts || Date.parse(f.raw)) < todayTs) return false;
     if (!S.airlines[f.airline]) return false;
-    // Filtr po wzorcu weekendu (Pt-Nd, Sb-Nd, etc.) — pole f.pattern
-    // Backward-compat: jeśli stary lot nie ma pattern, dopuść go (chyba że żadne
-    // przyciski dni nie są zaznaczone — wtedy domyślnie pokaż wszystkie)
     if (S.days.length > 0 && f.pattern && !S.days.includes(f.pattern)) return false;
     const p=S.roundtrip?f.price2:f.price1;
     if (S.budget<3000&&p>S.budget) return false;
     if (S.seaOnly&&!f.sea) return false;
     if (S.lgbtOnly&&!f.lgbt) return false;
 
-    // ── Filtr roku (na podstawie trybu) ──────────────────────
-    // 'any'     → nie filtruj po roku w ogóle
-    // 'current' → tylko rok bieżący (CUR_YR); jeśli wybrano miesiące — tylko one
-    // 'next'    → tylko rok następny (CUR_YR+1); jeśli wybrano miesiące — tylko one
     if (S.yearMode === 'current') {
       if (f.year !== CUR_YR) return false;
       if (S.months.length > 0 && !S.months.includes(`${f.year}-${f.month}`)) return false;
@@ -1224,7 +1230,6 @@ function getFlights() {
       if (f.year !== CUR_YR + 1) return false;
       if (S.months.length > 0 && !S.months.includes(`${f.year}-${f.month}`)) return false;
     }
-    // 'any' — miesiące ignorujemy (siatka ukryta, S.months zawsze [])
 
     if (S.origins.length>0&&!S.origins.find(o=>o.code===f.from)) return false;
     const activeDest=S.destFilter||destCity;
@@ -1237,14 +1242,14 @@ function getFlights() {
     if (S.filter==='novisa'&&f.visa!=='brak')return false;
     if (S.filter==='english'&&!f.englishOk)return false;
     if (S.filter==='close'&&f.distKm>15)return false;
-    if (S.filter==='cheapest'){const mn=Math.min(...FLIGHTS.map(x=>S.roundtrip?x.price2:x.price1));if(p>mn*1.65)return false;}
+    if (S.filter==='cheapest'&&p>cheapestMin*1.65)return false;
     return true;
   });
 
   fl.sort((a,b)=>{
     const pa=S.roundtrip?a.price2:a.price1, pb=S.roundtrip?b.price2:b.price1;
     if(S.sort==='price')return pa-pb; if(S.sort==='price-desc')return pb-pa;
-    if(S.sort==='date')return new Date(a.raw)-new Date(b.raw);
+    if(S.sort==='date')return (a._ts||Date.parse(a.raw))-(b._ts||Date.parse(b.raw));
     if(S.sort==='dur')return parseDur(a.dur)-parseDur(b.dur);
     if(S.sort==='dist')return a.distKm-b.distKm;
     return 0;
@@ -1254,12 +1259,19 @@ function getFlights() {
 function parseDur(d){const m=d.match(/(\d+)h (\d+)m/);return m?+m[1]*60+ +m[2]:999;}
 
 function renderResults() {
-  const fl=getFlights(), grid=document.getElementById('resultsGrid');
-  const ryCount = fl.filter(f => f.airline === 'ryanair').length;
-  const wzCount = fl.filter(f => f.airline === 'wizzair').length;
+  _cachedFlights = getFlights();
+  _shownCount = 0;
+  const grid = document.getElementById('resultsGrid');
+
+  // Remove stale load-more button before re-render
+  document.getElementById('loadMoreBtn')?.remove();
+
+  const ryCount = _cachedFlights.filter(f => f.airline === 'ryanair').length;
+  const wzCount = _cachedFlights.filter(f => f.airline === 'wizzair').length;
   document.getElementById('resNum').innerHTML =
-    `${fl.length} <span style="font-size:.75rem;opacity:.7">(🔵 ${ryCount} · 💜 ${wzCount})</span>`;
-  if (!fl.length) {
+    `${_cachedFlights.length} <span style="font-size:.75rem;opacity:.7">(🔵 ${ryCount} · 💜 ${wzCount})</span>`;
+
+  if (!_cachedFlights.length) {
     grid.innerHTML=''; grid.style.display='none'; document.getElementById('emptyDiv').style.display='block';
     let title='Nie znaleziono lotów', msg='Zmień kryteria lub zwiększ budżet.';
 
@@ -1278,7 +1290,6 @@ function renderResults() {
       title = `Brak lotów w roku ${CUR_YR+1}`;
       msg   = `Nie znaleziono lotów w roku ${CUR_YR+1}. Loty na ten rok mogą być jeszcze niedostępne w ofercie. Spróbuj rok bieżący.`;
     } else {
-      // 'any' lub bez filtra roku
       const dr = document.getElementById('destIn').value.trim();
       if (dr && dr !== 'Gdziekolwiek') {
         title = `Brak lotów do: ${dr.split('(')[0].trim()}`;
@@ -1290,7 +1301,34 @@ function renderResults() {
     document.getElementById('emptyMsg').innerHTML=msg; return;
   }
   document.getElementById('emptyDiv').style.display='none'; grid.style.display='grid';
-  grid.innerHTML=fl.map((f,i)=>cardHTML(f,i)).join('');
+  _appendFlightCards(grid, true);
+}
+
+function _appendFlightCards(grid, reset) {
+  const batch = _cachedFlights.slice(_shownCount, _shownCount + PAGE_SIZE);
+  if (reset) {
+    grid.innerHTML = batch.map((f,i) => cardHTML(f,i)).join('');
+  } else {
+    const div = document.createElement('div');
+    div.innerHTML = batch.map((f,i) => cardHTML(f, _shownCount+i)).join('');
+    while (div.firstChild) grid.appendChild(div.firstChild);
+  }
+  _shownCount += batch.length;
+
+  let btn = document.getElementById('loadMoreBtn');
+  const remaining = _cachedFlights.length - _shownCount;
+  if (remaining > 0) {
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'loadMoreBtn';
+      btn.className = 'btn-load-more';
+      btn.onclick = () => _appendFlightCards(document.getElementById('resultsGrid'), false);
+      grid.insertAdjacentElement('afterend', btn);
+    }
+    btn.textContent = `Załaduj więcej — jeszcze ${remaining} lotów ↓`;
+  } else {
+    btn?.remove();
+  }
 }
 
 /**

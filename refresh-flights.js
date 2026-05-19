@@ -517,6 +517,7 @@ function parseTimes(dateTimeStr) {
 // ─── Normalizacja Ryanair ─────────────────────────────────────────────────────
 function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   const out = fare.outbound;
+  const inb = fare.inbound;
   if (!out?.departureDate) return null;
 
   const dateStr = out.departureDate.slice(0, 10);
@@ -526,9 +527,10 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   if (!dow) return null;
 
   const rtPrice = fare.summary?.price?.value
-    || ((out.price?.value || 0) + (fare.inbound?.price?.value || 0));
+    || ((out.price?.value || 0) + (inb?.price?.value || 0));
 
-  const price1 = Math.round(rtPrice / 2 || out.price?.value || 0);
+  // Use real outbound leg price, not half of round-trip (legs are often asymmetric)
+  const price1 = Math.round(out.price?.value || rtPrice / 2 || 0);
   const price2 = Math.round(rtPrice || price1 * 1.7);
   if (!price2 || price2 > MAX_BUDGET_RT) return null;
 
@@ -536,6 +538,25 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   const [aH, aM] = parseTimes(out.arrivalDate);
   const durStr = (out.arrivalDate && out.departureDate) ? calcDur(out.departureDate, out.arrivalDate) : null;
   const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
+
+  // Override return times with real inbound flight data from API
+  if (inb?.departureDate && inb.departureDate.length >= 16) {
+    const [rDH, rDM] = parseTimes(inb.departureDate);
+    weekend.retDept = `${String(rDH).padStart(2,'0')}:${String(rDM).padStart(2,'0')}`;
+    if (inb.arrivalDate && inb.arrivalDate.length >= 16) {
+      const [rAH, rAM] = parseTimes(inb.arrivalDate);
+      weekend.retArr = `${String(rAH).padStart(2,'0')}:${String(rAM).padStart(2,'0')}`;
+    }
+    // Update retRaw to actual inbound date (may differ from the +2 day estimate)
+    const actualRetDate = inb.departureDate.slice(0, 10);
+    if (actualRetDate !== weekend.retRaw) {
+      const actualRetDow = classifyDow(actualRetDate);
+      weekend.retRaw = actualRetDate;
+      if (actualRetDow === 'sat') { weekend.retDay = 'sobota'; weekend.pattern = dow === 'fri' ? 'fri-sat' : 'sat-only'; }
+      else if (actualRetDow === 'sun') { weekend.retDay = 'niedziela'; }
+      else if (actualRetDow === 'fri') { weekend.retDay = 'piątek'; }
+    }
+  }
 
   return {
     id: `r${id}`, airline: 'ryanair',

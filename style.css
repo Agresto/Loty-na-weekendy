@@ -129,6 +129,7 @@ ul { list-style: none; }
   filter: blur(100px);
   opacity: .28;
   animation: aurora-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .ab:nth-child(1) {
@@ -1224,6 +1225,27 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 18px;
+}
+
+/* Load-more pagination button */
+.btn-load-more {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  margin: 20px auto 8px;
+  padding: 14px 24px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.btn-load-more:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--color-accent);
 }
 
 /* Skeleton */
