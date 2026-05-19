@@ -106,7 +106,12 @@ jobs:
         run: |
           git config user.name  "Flight Bot"
           git config user.email "bot@lotynaweekend.pl"
+          cp flights.json /tmp/flights_new.json
+          [ -f api-samples.json ] && cp api-samples.json /tmp/api_samples_new.json || true
+          git checkout -- flights.json api-samples.json 2>/dev/null || true
           git pull --rebase origin main
+          cp /tmp/flights_new.json flights.json
+          [ -f /tmp/api_samples_new.json ] && cp /tmp/api_samples_new.json api-samples.json || true
           git add flights.json api-samples.json
           if git diff --staged --quiet; then
             echo "ℹ️ Brak zmian — pomijam commit"
@@ -209,7 +214,13 @@ jobs:
         run: |
           git config user.name  "Flight Bot"
           git config user.email "bot@lotynaweekend.pl"
+          # Zachowaj wygenerowane pliki, przywróć oryginały, pull, a potem wróć
+          cp flights.json /tmp/flights_new.json
+          [ -f api-samples.json ] && cp api-samples.json /tmp/api_samples_new.json || true
+          git checkout -- flights.json api-samples.json 2>/dev/null || true
           git pull --rebase origin main
+          cp /tmp/flights_new.json flights.json
+          [ -f /tmp/api_samples_new.json ] && cp /tmp/api_samples_new.json api-samples.json || true
           git add flights.json api-samples.json
           if git diff --staged --quiet; then
             echo "ℹ️ Brak zmian w cenach — pomijam commit"
