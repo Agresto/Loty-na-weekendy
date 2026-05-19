@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-19T15:56:56.390Z",
+  "capturedAt": "2026-05-19T16:35:43.691Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→ALC",
@@ -33,16 +33,16 @@
           "departureDate": "2026-05-26T20:15:00",
           "arrivalDate": "2026-05-26T23:35:00",
           "price": {
-            "value": 103.71,
-            "valueMainUnit": "103",
-            "valueFractionalUnit": "71",
+            "value": 110.79,
+            "valueMainUnit": "110",
+            "valueFractionalUnit": "79",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~3596~ ~~KTW~05/26/2026 20:15~ALC~05/26/2026 23:35~~",
           "flightNumber": "FR3596",
           "previousPrice": null,
-          "priceUpdated": 1779201802000
+          "priceUpdated": 1779207149000
         },
         "inbound": {
           "departureAirport": {
@@ -83,9 +83,9 @@
         },
         "summary": {
           "price": {
-            "value": 216.96,
-            "valueMainUnit": "216",
-            "valueFractionalUnit": "96",
+            "value": 224.04,
+            "valueMainUnit": "224",
+            "valueFractionalUnit": "04",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -95,7 +95,7 @@
         }
       },
       "totalFares": 131,
-      "capturedAt": "2026-05-19T15:53:04.802Z"
+      "capturedAt": "2026-05-19T16:31:50.919Z"
     }
   },
   "wizzair": {
@@ -103,7 +103,7 @@
     "status": 200,
     "sampleResponse": {
       "totalRaw": 375,
-      "normalized": 44,
+      "normalized": 45,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "TIA",
@@ -126,7 +126,7 @@
           6
         ]
       },
-      "capturedAt": "2026-05-19T15:56:56.374Z"
+      "capturedAt": "2026-05-19T16:35:43.676Z"
     },
     "strategy": "playwright-farechart"
   }
