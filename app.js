@@ -482,13 +482,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (cntD) cntD.dataset.target = new Set(FLIGHTS.map(f => f.to)).size;
   if (cntO) cntO.dataset.target = new Set(FLIGHTS.map(f => f.from)).size;
 
-  // 5. Init UI
-  initTicker(); initVibes(); initVibeScroll(); initMonths();
-  setupOriginChips(); setupDestAC();
-  _syncSliderFill(document.getElementById('budgetR'));
-  renderResults(); initMap(); initTW(); initCounters(); initIO();
-
-  // 6. Event listeners
+  // 5. Event listeners — ALWAYS set up first, before anything that can throw
   document.getElementById('loginBtn').onclick    = () => openModal('login');
   document.getElementById('registerBtn').onclick = () => openModal('reg');
   document.getElementById('panelBtn').onclick    = () => openUserPanel();
@@ -497,6 +491,15 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('themeBtn').addEventListener('click', toggleTheme);
   const refreshBtn = document.getElementById('refreshBtn');
   if (refreshBtn) refreshBtn.addEventListener('click', refreshFlights);
+
+  // 6. Init UI
+  initTicker(); initVibes(); initVibeScroll(); initMonths();
+  setupOriginChips(); setupDestAC();
+  _syncSliderFill(document.getElementById('budgetR'));
+  renderResults(); initTW(); initCounters(); initIO();
+  try { initMap(); } catch(e) { console.error('[Map] initMap failed:', e); }
+  // If Leaflet loaded late (async), retry once after 800ms
+  if (!LMap) setTimeout(() => { try { initMap(); } catch(e) {} }, 800);
 
   // 6. Symulacja bg sync
   let syncTimer;
@@ -1510,6 +1513,7 @@ function makeTileLayer(isDark) {
 
 function initMap() {
   if (LMap) return;
+  if (typeof L === 'undefined') { console.warn('[Map] Leaflet not loaded — map disabled'); return; }
   var isDark = document.documentElement.getAttribute('data-theme') !== 'light';
 
   LMap = L.map('worldMap', {
