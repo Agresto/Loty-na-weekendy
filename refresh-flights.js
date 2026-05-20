@@ -364,117 +364,83 @@ async function fetchWizzairViaPlaywright(wRoutes) {
   return { allFlights, returnPriceMap };
 }
 
-// ─── Wizzair: pobieranie godzin lotów przez search API ───────────────────────
-async function fetchWizzairTimesViaSearch(wRoutes, allFlights) {
+// ─── Wizzair: pobieranie godzin lotów przez asset/map API ────────────────────
+// asset/map zwraca operationStartDate = czas najbliższego odlotu dla każdej trasy.
+// Ten endpoint działa bez blokady Kasada (inaczej niż search/search).
+// Czas jest stały w ramach sezonu — stosujemy go do wszystkich weekendowych dat.
+async function fetchWizzairTimesViaMap(wRoutes) {
   if (!chromium) return new Map();
 
   const timesMap = new Map();
-  const today = todayStr();
-  const eightWeeksOut = addDays(today, 56);
+  const today    = todayStr();
+  const maxDate  = addMonths(today, MONTHS_AHEAD);
 
-  // Jeśli allFlights dostarczone — filtruj do tras z bliskimi lotami
-  // Jeśli null — pobierz godziny dla WSZYSTKICH tras (wywołanie przed farechart)
-  let routePairs;
-  if (allFlights && allFlights.length) {
-    const nearRoutes = new Set();
-    for (const f of allFlights) {
-      const dateStr = f.date ? f.date.slice(0, 10) : null;
-      if (!dateStr || dateStr > eightWeeksOut) continue;
-      const [from, to] = f._route;
-      nearRoutes.add(`${from}|${to}`);
-      nearRoutes.add(`${to}|${from}`);
+  const init = await initWizzairBrowser();
+  if (!init) return timesMap;
+  const { browser, ctx, page, apiVersionRef } = init;
+
+  try {
+    const mapResult = await page.evaluate(async ({ apiVersion }) => {
+      const r = await fetch(
+        `https://be.wizzair.com/${apiVersion}/Api/asset/map?languageCode=pl-pl&withConnections=true`,
+        { headers: { accept: 'application/json', origin: 'https://wizzair.com', referer: 'https://wizzair.com/pl-pl' } }
+      );
+      if (!r.ok) return { ok: false, status: r.status };
+      const data = await r.json();
+      return { ok: true, cities: data.cities || [] };
+    }, { apiVersion: apiVersionRef.value });
+
+    if (!mapResult.ok) {
+      console.log(`\n[Wizzair Times] asset/map błąd: ${mapResult.status}`);
+      return timesMap;
     }
-    if (!nearRoutes.size) return timesMap;
-    routePairs = [...nearRoutes].map(k => k.split('|'));
-  } else {
-    // Przed farechart: szukaj godzin dla wszystkich tras (oba kierunki)
-    const allPairs = new Set();
-    wRoutes.forEach(([from, to]) => { allPairs.add(`${from}|${to}`); allPairs.add(`${to}|${from}`); });
-    routePairs = [...allPairs].map(k => k.split('|'));
-  }
-  const CHUNK = 38; // Zapytań na sesję — poniżej limitu Kasada (42-45)
-  const chunks = [];
-  for (let i = 0; i < routePairs.length; i += CHUNK) chunks.push(routePairs.slice(i, i + CHUNK));
-  console.log(`\n[Wizzair Times] ${routePairs.length} kierunków → ${chunks.length} sesji (max ${CHUNK}/sesja)...`);
 
-  let totalReq = 0;
-
-  for (let ci = 0; ci < chunks.length; ci++) {
-    const chunk = chunks[ci];
-    process.stdout.write(`[Wizzair Times] Sesja ${ci + 1}/${chunks.length}: `);
-
-    const init = await initWizzairBrowser();
-    if (!init) { console.log('Playwright niedostępny'); break; }
-    const { browser, ctx, page, apiVersionRef } = init;
-
-    try {
-      let chunkReq = 0;
-      for (const [from, to] of chunk) {
-        const body = JSON.stringify({
-          flightList: [{ departureStation: from, arrivalStation: to, from: today, to: eightWeeksOut }],
-          priceType: 'regular', adultCount: 1, childCount: 0, infantCount: 0,
-        });
-
-        const result = await page.evaluate(async ({ body, apiVersion }) => {
-          const r = await fetch(`https://be.wizzair.com/${apiVersion}/Api/search/search`, {
-            method: 'POST',
-            headers: {
-              'content-type': 'application/json;charset=UTF-8',
-              'accept': 'application/json, text/plain, */*',
-              'origin': 'https://wizzair.com',
-              'referer': 'https://wizzair.com/pl-pl',
-            },
-            body,
-          });
-          if (!r.ok) return { ok: false, status: r.status };
-          const data = await r.json();
-          return { ok: true, outbound: data.outboundFlights || [] };
-        }, { body, apiVersion: apiVersionRef.value });
-
-        chunkReq++; totalReq++;
-
-        if (!result.ok) {
-          if (result.status === 503 || result.status === 429) break;
-          continue;
-        }
-
-        for (const f of result.outbound || []) {
-          const depStr = f.scheduledDepartureDateTime || f.departureDateTime || f.departureDatTime;
-          const arrStr = f.scheduledArrivalDateTime  || f.arrivalDateTime   || f.arrivalDatTime;
-          if (!depStr || depStr.length < 16) continue;
-          const dateStr = depStr.slice(0, 10);
-          if (dateStr < today || dateStr > eightWeeksOut) continue;
-          const key = `${from}-${to}-${dateStr}`;
-          if (!timesMap.has(key)) {
-            const dept   = depStr.slice(11, 16);
-            const arr    = arrStr && arrStr.length >= 16 ? arrStr.slice(11, 16) : null;
-            const durMin = arr ? Math.round((new Date(arrStr.slice(0, 19)) - new Date(depStr.slice(0, 19))) / 60000) : 0;
-            const dur    = durMin > 0 && durMin < 720
-              ? `${Math.floor(durMin / 60)}h ${String(durMin % 60).padStart(2, '0')}m`
-              : null;
-            timesMap.set(key, { dept, arr, dur });
-          }
-        }
-        await sleep(300);
+    // Buduj mapę: "from-to" → czas odlotu z operationStartDate
+    const deptByRoute = new Map();
+    for (const city of mapResult.cities) {
+      for (const conn of city.connections || []) {
+        const osd = conn.operationStartDate;
+        if (!osd || osd.startsWith('0001') || osd.startsWith('1900')) continue;
+        const t = osd.slice(11, 16);
+        if (t === '00:00') continue;
+        deptByRoute.set(`${city.iata}-${conn.iata}`, t);
       }
-      console.log(`${timesMap.size} godzin (${chunkReq} req)`);
-    } catch(e) {
-      console.error(`błąd: ${e.message}`);
-    } finally {
-      await ctx.close().catch(() => {});
-      await browser.close().catch(() => {});
     }
 
-    // Cooldown między sesjami (nie po ostatniej)
-    if (ci + 1 < chunks.length) {
-      const cd = process.env.CI ? 8000 : 45000;
-      process.stdout.write(`[Wizzair Times] Cooldown ${cd / 1000}s... `);
-      await sleep(cd);
-      process.stdout.write('gotowe\n');
+    // Buduj timesMap: forward + reverse, wszystkie weekendowe daty
+    const pairs = [
+      ...wRoutes.map(r => ({ from: r[0], to: r[1], durMin: r[4] || 120 })),
+      ...wRoutes.map(r => ({ from: r[1], to: r[0], durMin: r[4] || 120 })),
+    ];
+
+    let routesFound = 0;
+    for (const { from, to, durMin } of pairs) {
+      const deptTime = deptByRoute.get(`${from}-${to}`);
+      if (!deptTime) continue;
+      routesFound++;
+
+      const [dH, dM] = deptTime.split(':').map(Number);
+      const arrMins  = dH * 60 + dM + durMin;
+      const arrTime  = `${String(Math.floor(arrMins / 60) % 24).padStart(2,'0')}:${String(arrMins % 60).padStart(2,'0')}`;
+      const durStr   = `${Math.floor(durMin / 60)}h ${String(durMin % 60).padStart(2,'0')}m`;
+
+      // Wypełnij wszystkie Pt/Sb/Nd w zakresie
+      const end = new Date(maxDate + 'T12:00:00');
+      for (let d = new Date(today + 'T12:00:00'); d <= end; d.setDate(d.getDate() + 1)) {
+        const dow = d.getDay(); // 0=Nd, 5=Pt, 6=Sb
+        if (dow !== 0 && dow !== 5 && dow !== 6) continue;
+        timesMap.set(`${from}-${to}-${isoDate(d)}`, { dept: deptTime, arr: arrTime, dur: durStr });
+      }
     }
+
+    console.log(`\n[Wizzair Times] ${routesFound} tras z mapy API → ${timesMap.size} wpisów`);
+  } catch(e) {
+    console.error('[Wizzair Times] błąd:', e.message);
+  } finally {
+    await ctx.close().catch(() => {});
+    await browser.close().catch(() => {});
   }
 
-  console.log(`[Wizzair Times] Łącznie: ${timesMap.size} godzin (${totalReq} zapytań)`);
   return timesMap;
 }
 
@@ -753,8 +719,8 @@ async function fetchRealFlights() {
   let wizzTimesMap = new Map();
 
   if (chromium) {
-    // 1. Godziny lotów PRZED farechart — świeża sesja Kasada, brak limitu
-    wizzTimesMap = await fetchWizzairTimesViaSearch(wRoutes, null);
+    // 1. Godziny lotów z asset/map API (bez blokady Kasada)
+    wizzTimesMap = await fetchWizzairTimesViaMap(wRoutes);
 
     const wizzResult = await fetchWizzairViaPlaywright(wRoutes);
     rawWizzFlights    = wizzResult?.allFlights || null;
