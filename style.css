@@ -201,6 +201,10 @@ ul { list-style: none; }
   color: var(--text-primary);
   outline: none;
 }
+.ticker-inner:has(.ticker-item:hover),
+.ticker-inner:has(.ticker-item:focus-visible) {
+  animation-play-state: paused;
+}
 .ticker-item strong { color: var(--color-accent); }
 .ticker-div { color: var(--border-input); padding: 0 4px; }
 

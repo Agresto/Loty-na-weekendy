@@ -1,11 +1,11 @@
 {
-  "capturedAt": "2026-05-19T16:48:24.450Z",
+  "capturedAt": "2026-05-20T18:39:00.863Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
-    "url": "ryanair/farfnd/v4/roundTripFares KTW→ALC",
+    "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
     "status": 200,
     "sampleResponse": {
-      "route": "KTW → ALC",
+      "route": "KTW → BUD",
       "firstFare": {
         "outbound": {
           "departureAirport": {
@@ -20,40 +20,40 @@
             }
           },
           "arrivalAirport": {
-            "countryName": "Hiszpania",
-            "iataCode": "ALC",
-            "name": "Alicante",
-            "seoName": "alicante",
+            "countryName": "Węgry",
+            "iataCode": "BUD",
+            "name": "Budapeszt",
+            "seoName": "budapeszt",
             "city": {
-              "code": "ALICANTE",
-              "countryCode": "es",
-              "name": "Alicante"
+              "code": "BUDAPEST",
+              "countryCode": "hu",
+              "name": "Budapeszt"
             }
           },
-          "departureDate": "2026-05-26T20:15:00",
-          "arrivalDate": "2026-05-26T23:35:00",
+          "departureDate": "2026-10-30T19:40:00",
+          "arrivalDate": "2026-10-30T20:45:00",
           "price": {
-            "value": 110.79,
-            "valueMainUnit": "110",
-            "valueFractionalUnit": "79",
+            "value": 120,
+            "valueMainUnit": "120",
+            "valueFractionalUnit": "00",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
-          "flightKey": "FR~3596~ ~~KTW~05/26/2026 20:15~ALC~05/26/2026 23:35~~",
-          "flightNumber": "FR3596",
+          "flightKey": "FR~9786~ ~~KTW~10/30/2026 19:40~BUD~10/30/2026 20:45~~",
+          "flightNumber": "FR9786",
           "previousPrice": null,
-          "priceUpdated": 1779207149000
+          "priceUpdated": 1779273477000
         },
         "inbound": {
           "departureAirport": {
-            "countryName": "Hiszpania",
-            "iataCode": "ALC",
-            "name": "Alicante",
-            "seoName": "alicante",
+            "countryName": "Węgry",
+            "iataCode": "BUD",
+            "name": "Budapeszt",
+            "seoName": "budapeszt",
             "city": {
-              "code": "ALICANTE",
-              "countryCode": "es",
-              "name": "Alicante"
+              "code": "BUDAPEST",
+              "countryCode": "hu",
+              "name": "Budapeszt"
             }
           },
           "arrivalAirport": {
@@ -67,43 +67,43 @@
               "name": "Katowice"
             }
           },
-          "departureDate": "2026-05-28T05:50:00",
-          "arrivalDate": "2026-05-28T08:55:00",
+          "departureDate": "2026-11-01T15:25:00",
+          "arrivalDate": "2026-11-01T16:25:00",
           "price": {
-            "value": 113.25,
-            "valueMainUnit": "113",
-            "valueFractionalUnit": "25",
+            "value": 120,
+            "valueMainUnit": "120",
+            "valueFractionalUnit": "00",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
-          "flightKey": "FR~3597~ ~~ALC~05/28/2026 05:50~KTW~05/28/2026 08:55~~",
-          "flightNumber": "FR3597",
+          "flightKey": "FR~9785~ ~~BUD~11/01/2026 15:25~KTW~11/01/2026 16:25~~",
+          "flightNumber": "FR9785",
           "previousPrice": null,
-          "priceUpdated": 1779202295000
+          "priceUpdated": 1779273212000
         },
         "summary": {
           "price": {
-            "value": 224.04,
-            "valueMainUnit": "224",
-            "valueFractionalUnit": "04",
+            "value": 240,
+            "valueMainUnit": "240",
+            "valueFractionalUnit": "00",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "previousPrice": null,
-          "newRoute": false,
+          "newRoute": true,
           "tripDurationDays": 2
         }
       },
-      "totalFares": 131,
-      "capturedAt": "2026-05-19T16:44:51.006Z"
+      "totalFares": 5,
+      "capturedAt": "2026-05-20T18:29:11.294Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 524,
-      "normalized": 76,
+      "totalRaw": 2081,
+      "normalized": 457,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "TIA",
@@ -114,7 +114,7 @@
           "exchangedCurrencyCode": null
         },
         "priceType": "noData",
-        "date": "2026-05-19T00:00:00+00:00",
+        "date": "2026-05-20T00:00:00+01:00",
         "classOfService": null,
         "hasMacFlight": false,
         "_route": [
@@ -126,7 +126,7 @@
           6
         ]
       },
-      "capturedAt": "2026-05-19T16:48:24.435Z"
+      "capturedAt": "2026-05-20T18:39:00.836Z"
     },
     "strategy": "playwright-farechart"
   }

@@ -74,8 +74,15 @@ async function fetchWithTimeout(url, opts = {}) {
 }
 
 // ─── Ryanair ──────────────────────────────────────────────────────────────────
-async function fetchRyanairFares(from, to, dateFrom, dateTo) {
-  const inboundTo = addDays(dateTo, 3);
+/**
+ * Pobiera taryfy dla jednej trasy i jednego zakresu długości pobytu.
+ * Dwa wywołania per trasa:
+ *   durationNights=1 → 1-nocne weekendy (Sb→Nd, Pt→Sb)
+ *   durationNights=2 → 2-nocne weekendy (Pt→Nd)
+ * Dzięki temu inbound ZAWSZE ląduje w weekendowym dniu, a nie w poniedziałek/wtorek.
+ */
+async function fetchRyanairFaresForDuration(from, to, dateFrom, dateTo, durationNights) {
+  const inboundTo = addDays(dateTo, durationNights + 1);
 
   const params = new URLSearchParams({
     departureAirportIataCode:  from,
@@ -84,8 +91,8 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
     outboundDepartureDateTo:   dateTo,
     inboundDepartureDateFrom:  dateFrom,
     inboundDepartureDateTo:    inboundTo,
-    durationFrom:              '1',
-    durationTo:                '3',
+    durationFrom:              String(durationNights),
+    durationTo:                String(durationNights),
     outboundDepartureTimeFrom: '00:00',
     outboundDepartureTimeTo:   '23:59',
     inboundDepartureTimeFrom:  '00:00',
@@ -112,6 +119,31 @@ async function fetchRyanairFares(from, to, dateFrom, dateTo) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = await res.json();
   return Array.isArray(data.fares) ? data.fares : [];
+}
+
+/**
+ * Pobiera WSZYSTKIE weekendowe taryfy dla trasy:
+ * 1-nocne (Sb→Nd, Pt→Sb) + 2-nocne (Pt→Nd), deduplikowane po dacie wylotu.
+ * Dla tej samej daty wylotu zachowujemy tańszą opcję.
+ */
+async function fetchRyanairFares(from, to, dateFrom, dateTo) {
+  const [fares1, fares2] = await Promise.all([
+    fetchRyanairFaresForDuration(from, to, dateFrom, dateTo, 1),
+    fetchRyanairFaresForDuration(from, to, dateFrom, dateTo, 2),
+  ]);
+
+  // Deduplikacja: dla tej samej daty wylotu bierz tańszą opcję
+  const byDate = new Map();
+  for (const fare of [...fares1, ...fares2]) {
+    const dateKey = fare.outbound?.departureDate?.slice(0, 10);
+    if (!dateKey) continue;
+    const existing = byDate.get(dateKey);
+    const price = fare.summary?.price?.value || Infinity;
+    if (!existing || price < (existing.summary?.price?.value || Infinity)) {
+      byDate.set(dateKey, fare);
+    }
+  }
+  return [...byDate.values()];
 }
 
 // ─── Wizzair przez Playwright + farechart API ─────────────────────────────────
@@ -186,7 +218,6 @@ async function callFarechart(page, from, to, centerDateStr, apiVersion) {
     isFlightChange: false,
     flightList: [
       { departureStation: from, arrivalStation: to, date: centerDateStr + 'T00:00:00' },
-      { departureStation: to,   arrivalStation: from, date: centerDateStr + 'T00:00:00' },
     ],
   });
 
@@ -229,8 +260,8 @@ async function fetchWizzairViaPlaywright(wRoutes) {
 
   const today   = todayStr();
   const maxDate = addMonths(today, MONTHS_AHEAD);
-  const seen          = new Set();
-  const allFlights    = [];
+  const seen           = new Set();
+  const allFlights     = [];
   const returnPriceMap = new Map();
   let totalAdded   = 0;
   let windowsDone  = 0;
@@ -264,10 +295,16 @@ async function fetchWizzairViaPlaywright(wRoutes) {
     let windowAdded = 0;
     let reqCount    = 0;
 
+    // Forward routes → allFlights; reverse routes → returnPriceMap (real return prices)
+    const allDirections = [
+      ...wRoutes.map(r => ({ route: r, isReturn: false })),
+      ...wRoutes.map(([f, t, ...rest]) => ({ route: [t, f, ...rest], isReturn: true })),
+    ];
+
     try {
-      for (const route of wRoutes) {
+      for (const { route, isReturn } of allDirections) {
         const [from, to] = route;
-        if (!ORIGINS[from] || !DESTS[to]) continue;
+        if (!isReturn && (!ORIGINS[from] || !DESTS[to])) continue;
 
         // Zatrzymaj gdy Kasada zaczyna blokować
         if (reqCount >= KASADA_MAX_REQUESTS) break;
@@ -284,22 +321,21 @@ async function fetchWizzairViaPlaywright(wRoutes) {
           if (f.departureStation !== from || f.arrivalStation !== to) continue;
           const dateStr = f.date ? f.date.slice(0, 10) : null;
           if (!dateStr || dateStr < today || dateStr > maxDate) continue;
-          const key = `${from}-${to}-${dateStr}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-          allFlights.push({ ...f, _route: route });
-          windowAdded++;
-          totalAdded++;
-        }
 
-        for (const f of result.inbound || []) {
-          const dateStr = f.date ? f.date.slice(0, 10) : null;
-          if (!dateStr || dateStr < today || dateStr > maxDate) continue;
-          const amount = f.price?.amount || 0;
-          if (amount > 0) {
-            const key = `${f.departureStation}-${f.arrivalStation}-${dateStr}`;
-            if (!returnPriceMap.has(key) || returnPriceMap.get(key) > amount)
-              returnPriceMap.set(key, amount);
+          if (!isReturn) {
+            const key = `${from}-${to}-${dateStr}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            allFlights.push({ ...f, _route: route });
+            windowAdded++;
+            totalAdded++;
+          } else {
+            const amount = f.price?.amount || 0;
+            if (amount > 0) {
+              const key = `${from}-${to}-${dateStr}`;
+              if (!returnPriceMap.has(key) || returnPriceMap.get(key) > amount)
+                returnPriceMap.set(key, amount);
+            }
           }
         }
 
@@ -492,19 +528,16 @@ function buildWeekendRecord(dateStr, dow, deptH, deptM, arrH, arrM, durStr) {
     dateLabel = fmtRange(dDate, sun, 2);
   }
 
-  const retDeptH = (deptH + 12) % 24;
-  const retArrH  = (arrH  + 12) % 24;
-
   return {
     deptDay, retDay, pattern,
     date: dateLabel, raw: dateStr, retRaw,
     month: parseInt(dateStr.slice(5, 7), 10),
     year:  parseInt(dateStr.slice(0, 4), 10),
-    dept:  `${String(deptH).padStart(2,'0')}:${String(deptM).padStart(2,'0')}`,
-    arr:   `${String(arrH).padStart(2,'0')}:${String(arrM).padStart(2,'0')}`,
-    retDept: `${String(retDeptH).padStart(2,'0')}:00`,
-    retArr:  `${String(retArrH).padStart(2,'0')}:${String(arrM).padStart(2,'0')}`,
-    dur: durStr || '2h 00m',
+    dept:  deptH != null ? `${String(deptH).padStart(2,'0')}:${String(deptM).padStart(2,'0')}` : null,
+    arr:   arrH  != null ? `${String(arrH).padStart(2,'0')}:${String(arrM).padStart(2,'0')}` : null,
+    retDept: null,
+    retArr:  null,
+    dur: durStr || null,
   };
 }
 
@@ -539,25 +572,26 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   const durStr = (out.arrivalDate && out.departureDate) ? calcDur(out.departureDate, out.arrivalDate) : null;
   const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
 
-  // Override return times with real inbound flight data from API
-  // Only when inbound falls on a weekend day (Fri/Sat/Sun) — if cheapest inbound
-  // is Mon-Thu, keep the buildWeekendRecord estimate so dates/patterns stay consistent
+  // Zawsze używaj rzeczywistych danych z API dla lotu powrotnego.
+  // Wcześniej odrzucaliśmy powroty w dni powszednie (Pon-Czw) — to powodowało
+  // że retDept/retArr zostawały null zamiast rzeczywistych godzin z API.
   if (inb?.departureDate && inb.departureDate.length >= 16) {
     const actualRetDate = inb.departureDate.slice(0, 10);
-    const actualRetDow = classifyDow(actualRetDate);
-    if (actualRetDow) {
-      const [rDH, rDM] = parseTimes(inb.departureDate);
-      weekend.retDept = `${String(rDH).padStart(2,'0')}:${String(rDM).padStart(2,'0')}`;
-      if (inb.arrivalDate && inb.arrivalDate.length >= 16) {
-        const [rAH, rAM] = parseTimes(inb.arrivalDate);
-        weekend.retArr = `${String(rAH).padStart(2,'0')}:${String(rAM).padStart(2,'0')}`;
-      }
-      if (actualRetDate !== weekend.retRaw) {
-        weekend.retRaw = actualRetDate;
-        if (actualRetDow === 'sat') { weekend.retDay = 'sobota'; weekend.pattern = dow === 'fri' ? 'fri-sat' : 'sat-only'; }
-        else if (actualRetDow === 'fri') { weekend.retDay = 'piątek'; }
-        // 'sun' → retDay already 'niedziela' from buildWeekendRecord
-      }
+    const [rDH, rDM] = parseTimes(inb.departureDate);
+    weekend.retDept = `${String(rDH).padStart(2,'0')}:${String(rDM).padStart(2,'0')}`;
+    if (inb.arrivalDate && inb.arrivalDate.length >= 16) {
+      const [rAH, rAM] = parseTimes(inb.arrivalDate);
+      weekend.retArr = `${String(rAH).padStart(2,'0')}:${String(rAM).padStart(2,'0')}`;
+    }
+    if (actualRetDate !== weekend.retRaw) {
+      weekend.retRaw = actualRetDate;
+      const actualRetDow = classifyDow(actualRetDate);
+      const retDow = new Date(actualRetDate + 'T12:00:00').getDay();
+      const retDayNames = ['niedziela','poniedziałek','wtorek','środa','czwartek','piątek','sobota'];
+      weekend.retDay = retDayNames[retDow];
+      if (actualRetDow === 'sat') weekend.pattern = dow === 'fri' ? 'fri-sat' : 'sat-only';
+      else if (actualRetDow === 'fri') weekend.pattern = 'fri-only';
+      else if (!actualRetDow) weekend.pattern = `${dow}-weekday`;
     }
   }
 
@@ -589,27 +623,18 @@ function normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, id, re
     : dow === 'fri' ? addDays(dateStr, 2)
     : dateStr;
   const retPrice = returnPriceMap?.get(`${to}-${from}-${retDate}`) || 0;
-  const price2 = retPrice > 0 ? Math.round(price1 + retPrice) : Math.round(price1 * 2);
+  if (retPrice === 0) return null; // brak rzeczywistej ceny powrotu → nie pokazuj
+  const price2 = Math.round(price1 + retPrice);
   if (price2 > MAX_BUDGET_RT) return null;
 
-  // Godziny wylotu: z search API (jeśli pobrane), inaczej ze statycznych ROUTES
+  // Godziny wylotu: tylko z search API (jeśli pobrane) — brak szacunków
   const outTimes = timesMap?.get(`${from}-${to}-${dateStr}`);
-  let deptH, deptM, arrH, arrM, durStr;
+  const weekend = buildWeekendRecord(dateStr, dow, null, null, null, null, null);
   if (outTimes?.dept) {
-    [deptH, deptM] = outTimes.dept.split(':').map(Number);
-    [arrH,  arrM]  = (outTimes.arr || '00:00').split(':').map(Number);
-    durStr = outTimes.dur;
-  } else {
-    const [, , , , durMin, deptHour] = route;
-    const totalMin = durMin || 120;
-    deptH = deptHour || 8; deptM = 0;
-    const arrTotal = deptH * 60 + totalMin;
-    arrH = Math.floor(arrTotal / 60) % 24;
-    arrM = arrTotal % 60;
-    durStr = `${Math.floor(totalMin / 60)}h ${String(totalMin % 60).padStart(2, '0')}m`;
+    weekend.dept = outTimes.dept;
+    weekend.arr  = outTimes.arr || null;
+    weekend.dur  = outTimes.dur || null;
   }
-
-  const weekend = buildWeekendRecord(dateStr, dow, deptH, deptM, arrH, arrM, durStr);
 
   // Godziny powrotu z search API (jeśli dostępne)
   if (retDate !== dateStr) {

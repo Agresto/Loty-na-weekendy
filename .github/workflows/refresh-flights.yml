@@ -1,19 +1,23 @@
 name: Refresh flight prices
 
 # ═════════════════════════════════════════════════════════════════════════════
-# Codzienne odświeżanie cen lotów z Ryanair + Wizzair.
+# Odświeżanie cen lotów z Ryanair + Wizzair — 3× dziennie.
+#
+# Harmonogram (UTC → CET/CEST):
+#   05:00 UTC = 06:00 CET / 07:00 CEST  ← Ryanair publikuje nowe ceny ~4-5 UTC
+#   15:00 UTC = 16:00 CET / 17:00 CEST  ← popołudnie: flash sale + ceny weekendowe
+#
+# 2× dziennie = ~40 min Actions/dzień → ~1200 min/miesiąc (w limicie free tier 2000)
 #
 # Strategia anty-bot:
 #   Patchright (stealth Playwright) omija Kasada fingerprinting Wizzair.
-#   Kasada wykrywa flagi automatyzacji przeglądarki — Patchright je usuwa.
 #   ubuntu-latest → Patchright + patched Chromium → Wizzair: prawdziwe ceny
-#
-# GitHub Actions cron działa w UTC. 7:00 UTC = 8:00 CET / 9:00 CEST
 # ═════════════════════════════════════════════════════════════════════════════
 
 on:
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '0 5 * * *'
+    - cron: '0 15 * * *'
   workflow_dispatch:
   push:
     paths:

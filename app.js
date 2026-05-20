@@ -1500,24 +1500,27 @@ function buildFlightUrl(airline, from, to, date, retDate) {
   const toU = to.toUpperCase();
 
   if (airline === 'ryanair') {
+    // /trip/flights/select — strona wyników dla konkretnej daty (nie fare-finder z elastycznym weekendem,
+    // który pre-selekcjonuje inne loty niż w naszych danych). Użytkownik widzi wszystkie loty na dany
+    // dzień i wybiera ten z godziną podaną w tooltipie.
     const params = new URLSearchParams([
-      ['originIata', fromU], ['destinationIata', toU],
-      ['adults', '1'], ['children', '0'], ['teens', '0'], ['infants', '0'],
-      ['currency', 'PLN'], ['market', 'pl-pl'],
+      ['adults', '1'], ['teens', '0'], ['children', '0'], ['infants', '0'],
       ['dateOut', date],
-      ['isFlexibleDay', 'true'],
-      ['dayOfWeek', 'FRIDAY,SATURDAY,SUNDAY'],
-      ['isReturn', retDate ? 'true' : 'false'],
+      ['isConnectedFlight', 'false'],
+      ['isReturn', 'false'],
+      ['discount', '0'],
+      ['promoCode', ''],
+      ['originIata', fromU],
+      ['destinationIata', toU],
+      ['tpAdults', '1'], ['tpTeens', '0'], ['tpChildren', '0'], ['tpInfants', '0'],
+      ['tpStartDate', date],
+      ['tpDiscount', '0'],
+      ['tpPromoCode', ''],
+      ['tpOriginIata', fromU],
+      ['tpDestinationIata', toU],
     ]);
 
-    if (retDate) {
-      params.append('dateIn', retDate);
-      params.append('daysTrip', '2');
-      params.append('nightsFrom', '1');
-      params.append('nightsTo', '3');
-    }
-
-    return `https://www.ryanair.com/pl/pl/fare-finder?${params.toString()}`;
+    return `https://www.ryanair.com/pl/pl/trip/flights/select?${params.toString()}`;
   }
 
   if (airline === 'wizzair') {
@@ -1546,17 +1549,16 @@ function cardHTML(f, i) {
     ? buildFlightUrl(f.airline, f.from, f.to, f.raw, f.retRaw)
     : buildFlightUrl(f.airline, f.from, f.to, f.raw);
   // Powrót: od lotniska docelowego z powrotem do startowego, na datę powrotu
-  const urlRet = S.roundtrip
-    ? buildFlightUrl(f.airline, f.from, f.to, f.raw, f.retRaw)
-    : buildFlightUrl(f.airline, f.to, f.from, f.retRaw);
+  const urlRet = buildFlightUrl(f.airline, f.to, f.from, f.retRaw);
 
   // Etykiety przycisków z datą i godziną wylotu — żeby użytkownik wiedział
   // który lot wybrać po otwarciu strony linii
   const outDateFmt = formatDateShort(f.raw);    // np. "17.04.2026"
   const retDateFmt = formatDateShort(f.retRaw); // np. "19.04.2026"
   // Skrócony format na przycisku: "17.04 · 06:40"
-  const outLabel = `${outDateFmt.slice(0,5)} · ${f.dept}`;   // "17.04 · 06:40"
-  const retLabel = `${retDateFmt.slice(0,5)} · ${f.retDept}`; // "19.04 · 20:00"
+  const outLabel = `${outDateFmt.slice(0,5)}${f.dept ? ' · ' + f.dept : ''}`;
+  const retTime  = f.retDept || '?';
+  const retLabel = `${retDateFmt.slice(0,5)}${f.retDept ? ' · ' + f.retDept : ''}`;
 
   // Badges
   const seaB  = f.sea  ? `<span class="badge badge-sea">🌊 Przy morzu</span>` : '';
@@ -1586,16 +1588,16 @@ function cardHTML(f, i) {
       </div>
       <div class="leg-row">
         <div class="t-block">
-          <div class="t-val">${f.retDept}</div>
+          <div class="t-val">${f.retDept || '—'}</div>
           <div class="t-city">${f.toCity}</div>
           <div style="font-size:.62rem;color:var(--text-muted)">${f.to}</div>
         </div>
         <div class="dur-center">
-          <div class="dur-txt">${f.dur}</div>
+          ${f.dur ? `<div class="dur-txt">${f.dur}</div>` : ''}
           <div class="dur-line"></div>
         </div>
         <div class="t-block" style="text-align:right">
-          <div class="t-val">${f.retArr}</div>
+          <div class="t-val">${f.retArr || '—'}</div>
           <div class="t-city">${f.fromCity}</div>
           <div style="font-size:.62rem;color:var(--text-muted)">${f.from}</div>
         </div>
@@ -1605,8 +1607,8 @@ function cardHTML(f, i) {
   // ── Przyciski zakupu ────────────────────────────────────────────────────────
   // Tooltip wyjaśnia, że po kliknięciu użytkownik trafi na stronę linii z
   // wynikami dla tej daty — powinien wybrać lot o godzinie widocznej na przycisku.
-  const outTooltip = `Otworzy ${f.airline === 'ryanair' ? 'Ryanair' : 'Wizzair'} z wynikami dla ${f.from}→${f.to} dnia ${outDateFmt}. Wybierz lot o godz. ${f.dept}.`;
-  const retTooltip = `Otworzy ${f.airline === 'ryanair' ? 'Ryanair' : 'Wizzair'} z wynikami dla ${f.to}→${f.from} dnia ${retDateFmt}. Wybierz lot o godz. ${f.retDept}.`;
+  const outTooltip = `Otworzy ${f.airline === 'ryanair' ? 'Ryanair' : 'Wizzair'} z wynikami dla ${f.from}→${f.to} dnia ${outDateFmt}.${f.dept ? ` Wybierz lot o godz. ${f.dept}.` : ''}`;
+  const retTooltip = `Otworzy ${f.airline === 'ryanair' ? 'Ryanair' : 'Wizzair'} z wynikami dla ${f.to}→${f.from} dnia ${retDateFmt}.${f.retDept ? ` Wybierz lot o godz. ${f.retDept}.` : ''}`;
 
   const buyButtons = S.roundtrip ? `
     <div class="fc-buy-btns">
@@ -1614,14 +1616,14 @@ function cardHTML(f, i) {
          target="_blank" rel="noopener noreferrer"
          class="btn-book"
          title="${outTooltip}"
-         aria-label="Kup bilet: ${f.fromCity} → ${f.toCity}, ${outDateFmt} godz. ${f.dept}">
+         aria-label="Kup bilet: ${f.fromCity} → ${f.toCity}, ${outDateFmt}${f.dept ? ` godz. ${f.dept}` : ''}">
         ✈ Tam &nbsp;${outLabel} ↗
       </a>
       <a href="${urlRet}"
          target="_blank" rel="noopener noreferrer"
          class="btn-book btn-book-ret"
          title="${retTooltip}"
-         aria-label="Kup bilet powrotny: ${f.toCity} → ${f.fromCity}, ${retDateFmt} godz. ${f.retDept}">
+         aria-label="Kup bilet powrotny: ${f.toCity} → ${f.fromCity}, ${retDateFmt}${f.retDept ? ` godz. ${f.retDept}` : ''}">
         ↩ Powrót &nbsp;${retLabel} ↗
       </a>
     </div>` : `
@@ -1629,7 +1631,7 @@ function cardHTML(f, i) {
        target="_blank" rel="noopener noreferrer"
        class="btn-book"
        title="${outTooltip}"
-       aria-label="Kup bilet: ${f.fromCity} → ${f.toCity}, ${outDateFmt} godz. ${f.dept}">
+       aria-label="Kup bilet: ${f.fromCity} → ${f.toCity}, ${outDateFmt}${f.dept ? ` godz. ${f.dept}` : ''}">
       ✈ Kup bilet &nbsp;${outLabel} ↗
     </a>`;
 
@@ -1646,7 +1648,7 @@ function cardHTML(f, i) {
     <div class="fc-date">
       <span>📅</span>
       <span class="fc-date-txt">${f.date}</span>
-      <span class="fc-date-dur">${f.dur} lotu</span>
+      ${f.dur ? `<span class="fc-date-dur">${f.dur} lotu</span>` : ''}
     </div>
 
     <div class="fc-times">
@@ -1656,7 +1658,7 @@ function cardHTML(f, i) {
       </div>
       <div class="leg-row">
         <div class="t-block">
-          <div class="t-val">${f.dept}</div>
+          <div class="t-val">${f.dept || '—'}</div>
           <div class="t-city">${f.fromCity}</div>
           <div style="font-size:.62rem;color:var(--text-muted)">${f.from}</div>
         </div>
@@ -1666,7 +1668,7 @@ function cardHTML(f, i) {
           <div class="dur-txt" style="font-size:.67rem">bezpośredni</div>
         </div>
         <div class="t-block" style="text-align:right">
-          <div class="t-val">${f.arr}</div>
+          <div class="t-val">${f.arr || '—'}</div>
           <div class="t-city">${f.toCity}</div>
           <div style="font-size:.62rem;color:var(--text-muted)">${f.to}</div>
         </div>
