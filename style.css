@@ -184,13 +184,85 @@ ul { list-style: none; }
   color: var(--text-secondary);
 }
 
-.ticker-item { padding: 0 8px; }
+.ticker-item {
+  padding: 2px 10px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-size: .78rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.ticker-item:hover, .ticker-item:focus-visible {
+  background: rgba(255,255,255,.12);
+  color: var(--text-primary);
+  outline: none;
+}
 .ticker-item strong { color: var(--color-accent); }
 .ticker-div { color: var(--border-input); padding: 0 4px; }
 
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+/* ─── 4b. CHOROPLETH LEGEND ─────────────────────────────────── */
+.choropleth-legend {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: .7rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  line-height: 1.4;
+}
+.choropleth-legend .cl-title {
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+.choropleth-legend .cl-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 2px;
+}
+.choropleth-legend .cl-row span {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  opacity: .9;
+}
+
+.alt-dates-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px 12px;
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  color: var(--color-accent);
+  font-size: .8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background .15s, color .15s;
+}
+.alt-dates-btn:hover, .alt-dates-btn:focus-visible {
+  background: var(--color-accent);
+  color: #fff;
+  outline: none;
 }
 
 /* ─── 5. NAVBAR ────────────────────────────────────────────── */
@@ -1757,10 +1829,20 @@ section {
   color: var(--text-muted);
 }
 
+.ltt-hint {
+  font-size: .68rem;
+  color: var(--color-accent);
+  margin-top: 4px;
+  opacity: .85;
+}
+
 /* ── Route arc lines (Leaflet SVG overlay) ─────────────────── */
 .leaflet-overlay-pane path {
   transition: opacity .18s ease, stroke-width .18s ease;
 }
+
+/* Kursor na interaktywnych elementach mapy (trasy, markery, choropleth) */
+.leaflet-interactive { cursor: pointer; }
 
 .map-controls {
   display: flex;

@@ -101,6 +101,8 @@ const AIRPORTS = [
   {code:'RHO',name:'Rodos',                       country:'Grecja',          flag:'🇬🇷',lat:36.4054,lng:28.0862},
   {code:'NCE',name:'Nicea',                       country:'Francja',         flag:'🇫🇷',lat:43.6584,lng:7.2150},
   {code:'VAR',name:'Warna',                       country:'Bułgaria',        flag:'🇧🇬',lat:43.2321,lng:27.8251},
+  {code:'LCA',name:'Larnaka (Cypr)',              country:'Cypr',            flag:'🇨🇾',lat:34.8751,lng:33.6249},
+  {code:'LTN',name:'Londyn Luton',                country:'Wielka Brytania', flag:'🇬🇧',lat:51.8747,lng:-0.3683},
 ];
 
 /**
@@ -313,8 +315,8 @@ async function _pollRefreshStatus() {
       _setRefreshStatus('✅ Gotowe — przeładowuję dane…', 'rf-done');
       clearInterval(_refreshPollTimer); _refreshPollTimer = null;
       setTimeout(async () => {
-        await loadFlights(); recomputeCheapest(); updateLastUpdatedUI(); renderResults();
-        if (LMap) { LMarkers.forEach(m=>LMap.removeLayer(m)); LRoutes.forEach(l=>LMap.removeLayer(l)); LMarkers=[]; LRoutes=[]; drawDots(); drawRoutes(); }
+        await loadFlights(); recomputeCheapest(); updateLastUpdatedUI(); initTicker(); renderResults();
+        if (LMap) { LMarkers.forEach(m=>LMap.removeLayer(m)); LRoutes.forEach(l=>LMap.removeLayer(l)); LMarkers=[]; LRoutes=[]; drawDots(); drawRoutes(); drawChoropleth(); }
         closeRefreshModal();
         const btn = document.getElementById('refreshBtn');
         if (btn) { btn.disabled = false; btn.textContent = '🔄 Odśwież'; }
@@ -382,17 +384,25 @@ const VIBES = [
   {city:'Paryż',     country:'Francja',       destCode:'CDG',badge:'Wieża Eiffla',            price:'od 299 PLN',img:'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=520&fit=crop&q=80',alt:'Wieża Eiffla'},
 ];
 
-const TICKER_DATA = [
-  {from:'KTW',to:'Tirana',    p:'149 PLN'},{from:'KRK',to:'Skopje',    p:'169 PLN'},
-  {from:'KRK',to:'Amsterdam', p:'199 PLN'},{from:'KTW',to:'Dublin',    p:'249 PLN'},
-  {from:'KRK',to:'Ateny',     p:'279 PLN'},{from:'KTW',to:'Londyn',    p:'279 PLN'},
-  {from:'KTW',to:'Rzym',      p:'319 PLN'},{from:'KRK',to:'Barcelona', p:'359 PLN'},
-  {from:'KRK',to:'Lizbona',   p:'419 PLN'},{from:'KTW',to:'Mallorca',  p:'449 PLN'},
-];
+
+// Mapowanie polskich nazw krajów → ISO 3166-1 numeric (world-atlas)
+const COUNTRY_ISO = {
+  'Hiszpania':       724, 'Włochy':          380, 'Francja':         250,
+  'Wielka Brytania': 826, 'Irlandia':        372, 'Holandia':        528,
+  'Austria':          40, 'Węgry':           348, 'Albania':           8,
+  'Macedonia Pn.':   807, 'Bułgaria':        100, 'Rumunia':         642,
+  'Łotwa':           428, 'Norwegia':        578, 'Malta':           470,
+  'Cypr':            196, 'Niemcy':          276, 'Czechy':          203,
+  'Portugalia':      620, 'Grecja':          300,
+};
+const ISO_COUNTRY = Object.fromEntries(Object.entries(COUNTRY_ISO).map(([k,v]) => [v, k]));
 
 // Leaflet map state
-let LMap         = null;
-let LTileLayer   = null;
+let LMap          = null;
+let LTileLayer    = null;
+let LLabelsLayer  = null;
+let LGeoLayer     = null;
+let _geoData      = null;
 let LRoutes      = [];
 let LMarkers     = [];
 
@@ -446,7 +456,11 @@ const S = {
   origins:    [],
   history:    [],
   alerts:     [],
+  allDates:   false,   // true = pokaż wszystkie terminy w budżecie, false = jeden najtańszy na trasę
 };
+
+// Liczba alternatywnych terminów dla każdego lotu (id → count), wypełniana przez getFlights()
+let _altCounts = {};
 
 const MO_PL = ['Sty','Lut','Mar','Kwi','Maj','Cze','Lip','Sie','Wrz','Paź','Lis','Gru'];
 const NOW    = new Date();
@@ -923,9 +937,48 @@ async function sendPriceAlertEmail(toEmail, flight) {
 ================================================================ */
 
 function initTicker() {
-  const items = [...TICKER_DATA, ...TICKER_DATA];
-  document.getElementById('tickerInner').innerHTML =
-    items.map(t => `<span class="ticker-item">✈ ${t.from} → ${t.to} <strong>${t.p}</strong></span><span class="ticker-div">|</span>`).join('');
+  const apFirst = code => {
+    const ap = AIRPORTS.find(a => a.code === code);
+    if (!ap) return code;
+    return ap.name.replace(/\s*\(.*\)/, '').split(' ')[0];
+  };
+
+  const seen = new Set();
+  const deals = FLIGHTS
+    .filter(f => f.price2 > 0)
+    .sort((a, b) => a.price2 - b.price2)
+    .filter(f => { const k = `${f.from}-${f.to}`; if (seen.has(k)) return false; seen.add(k); return true; })
+    .slice(0, 10);
+
+  if (!deals.length) return;
+
+  const mkItem = f =>
+    `<button class="ticker-item" onclick="tickerClick('${f.from}','${f.to}')" aria-label="Lot ${f.from} → ${apFirst(f.to)} od ${f.price2} PLN w obie strony">` +
+    `✈ ${f.from} → ${apFirst(f.to)} <strong>${f.price2} PLN</strong></button>` +
+    `<span class="ticker-div">|</span>`;
+
+  document.getElementById('tickerInner').innerHTML = [...deals, ...deals].map(mkItem).join('');
+}
+
+function tickerClick(from, to) {
+  S.origins = [];
+  renderChips();
+  const ap = AIRPORTS.find(a => a.code === from);
+  addOrigin(from, ap ? ap.name : from);
+
+  const destAp = AIRPORTS.find(a => a.code === to);
+  pickDestAC(to, destAp ? destAp.name : to);
+
+  if (!S.roundtrip) {
+    const sw = document.getElementById('swRound');
+    if (sw) { sw.classList.add('on'); sw.setAttribute('aria-checked', 'true'); }
+    S.roundtrip = true;
+  }
+
+  S.sort = 'price';
+
+  renderResults();
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 }
 
 function initVibes() {
@@ -1130,14 +1183,36 @@ function renderChips() {
 function setupDestAC() {
   const inp  = document.getElementById('destIn');
   const drop = document.getElementById('destDrop');
-  inp.addEventListener('input', () => {
-    const q = inp.value.trim().toLowerCase();
-    if (!q) { drop.classList.remove('open'); return; }
-    const extras = 'gdziekolwiek'.includes(q) ? [{code:'ANY',name:'Gdziekolwiek',country:'Wszystkie destynacje',flag:'🌍'}] : [];
-    const m = AIRPORTS.filter(a => !a.isPL && (a.name.toLowerCase().includes(q)||a.code.toLowerCase().includes(q)||a.country.toLowerCase().includes(q))).slice(0,7);
-    const all = [...extras,...m]; if(!all.length){drop.classList.remove('open');return;}
+
+  function availableDests() {
+    if (S.origins.length > 0 && FLIGHTS.length > 0) {
+      const fromSet = new Set(S.origins.map(o => o.code));
+      const toSet   = new Set(FLIGHTS.filter(f => fromSet.has(f.from)).map(f => f.to));
+      return AIRPORTS.filter(a => !a.isPL && toSet.has(a.code));
+    }
+    return AIRPORTS.filter(a => !a.isPL);
+  }
+
+  function showDrop(q) {
+    const extras = (!q || 'gdziekolwiek'.includes(q)) ? [{code:'ANY',name:'Gdziekolwiek',country:'Wszystkie destynacje',flag:'🌍'}] : [];
+    const pool   = availableDests();
+    const m = q
+      ? pool.filter(a => a.name.toLowerCase().includes(q)||a.code.toLowerCase().includes(q)||a.country.toLowerCase().includes(q)).slice(0, 7)
+      : pool.slice(0, 6);
+    const all = [...extras, ...m];
+    if (!all.length) { drop.classList.remove('open'); return; }
     drop.innerHTML = all.map(a=>`<div class="ac-item" role="option" tabindex="0" onclick="pickDestAC('${a.code}','${a.name}')" onkeydown="if(event.key==='Enter')pickDestAC('${a.code}','${a.name}')"><span class="ap-flag">${a.flag}</span><div><div class="ap-name">${a.name}</div><div class="ap-ctry">${a.country}</div></div><span class="ap-code">${a.code}</span></div>`).join('');
     drop.classList.add('open');
+  }
+
+  inp.addEventListener('focus', () => {
+    if (inp.value.trim() || S.origins.length === 0) return;
+    showDrop('');
+  });
+  inp.addEventListener('input', () => {
+    const q = inp.value.trim().toLowerCase();
+    if (!q) { drop.classList.remove('open'); if (S.origins.length > 0) showDrop(''); return; }
+    showDrop(q);
   });
   document.addEventListener('click', e => { if(!inp.contains(e.target)&&!drop.contains(e.target)) drop.classList.remove('open'); });
 }
@@ -1175,7 +1250,20 @@ function _syncSliderFill(r) {
   const pct = ((r.value - r.min) / (r.max - r.min) * 100).toFixed(1) + '%';
   r.style.setProperty('--val', pct);
 }
-function togSw(el) { el.classList.toggle('on'); const on=el.classList.contains('on'); el.setAttribute('aria-checked',on); if(el.id==='swRound')S.roundtrip=on; if(el.id==='swSea')S.seaOnly=on; if(el.id==='swLgbt')S.lgbtOnly=on; }
+function togSw(el) { el.classList.toggle('on'); const on=el.classList.contains('on'); el.setAttribute('aria-checked',on); if(el.id==='swRound')S.roundtrip=on; if(el.id==='swSea')S.seaOnly=on; if(el.id==='swLgbt')S.lgbtOnly=on; if(el.id==='swAllDates')S.allDates=on; }
+
+function showAltDates(from, to) {
+  S.origins = []; renderChips();
+  const ap = AIRPORTS.find(a => a.code === from);
+  addOrigin(from, ap ? ap.name : from);
+  const dp = AIRPORTS.find(a => a.code === to);
+  pickDestAC(to, dp ? dp.name : to);
+  const sw = document.getElementById('swAllDates');
+  if (sw && !S.allDates) { sw.classList.add('on'); sw.setAttribute('aria-checked', 'true'); S.allDates = true; }
+  S.sort = 'date';
+  renderResults();
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+}
 
 /* ================================================================
    SEKCJA 12: WYSZUKIWANIE I RENDEROWANIE WYNIKÓW
@@ -1246,6 +1334,24 @@ function getFlights() {
     return true;
   });
 
+  // Deduplikacja — jeden najtańszy termin na trasę (jeśli tryb allDates wyłączony)
+  _altCounts = {};
+  if (!S.allDates) {
+    const byRoute = new Map();
+    fl.forEach(f => {
+      const k = `${f.from}-${f.to}`;
+      if (!byRoute.has(k)) byRoute.set(k, []);
+      byRoute.get(k).push(f);
+    });
+    fl = [];
+    byRoute.forEach(flights => {
+      const price = f => S.roundtrip ? (f.price2 || 9999) : (f.price1 || 9999);
+      const best  = flights.reduce((a, b) => price(a) <= price(b) ? a : b);
+      _altCounts[best.id] = flights.length - 1;
+      fl.push(best);
+    });
+  }
+
   fl.sort((a,b)=>{
     const pa=S.roundtrip?a.price2:a.price1, pb=S.roundtrip?b.price2:b.price1;
     if(S.sort==='price')return pa-pb; if(S.sort==='price-desc')return pb-pa;
@@ -1268,8 +1374,9 @@ function renderResults() {
 
   const ryCount = _cachedFlights.filter(f => f.airline === 'ryanair').length;
   const wzCount = _cachedFlights.filter(f => f.airline === 'wizzair').length;
+  const unitLabel = S.allDates ? 'terminów' : 'tras';
   document.getElementById('resNum').innerHTML =
-    `${_cachedFlights.length} <span style="font-size:.75rem;opacity:.7">(🔵 ${ryCount} · 💜 ${wzCount})</span>`;
+    `${_cachedFlights.length} ${unitLabel} <span style="font-size:.75rem;opacity:.7">(🔵 ${ryCount} · 💜 ${wzCount})</span>`;
 
   if (!_cachedFlights.length) {
     grid.innerHTML=''; grid.style.display='none'; document.getElementById('emptyDiv').style.display='block';
@@ -1608,6 +1715,11 @@ function cardHTML(f, i) {
         ${buyButtons}
       </div>
     </div>
+    ${(!S.allDates && _altCounts[f.id] > 0) ? `
+    <button class="alt-dates-btn" onclick="showAltDates('${f.from}','${f.to}')"
+            aria-label="Pokaż ${_altCounts[f.id]} inne terminy na trasie ${f.from}→${f.to}">
+      📅 +${_altCounts[f.id]} ${_altCounts[f.id] === 1 ? 'inny termin' : (_altCounts[f.id] < 5 ? 'inne terminy' : 'innych terminów')} w tym budżecie
+    </button>` : ''}
   </article>`;
 }
 
@@ -1651,13 +1763,100 @@ function arcPoints(lat1, lng1, lat2, lng2, steps) {
 
 function makeTileLayer(isDark) {
   var url = isDark
-    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    ? 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png';
   return L.tileLayer(url, {
-    attribution: '\u00a9 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors \u00a9 <a href="https://carto.com/attributions">CARTO</a>',
+    attribution: '\u00a9 <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> \u00a9 <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 19,
   });
+}
+
+function makeLabelsLayer(isDark) {
+  var url = isDark
+    ? 'https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png';
+  return L.tileLayer(url, { subdomains: 'abcd', maxZoom: 19, pane: 'labelsPane' });
+}
+
+function priceColor(p) {
+  if (p < 100) return '#10b981';
+  if (p < 150) return '#84cc16';
+  if (p < 200) return '#f59e0b';
+  if (p < 300) return '#f97316';
+  return '#ef4444';
+}
+
+async function _loadGeoData() {
+  if (_geoData) return _geoData;
+  if (typeof topojson === 'undefined') return null;
+  try {
+    const r    = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');
+    const topo = await r.json();
+    const geo  = topojson.feature(topo, topo.objects.countries);
+    const valid = new Set(Object.values(COUNTRY_ISO));
+    geo.features = geo.features.filter(f => valid.has(+f.id));
+    _geoData = geo;
+    return geo;
+  } catch(e) {
+    console.warn('[Map] GeoJSON load failed:', e);
+    return null;
+  }
+}
+
+function drawChoropleth() {
+  if (!LMap || !_geoData) return;
+  if (LGeoLayer) { LMap.removeLayer(LGeoLayer); LGeoLayer = null; }
+
+  const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+  const border = isDark ? 'rgba(255,255,255,.18)' : 'rgba(255,255,255,.7)';
+
+  LGeoLayer = L.geoJSON(_geoData, {
+    style(feature) {
+      const name = ISO_COUNTRY[+feature.id];
+      const d    = name ? CHEAPEST_BY_COUNTRY[name] : null;
+      return d
+        ? { fillColor: priceColor(d.price1), fillOpacity: 0.50, color: border, weight: 0.8 }
+        : { fillColor: isDark ? '#1a1a2e' : '#d8dce8', fillOpacity: 0.30,
+            color: isDark ? 'rgba(255,255,255,.06)' : 'rgba(0,0,0,.07)', weight: 0.5 };
+    },
+    onEachFeature(feature, layer) {
+      const name = ISO_COUNTRY[+feature.id];
+      const d    = name ? CHEAPEST_BY_COUNTRY[name] : null;
+      if (!d) return;
+      const flag = AIRPORTS.find(a => a.country === name && !a.isPL)?.flag || '';
+      layer.bindTooltip(
+        '<div class="ltt-name">' + flag + ' ' + name + '</div>' +
+        '<div class="ltt-price">od ' + d.price1 + ' PLN / os.</div>' +
+        '<div class="ltt-sub">' + d.from + ' \u2192 ' + d.to + '</div>',
+        { direction: 'top', className: 'ltt', sticky: true }
+      );
+      layer.on('mouseover', function() { this.setStyle({ fillOpacity: 0.72, weight: 1.4 }); });
+      layer.on('mouseout',  function() { LGeoLayer.resetStyle(this); });
+      layer.on('click', function() {
+        var ap = AIRPORTS.find(function(a) { return a.code === d.to; });
+        if (ap) goToMap(ap.code, ap.name);
+      });
+    },
+  });
+
+  LGeoLayer.addTo(LMap);
+  LGeoLayer.bringToBack();
+}
+
+function addChoroplethLegend() {
+  var ctl = L.control({ position: 'bottomright' });
+  ctl.onAdd = function() {
+    var div = L.DomUtil.create('div', 'choropleth-legend');
+    div.innerHTML =
+      '<div class="cl-title">najtańszy lot \u2022 1 os. \u2022 1 strona</div>' +
+      [['#10b981','&lt; 100 PLN'], ['#84cc16','100\u2013150 PLN'], ['#f59e0b','150\u2013200 PLN'],
+       ['#f97316','200\u2013300 PLN'], ['#ef4444','&gt; 300 PLN']]
+        .map(function(x) { return '<div class="cl-row"><span style="background:' + x[0] + '"></span>' + x[1] + '</div>'; })
+        .join('');
+    return div;
+  };
+  ctl.addTo(LMap);
 }
 
 function initMap() {
@@ -1674,11 +1873,22 @@ function initMap() {
     attributionControl: true,
   });
 
+  LMap.createPane('labelsPane');
+  LMap.getPane('labelsPane').style.zIndex = 450;
+  LMap.getPane('labelsPane').style.pointerEvents = 'none';
+
   LTileLayer = makeTileLayer(isDark);
   LTileLayer.addTo(LMap);
 
+  _loadGeoData().then(function(geo) { if (geo) drawChoropleth(); });
+
   drawDots();
   drawRoutes();
+  addChoroplethLegend();
+
+  LLabelsLayer = makeLabelsLayer(isDark);
+  LLabelsLayer.addTo(LMap);
+
   setTimeout(function() { if (LMap) LMap.invalidateSize(); }, 300);
 }
 
@@ -1688,7 +1898,7 @@ function drawRoutes(origins) {
   LRoutes.forEach(function(l) { LMap.removeLayer(l); });
   LRoutes = [];
 
-  var ors = AIRPORTS.filter(function(a) { return origins.includes(a.code); });
+  var ors  = AIRPORTS.filter(function(a) { return origins.includes(a.code); });
   var seen = new Set();
 
   FLIGHTS.forEach(function(f) {
@@ -1699,14 +1909,59 @@ function drawRoutes(origins) {
     if (!o || !d) return;
     seen.add(key);
 
-    var pts   = arcPoints(o.lat, o.lng, d.lat, d.lng);
-    var color = f.airline === 'ryanair' ? '#5e9eff' : '#c066f0';
+    // Najta\u0144szy lot na tej trasie (mo\u017ce by\u0107 kilka linii/dat)
+    var best = FLIGHTS
+      .filter(function(fl) { return fl.from === f.from && fl.to === f.to; })
+      .sort(function(a, b) { return (a.price2 || 9999) - (b.price2 || 9999); })[0] || f;
 
-    var line = L.polyline(pts, { color: color, weight: 1.8, opacity: 0.38, smoothFactor: 1 });
-    line._toCode   = f.to;
-    line._fromCode = f.from;
-    line.addTo(LMap);
-    LRoutes.push(line);
+    var pts      = arcPoints(o.lat, o.lng, d.lat, d.lng);
+    var color    = best.airline === 'ryanair' ? '#5e9eff' : '#c066f0';
+    var airline  = best.airline === 'ryanair' ? 'Ryanair' : 'Wizzair';
+    var destName = d.name.replace(/\s*\(.*\)/, '');
+
+    // Widoczna linia (non-interactive \u2014 zdarzenia obs\u0142uguje hitbox)
+    var vis = L.polyline(pts, { color: color, weight: 2, opacity: 0.40, smoothFactor: 1, interactive: false });
+    vis._toCode = f.to; vis._fromCode = f.from; vis._isVis = true;
+    vis.addTo(LMap);
+    LRoutes.push(vis);
+
+    // Niewidoczny szeroki hitbox \u2014 \u0142atwy cel klikni\u0119cia
+    var hit = L.polyline(pts, { color: color, weight: 14, opacity: 0, smoothFactor: 1 });
+    hit._toCode = f.to; hit._fromCode = f.from; hit._isHit = true;
+
+    var tt =
+      '<div class="ltt-name">' + (d.flag || '') + ' ' + destName + '</div>' +
+      '<div class="ltt-price">od ' + best.price2 + ' PLN w obie strony</div>' +
+      '<div class="ltt-sub">' + f.from + ' \u2192 ' + f.to + ' \u00b7 ' + airline + '</div>' +
+      '<div class="ltt-hint">Kliknij aby wyszuka\u0107 \u2193</div>';
+    hit.bindTooltip(tt, { direction: 'top', className: 'ltt', sticky: true, offset: [0, -6] });
+
+    (function(vis, fromCode, toCode, toName) {
+      hit.on('mouseover', function() {
+        vis.setStyle({ opacity: 0.92, weight: 3.5 });
+        vis.bringToFront();
+      });
+      hit.on('mouseout', function() {
+        vis.setStyle({ opacity: 0.40, weight: 2 });
+      });
+      hit.on('click', function() {
+        S.origins = []; renderChips();
+        var ap = AIRPORTS.find(function(a) { return a.code === fromCode; });
+        addOrigin(fromCode, ap ? ap.name : fromCode);
+        pickDestAC(toCode, toName);
+        S.sort = 'price';
+        if (!S.roundtrip) {
+          var sw = document.getElementById('swRound');
+          if (sw) { sw.classList.add('on'); sw.setAttribute('aria-checked', 'true'); }
+          S.roundtrip = true;
+        }
+        renderResults();
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+      });
+    })(vis, f.from, f.to, d.name);
+
+    hit.addTo(LMap);
+    LRoutes.push(hit);
   });
 }
 
@@ -1768,14 +2023,18 @@ function drawDots() {
 
 function hlRoutes(toCode) {
   LRoutes.forEach(function(l) {
+    if (l._isHit) return;
     var match = l._toCode === toCode;
-    l.setStyle({ opacity: match ? 0.92 : 0.05, weight: match ? 3.5 : 1.8 });
+    l.setStyle({ opacity: match ? 0.92 : 0.05, weight: match ? 3.5 : 2 });
     if (match) l.bringToFront();
   });
 }
 
 function clRoutes() {
-  LRoutes.forEach(function(l) { l.setStyle({ opacity: 0.38, weight: 1.8 }); });
+  LRoutes.forEach(function(l) {
+    if (l._isHit) return;
+    l.setStyle({ opacity: 0.40, weight: 2 });
+  });
 }
 
 function updateMapRoutes() {
@@ -1802,6 +2061,10 @@ function updateMapTheme(isDark) {
   LMap.removeLayer(LTileLayer);
   LTileLayer = makeTileLayer(isDark);
   LTileLayer.addTo(LMap);
+  if (LLabelsLayer) { LMap.removeLayer(LLabelsLayer); }
+  LLabelsLayer = makeLabelsLayer(isDark);
+  LLabelsLayer.addTo(LMap);
+  drawChoropleth();
 }
 
 

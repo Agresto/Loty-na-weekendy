@@ -157,6 +157,7 @@
         <label class="opt-toggle"><div class="sw on" id="swRound" onclick="togSw(this)" role="switch" aria-checked="true" tabindex="0"></div><span>↔ W obie strony</span></label>
         <label class="opt-toggle"><div class="sw" id="swSea" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>🌊 Tylko przy morzu</span></label>
         <label class="opt-toggle"><div class="sw" id="swLgbt" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>🏳️‍🌈 LGBT+ friendly</span></label>
+        <label class="opt-toggle"><div class="sw" id="swAllDates" onclick="togSw(this)" role="switch" aria-checked="false" tabindex="0"></div><span>📅 Wszystkie terminy w budżecie</span></label>
       </div>
       <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border-subtle);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
         <button class="btn btn-accent btn-lg" style="flex:1;justify-content:center;max-width:320px" onclick="runSearch()">✈ Szukaj lotów</button>
@@ -373,6 +374,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
