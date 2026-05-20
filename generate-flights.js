@@ -184,7 +184,6 @@ const ORIGINS = {
 // ═════════════════════════════════════════════════════════════════════════════
 const ROUTES = [
   // ── KTW ──
-  ['KTW','TIA','wizzair', 99,  160, 6],
   ['KTW','BUD','ryanair', 99,  90,  18],
   ['KTW','OSL','ryanair', 159, 155, 16],
   ['KTW','LTN','wizzair', 149, 145, 16],
@@ -216,7 +215,6 @@ const ROUTES = [
   ['KRK','DUB','ryanair', 169, 195, 6],
   ['KRK','PMI','ryanair', 229, 215, 10],
   ['KRK','VIE','ryanair', 79,  85,  20],
-  ['KRK','BUD','wizzair', 99,  90,  18],
   ['KRK','SOF','wizzair', 159, 175, 8],
   // ── WAW ──  (Wizzair: tylko Ryanair — Wizzair ograniczony do KTW+KRK dla lepszego pokrycia)
   // ── WRO ──
