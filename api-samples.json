@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-20T19:18:38.707Z",
+  "capturedAt": "2026-05-21T14:04:05.179Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
@@ -42,7 +42,7 @@
           "flightKey": "FR~9786~ ~~KTW~10/30/2026 19:40~BUD~10/30/2026 20:45~~",
           "flightNumber": "FR9786",
           "previousPrice": null,
-          "priceUpdated": 1779273477000
+          "priceUpdated": 1779359876000
         },
         "inbound": {
           "departureAirport": {
@@ -79,7 +79,7 @@
           "flightKey": "FR~9785~ ~~BUD~11/01/2026 15:25~KTW~11/01/2026 16:25~~",
           "flightNumber": "FR9785",
           "previousPrice": null,
-          "priceUpdated": 1779273212000
+          "priceUpdated": 1779359610000
         },
         "summary": {
           "price": {
@@ -95,18 +95,18 @@
         }
       },
       "totalFares": 5,
-      "capturedAt": "2026-05-20T19:08:53.991Z"
+      "capturedAt": "2026-05-21T13:54:35.193Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 1857,
-      "normalized": 410,
+      "totalRaw": 1815,
+      "normalized": 243,
       "sample": {
         "departureStation": "KTW",
-        "arrivalStation": "TIA",
+        "arrivalStation": "LTN",
         "price": {
           "amount": 0,
           "currencyCode": "PLN",
@@ -114,19 +114,19 @@
           "exchangedCurrencyCode": null
         },
         "priceType": "noData",
-        "date": "2026-05-20T00:00:00+01:00",
+        "date": "2026-05-21T00:00:00+01:00",
         "classOfService": null,
         "hasMacFlight": false,
         "_route": [
           "KTW",
-          "TIA",
+          "LTN",
           "wizzair",
-          99,
-          160,
-          6
+          149,
+          145,
+          16
         ]
       },
-      "capturedAt": "2026-05-20T19:18:38.678Z"
+      "capturedAt": "2026-05-21T14:04:05.163Z"
     },
     "strategy": "playwright-farechart"
   }

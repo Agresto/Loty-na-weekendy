@@ -538,11 +538,23 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
   const durStr = (out.arrivalDate && out.departureDate) ? calcDur(out.departureDate, out.arrivalDate) : null;
   const weekend = buildWeekendRecord(dateStr, dow, dH, dM, aH, aM, durStr);
 
-  // Zawsze używaj rzeczywistych danych z API dla lotu powrotnego.
-  // Wcześniej odrzucaliśmy powroty w dni powszednie (Pon-Czw) — to powodowało
-  // że retDept/retArr zostawały null zamiast rzeczywistych godzin z API.
   if (inb?.departureDate && inb.departureDate.length >= 16) {
     const actualRetDate = inb.departureDate.slice(0, 10);
+    const retDow = new Date(actualRetDate + 'T12:00:00').getDay();
+    const actualRetDow = classifyDow(actualRetDate);
+
+    // Dozwolone wzorce weekendowe:
+    //   Pt/Sb/Nd → Pt/Sb/Nd (weekendowy powrót) ✓
+    //   Pt → Pn (długi weekend Pt→Pn, 3 noce) ✓
+    //   Sb → Pn (2 noce: Sb wieczór + Nd w miejscu) ✓
+    //   Nd → Pn/Wt (start w niedzielę = nie weekend) ✗
+    if (!actualRetDow) {
+      // Powrót w dzień powszedni — odrzuć jeśli wylot w niedzielę
+      if (dow === 'sun') return null;
+      // Odrzuć powroty wtorek–czwartek (zostawiamy tylko Pn)
+      if (retDow !== 1) return null;
+    }
+
     const [rDH, rDM] = parseTimes(inb.departureDate);
     weekend.retDept = `${String(rDH).padStart(2,'0')}:${String(rDM).padStart(2,'0')}`;
     if (inb.arrivalDate && inb.arrivalDate.length >= 16) {
@@ -551,13 +563,11 @@ function normalizeRyanairFare(fare, from, to, origInfo, destInfo, id) {
     }
     if (actualRetDate !== weekend.retRaw) {
       weekend.retRaw = actualRetDate;
-      const actualRetDow = classifyDow(actualRetDate);
-      const retDow = new Date(actualRetDate + 'T12:00:00').getDay();
       const retDayNames = ['niedziela','poniedziałek','wtorek','środa','czwartek','piątek','sobota'];
       weekend.retDay = retDayNames[retDow];
       if (actualRetDow === 'sat') weekend.pattern = dow === 'fri' ? 'fri-sat' : 'sat-only';
       else if (actualRetDow === 'fri') weekend.pattern = 'fri-only';
-      else if (!actualRetDow) weekend.pattern = `${dow}-weekday`;
+      else if (!actualRetDow) weekend.pattern = 'fri-mon'; // tylko Pt→Pn
     }
   }
 
@@ -585,9 +595,10 @@ function normalizeFarechartFlight(f, from, to, origInfo, destInfo, route, id, re
   if (!price1 || price1 <= 0) return null;
 
   // Rzeczywista cena powrotu z farechart (jeśli dostępna), inaczej szacunek ×2
-  const retDate = dow === 'sat' ? addDays(dateStr, 1)
-    : dow === 'fri' ? addDays(dateStr, 2)
-    : dateStr;
+  // Niedzielny wylot Wizzair = brak sensu weekendowego (powrót byłby ten sam dzień)
+  if (dow === 'sun') return null;
+  const retDate = dow === 'sat' ? addDays(dateStr, 1)   // Sb → Nd
+    : addDays(dateStr, 2);                               // Pt → Nd
   const retPrice = returnPriceMap?.get(`${to}-${from}-${retDate}`) || 0;
   if (retPrice === 0) return null; // brak rzeczywistej ceny powrotu → nie pokazuj
   const price2 = Math.round(price1 + retPrice);
