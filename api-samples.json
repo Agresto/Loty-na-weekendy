@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-05-24T07:50:59.643Z",
+  "capturedAt": "2026-05-24T16:06:56.853Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
@@ -95,27 +95,27 @@
         }
       },
       "totalFares": 5,
-      "capturedAt": "2026-05-24T07:47:37.329Z"
+      "capturedAt": "2026-05-24T16:03:24.998Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 330,
-      "normalized": 37,
+      "totalRaw": 335,
+      "normalized": 32,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
         "price": {
-          "amount": 359,
+          "amount": 0,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "price",
-        "date": "2026-05-24T00:00:00",
-        "classOfService": "JK",
+        "priceType": "noData",
+        "date": "2026-05-24T00:00:00+01:00",
+        "classOfService": null,
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -126,7 +126,7 @@
           16
         ]
       },
-      "capturedAt": "2026-05-24T07:50:59.629Z"
+      "capturedAt": "2026-05-24T16:06:56.838Z"
     },
     "strategy": "playwright-farechart"
   }
