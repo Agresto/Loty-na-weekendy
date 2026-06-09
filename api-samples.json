@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-06-09T08:32:36.393Z",
+  "capturedAt": "2026-06-09T17:29:55.763Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
@@ -42,7 +42,7 @@
           "flightKey": "FR~9786~ ~~KTW~10/30/2026 19:40~BUD~10/30/2026 20:45~~",
           "flightNumber": "FR9786",
           "previousPrice": null,
-          "priceUpdated": 1780976254000
+          "priceUpdated": 1781001478000
         },
         "inbound": {
           "departureAirport": {
@@ -79,7 +79,7 @@
           "flightKey": "FR~9785~ ~~BUD~11/01/2026 15:25~KTW~11/01/2026 16:25~~",
           "flightNumber": "FR9785",
           "previousPrice": null,
-          "priceUpdated": 1780972587000
+          "priceUpdated": 1781001211000
         },
         "summary": {
           "price": {
@@ -95,15 +95,15 @@
         }
       },
       "totalFares": 7,
-      "capturedAt": "2026-06-09T08:29:12.500Z"
+      "capturedAt": "2026-06-09T17:26:21.339Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 325,
-      "normalized": 35,
+      "totalRaw": 330,
+      "normalized": 42,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -126,7 +126,7 @@
           16
         ]
       },
-      "capturedAt": "2026-06-09T08:32:36.380Z"
+      "capturedAt": "2026-06-09T17:29:55.748Z"
     },
     "strategy": "playwright-farechart"
   }
