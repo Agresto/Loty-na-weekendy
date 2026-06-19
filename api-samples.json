@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-06-18T18:10:01.477Z",
+  "capturedAt": "2026-06-19T09:30:07.155Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
@@ -42,7 +42,7 @@
           "flightKey": "FR~9786~ ~~KTW~10/30/2026 19:40~BUD~10/30/2026 20:45~~",
           "flightNumber": "FR9786",
           "previousPrice": null,
-          "priceUpdated": 1781779071000
+          "priceUpdated": 1781836696000
         },
         "inbound": {
           "departureAirport": {
@@ -70,22 +70,22 @@
           "departureDate": "2026-11-01T15:25:00",
           "arrivalDate": "2026-11-01T16:25:00",
           "price": {
-            "value": 98,
-            "valueMainUnit": "98",
-            "valueFractionalUnit": "00",
+            "value": 107.76,
+            "valueMainUnit": "107",
+            "valueFractionalUnit": "76",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~9785~ ~~BUD~11/01/2026 15:25~KTW~11/01/2026 16:25~~",
           "flightNumber": "FR9785",
           "previousPrice": null,
-          "priceUpdated": 1781788876000
+          "priceUpdated": 1781850810000
         },
         "summary": {
           "price": {
-            "value": 196,
-            "valueMainUnit": "196",
-            "valueFractionalUnit": "00",
+            "value": 205.76,
+            "valueMainUnit": "205",
+            "valueFractionalUnit": "76",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -95,7 +95,7 @@
         }
       },
       "totalFares": 9,
-      "capturedAt": "2026-06-18T18:06:33.970Z"
+      "capturedAt": "2026-06-19T09:26:36.186Z"
     }
   },
   "wizzair": {
@@ -103,19 +103,19 @@
     "status": 200,
     "sampleResponse": {
       "totalRaw": 328,
-      "normalized": 36,
+      "normalized": 42,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
         "price": {
-          "amount": 0,
+          "amount": 309,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "noData",
-        "date": "2026-06-18T00:00:00+01:00",
-        "classOfService": null,
+        "priceType": "price",
+        "date": "2026-06-19T00:00:00",
+        "classOfService": "K",
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -126,7 +126,7 @@
           16
         ]
       },
-      "capturedAt": "2026-06-18T18:10:01.464Z"
+      "capturedAt": "2026-06-19T09:30:07.141Z"
     },
     "strategy": "playwright-farechart"
   }
