@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-06-21T08:58:58.762Z",
+  "lastUpdated": "2026-06-21T16:50:24.972Z",
   "source": "ryanair-api+wizzair-farechart-live",
   "maxBudgetRT": 800,
-  "totalCount": 898,
+  "totalCount": 883,
   "flights": [
     {
-      "id": "r82",
+      "id": "r84",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -27,7 +27,7 @@
       "retArr": "23:15",
       "dur": "1h 20m",
       "price1": 362,
-      "price2": 465,
+      "price2": 484,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -38,7 +38,7 @@
       "englishOk": true
     },
     {
-      "id": "r247",
+      "id": "r245",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -47,20 +47,20 @@
       "flag": "🇮🇹",
       "country": "Włochy",
       "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
+      "retDay": "sobota",
+      "pattern": "fri-sat",
       "date": "Pt–Nd, 26–28 Cze 2026",
       "raw": "2026-06-26",
-      "retRaw": "2026-06-28",
+      "retRaw": "2026-06-27",
       "month": 6,
       "year": 2026,
       "dept": "23:20",
       "arr": "01:05",
-      "retDept": "08:15",
-      "retArr": "10:00",
+      "retDept": "23:15",
+      "retArr": "01:00",
       "dur": "1h 45m",
       "price1": 136,
-      "price2": 256,
+      "price2": 260,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -71,7 +71,7 @@
       "englishOk": true
     },
     {
-      "id": "r297",
+      "id": "r303",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -92,8 +92,8 @@
       "retDept": "21:05",
       "retArr": "23:05",
       "dur": "2h 00m",
-      "price1": 191,
-      "price2": 385,
+      "price1": 223,
+      "price2": 418,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -126,7 +126,7 @@
       "retArr": "01:00",
       "dur": "2h 15m",
       "price1": 227,
-      "price2": 725,
+      "price2": 708,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -170,7 +170,7 @@
       "englishOk": true
     },
     {
-      "id": "r463",
+      "id": "r466",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -191,8 +191,8 @@
       "retDept": "07:35",
       "retArr": "10:55",
       "dur": "1h 25m",
-      "price1": 327,
-      "price2": 538,
+      "price1": 374,
+      "price2": 541,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -203,7 +203,7 @@
       "englishOk": true
     },
     {
-      "id": "r601",
+      "id": "r606",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -224,8 +224,8 @@
       "retDept": "15:30",
       "retArr": "18:15",
       "dur": "2h 45m",
-      "price1": 140,
-      "price2": 373,
+      "price1": 165,
+      "price2": 433,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -236,7 +236,7 @@
       "englishOk": true
     },
     {
-      "id": "r682",
+      "id": "r678",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -257,8 +257,8 @@
       "retDept": "10:25",
       "retArr": "12:20",
       "dur": "2h 00m",
-      "price1": 387,
-      "price2": 621,
+      "price1": 375,
+      "price2": 592,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -269,7 +269,7 @@
       "englishOk": true
     },
     {
-      "id": "r732",
+      "id": "r730",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -291,7 +291,7 @@
       "retArr": "00:05",
       "dur": "1h 15m",
       "price1": 365,
-      "price2": 502,
+      "price2": 492,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -302,7 +302,7 @@
       "englishOk": true
     },
     {
-      "id": "r815",
+      "id": "r813",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -323,8 +323,8 @@
       "retDept": "15:25",
       "retArr": "18:25",
       "dur": "1h 05m",
-      "price1": 226,
-      "price2": 427,
+      "price1": 230,
+      "price2": 431,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -335,40 +335,7 @@
       "englishOk": true
     },
     {
-      "id": "r841",
-      "airline": "ryanair",
-      "from": "POZ",
-      "to": "DUB",
-      "fromCity": "Poznań",
-      "toCity": "Dublin",
-      "flag": "🇮🇪",
-      "country": "Irlandia",
-      "deptDay": "piątek",
-      "retDay": "sobota",
-      "pattern": "fri-sat",
-      "date": "Pt–Nd, 26–28 Cze 2026",
-      "raw": "2026-06-26",
-      "retRaw": "2026-06-27",
-      "month": 6,
-      "year": 2026,
-      "dept": "17:50",
-      "arr": "19:30",
-      "retDept": "17:55",
-      "retArr": "21:25",
-      "dur": "1h 40m",
-      "price1": 196,
-      "price2": 763,
-      "sea": false,
-      "lgbt": true,
-      "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
-      "distKm": 12,
-      "passport": true,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w863",
+      "id": "w859",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -384,13 +351,13 @@
       "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
-      "price1": 449,
-      "price2": 494,
+      "price1": 269,
+      "price2": 314,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -401,7 +368,7 @@
       "englishOk": true
     },
     {
-      "id": "w865",
+      "id": "w861",
       "airline": "wizzair",
       "from": "KTW",
       "to": "FCO",
@@ -423,7 +390,7 @@
       "retArr": "23:50",
       "dur": "2h 25m",
       "price1": 140,
-      "price2": 230,
+      "price2": 220,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -434,7 +401,7 @@
       "englishOk": true
     },
     {
-      "id": "w866",
+      "id": "w862",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -450,13 +417,13 @@
       "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
-      "dept": "08:45",
-      "arr": "11:30",
-      "retDept": "06:00",
-      "retArr": "08:45",
+      "dept": "12:10",
+      "arr": "14:55",
+      "retDept": "14:50",
+      "retArr": "17:35",
       "dur": "2h 45m",
-      "price1": 509,
-      "price2": 536,
+      "price1": 449,
+      "price2": 476,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -467,7 +434,7 @@
       "englishOk": true
     },
     {
-      "id": "w867",
+      "id": "w863",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -488,8 +455,8 @@
       "retDept": "13:15",
       "retArr": "15:10",
       "dur": "1h 55m",
-      "price1": 309,
-      "price2": 434,
+      "price1": 289,
+      "price2": 389,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
@@ -500,7 +467,7 @@
       "englishOk": true
     },
     {
-      "id": "w868",
+      "id": "w865",
       "airline": "wizzair",
       "from": "KRK",
       "to": "AGP",
@@ -516,13 +483,13 @@
       "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
-      "dept": "15:10",
-      "arr": "18:45",
+      "dept": "14:55",
+      "arr": "18:30",
       "retDept": "19:45",
       "retArr": "23:20",
       "dur": "3h 35m",
-      "price1": 399,
-      "price2": 509,
+      "price1": 379,
+      "price2": 465,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Hiszpania – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -533,7 +500,40 @@
       "englishOk": true
     },
     {
-      "id": "w869",
+      "id": "w866",
+      "airline": "wizzair",
+      "from": "KRK",
+      "to": "BCN",
+      "fromCity": "Kraków",
+      "toCity": "Barcelona",
+      "flag": "🇪🇸",
+      "country": "Hiszpania",
+      "deptDay": "piątek",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
+      "date": "Pt–Nd, 26–28 Cze 2026",
+      "raw": "2026-06-26",
+      "retRaw": "2026-06-28",
+      "month": 6,
+      "year": 2026,
+      "dept": "06:00",
+      "arr": "09:25",
+      "retDept": "20:05",
+      "retArr": "23:30",
+      "dur": "3h 25m",
+      "price1": 449,
+      "price2": 509,
+      "sea": true,
+      "lgbt": true,
+      "lgbtN": "Barcelona – queer-friendly stolica Europy",
+      "distKm": 14,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
+      "id": "w867",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -555,7 +555,7 @@
       "retArr": "00:15",
       "dur": "2h 55m",
       "price1": 268,
-      "price2": 342,
+      "price2": 337,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Francja – progresywna polityka LGBTQ+",
@@ -566,7 +566,7 @@
       "englishOk": true
     },
     {
-      "id": "w871",
+      "id": "w869",
       "airline": "wizzair",
       "from": "KRK",
       "to": "SOF",
@@ -582,10 +582,10 @@
       "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
-      "dept": "13:50",
-      "arr": "16:45",
-      "retDept": "12:30",
-      "retArr": "15:25",
+      "dept": "13:20",
+      "arr": "16:15",
+      "retDept": "11:45",
+      "retArr": "14:40",
       "dur": "2h 55m",
       "price1": 174,
       "price2": 203,
@@ -620,8 +620,8 @@
       "retDept": "09:45",
       "retArr": "11:50",
       "dur": "2h 05m",
-      "price1": 95,
-      "price2": 599,
+      "price1": 96,
+      "price2": 655,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Norwegia – zalegalizowane małżeństwa jednopłciowe od 2009",
@@ -632,7 +632,7 @@
       "englishOk": true
     },
     {
-      "id": "r74",
+      "id": "r81",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -653,8 +653,8 @@
       "retDept": "20:05",
       "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 345,
-      "price2": 448,
+      "price1": 481,
+      "price2": 604,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -665,7 +665,7 @@
       "englishOk": true
     },
     {
-      "id": "r248",
+      "id": "r268",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -687,7 +687,7 @@
       "retArr": "08:40",
       "dur": "1h 45m",
       "price1": 141,
-      "price2": 209,
+      "price2": 218,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -698,7 +698,7 @@
       "englishOk": true
     },
     {
-      "id": "r318",
+      "id": "r317",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -752,8 +752,8 @@
       "retDept": "17:25",
       "retArr": "19:35",
       "dur": "2h 15m",
-      "price1": 306,
-      "price2": 724,
+      "price1": 311,
+      "price2": 753,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -764,7 +764,7 @@
       "englishOk": true
     },
     {
-      "id": "r467",
+      "id": "r469",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -773,20 +773,20 @@
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
       "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
       "date": "Sb–Nd, 27–28 Cze 2026",
       "raw": "2026-06-27",
-      "retRaw": "2026-06-29",
+      "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
       "dept": "23:30",
       "arr": "00:55",
-      "retDept": "17:40",
-      "retArr": "21:00",
+      "retDept": "07:35",
+      "retArr": "10:55",
       "dur": "1h 25m",
-      "price1": 365,
-      "price2": 527,
+      "price1": 457,
+      "price2": 624,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -830,7 +830,7 @@
       "englishOk": true
     },
     {
-      "id": "r562",
+      "id": "r561",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -863,7 +863,7 @@
       "englishOk": true
     },
     {
-      "id": "r635",
+      "id": "r637",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -884,8 +884,8 @@
       "retDept": "14:20",
       "retArr": "17:05",
       "dur": "2h 45m",
-      "price1": 273,
-      "price2": 628,
+      "price1": 355,
+      "price2": 710,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -896,7 +896,7 @@
       "englishOk": true
     },
     {
-      "id": "r685",
+      "id": "r683",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -929,7 +929,7 @@
       "englishOk": true
     },
     {
-      "id": "r715",
+      "id": "r724",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -945,13 +945,13 @@
       "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
-      "dept": "05:45",
-      "arr": "07:00",
+      "dept": "19:20",
+      "arr": "20:35",
       "retDept": "21:00",
       "retArr": "00:05",
       "dur": "1h 15m",
-      "price1": 281,
-      "price2": 418,
+      "price1": 413,
+      "price2": 540,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -962,7 +962,7 @@
       "englishOk": true
     },
     {
-      "id": "r818",
+      "id": "r816",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -984,7 +984,7 @@
       "retArr": "16:30",
       "dur": "1h 05m",
       "price1": 296,
-      "price2": 433,
+      "price2": 423,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -995,7 +995,7 @@
       "englishOk": true
     },
     {
-      "id": "w864",
+      "id": "w860",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -1011,10 +1011,10 @@
       "retRaw": "2026-06-28",
       "month": 6,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
       "price1": 449,
       "price2": 494,
@@ -1028,7 +1028,40 @@
       "englishOk": true
     },
     {
-      "id": "w870",
+      "id": "w864",
+      "airline": "wizzair",
+      "from": "KTW",
+      "to": "EIN",
+      "fromCity": "Katowice",
+      "toCity": "Eindhoven",
+      "flag": "🇳🇱",
+      "country": "Holandia",
+      "deptDay": "sobota",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
+      "date": "Sb–Nd, 27–28 Cze 2026",
+      "raw": "2026-06-27",
+      "retRaw": "2026-06-28",
+      "month": 6,
+      "year": 2026,
+      "dept": "10:45",
+      "arr": "12:40",
+      "retDept": "13:15",
+      "retArr": "15:10",
+      "dur": "1h 55m",
+      "price1": 449,
+      "price2": 549,
+      "sea": false,
+      "lgbt": true,
+      "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
+      "distKm": 9,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
+      "id": "w868",
       "airline": "wizzair",
       "from": "KRK",
       "to": "NCE",
@@ -1050,7 +1083,7 @@
       "retArr": "00:15",
       "dur": "2h 55m",
       "price1": 293,
-      "price2": 367,
+      "price2": 362,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Francja – progresywna polityka LGBTQ+",
@@ -1061,7 +1094,7 @@
       "englishOk": true
     },
     {
-      "id": "r68",
+      "id": "r69",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -1082,8 +1115,8 @@
       "retDept": "06:15",
       "retArr": "09:25",
       "dur": "1h 20m",
-      "price1": 164,
-      "price2": 390,
+      "price1": 191,
+      "price2": 426,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -1148,8 +1181,8 @@
       "retDept": "06:05",
       "retArr": "08:55",
       "dur": "2h 45m",
-      "price1": 306,
-      "price2": 600,
+      "price1": 311,
+      "price2": 604,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -1160,7 +1193,7 @@
       "englishOk": true
     },
     {
-      "id": "r256",
+      "id": "r258",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -1247,8 +1280,8 @@
       "retDept": "22:50",
       "retArr": "01:00",
       "dur": "2h 15m",
-      "price1": 136,
-      "price2": 690,
+      "price1": 158,
+      "price2": 703,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -1259,7 +1292,7 @@
       "englishOk": true
     },
     {
-      "id": "r408",
+      "id": "r407",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -1280,8 +1313,8 @@
       "retDept": "21:55",
       "retArr": "00:30",
       "dur": "2h 35m",
-      "price1": 217,
-      "price2": 540,
+      "price1": 221,
+      "price2": 553,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -1292,7 +1325,7 @@
       "englishOk": true
     },
     {
-      "id": "r451",
+      "id": "r456",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -1310,11 +1343,11 @@
       "year": 2026,
       "dept": "22:25",
       "arr": "23:50",
-      "retDept": "17:20",
-      "retArr": "20:40",
+      "retDept": "19:45",
+      "retArr": "23:05",
       "dur": "1h 25m",
-      "price1": 176,
-      "price2": 421,
+      "price1": 205,
+      "price2": 455,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -1325,40 +1358,7 @@
       "englishOk": true
     },
     {
-      "id": "r503",
-      "airline": "ryanair",
-      "from": "KRK",
-      "to": "DUB",
-      "fromCity": "Kraków",
-      "toCity": "Dublin",
-      "flag": "🇮🇪",
-      "country": "Irlandia",
-      "deptDay": "piątek",
-      "retDay": "sobota",
-      "pattern": "fri-sat",
-      "date": "Pt–Nd, 3–5 Lip 2026",
-      "raw": "2026-07-03",
-      "retRaw": "2026-07-04",
-      "month": 7,
-      "year": 2026,
-      "dept": "22:25",
-      "arr": "00:25",
-      "retDept": "21:00",
-      "retArr": "00:50",
-      "dur": "2h 00m",
-      "price1": 203,
-      "price2": 682,
-      "sea": false,
-      "lgbt": true,
-      "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
-      "distKm": 12,
-      "passport": true,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "r588",
+      "id": "r590",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -1379,8 +1379,8 @@
       "retDept": "19:30",
       "retArr": "23:00",
       "dur": "1h 40m",
-      "price1": 213,
-      "price2": 700,
+      "price1": 276,
+      "price2": 763,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -1391,7 +1391,7 @@
       "englishOk": true
     },
     {
-      "id": "r604",
+      "id": "r608",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -1413,7 +1413,7 @@
       "retArr": "18:15",
       "dur": "2h 45m",
       "price1": 160,
-      "price2": 399,
+      "price2": 436,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -1424,7 +1424,7 @@
       "englishOk": true
     },
     {
-      "id": "r659",
+      "id": "r655",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -1445,8 +1445,8 @@
       "retDept": "10:25",
       "retArr": "12:20",
       "dur": "2h 00m",
-      "price1": 166,
-      "price2": 434,
+      "price1": 145,
+      "price2": 413,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -1457,7 +1457,7 @@
       "englishOk": true
     },
     {
-      "id": "r701",
+      "id": "r700",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -1479,7 +1479,7 @@
       "retArr": "00:05",
       "dur": "1h 15m",
       "price1": 132,
-      "price2": 279,
+      "price2": 289,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -1490,7 +1490,7 @@
       "englishOk": true
     },
     {
-      "id": "r774",
+      "id": "r772",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -1511,8 +1511,8 @@
       "retDept": "20:50",
       "retArr": "23:55",
       "dur": "3h 10m",
-      "price1": 285,
-      "price2": 635,
+      "price1": 289,
+      "price2": 639,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -1523,7 +1523,7 @@
       "englishOk": true
     },
     {
-      "id": "r807",
+      "id": "r804",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -1556,7 +1556,7 @@
       "englishOk": true
     },
     {
-      "id": "r839",
+      "id": "r837",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -1577,8 +1577,8 @@
       "retDept": "17:55",
       "retArr": "21:25",
       "dur": "1h 40m",
-      "price1": 255,
-      "price2": 679,
+      "price1": 251,
+      "price2": 675,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -1589,7 +1589,7 @@
       "englishOk": true
     },
     {
-      "id": "w872",
+      "id": "w870",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -1605,13 +1605,13 @@
       "retRaw": "2026-07-05",
       "month": 7,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
-      "price1": 309,
-      "price2": 355,
+      "price1": 249,
+      "price2": 300,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -1622,40 +1622,7 @@
       "englishOk": true
     },
     {
-      "id": "w878",
-      "airline": "wizzair",
-      "from": "KTW",
-      "to": "FCO",
-      "fromCity": "Katowice",
-      "toCity": "Rzym Fiumicino",
-      "flag": "🇮🇹",
-      "country": "Włochy",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 3–5 Lip 2026",
-      "raw": "2026-07-03",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:35",
-      "arr": "21:00",
-      "retDept": "21:25",
-      "retArr": "23:50",
-      "dur": "2h 25m",
-      "price1": 179,
-      "price2": 239,
-      "sea": false,
-      "lgbt": true,
-      "lgbtN": "Rzym – aktywna społeczność queer",
-      "distKm": 30,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w879",
+      "id": "w877",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -1671,13 +1638,13 @@
       "retRaw": "2026-07-05",
       "month": 7,
       "year": 2026,
-      "dept": "08:45",
-      "arr": "11:30",
-      "retDept": "06:00",
-      "retArr": "08:45",
+      "dept": "12:10",
+      "arr": "14:55",
+      "retDept": "14:50",
+      "retArr": "17:35",
       "dur": "2h 45m",
-      "price1": 359,
-      "price2": 405,
+      "price1": 289,
+      "price2": 379,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -1688,7 +1655,7 @@
       "englishOk": true
     },
     {
-      "id": "w882",
+      "id": "w880",
       "airline": "wizzair",
       "from": "KTW",
       "to": "EIN",
@@ -1710,7 +1677,7 @@
       "retArr": "15:10",
       "dur": "1h 55m",
       "price1": 249,
-      "price2": 374,
+      "price2": 349,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
@@ -1721,7 +1688,7 @@
       "englishOk": true
     },
     {
-      "id": "w884",
+      "id": "w881",
       "airline": "wizzair",
       "from": "KRK",
       "to": "AGP",
@@ -1737,8 +1704,8 @@
       "retRaw": "2026-07-05",
       "month": 7,
       "year": 2026,
-      "dept": "15:10",
-      "arr": "18:45",
+      "dept": "14:55",
+      "arr": "18:30",
       "retDept": "19:45",
       "retArr": "23:20",
       "dur": "3h 35m",
@@ -1754,106 +1721,7 @@
       "englishOk": true
     },
     {
-      "id": "w887",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "BCN",
-      "fromCity": "Kraków",
-      "toCity": "Barcelona",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 3–5 Lip 2026",
-      "raw": "2026-07-03",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "12:35",
-      "arr": "16:00",
-      "retDept": "09:05",
-      "retArr": "12:30",
-      "dur": "3h 25m",
-      "price1": 269,
-      "price2": 329,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Barcelona – queer-friendly stolica Europy",
-      "distKm": 14,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w890",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 3–5 Lip 2026",
-      "raw": "2026-07-03",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:25",
-      "arr": "21:20",
-      "retDept": "21:20",
-      "retArr": "00:15",
-      "dur": "2h 55m",
-      "price1": 269,
-      "price2": 349,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w896",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "SOF",
-      "fromCity": "Kraków",
-      "toCity": "Sofia",
-      "flag": "🇧🇬",
-      "country": "Bułgaria",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 3–5 Lip 2026",
-      "raw": "2026-07-03",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "13:50",
-      "arr": "16:45",
-      "retDept": "12:30",
-      "retArr": "15:25",
-      "dur": "2h 55m",
-      "price1": 129,
-      "price2": 165,
-      "sea": false,
-      "lgbt": false,
-      "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
-      "distKm": 8,
-      "passport": false,
-      "visa": "brak",
-      "currency": "BGN лв",
-      "englishOk": true
-    },
-    {
-      "id": "r23",
+      "id": "r25",
       "airline": "ryanair",
       "from": "KTW",
       "to": "OSL",
@@ -1874,8 +1742,8 @@
       "retDept": "09:45",
       "retArr": "11:50",
       "dur": "2h 05m",
-      "price1": 79,
-      "price2": 519,
+      "price1": 90,
+      "price2": 580,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Norwegia – zalegalizowane małżeństwa jednopłciowe od 2009",
@@ -1886,7 +1754,7 @@
       "englishOk": true
     },
     {
-      "id": "r71",
+      "id": "r74",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -1907,8 +1775,8 @@
       "retDept": "20:05",
       "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 140,
-      "price2": 425,
+      "price1": 153,
+      "price2": 462,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -1940,8 +1808,8 @@
       "retDept": "08:05",
       "retArr": "11:50",
       "dur": "1h 55m",
-      "price1": 217,
-      "price2": 732,
+      "price1": 221,
+      "price2": 783,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -2006,8 +1874,8 @@
       "retDept": "19:00",
       "retArr": "21:50",
       "dur": "2h 45m",
-      "price1": 340,
-      "price2": 588,
+      "price1": 323,
+      "price2": 571,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -2018,7 +1886,7 @@
       "englishOk": true
     },
     {
-      "id": "r243",
+      "id": "r246",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -2039,8 +1907,8 @@
       "retDept": "06:55",
       "retArr": "08:40",
       "dur": "1h 45m",
-      "price1": 94,
-      "price2": 189,
+      "price1": 102,
+      "price2": 197,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -2051,7 +1919,7 @@
       "englishOk": true
     },
     {
-      "id": "r300",
+      "id": "r298",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -2084,7 +1952,7 @@
       "englishOk": true
     },
     {
-      "id": "r367",
+      "id": "r368",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -2105,8 +1973,8 @@
       "retDept": "17:25",
       "retArr": "19:35",
       "dur": "2h 15m",
-      "price1": 106,
-      "price2": 460,
+      "price1": 132,
+      "price2": 498,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -2117,7 +1985,7 @@
       "englishOk": true
     },
     {
-      "id": "r417",
+      "id": "r413",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -2126,20 +1994,20 @@
       "flag": "🇲🇹",
       "country": "Malta",
       "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
       "date": "Sb–Nd, 4–5 Lip 2026",
       "raw": "2026-07-04",
-      "retRaw": "2026-07-06",
+      "retRaw": "2026-07-05",
       "month": 7,
       "year": 2026,
       "dept": "18:55",
       "arr": "21:30",
-      "retDept": "14:00",
-      "retArr": "16:35",
+      "retDept": "15:15",
+      "retArr": "17:50",
       "dur": "2h 35m",
-      "price1": 217,
-      "price2": 621,
+      "price1": 209,
+      "price2": 617,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -2150,7 +2018,7 @@
       "englishOk": true
     },
     {
-      "id": "r449",
+      "id": "r453",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -2172,7 +2040,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 166,
-      "price2": 421,
+      "price2": 435,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -2180,6 +2048,39 @@
       "passport": true,
       "visa": "brak",
       "currency": "GBP £",
+      "englishOk": true
+    },
+    {
+      "id": "r509",
+      "airline": "ryanair",
+      "from": "KRK",
+      "to": "DUB",
+      "fromCity": "Kraków",
+      "toCity": "Dublin",
+      "flag": "🇮🇪",
+      "country": "Irlandia",
+      "deptDay": "sobota",
+      "retDay": "poniedziałek",
+      "pattern": "fri-mon",
+      "date": "Sb–Nd, 4–5 Lip 2026",
+      "raw": "2026-07-04",
+      "retRaw": "2026-07-06",
+      "month": 7,
+      "year": 2026,
+      "dept": "07:05",
+      "arr": "09:05",
+      "retDept": "08:25",
+      "retArr": "12:15",
+      "dur": "2h 00m",
+      "price1": 251,
+      "price2": 788,
+      "sea": false,
+      "lgbt": true,
+      "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
+      "distKm": 12,
+      "passport": true,
+      "visa": "brak",
+      "currency": "EUR €",
       "englishOk": true
     },
     {
@@ -2249,40 +2150,7 @@
       "englishOk": true
     },
     {
-      "id": "r563",
-      "airline": "ryanair",
-      "from": "WRO",
-      "to": "PMI",
-      "fromCity": "Wrocław",
-      "toCity": "Palma Mallorca",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
-      "date": "Sb–Nd, 4–5 Lip 2026",
-      "raw": "2026-07-04",
-      "retRaw": "2026-07-06",
-      "month": 7,
-      "year": 2026,
-      "dept": "15:45",
-      "arr": "18:35",
-      "retDept": "22:20",
-      "retArr": "01:10",
-      "dur": "2h 50m",
-      "price1": 437,
-      "price2": 760,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Mallorca – przyjazna LGBTQ+",
-      "distKm": 9,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "r631",
+      "id": "r634",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -2304,7 +2172,7 @@
       "retArr": "12:50",
       "dur": "2h 45m",
       "price1": 226,
-      "price2": 495,
+      "price2": 559,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -2315,7 +2183,7 @@
       "englishOk": true
     },
     {
-      "id": "r681",
+      "id": "r680",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -2336,8 +2204,8 @@
       "retDept": "17:05",
       "retArr": "19:00",
       "dur": "2h 00m",
-      "price1": 166,
-      "price2": 579,
+      "price1": 170,
+      "price2": 549,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -2348,7 +2216,7 @@
       "englishOk": true
     },
     {
-      "id": "r720",
+      "id": "r719",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -2381,7 +2249,7 @@
       "englishOk": true
     },
     {
-      "id": "r833",
+      "id": "r831",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -2403,7 +2271,7 @@
       "retArr": "00:45",
       "dur": "1h 05m",
       "price1": 98,
-      "price2": 319,
+      "price2": 343,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -2414,7 +2282,7 @@
       "englishOk": true
     },
     {
-      "id": "r859",
+      "id": "r855",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -2447,7 +2315,7 @@
       "englishOk": true
     },
     {
-      "id": "w873",
+      "id": "w871",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -2463,13 +2331,13 @@
       "retRaw": "2026-07-05",
       "month": 7,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
-      "price1": 159,
-      "price2": 205,
+      "price1": 139,
+      "price2": 190,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -2480,106 +2348,7 @@
       "englishOk": true
     },
     {
-      "id": "w883",
-      "airline": "wizzair",
-      "from": "KTW",
-      "to": "EIN",
-      "fromCity": "Katowice",
-      "toCity": "Eindhoven",
-      "flag": "🇳🇱",
-      "country": "Holandia",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 4–5 Lip 2026",
-      "raw": "2026-07-04",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "10:45",
-      "arr": "12:40",
-      "retDept": "13:15",
-      "retArr": "15:10",
-      "dur": "1h 55m",
-      "price1": 219,
-      "price2": 344,
-      "sea": false,
-      "lgbt": true,
-      "lgbtN": "Holandia – ojczyzna pierwszego małżeństwa jednopłciowego",
-      "distKm": 9,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w888",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "BCN",
-      "fromCity": "Kraków",
-      "toCity": "Barcelona",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 4–5 Lip 2026",
-      "raw": "2026-07-04",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "12:35",
-      "arr": "16:00",
-      "retDept": "09:05",
-      "retArr": "12:30",
-      "dur": "3h 25m",
-      "price1": 289,
-      "price2": 349,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Barcelona – queer-friendly stolica Europy",
-      "distKm": 14,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w891",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 4–5 Lip 2026",
-      "raw": "2026-07-04",
-      "retRaw": "2026-07-05",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:25",
-      "arr": "21:20",
-      "retDept": "21:20",
-      "retArr": "00:15",
-      "dur": "2h 55m",
-      "price1": 269,
-      "price2": 349,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "r77",
+      "id": "r76",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -2612,7 +2381,7 @@
       "englishOk": true
     },
     {
-      "id": "r186",
+      "id": "r187",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -2633,8 +2402,8 @@
       "retDept": "06:05",
       "retArr": "08:55",
       "dur": "2h 45m",
-      "price1": 281,
-      "price2": 604,
+      "price1": 298,
+      "price2": 621,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -2645,7 +2414,7 @@
       "englishOk": true
     },
     {
-      "id": "r244",
+      "id": "r241",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -2678,7 +2447,7 @@
       "englishOk": true
     },
     {
-      "id": "r288",
+      "id": "r286",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -2744,7 +2513,7 @@
       "englishOk": true
     },
     {
-      "id": "r398",
+      "id": "r404",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -2765,8 +2534,8 @@
       "retDept": "21:55",
       "retArr": "00:30",
       "dur": "2h 35m",
-      "price1": 174,
-      "price2": 472,
+      "price1": 213,
+      "price2": 511,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -2799,7 +2568,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 119,
-      "price2": 467,
+      "price2": 462,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -2810,7 +2579,7 @@
       "englishOk": true
     },
     {
-      "id": "r505",
+      "id": "r503",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -2843,7 +2612,7 @@
       "englishOk": true
     },
     {
-      "id": "r590",
+      "id": "r588",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -2876,7 +2645,7 @@
       "englishOk": true
     },
     {
-      "id": "r641",
+      "id": "r640",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -2909,7 +2678,7 @@
       "englishOk": true
     },
     {
-      "id": "r678",
+      "id": "r676",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -2930,8 +2699,8 @@
       "retDept": "18:45",
       "retArr": "20:40",
       "dur": "2h 00m",
-      "price1": 162,
-      "price2": 545,
+      "price1": 157,
+      "price2": 536,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -2942,7 +2711,7 @@
       "englishOk": true
     },
     {
-      "id": "r708",
+      "id": "r707",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -2964,7 +2733,7 @@
       "retArr": "00:05",
       "dur": "1h 15m",
       "price1": 69,
-      "price2": 324,
+      "price2": 334,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -2975,7 +2744,7 @@
       "englishOk": true
     },
     {
-      "id": "r761",
+      "id": "r759",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -2996,8 +2765,8 @@
       "retDept": "19:30",
       "retArr": "23:05",
       "dur": "1h 45m",
-      "price1": 180,
-      "price2": 688,
+      "price1": 207,
+      "price2": 763,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -3008,7 +2777,7 @@
       "englishOk": true
     },
     {
-      "id": "r802",
+      "id": "r800",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -3041,7 +2810,7 @@
       "englishOk": true
     },
     {
-      "id": "r840",
+      "id": "r838",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -3074,7 +2843,7 @@
       "englishOk": true
     },
     {
-      "id": "w874",
+      "id": "w872",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -3090,13 +2859,13 @@
       "retRaw": "2026-07-12",
       "month": 7,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
       "price1": 109,
-      "price2": 173,
+      "price2": 182,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3107,7 +2876,40 @@
       "englishOk": true
     },
     {
-      "id": "w880",
+      "id": "w876",
+      "airline": "wizzair",
+      "from": "KTW",
+      "to": "FCO",
+      "fromCity": "Katowice",
+      "toCity": "Rzym Fiumicino",
+      "flag": "🇮🇹",
+      "country": "Włochy",
+      "deptDay": "piątek",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
+      "date": "Pt–Nd, 10–12 Lip 2026",
+      "raw": "2026-07-10",
+      "retRaw": "2026-07-12",
+      "month": 7,
+      "year": 2026,
+      "dept": "18:35",
+      "arr": "21:00",
+      "retDept": "21:25",
+      "retArr": "23:50",
+      "dur": "2h 25m",
+      "price1": 139,
+      "price2": 199,
+      "sea": false,
+      "lgbt": true,
+      "lgbtN": "Rzym – aktywna społeczność queer",
+      "distKm": 30,
+      "passport": false,
+      "visa": "brak",
+      "currency": "EUR €",
+      "englishOk": true
+    },
+    {
+      "id": "w878",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -3123,13 +2925,13 @@
       "retRaw": "2026-07-12",
       "month": 7,
       "year": 2026,
-      "dept": "08:45",
-      "arr": "11:30",
-      "retDept": "06:00",
-      "retArr": "08:45",
+      "dept": "12:10",
+      "arr": "14:55",
+      "retDept": "14:50",
+      "retArr": "17:35",
       "dur": "2h 45m",
       "price1": 309,
-      "price2": 359,
+      "price2": 365,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -3140,7 +2942,7 @@
       "englishOk": true
     },
     {
-      "id": "w885",
+      "id": "w882",
       "airline": "wizzair",
       "from": "KRK",
       "to": "AGP",
@@ -3156,13 +2958,13 @@
       "retRaw": "2026-07-12",
       "month": 7,
       "year": 2026,
-      "dept": "15:10",
-      "arr": "18:45",
+      "dept": "14:55",
+      "arr": "18:30",
       "retDept": "19:45",
       "retArr": "23:20",
       "dur": "3h 35m",
-      "price1": 399,
-      "price2": 499,
+      "price1": 449,
+      "price2": 549,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Hiszpania – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -3170,72 +2972,6 @@
       "passport": false,
       "visa": "brak",
       "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w892",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 10–12 Lip 2026",
-      "raw": "2026-07-10",
-      "retRaw": "2026-07-12",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:25",
-      "arr": "21:20",
-      "retDept": "21:20",
-      "retArr": "00:15",
-      "dur": "2h 55m",
-      "price1": 199,
-      "price2": 269,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w897",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "SOF",
-      "fromCity": "Kraków",
-      "toCity": "Sofia",
-      "flag": "🇧🇬",
-      "country": "Bułgaria",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 10–12 Lip 2026",
-      "raw": "2026-07-10",
-      "retRaw": "2026-07-12",
-      "month": 7,
-      "year": 2026,
-      "dept": "13:50",
-      "arr": "16:45",
-      "retDept": "12:30",
-      "retArr": "15:25",
-      "dur": "2h 55m",
-      "price1": 179,
-      "price2": 219,
-      "sea": false,
-      "lgbt": false,
-      "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
-      "distKm": 8,
-      "passport": false,
-      "visa": "brak",
-      "currency": "BGN лв",
       "englishOk": true
     },
     {
@@ -3261,7 +2997,7 @@
       "retArr": "11:50",
       "dur": "2h 05m",
       "price1": 91,
-      "price2": 390,
+      "price2": 436,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Norwegia – zalegalizowane małżeństwa jednopłciowe od 2009",
@@ -3272,7 +3008,7 @@
       "englishOk": true
     },
     {
-      "id": "r72",
+      "id": "r70",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -3293,8 +3029,8 @@
       "retDept": "10:45",
       "retArr": "13:55",
       "dur": "1h 20m",
-      "price1": 69,
-      "price2": 398,
+      "price1": 73,
+      "price2": 397,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3371,7 +3107,7 @@
       "englishOk": true
     },
     {
-      "id": "r285",
+      "id": "r291",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -3392,8 +3128,8 @@
       "retDept": "12:20",
       "retArr": "14:20",
       "dur": "2h 00m",
-      "price1": 109,
-      "price2": 326,
+      "price1": 133,
+      "price2": 350,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -3425,8 +3161,8 @@
       "retDept": "17:25",
       "retArr": "19:35",
       "dur": "2h 15m",
-      "price1": 192,
-      "price2": 531,
+      "price1": 196,
+      "price2": 535,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -3437,7 +3173,7 @@
       "englishOk": true
     },
     {
-      "id": "r425",
+      "id": "r424",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -3458,8 +3194,8 @@
       "retDept": "14:00",
       "retArr": "16:35",
       "dur": "2h 35m",
-      "price1": 251,
-      "price2": 753,
+      "price1": 247,
+      "price2": 749,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -3492,7 +3228,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 72,
-      "price2": 421,
+      "price2": 416,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3524,8 +3260,8 @@
       "retDept": "08:25",
       "retArr": "12:15",
       "dur": "2h 00m",
-      "price1": 233,
-      "price2": 754,
+      "price1": 257,
+      "price2": 778,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -3558,7 +3294,7 @@
       "retArr": "08:35",
       "dur": "1h 05m",
       "price1": 84,
-      "price2": 207,
+      "price2": 203,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Wiedeń – stolica przyjazna LGBTQ+, doroczny Vienna Pride",
@@ -3569,7 +3305,7 @@
       "englishOk": true
     },
     {
-      "id": "r565",
+      "id": "r564",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -3602,7 +3338,7 @@
       "englishOk": true
     },
     {
-      "id": "r668",
+      "id": "r669",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -3623,8 +3359,8 @@
       "retDept": "18:45",
       "retArr": "20:40",
       "dur": "2h 00m",
-      "price1": 102,
-      "price2": 485,
+      "price1": 120,
+      "price2": 499,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -3635,7 +3371,7 @@
       "englishOk": true
     },
     {
-      "id": "r712",
+      "id": "r710",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -3656,8 +3392,8 @@
       "retDept": "21:00",
       "retArr": "00:05",
       "dur": "1h 15m",
-      "price1": 69,
-      "price2": 368,
+      "price1": 71,
+      "price2": 365,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3668,7 +3404,7 @@
       "englishOk": true
     },
     {
-      "id": "r817",
+      "id": "r815",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -3689,8 +3425,8 @@
       "retDept": "21:45",
       "retArr": "00:45",
       "dur": "1h 05m",
-      "price1": 69,
-      "price2": 324,
+      "price1": 71,
+      "price2": 341,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3701,7 +3437,7 @@
       "englishOk": true
     },
     {
-      "id": "w875",
+      "id": "w873",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -3717,13 +3453,13 @@
       "retRaw": "2026-07-12",
       "month": 7,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
       "price1": 109,
-      "price2": 173,
+      "price2": 182,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3734,73 +3470,7 @@
       "englishOk": true
     },
     {
-      "id": "w889",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "BCN",
-      "fromCity": "Kraków",
-      "toCity": "Barcelona",
-      "flag": "🇪🇸",
-      "country": "Hiszpania",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 11–12 Lip 2026",
-      "raw": "2026-07-11",
-      "retRaw": "2026-07-12",
-      "month": 7,
-      "year": 2026,
-      "dept": "12:35",
-      "arr": "16:00",
-      "retDept": "09:05",
-      "retArr": "12:30",
-      "dur": "3h 25m",
-      "price1": 179,
-      "price2": 249,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Barcelona – queer-friendly stolica Europy",
-      "distKm": 14,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w893",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 11–12 Lip 2026",
-      "raw": "2026-07-11",
-      "retRaw": "2026-07-12",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:25",
-      "arr": "21:20",
-      "retDept": "21:20",
-      "retArr": "00:15",
-      "dur": "2h 55m",
-      "price1": 179,
-      "price2": 249,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "r79",
+      "id": "r80",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -3854,8 +3524,8 @@
       "retDept": "06:05",
       "retArr": "08:55",
       "dur": "2h 45m",
-      "price1": 153,
-      "price2": 498,
+      "price1": 179,
+      "price2": 523,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -3866,7 +3536,7 @@
       "englishOk": true
     },
     {
-      "id": "r240",
+      "id": "r247",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -3888,7 +3558,7 @@
       "retArr": "01:00",
       "dur": "1h 45m",
       "price1": 64,
-      "price2": 251,
+      "price2": 264,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -3899,7 +3569,7 @@
       "englishOk": true
     },
     {
-      "id": "r296",
+      "id": "r295",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -3932,7 +3602,7 @@
       "englishOk": true
     },
     {
-      "id": "r410",
+      "id": "r409",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -3965,7 +3635,7 @@
       "englishOk": true
     },
     {
-      "id": "r470",
+      "id": "r472",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -3987,7 +3657,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 72,
-      "price2": 514,
+      "price2": 553,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -3998,7 +3668,7 @@
       "englishOk": true
     },
     {
-      "id": "r629",
+      "id": "r628",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -4031,7 +3701,7 @@
       "englishOk": true
     },
     {
-      "id": "r725",
+      "id": "r722",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -4053,7 +3723,7 @@
       "retArr": "00:05",
       "dur": "1h 15m",
       "price1": 69,
-      "price2": 535,
+      "price2": 530,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -4064,7 +3734,7 @@
       "englishOk": true
     },
     {
-      "id": "r779",
+      "id": "r777",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -4115,11 +3785,11 @@
       "year": 2026,
       "dept": "12:15",
       "arr": "13:20",
-      "retDept": "13:45",
-      "retArr": "16:45",
+      "retDept": "20:50",
+      "retArr": "23:50",
       "dur": "1h 05m",
       "price1": 72,
-      "price2": 595,
+      "price2": 628,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -4130,7 +3800,7 @@
       "englishOk": true
     },
     {
-      "id": "w876",
+      "id": "w874",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -4146,10 +3816,10 @@
       "retRaw": "2026-07-19",
       "month": 7,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
       "price1": 89,
       "price2": 195,
@@ -4163,7 +3833,7 @@
       "englishOk": true
     },
     {
-      "id": "w881",
+      "id": "w879",
       "airline": "wizzair",
       "from": "KTW",
       "to": "NAP",
@@ -4179,13 +3849,13 @@
       "retRaw": "2026-07-19",
       "month": 7,
       "year": 2026,
-      "dept": "08:45",
-      "arr": "11:30",
-      "retDept": "06:00",
-      "retArr": "08:45",
+      "dept": "12:10",
+      "arr": "14:55",
+      "retDept": "14:50",
+      "retArr": "17:35",
       "dur": "2h 45m",
       "price1": 599,
-      "price2": 655,
+      "price2": 659,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -4196,7 +3866,7 @@
       "englishOk": true
     },
     {
-      "id": "w886",
+      "id": "w883",
       "airline": "wizzair",
       "from": "KRK",
       "to": "AGP",
@@ -4212,8 +3882,8 @@
       "retRaw": "2026-07-19",
       "month": 7,
       "year": 2026,
-      "dept": "15:10",
-      "arr": "18:45",
+      "dept": "14:55",
+      "arr": "18:30",
       "retDept": "19:45",
       "retArr": "23:20",
       "dur": "3h 35m",
@@ -4229,73 +3899,7 @@
       "englishOk": true
     },
     {
-      "id": "w894",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 17–19 Lip 2026",
-      "raw": "2026-07-17",
-      "retRaw": "2026-07-19",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:25",
-      "arr": "21:20",
-      "retDept": "21:20",
-      "retArr": "00:15",
-      "dur": "2h 55m",
-      "price1": 199,
-      "price2": 269,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "w898",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "SOF",
-      "fromCity": "Kraków",
-      "toCity": "Sofia",
-      "flag": "🇧🇬",
-      "country": "Bułgaria",
-      "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
-      "date": "Pt–Nd, 17–19 Lip 2026",
-      "raw": "2026-07-17",
-      "retRaw": "2026-07-19",
-      "month": 7,
-      "year": 2026,
-      "dept": "13:50",
-      "arr": "16:45",
-      "retDept": "12:30",
-      "retArr": "15:25",
-      "dur": "2h 55m",
-      "price1": 179,
-      "price2": 211,
-      "sea": false,
-      "lgbt": false,
-      "lgbtN": "Bułgaria – ograniczone prawa LGBTQ+",
-      "distKm": 8,
-      "passport": false,
-      "visa": "brak",
-      "currency": "BGN лв",
-      "englishOk": true
-    },
-    {
-      "id": "r25",
+      "id": "r24",
       "airline": "ryanair",
       "from": "KTW",
       "to": "OSL",
@@ -4350,7 +3954,7 @@
       "retArr": "23:15",
       "dur": "1h 20m",
       "price1": 102,
-      "price2": 603,
+      "price2": 612,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -4449,7 +4053,7 @@
       "retArr": "08:40",
       "dur": "1h 45m",
       "price1": 64,
-      "price2": 187,
+      "price2": 179,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -4460,7 +4064,7 @@
       "englishOk": true
     },
     {
-      "id": "r304",
+      "id": "r302",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -4482,7 +4086,7 @@
       "retArr": "11:00",
       "dur": "2h 00m",
       "price1": 106,
-      "price2": 269,
+      "price2": 322,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -4559,7 +4163,7 @@
       "englishOk": true
     },
     {
-      "id": "r462",
+      "id": "r464",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -4581,7 +4185,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 81,
-      "price2": 522,
+      "price2": 562,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -4625,40 +4229,7 @@
       "englishOk": true
     },
     {
-      "id": "r643",
-      "airline": "ryanair",
-      "from": "WRO",
-      "to": "MLA",
-      "fromCity": "Wrocław",
-      "toCity": "Malta",
-      "flag": "🇲🇹",
-      "country": "Malta",
-      "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
-      "date": "Sb–Nd, 18–19 Lip 2026",
-      "raw": "2026-07-18",
-      "retRaw": "2026-07-20",
-      "month": 7,
-      "year": 2026,
-      "dept": "12:20",
-      "arr": "15:05",
-      "retDept": "10:05",
-      "retArr": "12:50",
-      "dur": "2h 45m",
-      "price1": 394,
-      "price2": 774,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
-      "distKm": 8,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
-      "englishOk": true
-    },
-    {
-      "id": "r686",
+      "id": "r684",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -4680,7 +4251,7 @@
       "retArr": "19:00",
       "dur": "2h 00m",
       "price1": 349,
-      "price2": 732,
+      "price2": 749,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -4691,7 +4262,7 @@
       "englishOk": true
     },
     {
-      "id": "r738",
+      "id": "r736",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -4713,7 +4284,7 @@
       "retArr": "23:10",
       "dur": "1h 15m",
       "price1": 72,
-      "price2": 563,
+      "price2": 553,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -4724,7 +4295,7 @@
       "englishOk": true
     },
     {
-      "id": "r828",
+      "id": "r826",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -4757,7 +4328,7 @@
       "englishOk": true
     },
     {
-      "id": "w877",
+      "id": "w875",
       "airline": "wizzair",
       "from": "KTW",
       "to": "LTN",
@@ -4773,10 +4344,10 @@
       "retRaw": "2026-07-19",
       "month": 7,
       "year": 2026,
-      "dept": "06:05",
-      "arr": "08:30",
-      "retDept": "08:30",
-      "retArr": "10:55",
+      "dept": "19:45",
+      "arr": "22:10",
+      "retDept": "21:55",
+      "retArr": "00:20",
       "dur": "2h 25m",
       "price1": 89,
       "price2": 195,
@@ -4787,39 +4358,6 @@
       "passport": true,
       "visa": "brak",
       "currency": "GBP £",
-      "englishOk": true
-    },
-    {
-      "id": "w895",
-      "airline": "wizzair",
-      "from": "KRK",
-      "to": "NCE",
-      "fromCity": "Kraków",
-      "toCity": "Nicea",
-      "flag": "🇫🇷",
-      "country": "Francja",
-      "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
-      "date": "Sb–Nd, 18–19 Lip 2026",
-      "raw": "2026-07-18",
-      "retRaw": "2026-07-19",
-      "month": 7,
-      "year": 2026,
-      "dept": "18:25",
-      "arr": "21:20",
-      "retDept": "21:20",
-      "retArr": "00:15",
-      "dur": "2h 55m",
-      "price1": 179,
-      "price2": 249,
-      "sea": true,
-      "lgbt": true,
-      "lgbtN": "Francja – progresywna polityka LGBTQ+",
-      "distKm": 7,
-      "passport": false,
-      "visa": "brak",
-      "currency": "EUR €",
       "englishOk": true
     },
     {
@@ -4844,8 +4382,8 @@
       "retDept": "20:05",
       "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 132,
-      "price2": 554,
+      "price1": 145,
+      "price2": 547,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -4856,7 +4394,7 @@
       "englishOk": true
     },
     {
-      "id": "r173",
+      "id": "r170",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -4878,7 +4416,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 192,
-      "price2": 472,
+      "price2": 498,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -4889,7 +4427,7 @@
       "englishOk": true
     },
     {
-      "id": "r255",
+      "id": "r251",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -4911,7 +4449,7 @@
       "retArr": "10:00",
       "dur": "1h 45m",
       "price1": 95,
-      "price2": 240,
+      "price2": 244,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -4922,7 +4460,7 @@
       "englishOk": true
     },
     {
-      "id": "r305",
+      "id": "r304",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -4976,8 +4514,8 @@
       "retDept": "22:45",
       "retArr": "00:55",
       "dur": "2h 15m",
-      "price1": 166,
-      "price2": 547,
+      "price1": 162,
+      "price2": 543,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -4988,7 +4526,7 @@
       "englishOk": true
     },
     {
-      "id": "r413",
+      "id": "r417",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -5009,8 +4547,8 @@
       "retDept": "12:15",
       "retArr": "14:50",
       "dur": "2h 35m",
-      "price1": 298,
-      "price2": 617,
+      "price1": 294,
+      "price2": 630,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -5021,7 +4559,7 @@
       "englishOk": true
     },
     {
-      "id": "r474",
+      "id": "r473",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -5043,7 +4581,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 72,
-      "price2": 553,
+      "price2": 558,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5054,7 +4592,7 @@
       "englishOk": true
     },
     {
-      "id": "r640",
+      "id": "r639",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -5087,7 +4625,7 @@
       "englishOk": true
     },
     {
-      "id": "r670",
+      "id": "r667",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -5120,7 +4658,7 @@
       "englishOk": true
     },
     {
-      "id": "r733",
+      "id": "r731",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -5136,13 +4674,13 @@
       "retRaw": "2026-07-25",
       "month": 7,
       "year": 2026,
-      "dept": "09:55",
-      "arr": "11:10",
+      "dept": "19:05",
+      "arr": "20:20",
       "retDept": "21:00",
       "retArr": "00:05",
       "dur": "1h 15m",
       "price1": 72,
-      "price2": 597,
+      "price2": 602,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5153,7 +4691,7 @@
       "englishOk": true
     },
     {
-      "id": "r781",
+      "id": "r778",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -5175,7 +4713,7 @@
       "retArr": "23:55",
       "dur": "3h 10m",
       "price1": 192,
-      "price2": 749,
+      "price2": 766,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -5186,7 +4724,7 @@
       "englishOk": true
     },
     {
-      "id": "r819",
+      "id": "r817",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -5219,7 +4757,7 @@
       "englishOk": true
     },
     {
-      "id": "r24",
+      "id": "r23",
       "airline": "ryanair",
       "from": "KTW",
       "to": "OSL",
@@ -5241,7 +4779,7 @@
       "retArr": "11:50",
       "dur": "2h 05m",
       "price1": 432,
-      "price2": 524,
+      "price2": 525,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Norwegia – zalegalizowane małżeństwa jednopłciowe od 2009",
@@ -5252,7 +4790,7 @@
       "englishOk": true
     },
     {
-      "id": "r81",
+      "id": "r78",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -5273,8 +4811,8 @@
       "retDept": "20:05",
       "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 140,
-      "price2": 562,
+      "price1": 136,
+      "price2": 539,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5285,7 +4823,7 @@
       "englishOk": true
     },
     {
-      "id": "r167",
+      "id": "r168",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -5307,7 +4845,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 241,
-      "price2": 521,
+      "price2": 547,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -5340,7 +4878,7 @@
       "retArr": "08:40",
       "dur": "1h 45m",
       "price1": 95,
-      "price2": 197,
+      "price2": 201,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -5351,7 +4889,7 @@
       "englishOk": true
     },
     {
-      "id": "r287",
+      "id": "r285",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -5406,7 +4944,7 @@
       "retArr": "01:00",
       "dur": "2h 15m",
       "price1": 111,
-      "price2": 549,
+      "price2": 545,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -5417,7 +4955,7 @@
       "englishOk": true
     },
     {
-      "id": "r424",
+      "id": "r425",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -5438,8 +4976,8 @@
       "retDept": "14:00",
       "retArr": "16:35",
       "dur": "2h 35m",
-      "price1": 370,
-      "price2": 722,
+      "price1": 400,
+      "price2": 752,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -5450,7 +4988,7 @@
       "englishOk": true
     },
     {
-      "id": "r468",
+      "id": "r467",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -5472,7 +5010,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 119,
-      "price2": 600,
+      "price2": 605,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5505,7 +5043,7 @@
       "retArr": "17:05",
       "dur": "2h 55m",
       "price1": 275,
-      "price2": 753,
+      "price2": 800,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -5537,7 +5075,7 @@
       "retDept": "07:30",
       "retArr": "08:35",
       "dur": "1h 05m",
-      "price1": 111,
+      "price1": 119,
       "price2": 208,
       "sea": false,
       "lgbt": true,
@@ -5549,7 +5087,7 @@
       "englishOk": true
     },
     {
-      "id": "r564",
+      "id": "r562",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -5582,7 +5120,7 @@
       "englishOk": true
     },
     {
-      "id": "r642",
+      "id": "r641",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -5604,7 +5142,7 @@
       "retArr": "12:50",
       "dur": "2h 45m",
       "price1": 349,
-      "price2": 728,
+      "price2": 776,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -5615,7 +5153,7 @@
       "englishOk": true
     },
     {
-      "id": "r671",
+      "id": "r668",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -5648,7 +5186,7 @@
       "englishOk": true
     },
     {
-      "id": "r735",
+      "id": "r733",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -5681,7 +5219,7 @@
       "englishOk": true
     },
     {
-      "id": "r826",
+      "id": "r823",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -5702,8 +5240,8 @@
       "retDept": "21:45",
       "retArr": "00:45",
       "dur": "1h 05m",
-      "price1": 85,
-      "price2": 468,
+      "price1": 81,
+      "price2": 459,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5714,7 +5252,7 @@
       "englishOk": true
     },
     {
-      "id": "r90",
+      "id": "r89",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -5765,11 +5303,11 @@
       "year": 2026,
       "dept": "17:50",
       "arr": "20:35",
-      "retDept": "21:40",
-      "retArr": "00:30",
+      "retDept": "06:05",
+      "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 196,
-      "price2": 549,
+      "price2": 564,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -5813,7 +5351,7 @@
       "englishOk": true
     },
     {
-      "id": "r289",
+      "id": "r288",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -5834,8 +5372,8 @@
       "retDept": "19:55",
       "retArr": "21:55",
       "dur": "2h 00m",
-      "price1": 95,
-      "price2": 312,
+      "price1": 98,
+      "price2": 316,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -5846,7 +5384,7 @@
       "englishOk": true
     },
     {
-      "id": "r358",
+      "id": "r357",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -5912,7 +5450,7 @@
       "englishOk": true
     },
     {
-      "id": "r472",
+      "id": "r471",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -5934,7 +5472,7 @@
       "retArr": "22:20",
       "dur": "1h 25m",
       "price1": 127,
-      "price2": 612,
+      "price2": 608,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -5945,7 +5483,7 @@
       "englishOk": true
     },
     {
-      "id": "r628",
+      "id": "r627",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -5978,7 +5516,7 @@
       "englishOk": true
     },
     {
-      "id": "r665",
+      "id": "r663",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -6000,7 +5538,7 @@
       "retArr": "12:20",
       "dur": "2h 00m",
       "price1": 102,
-      "price2": 468,
+      "price2": 472,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -6011,7 +5549,7 @@
       "englishOk": true
     },
     {
-      "id": "r727",
+      "id": "r725",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -6027,13 +5565,13 @@
       "retRaw": "2026-08-01",
       "month": 7,
       "year": 2026,
-      "dept": "19:05",
-      "arr": "20:20",
+      "dept": "09:55",
+      "arr": "11:10",
       "retDept": "21:00",
       "retArr": "00:05",
       "dur": "1h 15m",
-      "price1": 94,
-      "price2": 550,
+      "price1": 111,
+      "price2": 567,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6044,7 +5582,7 @@
       "englishOk": true
     },
     {
-      "id": "r780",
+      "id": "r779",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -6065,8 +5603,8 @@
       "retDept": "20:50",
       "retArr": "23:55",
       "dur": "3h 10m",
-      "price1": 314,
-      "price2": 740,
+      "price1": 359,
+      "price2": 797,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -6077,7 +5615,7 @@
       "englishOk": true
     },
     {
-      "id": "r820",
+      "id": "r818",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -6086,20 +5624,20 @@
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
       "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
+      "retDay": "sobota",
+      "pattern": "fri-sat",
       "date": "Pt–Nd, 31 Lip – 2 Sie 2026",
       "raw": "2026-07-31",
-      "retRaw": "2026-08-02",
+      "retRaw": "2026-08-01",
       "month": 7,
       "year": 2026,
       "dept": "18:55",
       "arr": "20:00",
-      "retDept": "15:25",
-      "retArr": "18:25",
+      "retDept": "20:50",
+      "retArr": "23:50",
       "dur": "1h 05m",
-      "price1": 106,
-      "price2": 512,
+      "price1": 111,
+      "price2": 508,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6143,7 +5681,7 @@
       "englishOk": true
     },
     {
-      "id": "r85",
+      "id": "r87",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -6164,8 +5702,8 @@
       "retDept": "20:05",
       "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 153,
-      "price2": 624,
+      "price1": 178,
+      "price2": 649,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6176,7 +5714,7 @@
       "englishOk": true
     },
     {
-      "id": "r168",
+      "id": "r169",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -6185,20 +5723,20 @@
       "flag": "🇪🇸",
       "country": "Hiszpania",
       "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
+      "retDay": "poniedziałek",
+      "pattern": "fri-mon",
       "date": "Sb–Nd, 1–2 Sie 2026",
       "raw": "2026-08-01",
-      "retRaw": "2026-08-02",
+      "retRaw": "2026-08-03",
       "month": 8,
       "year": 2026,
       "dept": "08:45",
       "arr": "11:30",
-      "retDept": "21:40",
-      "retArr": "00:30",
+      "retDept": "19:00",
+      "retArr": "21:50",
       "dur": "2h 45m",
-      "price1": 179,
-      "price2": 532,
+      "price1": 183,
+      "price2": 540,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -6209,7 +5747,7 @@
       "englishOk": true
     },
     {
-      "id": "r229",
+      "id": "r238",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -6230,8 +5768,8 @@
       "retDept": "08:15",
       "retArr": "10:00",
       "dur": "1h 45m",
-      "price1": 81,
-      "price2": 229,
+      "price1": 94,
+      "price2": 242,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -6242,7 +5780,7 @@
       "englishOk": true
     },
     {
-      "id": "r284",
+      "id": "r283",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -6330,7 +5868,7 @@
       "retArr": "16:35",
       "dur": "2h 35m",
       "price1": 215,
-      "price2": 525,
+      "price2": 534,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -6396,7 +5934,7 @@
       "retArr": "08:35",
       "dur": "1h 05m",
       "price1": 81,
-      "price2": 153,
+      "price2": 162,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Wiedeń – stolica przyjazna LGBTQ+, doroczny Vienna Pride",
@@ -6440,7 +5978,7 @@
       "englishOk": true
     },
     {
-      "id": "r638",
+      "id": "r636",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -6473,7 +6011,7 @@
       "englishOk": true
     },
     {
-      "id": "r674",
+      "id": "r673",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -6494,8 +6032,8 @@
       "retDept": "18:45",
       "retArr": "20:40",
       "dur": "2h 00m",
-      "price1": 157,
-      "price2": 536,
+      "price1": 153,
+      "price2": 532,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -6506,7 +6044,7 @@
       "englishOk": true
     },
     {
-      "id": "r737",
+      "id": "r735",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -6527,8 +6065,8 @@
       "retDept": "20:05",
       "retArr": "23:10",
       "dur": "1h 15m",
-      "price1": 128,
-      "price2": 579,
+      "price1": 132,
+      "price2": 593,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6539,7 +6077,7 @@
       "englishOk": true
     },
     {
-      "id": "r821",
+      "id": "r819",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -6572,7 +6110,7 @@
       "englishOk": true
     },
     {
-      "id": "r856",
+      "id": "r854",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -6594,7 +6132,7 @@
       "retArr": "09:50",
       "dur": "2h 55m",
       "price1": 343,
-      "price2": 564,
+      "price2": 598,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -6605,7 +6143,7 @@
       "englishOk": true
     },
     {
-      "id": "r89",
+      "id": "r90",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -6627,7 +6165,7 @@
       "retArr": "23:15",
       "dur": "1h 20m",
       "price1": 315,
-      "price2": 580,
+      "price2": 575,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6638,7 +6176,7 @@
       "englishOk": true
     },
     {
-      "id": "r176",
+      "id": "r173",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -6659,8 +6197,8 @@
       "retDept": "06:05",
       "retArr": "08:55",
       "dur": "2h 45m",
-      "price1": 234,
-      "price2": 506,
+      "price1": 230,
+      "price2": 498,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -6671,7 +6209,7 @@
       "englishOk": true
     },
     {
-      "id": "r246",
+      "id": "r244",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -6713,20 +6251,20 @@
       "flag": "🇮🇹",
       "country": "Włochy",
       "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
+      "retDay": "sobota",
+      "pattern": "fri-sat",
       "date": "Pt–Nd, 7–9 Sie 2026",
       "raw": "2026-08-07",
-      "retRaw": "2026-08-09",
+      "retRaw": "2026-08-08",
       "month": 8,
       "year": 2026,
       "dept": "16:10",
       "arr": "18:10",
-      "retDept": "12:20",
-      "retArr": "14:20",
+      "retDept": "21:05",
+      "retArr": "23:05",
       "dur": "2h 00m",
       "price1": 150,
-      "price2": 432,
+      "price2": 439,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -6753,8 +6291,8 @@
       "retRaw": "2026-08-09",
       "month": 8,
       "year": 2026,
-      "dept": "06:00",
-      "arr": "08:15",
+      "dept": "12:20",
+      "arr": "14:35",
       "retDept": "22:50",
       "retArr": "01:00",
       "dur": "2h 15m",
@@ -6792,7 +6330,7 @@
       "retArr": "14:50",
       "dur": "2h 35m",
       "price1": 123,
-      "price2": 353,
+      "price2": 362,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -6825,7 +6363,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 148,
-      "price2": 428,
+      "price2": 433,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -6836,7 +6374,7 @@
       "englishOk": true
     },
     {
-      "id": "r630",
+      "id": "r629",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -6845,20 +6383,20 @@
       "flag": "🇲🇹",
       "country": "Malta",
       "deptDay": "piątek",
-      "retDay": "niedziela",
-      "pattern": "fri-sun",
+      "retDay": "sobota",
+      "pattern": "fri-sat",
       "date": "Pt–Nd, 7–9 Sie 2026",
       "raw": "2026-08-07",
-      "retRaw": "2026-08-09",
+      "retRaw": "2026-08-08",
       "month": 8,
       "year": 2026,
       "dept": "15:45",
       "arr": "18:30",
-      "retDept": "14:20",
-      "retArr": "17:05",
+      "retDept": "15:30",
+      "retArr": "18:15",
       "dur": "2h 45m",
       "price1": 220,
-      "price2": 600,
+      "price2": 615,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -6890,8 +6428,8 @@
       "retDept": "10:25",
       "retArr": "12:20",
       "dur": "2h 00m",
-      "price1": 170,
-      "price2": 339,
+      "price1": 179,
+      "price2": 367,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -6902,7 +6440,7 @@
       "englishOk": true
     },
     {
-      "id": "r726",
+      "id": "r723",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -6935,7 +6473,7 @@
       "englishOk": true
     },
     {
-      "id": "r777",
+      "id": "r775",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -6968,7 +6506,7 @@
       "englishOk": true
     },
     {
-      "id": "r803",
+      "id": "r811",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -6989,8 +6527,8 @@
       "retDept": "20:50",
       "retArr": "23:50",
       "dur": "1h 05m",
-      "price1": 148,
-      "price2": 360,
+      "price1": 175,
+      "price2": 420,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -7034,7 +6572,7 @@
       "englishOk": true
     },
     {
-      "id": "r80",
+      "id": "r79",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -7043,19 +6581,19 @@
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
       "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
       "date": "Sb–Nd, 8–9 Sie 2026",
       "raw": "2026-08-08",
-      "retRaw": "2026-08-10",
+      "retRaw": "2026-08-09",
       "month": 8,
       "year": 2026,
       "dept": "09:50",
       "arr": "11:10",
-      "retDept": "10:45",
-      "retArr": "13:55",
+      "retDept": "20:05",
+      "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 294,
+      "price1": 289,
       "price2": 549,
       "sea": false,
       "lgbt": true,
@@ -7088,8 +6626,8 @@
       "retDept": "06:05",
       "retArr": "08:55",
       "dur": "2h 45m",
-      "price1": 247,
-      "price2": 519,
+      "price1": 243,
+      "price2": 511,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -7100,7 +6638,7 @@
       "englishOk": true
     },
     {
-      "id": "r270",
+      "id": "r269",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -7133,7 +6671,7 @@
       "englishOk": true
     },
     {
-      "id": "r295",
+      "id": "r305",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -7166,7 +6704,7 @@
       "englishOk": true
     },
     {
-      "id": "r347",
+      "id": "r349",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -7187,8 +6725,8 @@
       "retDept": "22:50",
       "retArr": "01:00",
       "dur": "2h 15m",
-      "price1": 174,
-      "price2": 536,
+      "price1": 179,
+      "price2": 540,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -7232,7 +6770,7 @@
       "englishOk": true
     },
     {
-      "id": "r466",
+      "id": "r465",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -7254,7 +6792,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 285,
-      "price2": 565,
+      "price2": 570,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -7331,7 +6869,7 @@
       "englishOk": true
     },
     {
-      "id": "r561",
+      "id": "r563",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -7353,7 +6891,7 @@
       "retArr": "01:10",
       "dur": "2h 50m",
       "price1": 401,
-      "price2": 730,
+      "price2": 769,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -7364,7 +6902,7 @@
       "englishOk": true
     },
     {
-      "id": "r634",
+      "id": "r633",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -7397,7 +6935,7 @@
       "englishOk": true
     },
     {
-      "id": "r676",
+      "id": "r674",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -7419,7 +6957,7 @@
       "retArr": "19:00",
       "dur": "2h 00m",
       "price1": 204,
-      "price2": 468,
+      "price2": 477,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -7430,7 +6968,7 @@
       "englishOk": true
     },
     {
-      "id": "r736",
+      "id": "r734",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -7463,7 +7001,7 @@
       "englishOk": true
     },
     {
-      "id": "r827",
+      "id": "r824",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -7485,7 +7023,7 @@
       "retArr": "00:45",
       "dur": "1h 05m",
       "price1": 191,
-      "price2": 372,
+      "price2": 382,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -7496,7 +7034,7 @@
       "englishOk": true
     },
     {
-      "id": "r860",
+      "id": "r856",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -7529,7 +7067,7 @@
       "englishOk": true
     },
     {
-      "id": "r87",
+      "id": "r85",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -7613,11 +7151,11 @@
       "year": 2026,
       "dept": "23:20",
       "arr": "01:05",
-      "retDept": "15:20",
-      "retArr": "17:05",
+      "retDept": "23:15",
+      "retArr": "01:00",
       "dur": "1h 45m",
       "price1": 95,
-      "price2": 194,
+      "price2": 193,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -7628,7 +7166,7 @@
       "englishOk": true
     },
     {
-      "id": "r279",
+      "id": "r280",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -7650,7 +7188,7 @@
       "retArr": "15:00",
       "dur": "2h 00m",
       "price1": 133,
-      "price2": 304,
+      "price2": 319,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -7661,7 +7199,7 @@
       "englishOk": true
     },
     {
-      "id": "r362",
+      "id": "r363",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -7694,7 +7232,7 @@
       "englishOk": true
     },
     {
-      "id": "r411",
+      "id": "r410",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -7727,7 +7265,7 @@
       "englishOk": true
     },
     {
-      "id": "r469",
+      "id": "r468",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -7749,7 +7287,7 @@
       "retArr": "00:30",
       "dur": "1h 25m",
       "price1": 352,
-      "price2": 558,
+      "price2": 553,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -7760,7 +7298,7 @@
       "englishOk": true
     },
     {
-      "id": "r592",
+      "id": "r591",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -7793,7 +7331,7 @@
       "englishOk": true
     },
     {
-      "id": "r618",
+      "id": "r617",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -7826,7 +7364,7 @@
       "englishOk": true
     },
     {
-      "id": "r667",
+      "id": "r665",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -7859,7 +7397,7 @@
       "englishOk": true
     },
     {
-      "id": "r728",
+      "id": "r726",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -7880,8 +7418,8 @@
       "retDept": "21:00",
       "retArr": "00:05",
       "dur": "1h 15m",
-      "price1": 349,
-      "price2": 570,
+      "price1": 353,
+      "price2": 569,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -7892,7 +7430,7 @@
       "englishOk": true
     },
     {
-      "id": "r778",
+      "id": "r776",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -7913,8 +7451,8 @@
       "retDept": "20:50",
       "retArr": "23:55",
       "dur": "3h 10m",
-      "price1": 238,
-      "price2": 702,
+      "price1": 234,
+      "price2": 698,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -7925,7 +7463,7 @@
       "englishOk": true
     },
     {
-      "id": "r823",
+      "id": "r822",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -8057,7 +7595,7 @@
       "englishOk": true
     },
     {
-      "id": "r260",
+      "id": "r259",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -8073,8 +7611,8 @@
       "retRaw": "2026-08-17",
       "month": 8,
       "year": 2026,
-      "dept": "12:40",
-      "arr": "14:25",
+      "dept": "10:20",
+      "arr": "12:05",
       "retDept": "20:05",
       "retArr": "21:50",
       "dur": "1h 45m",
@@ -8090,7 +7628,7 @@
       "englishOk": true
     },
     {
-      "id": "r281",
+      "id": "r289",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -8099,17 +7637,17 @@
       "flag": "🇮🇹",
       "country": "Włochy",
       "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
+      "retDay": "poniedziałek",
+      "pattern": "fri-mon",
       "date": "Sb–Nd, 15–16 Sie 2026",
       "raw": "2026-08-15",
-      "retRaw": "2026-08-16",
+      "retRaw": "2026-08-17",
       "month": 8,
       "year": 2026,
       "dept": "18:40",
       "arr": "20:40",
-      "retDept": "12:20",
-      "retArr": "14:20",
+      "retDept": "09:00",
+      "retArr": "11:00",
       "dur": "2h 00m",
       "price1": 106,
       "price2": 316,
@@ -8178,7 +7716,7 @@
       "retArr": "16:35",
       "dur": "2h 35m",
       "price1": 187,
-      "price2": 532,
+      "price2": 541,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -8189,7 +7727,7 @@
       "englishOk": true
     },
     {
-      "id": "r465",
+      "id": "r463",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -8276,8 +7814,8 @@
       "retDept": "07:30",
       "retArr": "08:35",
       "dur": "1h 05m",
-      "price1": 136,
-      "price2": 284,
+      "price1": 132,
+      "price2": 280,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Wiedeń – stolica przyjazna LGBTQ+, doroczny Vienna Pride",
@@ -8321,7 +7859,7 @@
       "englishOk": true
     },
     {
-      "id": "r637",
+      "id": "r635",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -8343,7 +7881,7 @@
       "retArr": "12:50",
       "dur": "2h 45m",
       "price1": 226,
-      "price2": 511,
+      "price2": 549,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -8354,7 +7892,7 @@
       "englishOk": true
     },
     {
-      "id": "r679",
+      "id": "r677",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -8387,7 +7925,7 @@
       "englishOk": true
     },
     {
-      "id": "r734",
+      "id": "r732",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -8408,8 +7946,8 @@
       "retDept": "20:05",
       "retArr": "23:10",
       "dur": "1h 15m",
-      "price1": 379,
-      "price2": 508,
+      "price1": 375,
+      "price2": 528,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -8420,7 +7958,7 @@
       "englishOk": true
     },
     {
-      "id": "r830",
+      "id": "r828",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -8453,7 +7991,7 @@
       "englishOk": true
     },
     {
-      "id": "r851",
+      "id": "r847",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -8486,7 +8024,7 @@
       "englishOk": true
     },
     {
-      "id": "r78",
+      "id": "r77",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -8507,8 +8045,8 @@
       "retDept": "06:15",
       "retArr": "09:25",
       "dur": "1h 20m",
-      "price1": 438,
-      "price2": 531,
+      "price1": 443,
+      "price2": 536,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -8537,11 +8075,11 @@
       "year": 2026,
       "dept": "17:50",
       "arr": "20:35",
-      "retDept": "21:40",
-      "retArr": "00:30",
+      "retDept": "06:05",
+      "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 409,
-      "price2": 619,
+      "price2": 639,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -8618,7 +8156,7 @@
       "englishOk": true
     },
     {
-      "id": "r349",
+      "id": "r348",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -8640,7 +8178,7 @@
       "retArr": "00:55",
       "dur": "2h 15m",
       "price1": 387,
-      "price2": 540,
+      "price2": 536,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -8717,7 +8255,7 @@
       "englishOk": true
     },
     {
-      "id": "r620",
+      "id": "r619",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -8750,7 +8288,7 @@
       "englishOk": true
     },
     {
-      "id": "r673",
+      "id": "r672",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -8771,8 +8309,8 @@
       "retDept": "18:45",
       "retArr": "20:40",
       "dur": "2h 00m",
-      "price1": 332,
-      "price2": 489,
+      "price1": 328,
+      "price2": 468,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -8783,7 +8321,7 @@
       "englishOk": true
     },
     {
-      "id": "r721",
+      "id": "r717",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -8816,7 +8354,7 @@
       "englishOk": true
     },
     {
-      "id": "r770",
+      "id": "r769",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -8838,7 +8376,7 @@
       "retArr": "23:55",
       "dur": "3h 10m",
       "price1": 272,
-      "price2": 540,
+      "price2": 558,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -8849,7 +8387,7 @@
       "englishOk": true
     },
     {
-      "id": "r810",
+      "id": "r812",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -8870,8 +8408,8 @@
       "retDept": "20:50",
       "retArr": "23:50",
       "dur": "1h 05m",
-      "price1": 316,
-      "price2": 393,
+      "price1": 353,
+      "price2": 431,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -8879,39 +8417,6 @@
       "passport": true,
       "visa": "brak",
       "currency": "GBP £",
-      "englishOk": true
-    },
-    {
-      "id": "r842",
-      "airline": "ryanair",
-      "from": "POZ",
-      "to": "DUB",
-      "fromCity": "Poznań",
-      "toCity": "Dublin",
-      "flag": "🇮🇪",
-      "country": "Irlandia",
-      "deptDay": "piątek",
-      "retDay": "sobota",
-      "pattern": "fri-sat",
-      "date": "Pt–Nd, 21–23 Sie 2026",
-      "raw": "2026-08-21",
-      "retRaw": "2026-08-22",
-      "month": 8,
-      "year": 2026,
-      "dept": "17:50",
-      "arr": "19:30",
-      "retDept": "17:55",
-      "retArr": "21:25",
-      "dur": "1h 40m",
-      "price1": 617,
-      "price2": 795,
-      "sea": false,
-      "lgbt": true,
-      "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
-      "distKm": 12,
-      "passport": true,
-      "visa": "brak",
-      "currency": "EUR €",
       "englishOk": true
     },
     {
@@ -8948,7 +8453,7 @@
       "englishOk": true
     },
     {
-      "id": "r84",
+      "id": "r82",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -8981,7 +8486,7 @@
       "englishOk": true
     },
     {
-      "id": "r172",
+      "id": "r176",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -9003,7 +8508,7 @@
       "retArr": "21:50",
       "dur": "2h 45m",
       "price1": 353,
-      "price2": 549,
+      "price2": 553,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -9080,7 +8585,7 @@
       "englishOk": true
     },
     {
-      "id": "r357",
+      "id": "r361",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -9089,17 +8594,17 @@
       "flag": "🇫🇷",
       "country": "Francja",
       "deptDay": "sobota",
-      "retDay": "niedziela",
-      "pattern": "sat-sun",
+      "retDay": "poniedziałek",
+      "pattern": "fri-mon",
       "date": "Sb–Nd, 22–23 Sie 2026",
       "raw": "2026-08-22",
-      "retRaw": "2026-08-23",
+      "retRaw": "2026-08-24",
       "month": 8,
       "year": 2026,
       "dept": "20:05",
       "arr": "22:20",
-      "retDept": "22:50",
-      "retArr": "01:00",
+      "retDept": "17:25",
+      "retArr": "19:35",
       "dur": "2h 15m",
       "price1": 399,
       "price2": 582,
@@ -9113,7 +8618,7 @@
       "englishOk": true
     },
     {
-      "id": "r397",
+      "id": "r403",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -9146,7 +8651,7 @@
       "englishOk": true
     },
     {
-      "id": "r464",
+      "id": "r462",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -9167,8 +8672,8 @@
       "retDept": "19:50",
       "retArr": "23:10",
       "dur": "1h 25m",
-      "price1": 430,
-      "price2": 523,
+      "price1": 426,
+      "price2": 519,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -9266,8 +8771,8 @@
       "retDept": "22:20",
       "retArr": "01:10",
       "dur": "2h 50m",
-      "price1": 190,
-      "price2": 387,
+      "price1": 241,
+      "price2": 439,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -9278,7 +8783,7 @@
       "englishOk": true
     },
     {
-      "id": "r633",
+      "id": "r631",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -9311,7 +8816,7 @@
       "englishOk": true
     },
     {
-      "id": "r675",
+      "id": "r671",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -9333,7 +8838,7 @@
       "retArr": "20:40",
       "dur": "2h 00m",
       "price1": 383,
-      "price2": 540,
+      "price2": 523,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -9344,7 +8849,7 @@
       "englishOk": true
     },
     {
-      "id": "r723",
+      "id": "r720",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -9377,7 +8882,7 @@
       "englishOk": true
     },
     {
-      "id": "r829",
+      "id": "r827",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9398,8 +8903,8 @@
       "retDept": "13:30",
       "retArr": "16:30",
       "dur": "1h 05m",
-      "price1": 413,
-      "price2": 516,
+      "price1": 409,
+      "price2": 512,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -9410,7 +8915,7 @@
       "englishOk": true
     },
     {
-      "id": "r857",
+      "id": "r851",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -9509,7 +9014,7 @@
       "englishOk": true
     },
     {
-      "id": "r241",
+      "id": "r240",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -9542,7 +9047,7 @@
       "englishOk": true
     },
     {
-      "id": "r302",
+      "id": "r300",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -9575,7 +9080,7 @@
       "englishOk": true
     },
     {
-      "id": "r359",
+      "id": "r358",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -9629,8 +9134,8 @@
       "retDept": "21:55",
       "retArr": "00:30",
       "dur": "2h 35m",
-      "price1": 149,
-      "price2": 412,
+      "price1": 145,
+      "price2": 408,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -9641,7 +9146,7 @@
       "englishOk": true
     },
     {
-      "id": "r471",
+      "id": "r470",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -9662,8 +9167,8 @@
       "retDept": "21:10",
       "retArr": "00:30",
       "dur": "1h 25m",
-      "price1": 511,
-      "price2": 589,
+      "price1": 506,
+      "price2": 585,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -9674,7 +9179,7 @@
       "englishOk": true
     },
     {
-      "id": "r504",
+      "id": "r506",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -9690,13 +9195,13 @@
       "retRaw": "2026-08-29",
       "month": 8,
       "year": 2026,
-      "dept": "10:10",
-      "arr": "12:10",
+      "dept": "22:25",
+      "arr": "00:25",
       "retDept": "21:00",
       "retArr": "00:50",
       "dur": "2h 00m",
-      "price1": 581,
-      "price2": 726,
+      "price1": 626,
+      "price2": 771,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -9707,7 +9212,7 @@
       "englishOk": true
     },
     {
-      "id": "r589",
+      "id": "r587",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -9740,7 +9245,7 @@
       "englishOk": true
     },
     {
-      "id": "r614",
+      "id": "r613",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -9773,7 +9278,7 @@
       "englishOk": true
     },
     {
-      "id": "r656",
+      "id": "r658",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -9794,8 +9299,8 @@
       "retDept": "10:25",
       "retArr": "12:20",
       "dur": "2h 00m",
-      "price1": 238,
-      "price2": 400,
+      "price1": 275,
+      "price2": 437,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -9806,7 +9311,7 @@
       "englishOk": true
     },
     {
-      "id": "r729",
+      "id": "r727",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -9827,8 +9332,8 @@
       "retDept": "21:00",
       "retArr": "00:05",
       "dur": "1h 15m",
-      "price1": 494,
-      "price2": 562,
+      "price1": 489,
+      "price2": 558,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -9839,7 +9344,7 @@
       "englishOk": true
     },
     {
-      "id": "r772",
+      "id": "r770",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -9872,7 +9377,7 @@
       "englishOk": true
     },
     {
-      "id": "r822",
+      "id": "r820",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -9905,7 +9410,7 @@
       "englishOk": true
     },
     {
-      "id": "r838",
+      "id": "r836",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -9960,7 +9465,7 @@
       "retArr": "11:50",
       "dur": "2h 05m",
       "price1": 138,
-      "price2": 303,
+      "price2": 331,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Norwegia – zalegalizowane małżeństwa jednopłciowe od 2009",
@@ -10070,7 +9575,7 @@
       "englishOk": true
     },
     {
-      "id": "r316",
+      "id": "r314",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -10103,7 +9608,7 @@
       "englishOk": true
     },
     {
-      "id": "r404",
+      "id": "r402",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -10125,7 +9630,7 @@
       "retArr": "16:35",
       "dur": "2h 35m",
       "price1": 127,
-      "price2": 386,
+      "price2": 403,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -10136,7 +9641,7 @@
       "englishOk": true
     },
     {
-      "id": "r473",
+      "id": "r474",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -10157,8 +9662,8 @@
       "retDept": "21:10",
       "retArr": "00:30",
       "dur": "1h 25m",
-      "price1": 570,
-      "price2": 649,
+      "price1": 583,
+      "price2": 662,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10169,7 +9674,7 @@
       "englishOk": true
     },
     {
-      "id": "r513",
+      "id": "r515",
       "airline": "ryanair",
       "from": "KRK",
       "to": "PMI",
@@ -10191,7 +9696,7 @@
       "retArr": "00:10",
       "dur": "2h 55m",
       "price1": 273,
-      "price2": 623,
+      "price2": 671,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -10268,7 +9773,7 @@
       "englishOk": true
     },
     {
-      "id": "r624",
+      "id": "r623",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -10301,7 +9806,7 @@
       "englishOk": true
     },
     {
-      "id": "r657",
+      "id": "r654",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -10310,20 +9815,20 @@
       "flag": "🇫🇷",
       "country": "Francja",
       "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
       "date": "Sb–Nd, 29–30 Sie 2026",
       "raw": "2026-08-29",
-      "retRaw": "2026-08-31",
+      "retRaw": "2026-08-30",
       "month": 8,
       "year": 2026,
       "dept": "08:00",
       "arr": "10:00",
-      "retDept": "17:05",
-      "retArr": "19:00",
+      "retDept": "18:45",
+      "retArr": "20:40",
       "dur": "2h 00m",
       "price1": 217,
-      "price2": 375,
+      "price2": 400,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -10334,7 +9839,7 @@
       "englishOk": true
     },
     {
-      "id": "r731",
+      "id": "r729",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -10367,7 +9872,7 @@
       "englishOk": true
     },
     {
-      "id": "r824",
+      "id": "r821",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -10388,8 +9893,8 @@
       "retDept": "15:25",
       "retArr": "18:25",
       "dur": "1h 05m",
-      "price1": 502,
-      "price2": 570,
+      "price1": 494,
+      "price2": 561,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10400,7 +9905,7 @@
       "englishOk": true
     },
     {
-      "id": "r858",
+      "id": "r853",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -10433,7 +9938,7 @@
       "englishOk": true
     },
     {
-      "id": "r70",
+      "id": "r72",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -10454,8 +9959,8 @@
       "retDept": "06:15",
       "retArr": "09:25",
       "dur": "1h 20m",
-      "price1": 318,
-      "price2": 408,
+      "price1": 363,
+      "price2": 453,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10466,7 +9971,7 @@
       "englishOk": true
     },
     {
-      "id": "r170",
+      "id": "r172",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -10487,8 +9992,8 @@
       "retDept": "06:05",
       "retArr": "08:55",
       "dur": "2h 45m",
-      "price1": 328,
-      "price2": 443,
+      "price1": 332,
+      "price2": 447,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -10499,7 +10004,7 @@
       "englishOk": true
     },
     {
-      "id": "r225",
+      "id": "r226",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -10521,7 +10026,7 @@
       "retArr": "01:00",
       "dur": "1h 45m",
       "price1": 119,
-      "price2": 217,
+      "price2": 221,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -10565,7 +10070,7 @@
       "englishOk": true
     },
     {
-      "id": "r337",
+      "id": "r338",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -10581,13 +10086,13 @@
       "retRaw": "2026-09-05",
       "month": 9,
       "year": 2026,
-      "dept": "06:00",
-      "arr": "08:15",
+      "dept": "12:20",
+      "arr": "14:35",
       "retDept": "22:45",
       "retArr": "00:55",
       "dur": "2h 15m",
-      "price1": 268,
-      "price2": 451,
+      "price1": 281,
+      "price2": 464,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -10631,7 +10136,7 @@
       "englishOk": true
     },
     {
-      "id": "r450",
+      "id": "r449",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -10664,7 +10169,7 @@
       "englishOk": true
     },
     {
-      "id": "r506",
+      "id": "r504",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -10697,7 +10202,7 @@
       "englishOk": true
     },
     {
-      "id": "r586",
+      "id": "r585",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -10718,8 +10223,8 @@
       "retDept": "19:30",
       "retArr": "23:00",
       "dur": "1h 40m",
-      "price1": 349,
-      "price2": 515,
+      "price1": 391,
+      "price2": 557,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -10752,7 +10257,7 @@
       "retArr": "18:15",
       "dur": "2h 45m",
       "price1": 179,
-      "price2": 392,
+      "price2": 426,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -10763,7 +10268,7 @@
       "englishOk": true
     },
     {
-      "id": "r658",
+      "id": "r656",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -10796,7 +10301,7 @@
       "englishOk": true
     },
     {
-      "id": "r722",
+      "id": "r718",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -10805,20 +10310,20 @@
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
       "deptDay": "piątek",
-      "retDay": "sobota",
-      "pattern": "fri-sat",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
       "date": "Pt–Nd, 4–6 Wrz 2026",
       "raw": "2026-09-04",
-      "retRaw": "2026-09-05",
+      "retRaw": "2026-09-06",
       "month": 9,
       "year": 2026,
       "dept": "19:05",
       "arr": "20:20",
-      "retDept": "07:25",
-      "retArr": "10:30",
+      "retDept": "10:40",
+      "retArr": "13:45",
       "dur": "1h 15m",
       "price1": 391,
-      "price2": 489,
+      "price2": 484,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -10829,7 +10334,7 @@
       "englishOk": true
     },
     {
-      "id": "r771",
+      "id": "r768",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -10862,7 +10367,7 @@
       "englishOk": true
     },
     {
-      "id": "r787",
+      "id": "r785",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -10895,7 +10400,7 @@
       "englishOk": true
     },
     {
-      "id": "r837",
+      "id": "r835",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -10961,7 +10466,7 @@
       "englishOk": true
     },
     {
-      "id": "r75",
+      "id": "r73",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -11016,7 +10521,7 @@
       "retArr": "11:50",
       "dur": "1h 55m",
       "price1": 448,
-      "price2": 597,
+      "price2": 593,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -11060,7 +10565,7 @@
       "englishOk": true
     },
     {
-      "id": "r169",
+      "id": "r167",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -11126,7 +10631,7 @@
       "englishOk": true
     },
     {
-      "id": "r315",
+      "id": "r316",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11159,7 +10664,7 @@
       "englishOk": true
     },
     {
-      "id": "r336",
+      "id": "r340",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -11225,7 +10730,7 @@
       "englishOk": true
     },
     {
-      "id": "r452",
+      "id": "r450",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -11246,8 +10751,8 @@
       "retDept": "19:50",
       "retArr": "23:10",
       "dur": "1h 25m",
-      "price1": 311,
-      "price2": 414,
+      "price1": 319,
+      "price2": 422,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -11258,7 +10763,7 @@
       "englishOk": true
     },
     {
-      "id": "r507",
+      "id": "r505",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -11378,8 +10883,8 @@
       "retDept": "22:20",
       "retArr": "01:10",
       "dur": "2h 50m",
-      "price1": 230,
-      "price2": 426,
+      "price1": 253,
+      "price2": 449,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -11390,7 +10895,7 @@
       "englishOk": true
     },
     {
-      "id": "r622",
+      "id": "r621",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -11423,7 +10928,7 @@
       "englishOk": true
     },
     {
-      "id": "r669",
+      "id": "r666",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -11456,7 +10961,7 @@
       "englishOk": true
     },
     {
-      "id": "r716",
+      "id": "r713",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -11474,11 +10979,11 @@
       "year": 2026,
       "dept": "05:45",
       "arr": "07:00",
-      "retDept": "21:00",
-      "retArr": "00:05",
+      "retDept": "10:40",
+      "retArr": "13:45",
       "dur": "1h 15m",
       "price1": 328,
-      "price2": 426,
+      "price2": 421,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -11489,7 +10994,7 @@
       "englishOk": true
     },
     {
-      "id": "r804",
+      "id": "r801",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -11522,7 +11027,7 @@
       "englishOk": true
     },
     {
-      "id": "r854",
+      "id": "r849",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -11654,7 +11159,7 @@
       "englishOk": true
     },
     {
-      "id": "r245",
+      "id": "r243",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -11687,7 +11192,7 @@
       "englishOk": true
     },
     {
-      "id": "r313",
+      "id": "r312",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -11720,7 +11225,7 @@
       "englishOk": true
     },
     {
-      "id": "r348",
+      "id": "r345",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -11741,8 +11246,8 @@
       "retDept": "22:45",
       "retArr": "00:55",
       "dur": "2h 15m",
-      "price1": 230,
-      "price2": 540,
+      "price1": 217,
+      "price2": 523,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -11753,7 +11258,7 @@
       "englishOk": true
     },
     {
-      "id": "r382",
+      "id": "r381",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -11786,7 +11291,7 @@
       "englishOk": true
     },
     {
-      "id": "r441",
+      "id": "r444",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -11807,8 +11312,8 @@
       "retDept": "19:45",
       "retArr": "23:05",
       "dur": "1h 25m",
-      "price1": 200,
-      "price2": 337,
+      "price1": 217,
+      "price2": 354,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -11852,7 +11357,7 @@
       "englishOk": true
     },
     {
-      "id": "r587",
+      "id": "r586",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -11885,7 +11390,7 @@
       "englishOk": true
     },
     {
-      "id": "r616",
+      "id": "r615",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -11918,7 +11423,7 @@
       "englishOk": true
     },
     {
-      "id": "r660",
+      "id": "r657",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -11940,7 +11445,7 @@
       "retArr": "12:20",
       "dur": "2h 00m",
       "price1": 209,
-      "price2": 434,
+      "price2": 430,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -11951,7 +11456,7 @@
       "englishOk": true
     },
     {
-      "id": "r700",
+      "id": "r698",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -11969,8 +11474,8 @@
       "year": 2026,
       "dept": "09:55",
       "arr": "11:10",
-      "retDept": "21:00",
-      "retArr": "00:05",
+      "retDept": "07:25",
+      "retArr": "10:30",
       "dur": "1h 15m",
       "price1": 179,
       "price2": 272,
@@ -11984,7 +11489,7 @@
       "englishOk": true
     },
     {
-      "id": "r760",
+      "id": "r758",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -12005,8 +11510,8 @@
       "retDept": "19:30",
       "retArr": "23:05",
       "dur": "1h 45m",
-      "price1": 396,
-      "price2": 660,
+      "price1": 400,
+      "price2": 664,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -12017,7 +11522,7 @@
       "englishOk": true
     },
     {
-      "id": "r769",
+      "id": "r767",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -12039,7 +11544,7 @@
       "retArr": "23:55",
       "dur": "3h 10m",
       "price1": 247,
-      "price2": 515,
+      "price2": 519,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -12050,7 +11555,7 @@
       "englishOk": true
     },
     {
-      "id": "r789",
+      "id": "r787",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -12083,7 +11588,7 @@
       "englishOk": true
     },
     {
-      "id": "r836",
+      "id": "r834",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -12149,7 +11654,7 @@
       "englishOk": true
     },
     {
-      "id": "r69",
+      "id": "r68",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -12248,7 +11753,7 @@
       "englishOk": true
     },
     {
-      "id": "r262",
+      "id": "r261",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -12281,7 +11786,7 @@
       "englishOk": true
     },
     {
-      "id": "r312",
+      "id": "r311",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -12314,7 +11819,7 @@
       "englishOk": true
     },
     {
-      "id": "r363",
+      "id": "r362",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -12402,7 +11907,7 @@
       "retArr": "21:00",
       "dur": "1h 25m",
       "price1": 153,
-      "price2": 271,
+      "price2": 266,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -12413,7 +11918,7 @@
       "englishOk": true
     },
     {
-      "id": "r509",
+      "id": "r507",
       "airline": "ryanair",
       "from": "KRK",
       "to": "DUB",
@@ -12467,8 +11972,8 @@
       "retDept": "07:30",
       "retArr": "08:35",
       "dur": "1h 05m",
-      "price1": 102,
-      "price2": 315,
+      "price1": 94,
+      "price2": 306,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Wiedeń – stolica przyjazna LGBTQ+, doroczny Vienna Pride",
@@ -12512,7 +12017,7 @@
       "englishOk": true
     },
     {
-      "id": "r626",
+      "id": "r625",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -12545,7 +12050,7 @@
       "englishOk": true
     },
     {
-      "id": "r684",
+      "id": "r682",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -12578,7 +12083,7 @@
       "englishOk": true
     },
     {
-      "id": "r707",
+      "id": "r705",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -12611,7 +12116,7 @@
       "englishOk": true
     },
     {
-      "id": "r799",
+      "id": "r797",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -12644,7 +12149,7 @@
       "englishOk": true
     },
     {
-      "id": "r853",
+      "id": "r848",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -12677,7 +12182,7 @@
       "englishOk": true
     },
     {
-      "id": "r64",
+      "id": "r65",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -12710,7 +12215,7 @@
       "englishOk": true
     },
     {
-      "id": "r124",
+      "id": "r123",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MAD",
@@ -12875,7 +12380,7 @@
       "englishOk": true
     },
     {
-      "id": "r402",
+      "id": "r400",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -12974,7 +12479,7 @@
       "englishOk": true
     },
     {
-      "id": "r591",
+      "id": "r589",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -13007,7 +12512,7 @@
       "englishOk": true
     },
     {
-      "id": "r610",
+      "id": "r609",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -13040,7 +12545,7 @@
       "englishOk": true
     },
     {
-      "id": "r664",
+      "id": "r662",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13073,7 +12578,7 @@
       "englishOk": true
     },
     {
-      "id": "r688",
+      "id": "r686",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -13106,7 +12611,7 @@
       "englishOk": true
     },
     {
-      "id": "r759",
+      "id": "r757",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -13139,7 +12644,7 @@
       "englishOk": true
     },
     {
-      "id": "r775",
+      "id": "r773",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -13172,7 +12677,7 @@
       "englishOk": true
     },
     {
-      "id": "r785",
+      "id": "r783",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -13205,7 +12710,7 @@
       "englishOk": true
     },
     {
-      "id": "r835",
+      "id": "r833",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -13271,7 +12776,7 @@
       "englishOk": true
     },
     {
-      "id": "r65",
+      "id": "r64",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -13289,11 +12794,11 @@
       "year": 2026,
       "dept": "09:50",
       "arr": "11:10",
-      "retDept": "14:45",
-      "retArr": "17:55",
+      "retDept": "20:05",
+      "retArr": "23:15",
       "dur": "1h 20m",
       "price1": 174,
-      "price2": 361,
+      "price2": 356,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -13326,7 +12831,7 @@
       "retArr": "11:50",
       "dur": "1h 55m",
       "price1": 405,
-      "price2": 622,
+      "price2": 626,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -13403,7 +12908,7 @@
       "englishOk": true
     },
     {
-      "id": "r268",
+      "id": "r266",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13421,11 +12926,11 @@
       "year": 2026,
       "dept": "12:40",
       "arr": "14:25",
-      "retDept": "06:55",
-      "retArr": "08:40",
+      "retDept": "09:15",
+      "retArr": "11:00",
       "dur": "1h 45m",
-      "price1": 123,
-      "price2": 242,
+      "price1": 119,
+      "price2": 238,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -13469,7 +12974,7 @@
       "englishOk": true
     },
     {
-      "id": "r360",
+      "id": "r359",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -13502,7 +13007,7 @@
       "englishOk": true
     },
     {
-      "id": "r400",
+      "id": "r398",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -13524,7 +13029,7 @@
       "retArr": "16:35",
       "dur": "2h 35m",
       "price1": 277,
-      "price2": 477,
+      "price2": 472,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -13535,7 +13040,7 @@
       "englishOk": true
     },
     {
-      "id": "r430",
+      "id": "r431",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -13556,8 +13061,8 @@
       "retDept": "17:40",
       "retArr": "21:00",
       "dur": "1h 25m",
-      "price1": 145,
-      "price2": 272,
+      "price1": 149,
+      "price2": 276,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -13601,7 +13106,7 @@
       "englishOk": true
     },
     {
-      "id": "r514",
+      "id": "r513",
       "airline": "ryanair",
       "from": "KRK",
       "to": "PMI",
@@ -13610,20 +13115,20 @@
       "flag": "🇪🇸",
       "country": "Hiszpania",
       "deptDay": "sobota",
-      "retDay": "poniedziałek",
-      "pattern": "fri-mon",
+      "retDay": "niedziela",
+      "pattern": "sat-sun",
       "date": "Sb–Nd, 19–20 Wrz 2026",
       "raw": "2026-09-19",
-      "retRaw": "2026-09-21",
+      "retRaw": "2026-09-20",
       "month": 9,
       "year": 2026,
       "dept": "17:55",
       "arr": "20:50",
-      "retDept": "14:15",
-      "retArr": "17:05",
+      "retDept": "21:20",
+      "retArr": "00:10",
       "dur": "2h 55m",
       "price1": 264,
-      "price2": 637,
+      "price2": 644,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -13655,8 +13160,8 @@
       "retDept": "07:30",
       "retArr": "08:35",
       "dur": "1h 05m",
-      "price1": 136,
-      "price2": 217,
+      "price1": 140,
+      "price2": 221,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Wiedeń – stolica przyjazna LGBTQ+, doroczny Vienna Pride",
@@ -13667,7 +13172,7 @@
       "englishOk": true
     },
     {
-      "id": "r552",
+      "id": "r553",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -13689,7 +13194,7 @@
       "retArr": "01:10",
       "dur": "2h 50m",
       "price1": 254,
-      "price2": 484,
+      "price2": 518,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -13700,7 +13205,7 @@
       "englishOk": true
     },
     {
-      "id": "r632",
+      "id": "r630",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -13733,7 +13238,7 @@
       "englishOk": true
     },
     {
-      "id": "r683",
+      "id": "r681",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -13766,7 +13271,7 @@
       "englishOk": true
     },
     {
-      "id": "r705",
+      "id": "r703",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -13787,8 +13292,8 @@
       "retDept": "20:05",
       "retArr": "23:10",
       "dur": "1h 15m",
-      "price1": 94,
-      "price2": 211,
+      "price1": 89,
+      "price2": 207,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -13799,7 +13304,7 @@
       "englishOk": true
     },
     {
-      "id": "r805",
+      "id": "r802",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -13832,7 +13337,7 @@
       "englishOk": true
     },
     {
-      "id": "r855",
+      "id": "r850",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -13920,7 +13425,7 @@
       "retArr": "12:15",
       "dur": "3h 30m",
       "price1": 279,
-      "price2": 639,
+      "price2": 612,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Hiszpania – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -13931,7 +13436,7 @@
       "englishOk": true
     },
     {
-      "id": "r151",
+      "id": "r150",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -13953,7 +13458,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 153,
-      "price2": 353,
+      "price2": 349,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -13964,7 +13469,7 @@
       "englishOk": true
     },
     {
-      "id": "r265",
+      "id": "r264",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -13997,7 +13502,7 @@
       "englishOk": true
     },
     {
-      "id": "r317",
+      "id": "r315",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -14030,7 +13535,7 @@
       "englishOk": true
     },
     {
-      "id": "r345",
+      "id": "r346",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -14063,7 +13568,7 @@
       "englishOk": true
     },
     {
-      "id": "r407",
+      "id": "r411",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -14081,11 +13586,11 @@
       "year": 2026,
       "dept": "22:00",
       "arr": "00:35",
-      "retDept": "12:15",
-      "retArr": "14:50",
+      "retDept": "21:55",
+      "retArr": "00:30",
       "dur": "2h 35m",
       "price1": 298,
-      "price2": 535,
+      "price2": 572,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -14162,7 +13667,7 @@
       "englishOk": true
     },
     {
-      "id": "r583",
+      "id": "r582",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -14195,7 +13700,7 @@
       "englishOk": true
     },
     {
-      "id": "r611",
+      "id": "r610",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -14228,7 +13733,7 @@
       "englishOk": true
     },
     {
-      "id": "r672",
+      "id": "r670",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -14250,7 +13755,7 @@
       "retArr": "12:20",
       "dur": "2h 00m",
       "price1": 268,
-      "price2": 506,
+      "price2": 502,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -14261,7 +13766,7 @@
       "englishOk": true
     },
     {
-      "id": "r695",
+      "id": "r693",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -14294,7 +13799,7 @@
       "englishOk": true
     },
     {
-      "id": "r757",
+      "id": "r755",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -14327,7 +13832,7 @@
       "englishOk": true
     },
     {
-      "id": "r776",
+      "id": "r774",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -14349,7 +13854,7 @@
       "retArr": "23:55",
       "dur": "3h 10m",
       "price1": 289,
-      "price2": 655,
+      "price2": 664,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -14360,7 +13865,7 @@
       "englishOk": true
     },
     {
-      "id": "r793",
+      "id": "r791",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -14381,8 +13886,8 @@
       "retDept": "20:50",
       "retArr": "23:50",
       "dur": "1h 05m",
-      "price1": 123,
-      "price2": 295,
+      "price1": 119,
+      "price2": 291,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -14393,7 +13898,7 @@
       "englishOk": true
     },
     {
-      "id": "r834",
+      "id": "r832",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -14459,7 +13964,7 @@
       "englishOk": true
     },
     {
-      "id": "r73",
+      "id": "r71",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -14480,8 +13985,8 @@
       "retDept": "20:05",
       "retArr": "23:15",
       "dur": "1h 20m",
-      "price1": 209,
-      "price2": 444,
+      "price1": 204,
+      "price2": 440,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -14547,7 +14052,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 226,
-      "price2": 426,
+      "price2": 421,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -14558,7 +14063,7 @@
       "englishOk": true
     },
     {
-      "id": "r249",
+      "id": "r248",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -14624,7 +14129,7 @@
       "englishOk": true
     },
     {
-      "id": "r361",
+      "id": "r360",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -14711,8 +14216,8 @@
       "retDept": "19:00",
       "retArr": "22:20",
       "dur": "1h 25m",
-      "price1": 136,
-      "price2": 274,
+      "price1": 140,
+      "price2": 278,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -14855,7 +14360,7 @@
       "englishOk": true
     },
     {
-      "id": "r627",
+      "id": "r626",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -14888,7 +14393,7 @@
       "englishOk": true
     },
     {
-      "id": "r677",
+      "id": "r675",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -14921,7 +14426,7 @@
       "englishOk": true
     },
     {
-      "id": "r709",
+      "id": "r706",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -14954,7 +14459,7 @@
       "englishOk": true
     },
     {
-      "id": "r795",
+      "id": "r793",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -15020,7 +14525,7 @@
       "englishOk": true
     },
     {
-      "id": "r125",
+      "id": "r124",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MAD",
@@ -15102,13 +14607,13 @@
       "retRaw": "2026-10-04",
       "month": 10,
       "year": 2026,
-      "dept": "12:05",
-      "arr": "13:50",
+      "dept": "20:50",
+      "arr": "22:35",
       "retDept": "08:15",
       "retArr": "10:00",
       "dur": "1h 45m",
-      "price1": 106,
-      "price2": 221,
+      "price1": 111,
+      "price2": 226,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -15152,7 +14657,7 @@
       "englishOk": true
     },
     {
-      "id": "r340",
+      "id": "r339",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -15227,20 +14732,20 @@
       "flag": "🇬🇧",
       "country": "Wielka Brytania",
       "deptDay": "piątek",
-      "retDay": "sobota",
-      "pattern": "fri-sat",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
       "date": "Pt–Nd, 2–4 Paź 2026",
       "raw": "2026-10-02",
-      "retRaw": "2026-10-03",
+      "retRaw": "2026-10-04",
       "month": 10,
       "year": 2026,
       "dept": "15:15",
       "arr": "16:40",
-      "retDept": "17:20",
-      "retArr": "20:40",
+      "retDept": "19:00",
+      "retArr": "22:20",
       "dur": "1h 25m",
       "price1": 140,
-      "price2": 307,
+      "price2": 312,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -15284,7 +14789,7 @@
       "englishOk": true
     },
     {
-      "id": "r584",
+      "id": "r583",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -15317,7 +14822,7 @@
       "englishOk": true
     },
     {
-      "id": "r621",
+      "id": "r620",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -15350,7 +14855,7 @@
       "englishOk": true
     },
     {
-      "id": "r689",
+      "id": "r687",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -15383,7 +14888,7 @@
       "englishOk": true
     },
     {
-      "id": "r756",
+      "id": "r754",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -15416,7 +14921,7 @@
       "englishOk": true
     },
     {
-      "id": "r768",
+      "id": "r766",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -15449,7 +14954,7 @@
       "englishOk": true
     },
     {
-      "id": "r782",
+      "id": "r780",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -15470,8 +14975,8 @@
       "retDept": "20:50",
       "retArr": "23:50",
       "dur": "1h 05m",
-      "price1": 94,
-      "price2": 175,
+      "price1": 89,
+      "price2": 170,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -15636,7 +15141,7 @@
       "retArr": "21:50",
       "dur": "2h 45m",
       "price1": 230,
-      "price2": 464,
+      "price2": 468,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -15647,7 +15152,7 @@
       "englishOk": true
     },
     {
-      "id": "r231",
+      "id": "r230",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -15713,7 +15218,7 @@
       "englishOk": true
     },
     {
-      "id": "r368",
+      "id": "r367",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -15767,8 +15272,8 @@
       "retDept": "14:00",
       "retArr": "16:35",
       "dur": "2h 35m",
-      "price1": 285,
-      "price2": 566,
+      "price1": 281,
+      "price2": 562,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -15779,7 +15284,7 @@
       "englishOk": true
     },
     {
-      "id": "r431",
+      "id": "r430",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -15845,7 +15350,7 @@
       "englishOk": true
     },
     {
-      "id": "r515",
+      "id": "r514",
       "airline": "ryanair",
       "from": "KRK",
       "to": "PMI",
@@ -15944,7 +15449,7 @@
       "englishOk": true
     },
     {
-      "id": "r639",
+      "id": "r638",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -15977,7 +15482,7 @@
       "englishOk": true
     },
     {
-      "id": "r690",
+      "id": "r688",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -16010,7 +15515,7 @@
       "englishOk": true
     },
     {
-      "id": "r798",
+      "id": "r796",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -16065,7 +15570,7 @@
       "retArr": "09:50",
       "dur": "2h 55m",
       "price1": 243,
-      "price2": 526,
+      "price2": 568,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Mallorca – przyjazna LGBTQ+",
@@ -16131,7 +15636,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 162,
-      "price2": 413,
+      "price2": 409,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -16175,7 +15680,7 @@
       "englishOk": true
     },
     {
-      "id": "r314",
+      "id": "r313",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -16262,8 +15767,8 @@
       "retDept": "12:15",
       "retArr": "14:50",
       "dur": "2h 35m",
-      "price1": 145,
-      "price2": 396,
+      "price1": 140,
+      "price2": 392,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -16340,7 +15845,7 @@
       "englishOk": true
     },
     {
-      "id": "r582",
+      "id": "r581",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -16373,7 +15878,7 @@
       "englishOk": true
     },
     {
-      "id": "r625",
+      "id": "r624",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -16406,7 +15911,7 @@
       "englishOk": true
     },
     {
-      "id": "r699",
+      "id": "r697",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -16439,7 +15944,7 @@
       "englishOk": true
     },
     {
-      "id": "r754",
+      "id": "r752",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -16472,7 +15977,7 @@
       "englishOk": true
     },
     {
-      "id": "r784",
+      "id": "r782",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -16538,7 +16043,7 @@
       "englishOk": true
     },
     {
-      "id": "r48",
+      "id": "r49",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -16637,7 +16142,7 @@
       "englishOk": true
     },
     {
-      "id": "r187",
+      "id": "r186",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -16659,7 +16164,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 523,
-      "price2": 775,
+      "price2": 770,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -16670,7 +16175,7 @@
       "englishOk": true
     },
     {
-      "id": "r226",
+      "id": "r225",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -16691,8 +16196,8 @@
       "retDept": "09:15",
       "retArr": "11:00",
       "dur": "1h 45m",
-      "price1": 98,
-      "price2": 217,
+      "price1": 94,
+      "price2": 213,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Włochy – aktywna społeczność queer w dużych miastach",
@@ -16790,8 +16295,8 @@
       "retDept": "14:00",
       "retArr": "16:35",
       "dur": "2h 35m",
-      "price1": 200,
-      "price2": 485,
+      "price1": 213,
+      "price2": 494,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -16967,7 +16472,7 @@
       "englishOk": true
     },
     {
-      "id": "r623",
+      "id": "r622",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -17000,7 +16505,7 @@
       "englishOk": true
     },
     {
-      "id": "r702",
+      "id": "r699",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -17033,7 +16538,7 @@
       "englishOk": true
     },
     {
-      "id": "r816",
+      "id": "r814",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -17066,7 +16571,7 @@
       "englishOk": true
     },
     {
-      "id": "r862",
+      "id": "r858",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -17099,7 +16604,7 @@
       "englishOk": true
     },
     {
-      "id": "r76",
+      "id": "r75",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -17187,7 +16692,7 @@
       "retArr": "08:55",
       "dur": "2h 45m",
       "price1": 217,
-      "price2": 443,
+      "price2": 439,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -17231,7 +16736,7 @@
       "englishOk": true
     },
     {
-      "id": "r261",
+      "id": "r260",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -17286,7 +16791,7 @@
       "retArr": "14:20",
       "dur": "2h 00m",
       "price1": 395,
-      "price2": 664,
+      "price2": 727,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -17330,7 +16835,7 @@
       "englishOk": true
     },
     {
-      "id": "r379",
+      "id": "r383",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -17351,8 +16856,8 @@
       "retDept": "21:55",
       "retArr": "00:30",
       "dur": "2h 35m",
-      "price1": 128,
-      "price2": 345,
+      "price1": 153,
+      "price2": 370,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -17412,8 +16917,8 @@
       "retRaw": "2026-10-17",
       "month": 10,
       "year": 2026,
-      "dept": "10:10",
-      "arr": "12:10",
+      "dept": "22:25",
+      "arr": "00:25",
       "retDept": "21:00",
       "retArr": "00:50",
       "dur": "2h 00m",
@@ -17429,7 +16934,7 @@
       "englishOk": true
     },
     {
-      "id": "r581",
+      "id": "r580",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -17462,7 +16967,7 @@
       "englishOk": true
     },
     {
-      "id": "r613",
+      "id": "r612",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -17495,7 +17000,7 @@
       "englishOk": true
     },
     {
-      "id": "r693",
+      "id": "r691",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -17528,7 +17033,7 @@
       "englishOk": true
     },
     {
-      "id": "r755",
+      "id": "r753",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -17549,8 +17054,8 @@
       "retDept": "19:30",
       "retArr": "23:05",
       "dur": "1h 45m",
-      "price1": 170,
-      "price2": 415,
+      "price1": 174,
+      "price2": 420,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -17561,7 +17066,7 @@
       "englishOk": true
     },
     {
-      "id": "r783",
+      "id": "r781",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -17627,7 +17132,7 @@
       "englishOk": true
     },
     {
-      "id": "r49",
+      "id": "r48",
       "airline": "ryanair",
       "from": "KTW",
       "to": "STN",
@@ -17648,8 +17153,8 @@
       "retDept": "05:55",
       "retArr": "09:05",
       "dur": "1h 20m",
-      "price1": 136,
-      "price2": 243,
+      "price1": 132,
+      "price2": 239,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -17726,7 +17231,7 @@
       "englishOk": true
     },
     {
-      "id": "r159",
+      "id": "r158",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -17759,7 +17264,7 @@
       "englishOk": true
     },
     {
-      "id": "r263",
+      "id": "r262",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -17792,7 +17297,7 @@
       "englishOk": true
     },
     {
-      "id": "r311",
+      "id": "r318",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -17814,7 +17319,7 @@
       "retArr": "14:20",
       "dur": "2h 00m",
       "price1": 187,
-      "price2": 455,
+      "price2": 518,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Rzym – aktywna społeczność queer",
@@ -18012,7 +17517,7 @@
       "retArr": "08:35",
       "dur": "1h 05m",
       "price1": 81,
-      "price2": 213,
+      "price2": 209,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Wiedeń – stolica przyjazna LGBTQ+, doroczny Vienna Pride",
@@ -18023,7 +17528,7 @@
       "englishOk": true
     },
     {
-      "id": "r553",
+      "id": "r552",
       "airline": "ryanair",
       "from": "WRO",
       "to": "PMI",
@@ -18056,7 +17561,7 @@
       "englishOk": true
     },
     {
-      "id": "r636",
+      "id": "r632",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -18089,7 +17594,7 @@
       "englishOk": true
     },
     {
-      "id": "r692",
+      "id": "r690",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -18105,13 +17610,13 @@
       "retRaw": "2026-10-19",
       "month": 10,
       "year": 2026,
-      "dept": "19:20",
-      "arr": "20:35",
+      "dept": "05:45",
+      "arr": "07:00",
       "retDept": "18:05",
       "retArr": "21:10",
       "dur": "1h 15m",
-      "price1": 94,
-      "price2": 205,
+      "price1": 89,
+      "price2": 201,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -18122,7 +17627,7 @@
       "englishOk": true
     },
     {
-      "id": "r811",
+      "id": "r807",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -18155,7 +17660,7 @@
       "englishOk": true
     },
     {
-      "id": "r861",
+      "id": "r857",
       "airline": "ryanair",
       "from": "POZ",
       "to": "PMI",
@@ -18308,8 +17813,8 @@
       "retDept": "15:45",
       "retArr": "19:10",
       "dur": "3h 30m",
-      "price1": 196,
-      "price2": 409,
+      "price1": 200,
+      "price2": 413,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Hiszpania – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -18341,8 +17846,8 @@
       "retDept": "12:05",
       "retArr": "14:55",
       "dur": "2h 45m",
-      "price1": 217,
-      "price2": 399,
+      "price1": 221,
+      "price2": 403,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -18353,7 +17858,7 @@
       "englishOk": true
     },
     {
-      "id": "r233",
+      "id": "r232",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -18452,7 +17957,7 @@
       "englishOk": true
     },
     {
-      "id": "r403",
+      "id": "r401",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -18507,7 +18012,7 @@
       "retArr": "23:05",
       "dur": "1h 25m",
       "price1": 128,
-      "price2": 417,
+      "price2": 412,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Londyn – jedna z najbardziej LGBTQ+ friendly metropolii",
@@ -18551,7 +18056,7 @@
       "englishOk": true
     },
     {
-      "id": "r585",
+      "id": "r584",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -18584,7 +18089,7 @@
       "englishOk": true
     },
     {
-      "id": "r606",
+      "id": "r602",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -18617,7 +18122,7 @@
       "englishOk": true
     },
     {
-      "id": "r687",
+      "id": "r685",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -18650,7 +18155,7 @@
       "englishOk": true
     },
     {
-      "id": "r717",
+      "id": "r714",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -18683,7 +18188,7 @@
       "englishOk": true
     },
     {
-      "id": "r758",
+      "id": "r756",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -18716,7 +18221,7 @@
       "englishOk": true
     },
     {
-      "id": "r773",
+      "id": "r771",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -18737,8 +18242,8 @@
       "retDept": "18:15",
       "retArr": "21:20",
       "dur": "3h 10m",
-      "price1": 204,
-      "price2": 595,
+      "price1": 200,
+      "price2": 591,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -18749,7 +18254,7 @@
       "englishOk": true
     },
     {
-      "id": "r813",
+      "id": "r809",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -18782,7 +18287,7 @@
       "englishOk": true
     },
     {
-      "id": "r848",
+      "id": "r844",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -18914,7 +18419,7 @@
       "englishOk": true
     },
     {
-      "id": "r149",
+      "id": "r151",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -18935,8 +18440,8 @@
       "retDept": "09:25",
       "retArr": "12:20",
       "dur": "2h 45m",
-      "price1": 145,
-      "price2": 307,
+      "price1": 149,
+      "price2": 311,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -18965,8 +18470,8 @@
       "year": 2026,
       "dept": "12:40",
       "arr": "14:25",
-      "retDept": "13:30",
-      "retArr": "15:15",
+      "retDept": "09:40",
+      "retArr": "11:25",
       "dur": "1h 45m",
       "price1": 106,
       "price2": 235,
@@ -19079,7 +18584,7 @@
       "englishOk": true
     },
     {
-      "id": "r453",
+      "id": "r451",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -19178,7 +18683,7 @@
       "englishOk": true
     },
     {
-      "id": "r599",
+      "id": "r597",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -19211,7 +18716,7 @@
       "englishOk": true
     },
     {
-      "id": "r713",
+      "id": "r711",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -19244,7 +18749,7 @@
       "englishOk": true
     },
     {
-      "id": "r796",
+      "id": "r794",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -19310,7 +18815,7 @@
       "englishOk": true
     },
     {
-      "id": "r32",
+      "id": "r36",
       "airline": "ryanair",
       "from": "KTW",
       "to": "ALC",
@@ -19332,7 +18837,7 @@
       "retArr": "14:25",
       "dur": "3h 20m",
       "price1": 136,
-      "price2": 353,
+      "price2": 390,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Hiszpania – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -19442,7 +18947,7 @@
       "englishOk": true
     },
     {
-      "id": "r143",
+      "id": "r142",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -19541,7 +19046,7 @@
       "englishOk": true
     },
     {
-      "id": "r230",
+      "id": "r229",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -19574,7 +19079,7 @@
       "englishOk": true
     },
     {
-      "id": "r282",
+      "id": "r281",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -19607,7 +19112,7 @@
       "englishOk": true
     },
     {
-      "id": "r339",
+      "id": "r337",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -19625,8 +19130,8 @@
       "year": 2026,
       "dept": "07:35",
       "arr": "09:55",
-      "retDept": "22:15",
-      "retArr": "00:25",
+      "retDept": "09:35",
+      "retArr": "11:45",
       "dur": "2h 20m",
       "price1": 285,
       "price2": 442,
@@ -19673,7 +19178,7 @@
       "englishOk": true
     },
     {
-      "id": "r454",
+      "id": "r452",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -19772,7 +19277,7 @@
       "englishOk": true
     },
     {
-      "id": "r573",
+      "id": "r572",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -19805,7 +19310,7 @@
       "englishOk": true
     },
     {
-      "id": "r609",
+      "id": "r607",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -19838,7 +19343,7 @@
       "englishOk": true
     },
     {
-      "id": "r655",
+      "id": "r653",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -19871,7 +19376,7 @@
       "englishOk": true
     },
     {
-      "id": "r706",
+      "id": "r704",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -19904,7 +19409,7 @@
       "englishOk": true
     },
     {
-      "id": "r747",
+      "id": "r745",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -19937,7 +19442,7 @@
       "englishOk": true
     },
     {
-      "id": "r794",
+      "id": "r792",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -19970,7 +19475,7 @@
       "englishOk": true
     },
     {
-      "id": "r845",
+      "id": "r841",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -20201,7 +19706,7 @@
       "englishOk": true
     },
     {
-      "id": "r232",
+      "id": "r231",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -20234,7 +19739,7 @@
       "englishOk": true
     },
     {
-      "id": "r291",
+      "id": "r290",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -20267,7 +19772,7 @@
       "englishOk": true
     },
     {
-      "id": "r338",
+      "id": "r336",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -20300,7 +19805,7 @@
       "englishOk": true
     },
     {
-      "id": "r401",
+      "id": "r399",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -20387,8 +19892,8 @@
       "retDept": "20:20",
       "retArr": "00:10",
       "dur": "2h 05m",
-      "price1": 325,
-      "price2": 536,
+      "price1": 354,
+      "price2": 565,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -20432,7 +19937,7 @@
       "englishOk": true
     },
     {
-      "id": "r570",
+      "id": "r571",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -20453,8 +19958,8 @@
       "retDept": "16:05",
       "retArr": "19:35",
       "dur": "1h 45m",
-      "price1": 255,
-      "price2": 421,
+      "price1": 296,
+      "price2": 462,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Irlandia – pierwsze referendum za małżeństwami jednopłciowymi",
@@ -20465,7 +19970,7 @@
       "englishOk": true
     },
     {
-      "id": "r595",
+      "id": "r598",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -20486,8 +19991,8 @@
       "retDept": "10:00",
       "retArr": "12:45",
       "dur": "2h 50m",
-      "price1": 153,
-      "price2": 332,
+      "price1": 179,
+      "price2": 358,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Malta – #1 w Europie pod względem praw LGBTQ+ wg ILGA",
@@ -20498,7 +20003,7 @@
       "englishOk": true
     },
     {
-      "id": "r661",
+      "id": "r659",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -20531,7 +20036,7 @@
       "englishOk": true
     },
     {
-      "id": "r704",
+      "id": "r702",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -20564,7 +20069,7 @@
       "englishOk": true
     },
     {
-      "id": "r753",
+      "id": "r751",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -20597,7 +20102,7 @@
       "englishOk": true
     },
     {
-      "id": "r766",
+      "id": "r764",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -20630,7 +20135,7 @@
       "englishOk": true
     },
     {
-      "id": "r814",
+      "id": "r810",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -20828,7 +20333,7 @@
       "englishOk": true
     },
     {
-      "id": "r141",
+      "id": "r144",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -20849,8 +20354,8 @@
       "retDept": "17:30",
       "retArr": "20:25",
       "dur": "2h 50m",
-      "price1": 148,
-      "price2": 296,
+      "price1": 176,
+      "price2": 324,
       "sea": true,
       "lgbt": true,
       "lgbtN": "Barcelona – queer-friendly stolica Europy",
@@ -20960,7 +20465,7 @@
       "englishOk": true
     },
     {
-      "id": "r298",
+      "id": "r296",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -21158,7 +20663,7 @@
       "englishOk": true
     },
     {
-      "id": "r572",
+      "id": "r570",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -21191,7 +20696,7 @@
       "englishOk": true
     },
     {
-      "id": "r596",
+      "id": "r594",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -21224,7 +20729,7 @@
       "englishOk": true
     },
     {
-      "id": "r651",
+      "id": "r648",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -21257,7 +20762,7 @@
       "englishOk": true
     },
     {
-      "id": "r719",
+      "id": "r716",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -21290,7 +20795,7 @@
       "englishOk": true
     },
     {
-      "id": "r751",
+      "id": "r749",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -21323,7 +20828,7 @@
       "englishOk": true
     },
     {
-      "id": "r800",
+      "id": "r798",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -21341,8 +20846,8 @@
       "year": 2026,
       "dept": "07:40",
       "arr": "08:50",
-      "retDept": "11:55",
-      "retArr": "14:55",
+      "retDept": "17:20",
+      "retArr": "20:20",
       "dur": "1h 10m",
       "price1": 230,
       "price2": 349,
@@ -21356,7 +20861,7 @@
       "englishOk": true
     },
     {
-      "id": "r850",
+      "id": "r846",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -21554,7 +21059,7 @@
       "englishOk": true
     },
     {
-      "id": "r257",
+      "id": "r255",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -21587,7 +21092,7 @@
       "englishOk": true
     },
     {
-      "id": "r303",
+      "id": "r301",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -21686,7 +21191,7 @@
       "englishOk": true
     },
     {
-      "id": "r442",
+      "id": "r441",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -21752,7 +21257,7 @@
       "englishOk": true
     },
     {
-      "id": "r575",
+      "id": "r574",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -21785,7 +21290,7 @@
       "englishOk": true
     },
     {
-      "id": "r612",
+      "id": "r611",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -21818,7 +21323,7 @@
       "englishOk": true
     },
     {
-      "id": "r649",
+      "id": "r647",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -21851,7 +21356,7 @@
       "englishOk": true
     },
     {
-      "id": "r698",
+      "id": "r696",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -21884,7 +21389,7 @@
       "englishOk": true
     },
     {
-      "id": "r746",
+      "id": "r744",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -21917,7 +21422,7 @@
       "englishOk": true
     },
     {
-      "id": "r801",
+      "id": "r799",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -21935,8 +21440,8 @@
       "year": 2026,
       "dept": "15:25",
       "arr": "16:35",
-      "retDept": "18:55",
-      "retArr": "21:55",
+      "retDept": "07:35",
+      "retArr": "10:35",
       "dur": "1h 10m",
       "price1": 230,
       "price2": 349,
@@ -21983,7 +21488,7 @@
       "englishOk": true
     },
     {
-      "id": "r34",
+      "id": "r33",
       "airline": "ryanair",
       "from": "KTW",
       "to": "ALC",
@@ -22203,7 +21708,7 @@
       "retArr": "22:00",
       "dur": "3h 10m",
       "price1": 243,
-      "price2": 630,
+      "price2": 681,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Portugalia – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -22214,7 +21719,7 @@
       "englishOk": true
     },
     {
-      "id": "r234",
+      "id": "r233",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -22247,7 +21752,7 @@
       "englishOk": true
     },
     {
-      "id": "r283",
+      "id": "r282",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -22298,8 +21803,8 @@
       "year": 2026,
       "dept": "07:35",
       "arr": "09:55",
-      "retDept": "09:35",
-      "retArr": "11:45",
+      "retDept": "22:15",
+      "retArr": "00:25",
       "dur": "2h 20m",
       "price1": 187,
       "price2": 344,
@@ -22313,7 +21818,7 @@
       "englishOk": true
     },
     {
-      "id": "r381",
+      "id": "r379",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -22346,7 +21851,7 @@
       "englishOk": true
     },
     {
-      "id": "r443",
+      "id": "r442",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -22445,7 +21950,7 @@
       "englishOk": true
     },
     {
-      "id": "r566",
+      "id": "r565",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -22478,7 +21983,7 @@
       "englishOk": true
     },
     {
-      "id": "r602",
+      "id": "r600",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -22511,7 +22016,7 @@
       "englishOk": true
     },
     {
-      "id": "r644",
+      "id": "r642",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -22544,7 +22049,7 @@
       "englishOk": true
     },
     {
-      "id": "r691",
+      "id": "r689",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -22577,7 +22082,7 @@
       "englishOk": true
     },
     {
-      "id": "r741",
+      "id": "r739",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -22610,7 +22115,7 @@
       "englishOk": true
     },
     {
-      "id": "r786",
+      "id": "r784",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -22643,7 +22148,7 @@
       "englishOk": true
     },
     {
-      "id": "r843",
+      "id": "r839",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -22676,7 +22181,7 @@
       "englishOk": true
     },
     {
-      "id": "r35",
+      "id": "r34",
       "airline": "ryanair",
       "from": "KTW",
       "to": "ALC",
@@ -22775,7 +22280,7 @@
       "englishOk": true
     },
     {
-      "id": "r144",
+      "id": "r143",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -22874,7 +22379,7 @@
       "englishOk": true
     },
     {
-      "id": "r235",
+      "id": "r234",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -22907,7 +22412,7 @@
       "englishOk": true
     },
     {
-      "id": "r290",
+      "id": "r287",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -23072,7 +22577,7 @@
       "englishOk": true
     },
     {
-      "id": "r571",
+      "id": "r569",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -23105,7 +22610,7 @@
       "englishOk": true
     },
     {
-      "id": "r617",
+      "id": "r616",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -23138,7 +22643,7 @@
       "englishOk": true
     },
     {
-      "id": "r647",
+      "id": "r645",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -23171,7 +22676,7 @@
       "englishOk": true
     },
     {
-      "id": "r697",
+      "id": "r695",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -23204,7 +22709,7 @@
       "englishOk": true
     },
     {
-      "id": "r742",
+      "id": "r740",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -23237,7 +22742,7 @@
       "englishOk": true
     },
     {
-      "id": "r788",
+      "id": "r786",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -23253,8 +22758,8 @@
       "retRaw": "2026-11-15",
       "month": 11,
       "year": 2026,
-      "dept": "15:25",
-      "arr": "16:35",
+      "dept": "20:45",
+      "arr": "21:55",
       "retDept": "18:55",
       "retArr": "21:55",
       "dur": "1h 10m",
@@ -23534,7 +23039,7 @@
       "englishOk": true
     },
     {
-      "id": "r236",
+      "id": "r235",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -23583,8 +23088,8 @@
       "retRaw": "2026-11-21",
       "month": 11,
       "year": 2026,
-      "dept": "13:20",
-      "arr": "15:20",
+      "dept": "19:25",
+      "arr": "21:25",
       "retDept": "08:55",
       "retArr": "10:55",
       "dur": "2h 00m",
@@ -23765,7 +23270,7 @@
       "englishOk": true
     },
     {
-      "id": "r574",
+      "id": "r573",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -23798,7 +23303,7 @@
       "englishOk": true
     },
     {
-      "id": "r597",
+      "id": "r595",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -23831,7 +23336,7 @@
       "englishOk": true
     },
     {
-      "id": "r648",
+      "id": "r646",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -23864,7 +23369,7 @@
       "englishOk": true
     },
     {
-      "id": "r694",
+      "id": "r692",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -23897,7 +23402,7 @@
       "englishOk": true
     },
     {
-      "id": "r744",
+      "id": "r742",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -23930,7 +23435,7 @@
       "englishOk": true
     },
     {
-      "id": "r792",
+      "id": "r790",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -23963,7 +23468,7 @@
       "englishOk": true
     },
     {
-      "id": "r844",
+      "id": "r840",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -23996,7 +23501,7 @@
       "englishOk": true
     },
     {
-      "id": "r36",
+      "id": "r35",
       "airline": "ryanair",
       "from": "KTW",
       "to": "ALC",
@@ -24095,7 +23600,7 @@
       "englishOk": true
     },
     {
-      "id": "r142",
+      "id": "r141",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -24194,7 +23699,7 @@
       "englishOk": true
     },
     {
-      "id": "r237",
+      "id": "r236",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -24282,7 +23787,7 @@
       "retArr": "00:50",
       "dur": "2h 20m",
       "price1": 157,
-      "price2": 276,
+      "price2": 302,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Paryż – aktywna społeczność LGBTQ+, Marais district",
@@ -24392,7 +23897,7 @@
       "englishOk": true
     },
     {
-      "id": "r569",
+      "id": "r568",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -24425,7 +23930,7 @@
       "englishOk": true
     },
     {
-      "id": "r600",
+      "id": "r599",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -24458,7 +23963,7 @@
       "englishOk": true
     },
     {
-      "id": "r646",
+      "id": "r644",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -24491,7 +23996,7 @@
       "englishOk": true
     },
     {
-      "id": "r696",
+      "id": "r694",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -24524,7 +24029,7 @@
       "englishOk": true
     },
     {
-      "id": "r740",
+      "id": "r738",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -24557,7 +24062,7 @@
       "englishOk": true
     },
     {
-      "id": "r767",
+      "id": "r765",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -24590,7 +24095,7 @@
       "englishOk": true
     },
     {
-      "id": "r790",
+      "id": "r788",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -24887,7 +24392,7 @@
       "englishOk": true
     },
     {
-      "id": "r238",
+      "id": "r237",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -25019,7 +24524,7 @@
       "englishOk": true
     },
     {
-      "id": "r444",
+      "id": "r443",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -25118,7 +24623,7 @@
       "englishOk": true
     },
     {
-      "id": "r576",
+      "id": "r575",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -25151,7 +24656,7 @@
       "englishOk": true
     },
     {
-      "id": "r593",
+      "id": "r592",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -25184,7 +24689,7 @@
       "englishOk": true
     },
     {
-      "id": "r645",
+      "id": "r643",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -25217,7 +24722,7 @@
       "englishOk": true
     },
     {
-      "id": "r710",
+      "id": "r708",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -25250,7 +24755,7 @@
       "englishOk": true
     },
     {
-      "id": "r749",
+      "id": "r747",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -25283,7 +24788,7 @@
       "englishOk": true
     },
     {
-      "id": "r806",
+      "id": "r803",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -25301,8 +24806,8 @@
       "year": 2026,
       "dept": "07:40",
       "arr": "08:50",
-      "retDept": "11:55",
-      "retArr": "14:55",
+      "retDept": "17:20",
+      "retArr": "20:20",
       "dur": "1h 10m",
       "price1": 230,
       "price2": 371,
@@ -25316,7 +24821,7 @@
       "englishOk": true
     },
     {
-      "id": "r849",
+      "id": "r845",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -25547,7 +25052,7 @@
       "englishOk": true
     },
     {
-      "id": "r250",
+      "id": "r249",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -25580,7 +25085,7 @@
       "englishOk": true
     },
     {
-      "id": "r280",
+      "id": "r279",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -25695,8 +25200,8 @@
       "retRaw": "2026-11-29",
       "month": 11,
       "year": 2026,
-      "dept": "18:45",
-      "arr": "20:15",
+      "dept": "06:15",
+      "arr": "07:45",
       "retDept": "17:55",
       "retArr": "21:15",
       "dur": "1h 30m",
@@ -25745,7 +25250,7 @@
       "englishOk": true
     },
     {
-      "id": "r567",
+      "id": "r566",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -25778,7 +25283,7 @@
       "englishOk": true
     },
     {
-      "id": "r594",
+      "id": "r593",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -25811,7 +25316,7 @@
       "englishOk": true
     },
     {
-      "id": "r653",
+      "id": "r651",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -25844,7 +25349,7 @@
       "englishOk": true
     },
     {
-      "id": "r714",
+      "id": "r712",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -25877,7 +25382,7 @@
       "englishOk": true
     },
     {
-      "id": "r745",
+      "id": "r743",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -25910,7 +25415,7 @@
       "englishOk": true
     },
     {
-      "id": "r765",
+      "id": "r763",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -25943,7 +25448,7 @@
       "englishOk": true
     },
     {
-      "id": "r791",
+      "id": "r789",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -26108,7 +25613,7 @@
       "englishOk": true
     },
     {
-      "id": "r123",
+      "id": "r126",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MAD",
@@ -26117,17 +25622,17 @@
       "flag": "🇪🇸",
       "country": "Hiszpania",
       "deptDay": "piątek",
-      "retDay": "sobota",
-      "pattern": "fri-sat",
+      "retDay": "niedziela",
+      "pattern": "fri-sun",
       "date": "Pt–Nd, 4–6 Gru 2026",
       "raw": "2026-12-04",
-      "retRaw": "2026-12-05",
+      "retRaw": "2026-12-06",
       "month": 12,
       "year": 2026,
       "dept": "15:50",
       "arr": "19:25",
-      "retDept": "15:00",
-      "retArr": "18:25",
+      "retDept": "15:45",
+      "retArr": "19:10",
       "dur": "3h 35m",
       "price1": 226,
       "price2": 642,
@@ -26157,8 +25662,8 @@
       "retRaw": "2026-12-06",
       "month": 12,
       "year": 2026,
-      "dept": "09:35",
-      "arr": "12:25",
+      "dept": "18:15",
+      "arr": "21:05",
       "retDept": "06:40",
       "retArr": "09:35",
       "dur": "2h 50m",
@@ -26240,7 +25745,7 @@
       "englishOk": true
     },
     {
-      "id": "r269",
+      "id": "r270",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -26256,8 +25761,8 @@
       "retRaw": "2026-12-06",
       "month": 12,
       "year": 2026,
-      "dept": "18:15",
-      "arr": "20:05",
+      "dept": "05:50",
+      "arr": "07:40",
       "retDept": "08:20",
       "retArr": "10:05",
       "dur": "1h 50m",
@@ -26289,8 +25794,8 @@
       "retRaw": "2026-12-06",
       "month": 12,
       "year": 2026,
-      "dept": "13:20",
-      "arr": "15:20",
+      "dept": "19:25",
+      "arr": "21:25",
       "retDept": "16:25",
       "retArr": "18:25",
       "dur": "2h 00m",
@@ -26372,7 +25877,7 @@
       "englishOk": true
     },
     {
-      "id": "r456",
+      "id": "r455",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -26388,8 +25893,8 @@
       "retRaw": "2026-12-05",
       "month": 12,
       "year": 2026,
-      "dept": "06:10",
-      "arr": "07:40",
+      "dept": "07:45",
+      "arr": "09:15",
       "retDept": "08:10",
       "retArr": "11:30",
       "dur": "1h 30m",
@@ -26471,7 +25976,7 @@
       "englishOk": true
     },
     {
-      "id": "r580",
+      "id": "r579",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -26504,7 +26009,7 @@
       "englishOk": true
     },
     {
-      "id": "r598",
+      "id": "r596",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -26537,7 +26042,7 @@
       "englishOk": true
     },
     {
-      "id": "r652",
+      "id": "r649",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -26570,7 +26075,7 @@
       "englishOk": true
     },
     {
-      "id": "r718",
+      "id": "r715",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -26603,7 +26108,7 @@
       "englishOk": true
     },
     {
-      "id": "r750",
+      "id": "r748",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -26636,7 +26141,7 @@
       "englishOk": true
     },
     {
-      "id": "r812",
+      "id": "r808",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -26669,7 +26174,7 @@
       "englishOk": true
     },
     {
-      "id": "r846",
+      "id": "r842",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -26702,7 +26207,7 @@
       "englishOk": true
     },
     {
-      "id": "r33",
+      "id": "r32",
       "airline": "ryanair",
       "from": "KTW",
       "to": "ALC",
@@ -26768,7 +26273,7 @@
       "englishOk": true
     },
     {
-      "id": "r126",
+      "id": "r125",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MAD",
@@ -26801,7 +26306,7 @@
       "englishOk": true
     },
     {
-      "id": "r150",
+      "id": "r149",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -26834,7 +26339,7 @@
       "englishOk": true
     },
     {
-      "id": "r199",
+      "id": "r198",
       "airline": "ryanair",
       "from": "KRK",
       "to": "OPO",
@@ -26900,7 +26405,7 @@
       "englishOk": true
     },
     {
-      "id": "r251",
+      "id": "r250",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -26999,7 +26504,7 @@
       "englishOk": true
     },
     {
-      "id": "r399",
+      "id": "r397",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -27098,7 +26603,7 @@
       "englishOk": true
     },
     {
-      "id": "r568",
+      "id": "r567",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -27131,7 +26636,7 @@
       "englishOk": true
     },
     {
-      "id": "r605",
+      "id": "r601",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -27164,7 +26669,7 @@
       "englishOk": true
     },
     {
-      "id": "r654",
+      "id": "r652",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -27197,7 +26702,7 @@
       "englishOk": true
     },
     {
-      "id": "r711",
+      "id": "r709",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -27230,7 +26735,7 @@
       "englishOk": true
     },
     {
-      "id": "r743",
+      "id": "r741",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -27263,7 +26768,7 @@
       "englishOk": true
     },
     {
-      "id": "r763",
+      "id": "r761",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -27296,7 +26801,7 @@
       "englishOk": true
     },
     {
-      "id": "r797",
+      "id": "r795",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -27527,7 +27032,7 @@
       "englishOk": true
     },
     {
-      "id": "r198",
+      "id": "r197",
       "airline": "ryanair",
       "from": "KRK",
       "to": "OPO",
@@ -27593,7 +27098,7 @@
       "englishOk": true
     },
     {
-      "id": "r264",
+      "id": "r263",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -27611,8 +27116,8 @@
       "year": 2026,
       "dept": "22:05",
       "arr": "23:55",
-      "retDept": "20:35",
-      "retArr": "22:20",
+      "retDept": "08:20",
+      "retArr": "10:05",
       "dur": "1h 50m",
       "price1": 145,
       "price2": 290,
@@ -27626,7 +27131,7 @@
       "englishOk": true
     },
     {
-      "id": "r301",
+      "id": "r299",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -27642,8 +27147,8 @@
       "retRaw": "2026-12-13",
       "month": 12,
       "year": 2026,
-      "dept": "19:25",
-      "arr": "21:25",
+      "dept": "13:20",
+      "arr": "15:20",
       "retDept": "06:20",
       "retArr": "08:20",
       "dur": "2h 00m",
@@ -27824,7 +27329,7 @@
       "englishOk": true
     },
     {
-      "id": "r578",
+      "id": "r577",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -27857,7 +27362,7 @@
       "englishOk": true
     },
     {
-      "id": "r607",
+      "id": "r604",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -27890,7 +27395,7 @@
       "englishOk": true
     },
     {
-      "id": "r666",
+      "id": "r664",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -27923,7 +27428,7 @@
       "englishOk": true
     },
     {
-      "id": "r703",
+      "id": "r701",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -27956,7 +27461,7 @@
       "englishOk": true
     },
     {
-      "id": "r748",
+      "id": "r746",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -27989,7 +27494,7 @@
       "englishOk": true
     },
     {
-      "id": "r808",
+      "id": "r805",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -28022,7 +27527,7 @@
       "englishOk": true
     },
     {
-      "id": "r847",
+      "id": "r843",
       "airline": "ryanair",
       "from": "POZ",
       "to": "DUB",
@@ -28187,7 +27692,7 @@
       "englishOk": true
     },
     {
-      "id": "r197",
+      "id": "r199",
       "airline": "ryanair",
       "from": "KRK",
       "to": "OPO",
@@ -28208,8 +27713,8 @@
       "retDept": "06:40",
       "retArr": "11:20",
       "dur": "2h 50m",
-      "price1": 266,
-      "price2": 513,
+      "price1": 306,
+      "price2": 553,
       "sea": false,
       "lgbt": true,
       "lgbtN": "Portugalia – jeden z najbardziej tolerancyjnych krajów Europy",
@@ -28253,7 +27758,7 @@
       "englishOk": true
     },
     {
-      "id": "r266",
+      "id": "r265",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -28271,8 +27776,8 @@
       "year": 2026,
       "dept": "06:10",
       "arr": "08:00",
-      "retDept": "08:20",
-      "retArr": "10:05",
+      "retDept": "20:35",
+      "retArr": "22:20",
       "dur": "1h 50m",
       "price1": 170,
       "price2": 315,
@@ -28286,7 +27791,7 @@
       "englishOk": true
     },
     {
-      "id": "r286",
+      "id": "r284",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -28352,7 +27857,7 @@
       "englishOk": true
     },
     {
-      "id": "r383",
+      "id": "r382",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -28385,7 +27890,7 @@
       "englishOk": true
     },
     {
-      "id": "r455",
+      "id": "r454",
       "airline": "ryanair",
       "from": "KRK",
       "to": "STN",
@@ -28451,7 +27956,7 @@
       "englishOk": true
     },
     {
-      "id": "r577",
+      "id": "r576",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -28484,7 +27989,7 @@
       "englishOk": true
     },
     {
-      "id": "r615",
+      "id": "r614",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -28517,7 +28022,7 @@
       "englishOk": true
     },
     {
-      "id": "r662",
+      "id": "r660",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -28550,7 +28055,7 @@
       "englishOk": true
     },
     {
-      "id": "r724",
+      "id": "r721",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -28583,7 +28088,7 @@
       "englishOk": true
     },
     {
-      "id": "r752",
+      "id": "r750",
       "airline": "ryanair",
       "from": "GDN",
       "to": "DUB",
@@ -28616,7 +28121,7 @@
       "englishOk": true
     },
     {
-      "id": "r762",
+      "id": "r760",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -28649,7 +28154,7 @@
       "englishOk": true
     },
     {
-      "id": "r809",
+      "id": "r806",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -28748,7 +28253,7 @@
       "englishOk": true
     },
     {
-      "id": "r158",
+      "id": "r159",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BCN",
@@ -28847,7 +28352,7 @@
       "englishOk": true
     },
     {
-      "id": "r258",
+      "id": "r256",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -29012,7 +28517,7 @@
       "englishOk": true
     },
     {
-      "id": "r579",
+      "id": "r578",
       "airline": "ryanair",
       "from": "WRO",
       "to": "DUB",
@@ -29045,7 +28550,7 @@
       "englishOk": true
     },
     {
-      "id": "r608",
+      "id": "r605",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -29078,7 +28583,7 @@
       "englishOk": true
     },
     {
-      "id": "r663",
+      "id": "r661",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -29111,7 +28616,7 @@
       "englishOk": true
     },
     {
-      "id": "r739",
+      "id": "r737",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -29144,7 +28649,7 @@
       "englishOk": true
     },
     {
-      "id": "r831",
+      "id": "r829",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
@@ -29160,8 +28665,8 @@
       "retRaw": "2026-12-19",
       "month": 12,
       "year": 2026,
-      "dept": "07:40",
-      "arr": "08:50",
+      "dept": "17:05",
+      "arr": "18:15",
       "retDept": "11:55",
       "retArr": "14:55",
       "dur": "1h 10m",
@@ -29226,8 +28731,8 @@
       "retRaw": "2026-12-21",
       "month": 12,
       "year": 2026,
-      "dept": "09:15",
-      "arr": "12:05",
+      "dept": "20:50",
+      "arr": "23:40",
       "retDept": "21:10",
       "retArr": "00:05",
       "dur": "2h 50m",
@@ -29309,7 +28814,7 @@
       "englishOk": true
     },
     {
-      "id": "r259",
+      "id": "r257",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BGY",
@@ -29325,8 +28830,8 @@
       "retRaw": "2026-12-20",
       "month": 12,
       "year": 2026,
-      "dept": "13:45",
-      "arr": "15:35",
+      "dept": "20:20",
+      "arr": "22:10",
       "retDept": "20:35",
       "retArr": "22:20",
       "dur": "1h 50m",
@@ -29342,7 +28847,7 @@
       "englishOk": true
     },
     {
-      "id": "r299",
+      "id": "r297",
       "airline": "ryanair",
       "from": "KRK",
       "to": "CIA",
@@ -29375,7 +28880,7 @@
       "englishOk": true
     },
     {
-      "id": "r346",
+      "id": "r347",
       "airline": "ryanair",
       "from": "KRK",
       "to": "BVA",
@@ -29408,7 +28913,7 @@
       "englishOk": true
     },
     {
-      "id": "r409",
+      "id": "r408",
       "airline": "ryanair",
       "from": "KRK",
       "to": "MLA",
@@ -29474,7 +28979,7 @@
       "englishOk": true
     },
     {
-      "id": "r619",
+      "id": "r618",
       "airline": "ryanair",
       "from": "WRO",
       "to": "MLA",
@@ -29507,7 +29012,7 @@
       "englishOk": true
     },
     {
-      "id": "r680",
+      "id": "r679",
       "airline": "ryanair",
       "from": "WRO",
       "to": "BVA",
@@ -29540,7 +29045,7 @@
       "englishOk": true
     },
     {
-      "id": "r730",
+      "id": "r728",
       "airline": "ryanair",
       "from": "GDN",
       "to": "STN",
@@ -29573,7 +29078,7 @@
       "englishOk": true
     },
     {
-      "id": "r764",
+      "id": "r762",
       "airline": "ryanair",
       "from": "GDN",
       "to": "MLA",
@@ -29606,7 +29111,7 @@
       "englishOk": true
     },
     {
-      "id": "r832",
+      "id": "r830",
       "airline": "ryanair",
       "from": "POZ",
       "to": "STN",
