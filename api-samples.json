@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-06-21T16:50:24.976Z",
+  "capturedAt": "2026-06-22T10:39:07.384Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
@@ -42,7 +42,7 @@
           "flightKey": "FR~9786~ ~~KTW~11/06/2026 19:40~BUD~11/06/2026 20:45~~",
           "flightNumber": "FR9786",
           "previousPrice": null,
-          "priceUpdated": 1782009271000
+          "priceUpdated": 1782095650000
         },
         "inbound": {
           "departureAirport": {
@@ -79,7 +79,7 @@
           "flightKey": "FR~9785~ ~~BUD~11/08/2026 15:25~KTW~11/08/2026 16:25~~",
           "flightNumber": "FR9785",
           "previousPrice": null,
-          "priceUpdated": 1782029111000
+          "priceUpdated": 1782124409000
         },
         "summary": {
           "price": {
@@ -95,27 +95,27 @@
         }
       },
       "totalFares": 9,
-      "capturedAt": "2026-06-21T16:46:51.208Z"
+      "capturedAt": "2026-06-22T10:35:21.943Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 329,
-      "normalized": 25,
+      "totalRaw": 333,
+      "normalized": 10,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
         "price": {
-          "amount": 0,
+          "amount": 939,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "noData",
-        "date": "2026-06-21T00:00:00+01:00",
-        "classOfService": null,
+        "priceType": "price",
+        "date": "2026-06-22T00:00:00",
+        "classOfService": "FE",
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -126,7 +126,7 @@
           16
         ]
       },
-      "capturedAt": "2026-06-21T16:50:24.962Z"
+      "capturedAt": "2026-06-22T10:39:07.371Z"
     },
     "strategy": "playwright-farechart"
   }
