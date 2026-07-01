@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-06-30T17:10:57.656Z",
+  "capturedAt": "2026-07-01T08:50:43.089Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→BUD",
@@ -42,7 +42,7 @@
           "flightKey": "FR~9786~ ~~KTW~11/06/2026 19:40~BUD~11/06/2026 20:45~~",
           "flightNumber": "FR9786",
           "previousPrice": null,
-          "priceUpdated": 1782815878000
+          "priceUpdated": 1782877045000
         },
         "inbound": {
           "departureAirport": {
@@ -79,7 +79,7 @@
           "flightKey": "FR~9785~ ~~BUD~11/08/2026 15:25~KTW~11/08/2026 16:25~~",
           "flightNumber": "FR9785",
           "previousPrice": null,
-          "priceUpdated": 1782815615000
+          "priceUpdated": 1782893124000
         },
         "summary": {
           "price": {
@@ -94,28 +94,28 @@
           "tripDurationDays": 2
         }
       },
-      "totalFares": 9,
-      "capturedAt": "2026-06-30T17:07:40.362Z"
+      "totalFares": 10,
+      "capturedAt": "2026-07-01T08:47:21.794Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 329,
+      "totalRaw": 328,
       "normalized": 22,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
         "price": {
-          "amount": 0,
+          "amount": 669,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "noData",
-        "date": "2026-06-30T00:00:00+01:00",
-        "classOfService": null,
+        "priceType": "price",
+        "date": "2026-07-01T00:00:00",
+        "classOfService": "GH",
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -126,7 +126,7 @@
           16
         ]
       },
-      "capturedAt": "2026-06-30T17:10:57.643Z"
+      "capturedAt": "2026-07-01T08:50:43.076Z"
     },
     "strategy": "playwright-farechart"
   }
