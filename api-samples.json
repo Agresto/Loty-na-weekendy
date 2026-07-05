@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-07-05T07:57:10.380Z",
+  "capturedAt": "2026-07-05T16:14:55.104Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -97,27 +97,27 @@
         }
       },
       "totalFares": 34,
-      "capturedAt": "2026-07-05T07:53:32.089Z"
+      "capturedAt": "2026-07-05T16:11:34.791Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 328,
-      "normalized": 35,
+      "totalRaw": 329,
+      "normalized": 26,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
         "price": {
-          "amount": 1079,
+          "amount": 0,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "price",
-        "date": "2026-07-05T00:00:00",
-        "classOfService": "ED",
+        "priceType": "noData",
+        "date": "2026-07-05T00:00:00+01:00",
+        "classOfService": null,
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-07-05T07:57:10.366Z"
+      "capturedAt": "2026-07-05T16:14:55.088Z"
     },
     "strategy": "playwright-farechart"
   }
