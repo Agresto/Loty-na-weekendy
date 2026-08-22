@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-22T05:25:45.757Z",
+  "capturedAt": "2026-08-22T15:27:05.426Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -34,16 +34,16 @@
           "departureDate": "2026-10-10T05:45:00",
           "arrivalDate": "2026-10-10T07:50:00",
           "price": {
-            "value": 89.65,
-            "valueMainUnit": "89",
-            "valueFractionalUnit": "65",
+            "value": 95.83,
+            "valueMainUnit": "95",
+            "valueFractionalUnit": "83",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~7100~ ~~KTW~10/10/2026 05:45~OSL~10/10/2026 07:50~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1787372948000
+          "priceUpdated": 1787382162000
         },
         "inbound": {
           "departureAirport": {
@@ -81,13 +81,13 @@
           "flightKey": "FR~9721~ ~~OSL~10/11/2026 09:10~KTW~10/11/2026 11:15~~",
           "flightNumber": "FR9721",
           "previousPrice": null,
-          "priceUpdated": 1787373013000
+          "priceUpdated": 1787384820000
         },
         "summary": {
           "price": {
-            "value": 179.3,
-            "valueMainUnit": "179",
-            "valueFractionalUnit": "30",
+            "value": 185.48,
+            "valueMainUnit": "185",
+            "valueFractionalUnit": "48",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -97,15 +97,15 @@
         }
       },
       "totalFares": 20,
-      "capturedAt": "2026-08-22T05:22:18.169Z"
+      "capturedAt": "2026-08-22T15:23:32.831Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 328,
-      "normalized": 30,
+      "totalRaw": 335,
+      "normalized": 35,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-08-22T05:25:45.744Z"
+      "capturedAt": "2026-08-22T15:27:05.412Z"
     },
     "strategy": "playwright-farechart"
   }
