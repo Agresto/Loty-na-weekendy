@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-23T15:28:26.383Z",
+  "capturedAt": "2026-08-24T05:37:47.360Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -43,7 +43,7 @@
           "flightKey": "FR~7100~ ~~KTW~10/10/2026 05:45~OSL~10/10/2026 07:50~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1787484158000
+          "priceUpdated": 1787539000000
         },
         "inbound": {
           "departureAirport": {
@@ -81,7 +81,7 @@
           "flightKey": "FR~9721~ ~~OSL~10/11/2026 09:10~KTW~10/11/2026 11:15~~",
           "flightNumber": "FR9721",
           "previousPrice": null,
-          "priceUpdated": 1787491072000
+          "priceUpdated": 1787545757000
         },
         "summary": {
           "price": {
@@ -96,28 +96,28 @@
           "tripDurationDays": 1
         }
       },
-      "totalFares": 20,
-      "capturedAt": "2026-08-23T15:24:57.846Z"
+      "totalFares": 19,
+      "capturedAt": "2026-08-24T05:34:18.047Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 330,
-      "normalized": 33,
+      "totalRaw": 326,
+      "normalized": 16,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
         "price": {
-          "amount": 0,
+          "amount": 1359,
           "currencyCode": "PLN",
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "noData",
-        "date": "2026-08-23T00:00:00+01:00",
-        "classOfService": null,
+        "priceType": "price",
+        "date": "2026-08-24T00:00:00",
+        "classOfService": "C",
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-08-23T15:28:26.369Z"
+      "capturedAt": "2026-08-24T05:37:47.345Z"
     },
     "strategy": "playwright-farechart"
   }
