@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-29T11:31:23.878Z",
+  "capturedAt": "2026-08-29T18:16:40.570Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -81,7 +81,7 @@
           "flightKey": "FR~9721~ ~~OSL~10/11/2026 09:10~KTW~10/11/2026 11:15~~",
           "flightNumber": "FR9721",
           "previousPrice": null,
-          "priceUpdated": 1787989220000
+          "priceUpdated": 1788021011000
         },
         "summary": {
           "price": {
@@ -97,7 +97,7 @@
         }
       },
       "totalFares": 18,
-      "capturedAt": "2026-08-29T11:27:47.440Z"
+      "capturedAt": "2026-08-29T18:13:13.744Z"
     }
   },
   "wizzair": {
@@ -105,7 +105,7 @@
     "status": 200,
     "sampleResponse": {
       "totalRaw": 330,
-      "normalized": 39,
+      "normalized": 41,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-08-29T11:31:23.865Z"
+      "capturedAt": "2026-08-29T18:16:40.553Z"
     },
     "strategy": "playwright-farechart"
   }
