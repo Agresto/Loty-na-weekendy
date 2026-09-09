@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-08T18:27:34.887Z",
+  "capturedAt": "2026-09-09T09:25:33.136Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -34,16 +34,16 @@
           "departureDate": "2026-10-18T06:35:00",
           "arrivalDate": "2026-10-18T08:45:00",
           "price": {
-            "value": 75.77,
-            "valueMainUnit": "75",
-            "valueFractionalUnit": "77",
+            "value": 65,
+            "valueMainUnit": "65",
+            "valueFractionalUnit": "00",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~9722~ ~~KTW~10/18/2026 06:35~OSL~10/18/2026 08:45~~",
           "flightNumber": "FR9722",
           "previousPrice": null,
-          "priceUpdated": 1788891496000
+          "priceUpdated": 1788938419000
         },
         "inbound": {
           "departureAirport": {
@@ -72,22 +72,22 @@
           "departureDate": "2026-10-19T09:45:00",
           "arrivalDate": "2026-10-19T11:50:00",
           "price": {
-            "value": 72.5,
-            "valueMainUnit": "72",
-            "valueFractionalUnit": "50",
+            "value": 89.35,
+            "valueMainUnit": "89",
+            "valueFractionalUnit": "35",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~7101~ ~~OSL~10/19/2026 09:45~KTW~10/19/2026 11:50~~",
           "flightNumber": "FR7101",
           "previousPrice": null,
-          "priceUpdated": 1788891478000
+          "priceUpdated": 1788943221000
         },
         "summary": {
           "price": {
-            "value": 148.27,
-            "valueMainUnit": "148",
-            "valueFractionalUnit": "27",
+            "value": 154.35,
+            "valueMainUnit": "154",
+            "valueFractionalUnit": "35",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -97,15 +97,15 @@
         }
       },
       "totalFares": 15,
-      "capturedAt": "2026-09-08T18:23:58.375Z"
+      "capturedAt": "2026-09-09T09:21:55.788Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 330,
-      "normalized": 33,
+      "totalRaw": 329,
+      "normalized": 35,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -116,7 +116,7 @@
           "exchangedCurrencyCode": null
         },
         "priceType": "noData",
-        "date": "2026-09-08T00:00:00+00:00",
+        "date": "2026-09-09T00:00:00+01:00",
         "classOfService": null,
         "hasMacFlight": false,
         "_route": [
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-09-08T18:27:34.874Z"
+      "capturedAt": "2026-09-09T09:25:33.123Z"
     },
     "strategy": "playwright-farechart"
   }
