@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-13T09:59:33.712Z",
+  "capturedAt": "2026-09-13T18:02:34.298Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -81,7 +81,7 @@
           "flightKey": "FR~7101~ ~~OSL~10/19/2026 09:45~KTW~10/19/2026 11:50~~",
           "flightNumber": "FR7101",
           "previousPrice": null,
-          "priceUpdated": 1789280660000
+          "priceUpdated": 1789301941000
         },
         "summary": {
           "price": {
@@ -97,14 +97,14 @@
         }
       },
       "totalFares": 14,
-      "capturedAt": "2026-09-13T09:55:59.330Z"
+      "capturedAt": "2026-09-13T17:58:58.808Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 333,
+      "totalRaw": 334,
       "normalized": 38,
       "sample": {
         "departureStation": "KTW",
@@ -115,9 +115,9 @@
           "exchangedAmount": null,
           "exchangedCurrencyCode": null
         },
-        "priceType": "checkPrice",
-        "date": "2026-09-13T00:00:00",
-        "classOfService": "C",
+        "priceType": "noData",
+        "date": "2026-09-13T00:00:00+01:00",
+        "classOfService": null,
         "hasMacFlight": false,
         "_route": [
           "KTW",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-09-13T09:59:33.701Z"
+      "capturedAt": "2026-09-13T18:02:34.290Z"
     },
     "strategy": "playwright-farechart"
   }
