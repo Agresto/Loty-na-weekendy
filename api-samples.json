@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-20T09:50:14.418Z",
+  "capturedAt": "2026-10-20T19:04:50.899Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -43,7 +43,7 @@
           "flightKey": "FR~7100~ ~~KTW~04/15/2027 10:35~OSL~04/15/2027 12:45~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1792463566000
+          "priceUpdated": 1792492674000
         },
         "inbound": {
           "departureAirport": {
@@ -81,7 +81,7 @@
           "flightKey": "FR~7101~ ~~OSL~04/16/2027 08:45~KTW~04/16/2027 10:45~~",
           "flightNumber": "FR7101",
           "previousPrice": null,
-          "priceUpdated": 1792467287000
+          "priceUpdated": 1792492837000
         },
         "summary": {
           "price": {
@@ -97,15 +97,15 @@
         }
       },
       "totalFares": 14,
-      "capturedAt": "2026-10-20T09:46:48.923Z"
+      "capturedAt": "2026-10-20T19:01:23.912Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 332,
-      "normalized": 13,
+      "totalRaw": 334,
+      "normalized": 15,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-10-20T09:50:14.406Z"
+      "capturedAt": "2026-10-20T19:04:50.891Z"
     },
     "strategy": "playwright-farechart"
   }
