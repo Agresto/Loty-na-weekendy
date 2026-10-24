@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-23T18:58:33.599Z",
+  "capturedAt": "2026-10-24T09:19:35.745Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -43,7 +43,7 @@
           "flightKey": "FR~7100~ ~~KTW~04/22/2027 10:35~OSL~04/22/2027 12:45~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1792751873000
+          "priceUpdated": 1792825672000
         },
         "inbound": {
           "departureAirport": {
@@ -72,22 +72,22 @@
           "departureDate": "2027-04-23T08:45:00",
           "arrivalDate": "2027-04-23T10:45:00",
           "price": {
-            "value": 256.82,
-            "valueMainUnit": "256",
-            "valueFractionalUnit": "82",
+            "value": 223.02,
+            "valueMainUnit": "223",
+            "valueFractionalUnit": "02",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~7101~ ~~OSL~04/23/2027 08:45~KTW~04/23/2027 10:45~~",
           "flightNumber": "FR7101",
           "previousPrice": null,
-          "priceUpdated": 1792752066000
+          "priceUpdated": 1792825833000
         },
         "summary": {
           "price": {
-            "value": 494.82,
-            "valueMainUnit": "494",
-            "valueFractionalUnit": "82",
+            "value": 461.02,
+            "valueMainUnit": "461",
+            "valueFractionalUnit": "02",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -97,14 +97,14 @@
         }
       },
       "totalFares": 16,
-      "capturedAt": "2026-10-23T18:54:54.548Z"
+      "capturedAt": "2026-10-24T09:16:08.624Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 329,
+      "totalRaw": 331,
       "normalized": 13,
       "sample": {
         "departureStation": "KTW",
@@ -116,7 +116,7 @@
           "exchangedCurrencyCode": null
         },
         "priceType": "noData",
-        "date": "2026-10-23T00:00:00+01:00",
+        "date": "2026-10-24T00:00:00+01:00",
         "classOfService": null,
         "hasMacFlight": false,
         "_route": [
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-10-23T18:58:33.583Z"
+      "capturedAt": "2026-10-24T09:19:35.734Z"
     },
     "strategy": "playwright-farechart"
   }
