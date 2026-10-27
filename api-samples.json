@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-26T20:24:26.148Z",
+  "capturedAt": "2026-10-27T10:14:23.325Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -43,7 +43,7 @@
           "flightKey": "FR~7100~ ~~KTW~04/22/2027 10:35~OSL~04/22/2027 12:45~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1793011067000
+          "priceUpdated": 1793084558000
         },
         "inbound": {
           "departureAirport": {
@@ -72,22 +72,22 @@
           "departureDate": "2027-04-23T08:45:00",
           "arrivalDate": "2027-04-23T10:45:00",
           "price": {
-            "value": 145.15,
-            "valueMainUnit": "145",
-            "valueFractionalUnit": "15",
+            "value": 127.55,
+            "valueMainUnit": "127",
+            "valueFractionalUnit": "55",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~7101~ ~~OSL~04/23/2027 08:45~KTW~04/23/2027 10:45~~",
           "flightNumber": "FR7101",
           "previousPrice": null,
-          "priceUpdated": 1793017377000
+          "priceUpdated": 1793084573000
         },
         "summary": {
           "price": {
-            "value": 383.15,
-            "valueMainUnit": "383",
-            "valueFractionalUnit": "15",
+            "value": 365.55,
+            "valueMainUnit": "365",
+            "valueFractionalUnit": "55",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -96,8 +96,8 @@
           "tripDurationDays": 1
         }
       },
-      "totalFares": 17,
-      "capturedAt": "2026-10-26T20:20:49.849Z"
+      "totalFares": 18,
+      "capturedAt": "2026-10-27T10:10:47.889Z"
     }
   },
   "wizzair": {
@@ -105,7 +105,7 @@
     "status": 200,
     "sampleResponse": {
       "totalRaw": 333,
-      "normalized": 12,
+      "normalized": 10,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -116,7 +116,7 @@
           "exchangedCurrencyCode": null
         },
         "priceType": "noData",
-        "date": "2026-10-26T00:00:00+00:00",
+        "date": "2026-10-27T00:00:00+00:00",
         "classOfService": null,
         "hasMacFlight": false,
         "_route": [
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-10-26T20:24:26.130Z"
+      "capturedAt": "2026-10-27T10:14:23.314Z"
     },
     "strategy": "playwright-farechart"
   }
