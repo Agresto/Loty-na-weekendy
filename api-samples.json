@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-28T20:10:54.898Z",
+  "capturedAt": "2026-10-29T11:19:12.755Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -34,8 +34,8 @@
           "departureDate": "2027-04-15T10:35:00",
           "arrivalDate": "2027-04-15T12:45:00",
           "price": {
-            "value": 238,
-            "valueMainUnit": "238",
+            "value": 272,
+            "valueMainUnit": "272",
             "valueFractionalUnit": "00",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
@@ -43,7 +43,7 @@
           "flightKey": "FR~7100~ ~~KTW~04/15/2027 10:35~OSL~04/15/2027 12:45~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1793183867000
+          "priceUpdated": 1793270266000
         },
         "inbound": {
           "departureAirport": {
@@ -81,12 +81,12 @@
           "flightKey": "FR~7101~ ~~OSL~04/16/2027 08:45~KTW~04/16/2027 10:45~~",
           "flightNumber": "FR7101",
           "previousPrice": null,
-          "priceUpdated": 1793200227000
+          "priceUpdated": 1793270431000
         },
         "summary": {
           "price": {
-            "value": 347.87,
-            "valueMainUnit": "347",
+            "value": 381.87,
+            "valueMainUnit": "381",
             "valueFractionalUnit": "87",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
@@ -96,16 +96,16 @@
           "tripDurationDays": 1
         }
       },
-      "totalFares": 18,
-      "capturedAt": "2026-10-28T20:07:27.482Z"
+      "totalFares": 19,
+      "capturedAt": "2026-10-29T11:15:44.382Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 332,
-      "normalized": 11,
+      "totalRaw": 335,
+      "normalized": 12,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -116,7 +116,7 @@
           "exchangedCurrencyCode": null
         },
         "priceType": "noData",
-        "date": "2026-10-28T00:00:00+00:00",
+        "date": "2026-10-29T00:00:00+00:00",
         "classOfService": null,
         "hasMacFlight": false,
         "_route": [
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-10-28T20:10:54.883Z"
+      "capturedAt": "2026-10-29T11:19:12.745Z"
     },
     "strategy": "playwright-farechart"
   }
