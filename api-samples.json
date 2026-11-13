@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-11-13T12:53:10.042Z",
+  "capturedAt": "2026-11-13T21:19:01.277Z",
   "note": "Surowe próbki odpowiedzi z API Ryanair i Wizzair (zapis okresowy).",
   "ryanair": {
     "url": "ryanair/farfnd/v4/roundTripFares KTW→OSL",
@@ -34,16 +34,16 @@
           "departureDate": "2027-04-08T10:35:00",
           "arrivalDate": "2027-04-08T12:45:00",
           "price": {
-            "value": 132.3,
-            "valueMainUnit": "132",
-            "valueFractionalUnit": "30",
+            "value": 131.94,
+            "valueMainUnit": "131",
+            "valueFractionalUnit": "94",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
           "flightKey": "FR~7100~ ~~KTW~04/08/2027 10:35~OSL~04/08/2027 12:45~~",
           "flightNumber": "FR7100",
           "previousPrice": null,
-          "priceUpdated": 1794566264000
+          "priceUpdated": 1794586558000
         },
         "inbound": {
           "departureAirport": {
@@ -85,9 +85,9 @@
         },
         "summary": {
           "price": {
-            "value": 404.3,
-            "valueMainUnit": "404",
-            "valueFractionalUnit": "30",
+            "value": 403.94,
+            "valueMainUnit": "403",
+            "valueFractionalUnit": "94",
             "currencyCode": "PLN",
             "currencySymbol": "zł"
           },
@@ -97,15 +97,15 @@
         }
       },
       "totalFares": 27,
-      "capturedAt": "2026-11-13T12:49:40.985Z"
+      "capturedAt": "2026-11-13T21:15:26.294Z"
     }
   },
   "wizzair": {
     "url": "be.wizzair.com/28.9.0/Api/asset/farechart",
     "status": 200,
     "sampleResponse": {
-      "totalRaw": 334,
-      "normalized": 21,
+      "totalRaw": 335,
+      "normalized": 19,
       "sample": {
         "departureStation": "KTW",
         "arrivalStation": "LTN",
@@ -128,7 +128,7 @@
           16
         ]
       },
-      "capturedAt": "2026-11-13T12:53:10.031Z"
+      "capturedAt": "2026-11-13T21:19:01.262Z"
     },
     "strategy": "playwright-farechart"
   }
